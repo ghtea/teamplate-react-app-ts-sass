@@ -1,19 +1,38 @@
+import produce from 'immer';
 import {handleActions} from 'redux-actions';
 
-import * as status from '../actions/status';
+import * as status from 'store/actions/status';
 
 //import defaultUsingColorAssignment from '../../styles/defaultUsingColorAssignment'
 
 
-// 
-https://react-etc.vlpt.us/07.typescript-redux.html
+// https://react-etc.vlpt.us/07.typescript-redux.html
+
+type typeState = {
+  
+  loading: {
+    user: boolean
+  },
+  
+  ready: {
+    user: boolean
+  },
+  
+  current: {
+    
+  },
+  
+  showing: {
+    
+  }
+  
+};
 
 
-const stateInitial = {
+const stateInitial: typeState = {
   
   loading: {
     user: false
-    
   },
   
   ready: {
@@ -22,43 +41,54 @@ const stateInitial = {
   
   current: {
     
-    color: {    // 주의! 각 페이지에서 Editor 
-      
-      model: 'solo',
-      
-      solo: {
-        position: 'main',
-        mode: 'hsl',
-        opacity: false 
-      },
-      
-      duo: {
-        position: 'main',
-        mode: 'hsl'
-      },
-      
-      series: {
-        position: '10'
-      }
-
-    }
-    
   },
   
   showing: {
     
-    color:{
-      editor: true
-    }
-    
   }
   
-});
+};
+
+
+
+
+// key가 차례대로 적혀있는 list를 이용해서 object access 하기!
+// https://medium.com/better-programming/4-ways-to-safely-access-nested-objects-in-vanilla-javascript-8671d09348a8
+
+
+const reducerStatus = handleActions<typeState, any>({
+  
+  [status.REPLACE]: (statePrevious, action: status.type_REPLACE) => {
+    
+    
+    return produce(statePrevious, stateNew => {
+      if (action.payload === undefined) { 
+        return;
+      }
+      else {
+        const listKey = action.payload.listKey;
+        if (Array.isArray(listKey)) {
+          
+          const location = listKey.reduce<string[]>((statePrevious: status.type_REPLACE, key: string): any => {
+            return (statePrevious[key]); 
+          }, statePrevious);
+          
+        }
+      }
+      
+    });
+  }
+  
+}, stateInitial);
 
 
 
 
 
+export default statusReducer;
+
+
+/*
 const statusReducer = handleActions({
   
   
@@ -79,5 +109,4 @@ const statusReducer = handleActions({
   
 }, stateInitial);
 
-
-export default statusReducer;
+*/

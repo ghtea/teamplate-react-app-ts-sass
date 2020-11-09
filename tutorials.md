@@ -6,6 +6,8 @@
 -- very helful!
 - https://blog.woolta.com/categories/1/posts/197
 -- 전체적인 시스템 참고하기 매우 좋다!
+- https://react-etc.vlpt.us/07.typescript-redux.html
+-- 실제로는 이걸 많이 따라했다
 
 
 ## styled componets
