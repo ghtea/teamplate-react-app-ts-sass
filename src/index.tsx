@@ -6,14 +6,8 @@ import App from './App';
 import {Provider} from 'react-redux'
 import { CookiesProvider } from 'react-cookie';
 
-import saga from './store/sagas'
-import {configureStore} from './store'
 
-
-
-
-const store = configureStore();
-store.runSaga(saga);
+import store from './store';
 
 
 

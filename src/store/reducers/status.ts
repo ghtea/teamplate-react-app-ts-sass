@@ -1,7 +1,7 @@
 import produce from 'immer';
 import {handleActions} from 'redux-actions';
 
-import * as status from 'store/actions/status';
+import * as actionsStatus from 'store/actions/status';
 
 //import defaultUsingColorAssignment from '../../styles/defaultUsingColorAssignment'
 
@@ -11,16 +11,16 @@ import * as status from 'store/actions/status';
 type typeState = {
   
   loading: {
-    user: boolean
-  },
+    user: boolean;
+  };
   
   ready: {
-    user: boolean
-  },
+    user: boolean;
+  };
   
   current: {
     
-  },
+  };
   
   showing: {
     
@@ -51,27 +51,21 @@ const stateInitial: typeState = {
 
 
 
-
-// key가 차례대로 적혀있는 list를 이용해서 object access 하기!
-// https://medium.com/better-programming/4-ways-to-safely-access-nested-objects-in-vanilla-javascript-8671d09348a8
-
-
 const reducerStatus = handleActions<typeState, any>({
   
-  [status.REPLACE]: (statePrevious, action: status.type_REPLACE) => {
-    
+  [actionsStatus.REPLACE]: (statePrevious, action: actionsStatus.type_REPLACE) => {
     
     return produce(statePrevious, stateNew => {
       if (action.payload === undefined) { 
         return;
       }
       else {
-        const listKey = action.payload.listKey;
+        const listKey: string[] = action.payload.listKey;
         if (Array.isArray(listKey)) {
           
-          const location = listKey.reduce<string[]>((statePrevious: status.type_REPLACE, key: string): any => {
-            return (statePrevious[key]); 
-          }, statePrevious);
+          const location = listKey.reduce( (obj: any, key: string) => {
+            return obj[key]; 
+          }, stateNew);
           
         }
       }
@@ -83,9 +77,45 @@ const reducerStatus = handleActions<typeState, any>({
 
 
 
+// key가 차례대로 적혀있는 list를 이용해서 object access 하기!
+// https://medium.com/better-programming/4-ways-to-safely-access-nested-objects-in-vanilla-javascript-8671d09348a8
+
+/*
+const reducerStatus = (statePrevious: typeState = stateInitial, action: any): typeState => {
+  switch (action.type) {
+    
+    case status.REPLACE:
+      
+      return produce(statePrevious, stateNew => {
+        if (action.payload === undefined) { 
+          return;
+        }
+        else {
+          const listKey: string[] = action.payload.listKey;
+          if (Array.isArray(listKey)) {
+            
+            console.log(stateNew);
+            
+            const location = listKey.reduce( (obj: any, key: string) => {
+              return obj[key]; 
+            }, stateNew);
+            
+          }
+      }
+      
+    });
+    
+    
+    default:
+      return statePrevious;
+  }
+}
+
+*/
 
 
-export default statusReducer;
+
+export default reducerStatus;
 
 
 /*

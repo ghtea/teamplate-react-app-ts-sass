@@ -2,7 +2,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 //import Immutable from 'immutable';
 
 
-const Default_Styled = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
@@ -32,4 +32,4 @@ const Default_Styled = createGlobalStyle`
   
 `
 
-export default Default_Styled;
+export default GlobalStyle;

@@ -1,16 +1,16 @@
 import {combineReducers} from 'redux';
 
-//import statusReducer from './reducers/status';
+import reducerStatus from './reducers/status';
 //import authReducer from './reducers/auth';
 
-const rootReducer = combineReducers({
-  //status: statusReducer,
+const reducerRoot = combineReducers({
+  status: reducerStatus
   //auth: authReducer,
   //theme: themeReducer
 });
 
 
 
-export default rootReducer;
+export default reducerRoot;
 
-export type RootState = ReturnType<typeof rootReducer>; // https://velog.io/@velopert/use-typescript-and-redux-like-a-pro
+export type RootState = ReturnType<typeof reducerRoot>; // https://velog.io/@velopert/use-typescript-and-redux-like-a-pro

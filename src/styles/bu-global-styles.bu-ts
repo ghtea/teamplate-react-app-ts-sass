@@ -6,8 +6,8 @@ const objListColor = {
     
 }
 
-
-const Default_Styled = createGlobalStyle<{theme: }>`
+const GlobalStyle = createGlobalStyle`
+  
   
   ${reset}
   
@@ -184,4 +184,4 @@ const Default_Styled = createGlobalStyle<{theme: }>`
   }
 `
 
-export default Default_Styled;
+export default GlobalStyle;

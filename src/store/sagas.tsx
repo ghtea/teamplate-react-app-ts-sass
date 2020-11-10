@@ -3,7 +3,7 @@ import { all, fork } from 'redux-saga/effects'
 //import colorSaga from './sagas/color';
 //import authSaga from './sagas/auth';
 
-export default function* rootSaga() {
+export default function* sagaRoot() {
   yield all ([
     //fork(colorSaga),
     //fork(authSaga)
