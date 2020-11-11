@@ -36,6 +36,7 @@ export const Div__TemplateAdvanced = styled.div
   
   overflow: auto;
   
+  cursor: pointer;
 `;
 
 

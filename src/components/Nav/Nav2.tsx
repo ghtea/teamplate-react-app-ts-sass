@@ -7,11 +7,32 @@ type PropsNav2 = {};
 
 function Nav2({}: PropsNav2) {
   
-  //const history = useHistory();
-
+  const history = useHistory();
+  
+  const onClick_LinkInsideApp = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>, destination:string) => {
+      history.push(destination);
+    },[]
+  );
+  
   return (
     <Styled.Div__Nav2>
-      nav
+      <div>
+        <button
+          onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+        >
+          logo
+        </button>
+      </div>
+      
+      <Styled.Div__CollectionLink>
+        <div> test </div>
+        <div> test </div>
+      </Styled.Div__CollectionLink>
+      
+      <div>
+        right: login
+      </div>
     </Styled.Div__Nav2>
   );
 }

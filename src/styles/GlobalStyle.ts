@@ -15,21 +15,52 @@ const GlobalStyle = createGlobalStyle`
   }
   
   div {
-    width: 100%; /* is good for */
-    height: auto;
-    
+  
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex-flow: column nowrap;   /* row */
+    justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
+    border: 0px solid #fff;  /* border: 2px dashed #aaa; */
+    background-color: none; 
+    color: #000;
+    
+    width: 100%; 
+    height: auto;
+    font-size: 1rem;
+    border-radius: 0px;
+    
+    position: static;
+    
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
     
   }
   
+  
+  button {
+  
+    display: flex;
+    flex-flow: column nowrap;   /* row */
+    justify-content: flex-start; align-items: center;
+    
+    box-sizing: border-box;
+    border: 1px solid #000;  /* border: 2px dashed #aaa; */
+    background-color: none; 
+    color: #000;
+    
+    width: 100%; 
+    height: auto;
+    font-size: 1rem;
+    border-radius: 0px;
+    
+    position: static;
+    
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
+    
+    cursor: pointer;
+  }
 `
 
 export default GlobalStyle;

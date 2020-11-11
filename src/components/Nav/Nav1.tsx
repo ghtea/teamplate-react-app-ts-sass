@@ -11,7 +11,25 @@ function Nav1({}: PropsNav1) {
 
   return (
     <Styled.Div__Nav1>
-      nav
+      
+      <Styled.Div__Bar> 
+        <div>
+          logo
+        </div>
+        
+        <div>
+          title
+        </div>
+        
+        <div>
+          hide/show
+        </div>
+      </Styled.Div__Bar> 
+      
+      <Styled.Div__Board>
+        board
+      </Styled.Div__Board>
+      
     </Styled.Div__Nav1>
   );
 }
