@@ -2,19 +2,19 @@ import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
 
-type PropsHome = {};
+type PropsLogIn = {};
 
-function Home({}: PropsHome) {
+function LogIn({}: PropsLogIn) {
   
   //const history = useHistory();
 
   return (
     <div>
-        home
+        log in
     </div>
   );
 }
 
-Home.defaultProps = {};
+LogIn.defaultProps = {};
 
-export default Home;
+export default LogIn;

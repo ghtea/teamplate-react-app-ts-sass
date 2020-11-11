@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
 
-export type TypeTheme = typeof themeLight; // This is the type definition for my theme object.
+export type Theme = typeof themeLight; // This is the type definition for my theme object.
 
 export const themeLight = {
   colors: {
@@ -12,7 +12,7 @@ export const themeLight = {
 }
 
 
-export const themeDark: TypeTheme = {
+export const themeDark: Theme = {
   colors: {
     basic: [],
     active: []

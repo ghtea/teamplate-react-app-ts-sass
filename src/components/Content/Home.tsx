@@ -1,20 +1,22 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
+import * as Styled from './Home__Styled';
 
-type PropsNav = {};
 
-function Nav({}: PropsNav) {
+type PropsHome = {};
+
+function Home({}: PropsHome) {
   
   //const history = useHistory();
 
   return (
     <div>
-        nav
+        home
     </div>
   );
 }
 
-Nav.defaultProps = {};
+Home.defaultProps = {};
 
-export default Nav;
+export default Home;
