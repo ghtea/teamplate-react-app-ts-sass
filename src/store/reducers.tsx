@@ -13,4 +13,4 @@ const reducerRoot = combineReducers({
 
 export default reducerRoot;
 
-export type RootState = ReturnType<typeof reducerRoot>; // https://velog.io/@velopert/use-typescript-and-redux-like-a-pro
+export type StateRoot = ReturnType<typeof reducerRoot>; // https://velog.io/@velopert/use-typescript-and-redux-like-a-pro

@@ -3,6 +3,7 @@ import {handleActions} from 'redux-actions';
 
 import * as actionsStatus from 'store/actions/status';
 
+import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
 //import defaultUsingColorAssignment from '../../styles/defaultUsingColorAssignment'
 
 
@@ -23,6 +24,9 @@ type typeState = {
   };
   
   showing: {
+    nav: {
+      nav1: boolean;
+    }
     
   }
   
@@ -44,7 +48,9 @@ const stateInitial: typeState = {
   },
   
   showing: {
-    
+    nav: {
+      nav1: false
+    }
   }
   
 };
@@ -61,13 +67,14 @@ const reducerStatus = handleActions<typeState, any>({
       }
       else {
         const listKey: string[] = action.payload.listKey;
-        if (Array.isArray(listKey)) {
-          
-          const location = listKey.reduce( (obj: any, key: string) => {
-            return obj[key]; 
-          }, stateNew);
+        
+        try { putValueToNestedObject(stateNew, listKey, action.payload.replacement); 
           
         }
+        catch {
+          return;
+        }
+        
       }
       
     });
@@ -140,3 +147,10 @@ const statusReducer = handleActions({
 }, stateInitial);
 
 */
+
+
+
+
+
+
+
