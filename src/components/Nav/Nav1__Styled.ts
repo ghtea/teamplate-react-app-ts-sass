@@ -9,7 +9,7 @@ export const Div__Nav1 = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: none; 
+  background-color: #ddf; 
   color: #000;
   
   width: 100%;

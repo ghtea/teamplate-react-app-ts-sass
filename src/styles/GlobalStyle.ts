@@ -5,12 +5,29 @@ import styled, {createGlobalStyle} from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   
   body {
-    font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif;
+    
+    display: flex;
+    flex-flow: column nowrap;   /* row */
+    justify-content: flex-start; align-items: center;
+    
+    box-sizing: border-box;
+    border: 0px solid #fff;  /* border: 2px dashed #aaa; */
+    background-color: #eee; 
+    color: #222;
+    
+    width: 100%; min-width: 320px;
+    height: auto;
+    
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
     
-    background-color: #eee;
+    border-radius: 0px;
     
-    color: #222;
+    position: static;
+    
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
+    
     
   }
   

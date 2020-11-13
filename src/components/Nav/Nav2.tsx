@@ -2,6 +2,8 @@ import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
 import * as Styled from './Nav2__Styled';
+import IconHome from 'svgs/basic/IconHome';
+
 
 type PropsNav2 = {};
 
@@ -12,7 +14,7 @@ function Nav2({}: PropsNav2) {
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
-    },[]
+    },[history]
   );
   
   return (
@@ -21,7 +23,7 @@ function Nav2({}: PropsNav2) {
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}
         >
-          logo
+          <IconHome/>
         </button>
       </div>
       

@@ -16,10 +16,16 @@ type PropsNav1 = {};
 
 function Nav1({}: PropsNav1) {
   
-  //const history = useHistory();
+  const history = useHistory();
   const dispatch = useDispatch();
   
   const showingNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['nav1']);
+  
+  const onClick_LinkInsideApp = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>, destination:string) => {
+      history.push(destination);
+    },[history]
+  );
   
   
   const onClick_ShowHideBoard = useCallback(
@@ -43,7 +49,11 @@ function Nav1({}: PropsNav1) {
       
       <Styled.Div__Bar> 
         <div>
-          <IconHome/>
+          <button
+            onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+          >
+            <IconHome/>
+          </button>
         </div>
         
         <div>
