@@ -42,14 +42,14 @@ const GlobalStyle = createGlobalStyle`
   
     display: flex;
     flex-flow: column nowrap;   /* row */
-    justify-content: flex-start; align-items: center;
+    justify-content: center; align-items: center;
     
     box-sizing: border-box;
-    border: 1px solid #000;  /* border: 2px dashed #aaa; */
+    border: 1px solid #999;  /* border: 2px dashed #aaa; */
     background-color: none; 
     color: #000;
     
-    width: 100%; 
+    width: auto; 
     height: auto;
     font-size: 1rem;
     border-radius: 0px;

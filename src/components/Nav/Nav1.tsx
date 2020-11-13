@@ -6,6 +6,11 @@ import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
 import * as Styled from './Nav1__Styled';
+import IconHome from 'svgs/basic/IconHome';
+import IconThreeBars from 'svgs/basic/IconThreeBars';
+import IconX from 'svgs/basic/IconX';
+
+
 
 type PropsNav1 = {};
 
@@ -31,14 +36,14 @@ function Nav1({}: PropsNav1) {
     [showingNav1]
   );
   
-  
+
   
   return (
     <Styled.Div__Nav1>
       
       <Styled.Div__Bar> 
         <div>
-          logo
+          <IconHome/>
         </div>
         
         <div>
@@ -49,14 +54,15 @@ function Nav1({}: PropsNav1) {
           <button
             onClick={(event)=>onClick_ShowHideBoard(event)}
           >
-            hide/show
+            {showingNav1 ? (<IconX/>) : (<IconThreeBars/>)}
           </button>
         </div>
       </Styled.Div__Bar> 
       
       {showingNav1 && (
         <Styled.Div__Board>
-          board
+          <div> home </div>
+          <div> login </div>
         </Styled.Div__Board>
       )}
       
