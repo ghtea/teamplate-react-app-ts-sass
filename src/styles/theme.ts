@@ -16,7 +16,7 @@ export const themeLight = {
   color: {
     
     GlobalStyle: {
-      body___bg: palette.basic['95'],
+      body___bg: palette.basic['100'],
       body___font: palette.basic['25'],
       
       div___bg: 'transparent',
@@ -48,8 +48,17 @@ export const themeLight = {
       nav1_bar___font: palette.main['100'],
       nav1_bar___border: palette.main['60'],
       
-      nav1_board___bg: palette.main['90'],
-      nav1_board___font: palette.main['50']
+      nav1_board___bg: palette.basic['85'],
+      nav1_board___font: palette.basic['25'],
+      
+      nav2_title___logo: palette.main['60'],
+      nav2_title___font: palette.basic['20'],
+      nav2_title___border: palette.basic['80'],
+      
+      nav2_link___font: palette.basic['40'],
+      nav2_link___font_hover: palette.basic['10'],
+      
+      nav2_tool___icon: palette.basic['70']
     }
     
     

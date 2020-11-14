@@ -5,14 +5,15 @@ type PropsIcon = {
   className: string;
   width: string;
   height: string;
-  color: string;
+  color?: string;
+  listKeyTheme?: string[];
 } & typeof propsDefault;
 
 const propsDefault = {  
   className: '',
   width: '30px',
   height: '30px',
-	color: '#000'
+  color: '#000'
 };
 
 
@@ -20,7 +21,11 @@ type PropsDivIcon = {
   width: string;
   height: string;
   color: string;
+  listKeyTheme?: string[];
 };
+
+
+
 
 export const Div__Icon = styled.div<PropsDivIcon>
 `
@@ -32,9 +37,8 @@ export const Div__Icon = styled.div<PropsDivIcon>
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   background-color: none; 
-  color: ${props=>props.color };
-  
-  width: ${props=>props.width };
+  color: ${props=> (props.listKeyTheme) ? (props.listKeyTheme).reduce((obj: any, key: string) =>  (obj || {})[key], props.theme) : props.color };
+  width: ${props=>props.width};
   height: ${props=>props.height };
   font-size: 1rem;
   border-radius: 0px;
@@ -48,13 +52,14 @@ export const Div__Icon = styled.div<PropsDivIcon>
 
 
 // Home
-const Icon = ({ className, width, height, color }: PropsIcon) => {
+const Icon = ({ className, width, height, color, listKeyTheme }: PropsIcon) => {
   return (
     <Div__Icon
       className={className}
       width={width}
       height={height}
       color={color}
+      listKeyTheme={listKeyTheme}
     >
       <svg
         width="100%"

@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center; align-items: center;
     
     box-sizing: border-box;
-    border: 0px solid ${ ({theme})=>theme.color.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
+    border: 1px solid ${ ({theme})=>theme.color.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
     background-color: ${ ({theme})=>theme.color.GlobalStyle.button___bg };
     color: ${ ({theme})=>theme.color.GlobalStyle.button___font };
     

@@ -23,7 +23,7 @@ export const Div__TemplateBasic = styled.div
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   
-	@media (min-width: 768px) { // 320≤ XS< 576,   576 ≤ S< 768,   768 ≤ M< 992,   992 ≤ L< 1200,   1200 ≤ XL
+	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	 
 	}
   

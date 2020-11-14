@@ -26,6 +26,7 @@ type PropsDivIcon = {
 
 
 
+
 export const Div__Icon = styled.div<PropsDivIcon>
 `
   
@@ -37,9 +38,8 @@ export const Div__Icon = styled.div<PropsDivIcon>
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   background-color: none; 
   color: ${props=> (props.listKeyTheme) ? (props.listKeyTheme).reduce((obj: any, key: string) =>  (obj || {})[key], props.theme) : props.color };
-  
   width: ${props=>props.width};
-  height: ${props=>props.height};
+  height: ${props=>props.height };
   font-size: 1rem;
   border-radius: 0px;
   
@@ -51,8 +51,7 @@ export const Div__Icon = styled.div<PropsDivIcon>
 `;
 
 
-
-// X
+// SignOut
 const Icon = ({ className, width, height, color, listKeyTheme }: PropsIcon) => {
   return (
     <Div__Icon
@@ -71,10 +70,10 @@ const Icon = ({ className, width, height, color, listKeyTheme }: PropsIcon) => {
         focusable="false"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 320 512"
+        viewBox="0 0 512 512"
       >
         <path 
-          d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z">
+          d="M272 112v51.6h-96c-26.5 0-48 21.5-48 48v88.6c0 26.5 21.5 48 48 48h96v51.6c0 42.6 51.7 64.2 81.9 33.9l144-143.9c18.7-18.7 18.7-49.1 0-67.9l-144-144C323.8 48 272 69.3 272 112zm192 144L320 400v-99.7H176v-88.6h144V112l144 144zM96 64h84c6.6 0 12 5.4 12 12v24c0 6.6-5.4 12-12 12H96c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h84c6.6 0 12 5.4 12 12v24c0 6.6-5.4 12-12 12H96c-53 0-96-43-96-96V160c0-53 43-96 96-96z">
         </path>
       </svg>
       

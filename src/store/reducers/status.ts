@@ -9,42 +9,25 @@ import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
 
 // https://react-etc.vlpt.us/07.typescript-redux.html
 
-type typeState = {
+export type State = typeof stateInitial;
+
+
+
+const stateInitial = {
   
   loading: {
-    user: boolean;
-  };
+    user: false
+  },
   
   ready: {
-    user: boolean;
-  };
+    user: false
+  },
   
   current: {
-    
-  };
-  
-  showing: {
-    nav: {
-      nav1: boolean;
+    theme: {
+      option: '',
+      name: 'themeLight'
     }
-    
-  }
-  
-};
-
-
-const stateInitial: typeState = {
-  
-  loading: {
-    user: false
-  },
-  
-  ready: {
-    user: false
-  },
-  
-  current: {
-    
   },
   
   showing: {
@@ -57,7 +40,7 @@ const stateInitial: typeState = {
 
 
 
-const reducerStatus = handleActions<typeState, any>({
+const reducerStatus = handleActions<State, any>({
   
   [actionsStatus.REPLACE]: (statePrevious, action: actionsStatus.type_REPLACE) => {
     
