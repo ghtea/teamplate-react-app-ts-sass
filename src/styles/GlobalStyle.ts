@@ -11,9 +11,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
-    border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-    background-color: #eee; 
-    color: #222;
+  
+    background-color: ${ ({theme})=>theme.color.GlobalStyle.body___bg };  
+    color: ${ ({theme})=>theme.color.GlobalStyle.body___font };  
     
     width: 100%; min-width: 320px;
     height: auto;
@@ -38,9 +38,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
-    border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-    background-color: none; 
-    color: #000;
+    border: 0px solid ${ ({theme})=>theme.color.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
+    background-color: ${ ({theme})=>theme.color.GlobalStyle.div___bg };
+    color: ${ ({theme})=>theme.color.GlobalStyle.div___font };
     
     width: 100%; 
     height: auto;
@@ -62,9 +62,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center; align-items: center;
     
     box-sizing: border-box;
-    border: 1px solid #999;  /* border: 2px dashed #aaa; */
-    background-color: none; 
-    color: #000;
+    border: 0px solid ${ ({theme})=>theme.color.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
+    background-color: ${ ({theme})=>theme.color.GlobalStyle.button___bg };
+    color: ${ ({theme})=>theme.color.GlobalStyle.button___font };
     
     width: auto; 
     height: auto;

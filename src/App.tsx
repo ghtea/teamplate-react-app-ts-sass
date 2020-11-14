@@ -3,7 +3,7 @@ import React from 'react';
 
 import styled, {ThemeProvider }  from 'styled-components';
 
-import { themeLight, themeDark } from "./styles/theme";
+import { themeLight } from "./styles/theme";
 import GlobalStyle from 'styles/GlobalStyle';
 import 'styles/importFonts.css';
 

@@ -9,8 +9,8 @@ export const Div__Nav1 = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: #ddf; 
-  color: #000;
+  
+  background-color: green;  /* 0 ~ 20 */
   
   width: 100%;
   height: auto;      /* we should let 'Content' know this value too */ 
@@ -27,6 +27,10 @@ export const Div__Nav1 = styled.div
     display: none;
 	}
   
+  & * {
+    color: purple;  /* 0 ~ 20  */ 
+  
+  }
 `;
 
 
@@ -40,7 +44,7 @@ export const Div__Bar = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: none; 
+  background-color: transparent; 
   color: #000;
   
   width: 100%;
@@ -80,8 +84,8 @@ export const Div__Board = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: #bbb; 
-  color: #000;
+  background-color: red;  /* 0 ~ 20 */
+  
   
   width: 100%;
   height: calc(100vh - 40px);      /* we should let 'Content' know this value too */ 
@@ -98,4 +102,7 @@ export const Div__Board = styled.div
     display: none;
 	}
   
+  & > div {
+    color: blue;  /* 0 ~ 20 */
+  }
 `;

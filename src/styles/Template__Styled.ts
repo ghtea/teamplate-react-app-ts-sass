@@ -8,7 +8,8 @@ export const Div__TemplateBasic = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: none; 
+  
+  background-color: transparent; 
   color: #000;
   
   width: 100%; min-width: 100%; max-width: 100%;
