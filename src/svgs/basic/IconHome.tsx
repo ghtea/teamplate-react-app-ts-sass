@@ -2,12 +2,14 @@ import React from "react";
 import styled from 'styled-components';
 
 type PropsIcon = {
+  className: string;
   width: string;
   height: string;
   color: string;
 } & typeof propsDefault;
 
 const propsDefault = {  
+  className: '',
   width: '30px',
   height: '30px',
 	color: '#000'
@@ -46,12 +48,13 @@ export const Div__Icon = styled.div<PropsDivIcon>
 
 
 // Home
-const Icon = ({ width, height, color }: PropsIcon) => {
+const Icon = ({ className, width, height, color }: PropsIcon) => {
   return (
     <Div__Icon
-        width={width}
-        height={height}
-        color={color}
+      className={className}
+      width={width}
+      height={height}
+      color={color}
     >
       <svg
         width="100%"

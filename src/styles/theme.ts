@@ -44,7 +44,12 @@ export const themeLight = {
     },
     
     Nav : {
+      nav1_bar___bg: palette.main['65'],
+      nav1_bar___font: palette.main['100'],
+      nav1_bar___border: palette.main['60'],
       
+      nav1_board___bg: palette.main['90'],
+      nav1_board___font: palette.main['50']
     }
     
     

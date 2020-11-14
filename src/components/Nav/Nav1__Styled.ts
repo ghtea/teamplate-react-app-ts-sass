@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Div__Nav1 = styled.div
 `
@@ -8,9 +8,6 @@ export const Div__Nav1 = styled.div
   justify-content: space-between; align-items: center;
   
   box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  
-  background-color: green;  /* 0 ~ 20 */
   
   width: 100%;
   height: auto;      /* we should let 'Content' know this value too */ 
@@ -18,6 +15,7 @@ export const Div__Nav1 = styled.div
   border-radius: 0px;
   
   position: static;
+  
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -28,10 +26,28 @@ export const Div__Nav1 = styled.div
 	}
   
   & * {
-    color: purple;  /* 0 ~ 20  */ 
+    color: ${ ({theme})=>theme.color.Nav.nav1_bar___font };  
   
   }
 `;
+
+const keyframes_RotateIconX = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+`
+
+const keyframes_RotateIconThreeBars = keyframes`
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+`
 
 
 
@@ -43,16 +59,19 @@ export const Div__Bar = styled.div
   justify-content: space-evenly; align-items: center;
   
   box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: transparent; 
-  color: #000;
+  border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav1_bar___border };  /* border: 2px dashed #aaa; */
+
+  background-color: ${ ({theme})=>theme.color.Nav.nav1_bar___bg };  
+  color: ${ ({theme})=>theme.color.Nav.nav1_bar___font };  
+  
   
   width: 100%;
-  height: 40px;      /* we should let 'Content' know this value too */ 
+  height: 40px;      /* we should let 'Content', 'Nav1 - Board' know this value too */ 
   font-size: 1rem;
   border-radius: 0px;
   
   position: static;
+  z-index: 100;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -65,6 +84,12 @@ export const Div__Bar = styled.div
   }
   & > div:nth-child(3) {
     width: 40px;
+    & button .IconX {
+      animation: ${keyframes_RotateIconX} 0.4s ease-out 0s 1 normal;
+    }
+    & button .IconThreeBars {
+      animation: ${keyframes_RotateIconThreeBars} 0.4s ease-out 0s 1 normal;
+    }
   }
   
   
@@ -80,11 +105,11 @@ export const Div__Board = styled.div
  
   display: flex;
   flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
+  justify-content: flex-start; align-items: center;
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: red;  /* 0 ~ 20 */
+  background-color: ${ ({theme})=>theme.color.Nav.nav1_board___bg };  
   
   
   width: 100%;
@@ -92,7 +117,8 @@ export const Div__Board = styled.div
   font-size: 1rem;
   border-radius: 0px;
   
-  position: static;
+  position: fixed;
+  top: 40px; 
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -103,6 +129,11 @@ export const Div__Board = styled.div
 	}
   
   & > div {
-    color: blue;  /* 0 ~ 20 */
+    display: flex;
+    flex-flow: column nowrap;   /* row */
+    justify-content: center; align-items: center;
+    
+    height: 90px;
+    color: ${ ({theme})=>theme.color.Nav.nav1_board___font };  
   }
 `;

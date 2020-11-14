@@ -52,7 +52,7 @@ function Nav1({}: PropsNav1) {
           <button
             onClick={(event)=>onClick_LinkInsideApp(event, '/')}
           >
-            <IconHome/>
+            <IconHome width={'24px'} height={'24px'} />
           </button>
         </div>
         
@@ -64,7 +64,13 @@ function Nav1({}: PropsNav1) {
           <button
             onClick={(event)=>onClick_ShowHideBoard(event)}
           >
-            {showingNav1 ? (<IconX/>) : (<IconThreeBars/>)}
+            {showingNav1 ? (
+            <IconX 
+              className={"IconX"} width={'24px'} height={'24px'} />
+            ) : (
+            <IconThreeBars 
+              className={"IconThreeBars"} width={'24px'} height={'24px'} />
+            )}
           </button>
         </div>
       </Styled.Div__Bar> 
