@@ -13,7 +13,7 @@ type PropsNav2 = {};
 
 function Nav2({}: PropsNav2) {
   
-  const history = useHistory();
+  let history = useHistory();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);

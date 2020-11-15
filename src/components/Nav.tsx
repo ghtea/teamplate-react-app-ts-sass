@@ -17,8 +17,7 @@ type PropsNav = {};
 function Nav({}: PropsNav) {
   
   const dispatch = useDispatch();
-  const location = useLocation();
-  
+  let location = useLocation();
   
   useEffect(() => {
     
