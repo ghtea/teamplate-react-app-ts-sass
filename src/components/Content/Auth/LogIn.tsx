@@ -20,12 +20,13 @@ function LogIn({}: PropsLogIn) {
   useEffect(() => {
     
     console.log('hi');
+    
     dispatch(actionsStatus.return_REPLACE({
       listKey:['showing', 'nav', 'all'],
       replacement: false
     }))
       
-  });
+  }, []);
 
 
   return (
