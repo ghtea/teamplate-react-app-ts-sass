@@ -5,7 +5,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
   display: none;
   visibility: ${ (props)=> props.showingNav ?  'visible' : 'hidden'};
   
-	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  
 	  display: flex;
     flex-flow: row nowrap;   /* row */
@@ -20,7 +20,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
     font-size: 1rem;
     border-radius: 0px;
     
-    position: static;
+    position: fixed;
     
     margin: 0px 0px 0px 0px; /* top right bottom left */
     padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -62,9 +62,6 @@ export const Div__Title = styled.div
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   
-	@media ${({theme})=>theme.device.m} { // 320≤ XS< 576,   576 ≤ S< 768,   768 ≤ M< 992,   992 ≤ L< 1200,   1200 ≤ XL
-	  
-	}
 	
 	& > *:nth-child(1) {
 	  margin-left: 10px;
@@ -79,6 +76,7 @@ export const Div__Title = styled.div
 	}
   
 `;
+
 
 
 export const Div__CollectionLink = styled.div

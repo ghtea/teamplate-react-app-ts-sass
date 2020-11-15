@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 
 import styled, {ThemeProvider }  from 'styled-components';
@@ -12,14 +12,44 @@ import 'styles/importFonts.css';
 
 import Nav from "./components/Nav";
 import Content from "./components/Content";
+import FullPage from "./components/FullPage";
 
 // TS  https://velog.io/@velopert/create-typescript-react-component
 type PropsApp = {};
 
 function App({}: PropsApp) {
   
-  
+  let location = useLocation();
   const dispatch = useDispatch();
+  
+  
+  
+  const [isFullPage, setIsFullPage] = useState(false);
+  
+  const listFullPage : string[] = [
+    '/log-in', '/sign-up', '/lost'
+  ];
+  
+  useEffect(() => {
+    
+    const listMatched: RegExpMatchArray | null = (location.pathname).match( /\/[^\/]+/ );
+    let pathFirst: string = '/';
+    if (listMatched !== null){
+      pathFirst = listMatched[0];
+    }
+    //console.log(listMatched)
+    //console.log(pathFirst)
+    
+    if (listFullPage.includes(pathFirst)){
+      setIsFullPage(true);
+    }
+    else {
+      setIsFullPage(false);
+    }
+    
+  }, [location]);
+  
+  
   
   
   return (
@@ -28,8 +58,17 @@ function App({}: PropsApp) {
     
       <GlobalStyle />
       
-      <Nav/>
-      <Content/>
+      { 
+        isFullPage ? (
+          <FullPage/>
+        ) : (
+          <>
+            <Nav/>
+            <Content/>
+          </>
+        ) 
+      }
+      
   
     </ThemeProvider>
     

@@ -1,4 +1,3 @@
-import device from './theme/device';
 import palette from './theme/palette';
 import size from './theme/size';
 
@@ -11,7 +10,6 @@ export const themeLight = {
   
   light: true,
   
-  device,
   size,
   
   color: {
@@ -23,12 +21,14 @@ export const themeLight = {
       div___bg: 'transparent',
       div___font: 'inherit',
       div___border: 'transparent',
+      //div___border: palette.basic['80'],
       
       a___font: 'inherit',
       
       button___bg: 'transparent',
       button___font: 'inherit',
-      button___border: palette.basic['50'],
+      button___border: 'transparent',
+      //button___border: palette.basic['50'],
       
       button___bg__hover: 'transparent',
       button___font__hover: 'inherit',
@@ -41,6 +41,8 @@ export const themeLight = {
     },
     
     Content : {
+      label___font: palette.basic['40']
+      
       
     },
     
@@ -60,7 +62,12 @@ export const themeLight = {
       nav2_link___font_hover: palette.basic['20'],
       
       nav2_tool___icon: palette.basic['70']
-    }
+    },
+    
+    FullPage : {
+      full_page___bg: palette.basic['95']
+      
+    },
     
     
   }

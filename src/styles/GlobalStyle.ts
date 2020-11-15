@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${ ({theme})=>theme.color.GlobalStyle.body___bg };  
     color: ${ ({theme})=>theme.color.GlobalStyle.body___font };  
     
-    width: 100%; min-width: 320px;
+    width: 100%; min-width: ${({theme})=>theme.size.device.minWidth_xs}px;
     height: auto;
     
     font-family: 'Noto Sans KR', sans-serif;
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
-    border: 0px solid ${ ({theme})=>theme.color.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
+    border: 1px solid ${ ({theme})=>theme.color.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
     background-color: ${ ({theme})=>theme.color.GlobalStyle.div___bg };
     color: ${ ({theme})=>theme.color.GlobalStyle.div___font };
     

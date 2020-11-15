@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 
 import styled, {ThemeProvider }  from 'styled-components';
@@ -16,37 +16,26 @@ type PropsNav = {};
 
 function Nav({}: PropsNav) {
   
-  const dispatch = useDispatch();
   let location = useLocation();
-  
-  useEffect(() => {
-    
-    if ( (/^\/log-in/).test(location.pathname) || (/^\/sign-up/).test(location.pathname) ) {
-      dispatch(actionsStatus.return_REPLACE({
-        listKey:['showing', 'nav', 'all'],
-        replacement: false
-      }))
-    }
-    else {
-      dispatch(actionsStatus.return_REPLACE({
-        listKey:['showing', 'nav', 'all'],
-        replacement: true
-      }))
-    }
-    
-  }, [location]);
   
   
   return (
-  
     <>
       <Nav1/>
       <Nav2/>
     </>
-    
-  );
+  )
+  
 }
 
 export default Nav;
 
 
+/*
+
+ const reducer = (resultCurrent:boolean, pageCurrent:string):boolean => (new RegExp(`^${pageCurrent}`)).test(location.pathname) ? true : false;
+
+  
+  const isFullPage: boolean = listFullPage.reduce(reducer, false)
+  
+*/

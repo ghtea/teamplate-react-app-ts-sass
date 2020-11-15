@@ -11,9 +11,9 @@ function Home({}: PropsHome) {
   //const history = useHistory();
 
   return (
-    <div>
-        home
-    </div>
+    <Styled.Div__Home>
+        <div> This app is a template for React app </div>
+    </Styled.Div__Home>
   );
 }
 

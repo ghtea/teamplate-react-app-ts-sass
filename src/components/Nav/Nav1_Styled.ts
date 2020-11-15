@@ -23,7 +23,7 @@ export const Header__Nav1 = styled.header<{showingNav: boolean}>
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   
-	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  display: none;
 	}
   
@@ -67,7 +67,7 @@ export const Div__Bar = styled.div
   
   
   width: 100%;
-  height: ${ ({theme})=>theme.size.pxHeightNav1 }px;     /* we should let 'Content', 'Nav1 - Board' know this value too */ 
+  height: ${ ({theme})=>theme.size.nav.height_nav1 }px;     /* we should let 'Content', 'Nav1 - Board' know this value too */ 
   font-size: 1rem;
   border-radius: 0px;
   
@@ -94,7 +94,7 @@ export const Div__Bar = styled.div
   }
   
   
-	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  display: none;
 	}
   
@@ -114,19 +114,19 @@ export const Div__Board = styled.div
   
   
   width: 100%;
-  height: calc(100vh - ${ ({theme})=>theme.size.pxHeightNav1 }px);     /* using height of*/
+  height: calc(100vh - ${ ({theme})=>theme.size.nav.height_nav1 }px);     /* using height of*/
   font-size: 1rem;
   border-radius: 0px;
   
   position: fixed;
-  top: ${ ({theme})=>theme.size.pxHeightNav1 }px; 
+  top: ${ ({theme})=>theme.size.nav.height_nav1 }px; 
   z-index: 50;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
 
   
-	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  display: none;
 	}
   

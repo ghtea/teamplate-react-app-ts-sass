@@ -12,7 +12,7 @@ export const Div__Home = styled.div
   background-color: none; 
   color: #000;
   
-  width: 100%; min-width: 100%; max-width: 100%;
+  width: 100%;
   height: auto;
   font-size: 1rem;
   border-radius: 0px;
@@ -22,10 +22,7 @@ export const Div__Home = styled.div
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  
-	@media (min-width: 768px) { // 320≤ XS< 576,   576 ≤ S< 768,   768 ≤ M< 992,   992 ≤ L< 1200,   1200 ≤ XL
-	 
-	}
+
   
 `;
 

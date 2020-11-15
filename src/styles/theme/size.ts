@@ -10,6 +10,10 @@ const size = {
     height_nav2: 60
   },
   
+  fullPage : {
+    minHeight: 400
+  },
+  
   device : {
     minWidth_xs : 320,   // min-width
     minWidth_s : 576,

@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Content/Home";
 //import SignUp from "./components/Auth/SignUp";
 
-import LogIn from "./Content/Auth/LogIn";
 
 import * as Styled from './Content_Styled';
 
@@ -18,10 +17,6 @@ function Content({}: PropsContent) {
             
             <Route exact path="/" >
               <Home />
-            </Route>
-            
-            <Route path="/log-in" >
-              <LogIn />
             </Route>
             
           </Switch>

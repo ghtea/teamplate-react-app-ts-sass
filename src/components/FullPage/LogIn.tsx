@@ -19,16 +19,21 @@ function LogIn({}: PropsLogIn) {
   
   return (
     <Styled.Div__LogIn>
-        <div> React App </div>
-        <div> Log In </div>
-        <div> 
+    
+        <Styled.Div__LogIn_NameApp> React App </Styled.Div__LogIn_NameApp>
+        
+        <Styled.Div__LogIn_TitlePage> Log In </Styled.Div__LogIn_TitlePage>
+        
+        <Styled.Div__LogIn_Identity> 
           <div> email address </div>
           <div> <input type='text' /> </div>
-        </div>
-        <div> 
+        </Styled.Div__LogIn_Identity>
+        
+        <Styled.Div__LogIn_Password> 
           <div> password </div>
           <div> <input type='password' /> </div>
-        </div>
+        </Styled.Div__LogIn_Password> 
+        
     </Styled.Div__LogIn>
   );
 }
