@@ -37,9 +37,9 @@ export const Div__Icon = styled.div<PropsDivIcon>
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   background-color: none; 
-  color: ${props=> (props.listKeyTheme) ? (props.listKeyTheme).reduce((obj: any, key: string) =>  (obj || {})[key], props.theme) : props.color };
-  width: ${props=>props.width};
-  height: ${props=>props.height };
+  color: ${props=> (props.listKeyTheme) ? (props.listKeyTheme).reduce((obj: any, key: string) =>  (obj || {})[key], props.theme) : props.color } !important;
+  width: ${props=>props.width} !important;
+  height: ${props=>props.height } !important;
   font-size: 1rem;
   border-radius: 0px;
   

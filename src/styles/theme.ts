@@ -56,7 +56,7 @@ export const themeLight = {
       nav2_title___border: palette.basic['80'],
       
       nav2_link___font: palette.basic['40'],
-      nav2_link___font_hover: palette.basic['10'],
+      nav2_link___font_hover: palette.basic['20'],
       
       nav2_tool___icon: palette.basic['70']
     }

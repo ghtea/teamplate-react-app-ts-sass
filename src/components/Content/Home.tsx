@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
 
-import * as Styled from './Home__Styled';
+import * as Styled from './Home_Styled';
 
 
 type PropsHome = {};

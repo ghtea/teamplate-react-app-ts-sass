@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
-import * as Styled from './Nav1__Styled';
+import * as Styled from './Nav1_Styled';
 import IconHome from 'svgs/basic/IconHome';
 import IconThreeBars from 'svgs/basic/IconThreeBars';
 import IconX from 'svgs/basic/IconX';
@@ -22,7 +22,7 @@ function Nav1({}: PropsNav1) {
   const showingNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['nav1']);
   
   const onClick_LinkInsideApp = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement>, destination:string) => {
+    (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
   );
@@ -30,7 +30,7 @@ function Nav1({}: PropsNav1) {
   
   const onClick_ShowHideBoard = useCallback(
     
-    (event:React.MouseEvent<HTMLButtonElement>) => {
+    (event:React.MouseEvent<HTMLButtonElement> ) => {
       event.preventDefault();
       
       dispatch(actionsStatus.return_REPLACE({
@@ -45,14 +45,14 @@ function Nav1({}: PropsNav1) {
 
   
   return (
-    <Styled.Div__Nav1>
+    <Styled.Header__Nav1>
       
       <Styled.Div__Bar> 
         <div>
           <button
             onClick={(event)=>onClick_LinkInsideApp(event, '/')}
           >
-            <IconHome width={'24px'} height={'24px'} />
+            <IconHome width={'30px'} height={'30px'} />
           </button>
         </div>
         
@@ -66,10 +66,10 @@ function Nav1({}: PropsNav1) {
           >
             {showingNav1 ? (
             <IconX 
-              className={"IconX"} width={'24px'} height={'24px'} />
+              className={"IconX"} width={'30px'} height={'30px'} />
             ) : (
             <IconThreeBars 
-              className={"IconThreeBars"} width={'24px'} height={'24px'} />
+              className={"IconThreeBars"} width={'30px'} height={'30px'} />
             )}
           </button>
         </div>
@@ -77,12 +77,22 @@ function Nav1({}: PropsNav1) {
       
       {showingNav1 && (
         <Styled.Div__Board>
-          <div> home </div>
-          <div> login </div>
+          <div> 
+            <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+            > Home
+            </a>
+          </div>
+          <div> 
+            <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
+            > Log In
+            </a>
+          </div>
         </Styled.Div__Board>
       )}
       
-    </Styled.Div__Nav1>
+    </Styled.Header__Nav1>
   );
 }
 

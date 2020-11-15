@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Div__Nav2 = styled.div
+export const Header__Nav2 = styled.header
 `
   display: none;
 
@@ -157,5 +157,59 @@ export const Div__CollectionTool = styled.div
 	& > *:nth-child(1) {
 	  margin-right: 10px;
 	}
+  
+  
+`;
+
+
+export const Div__Tool = styled.div
+`
+  display: flex;
+  flex-flow: row nowrap;   /* row */
+  justify-content: flex-end; align-items: center;
+  
+  box-sizing: border-box;
+  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
+  
+  background-color: transparent; 
+  color: #000;
+  
+  height: auto;
+  font-size: 1rem;
+  border-radius: 0px;
+  
+  position: static;
+  
+  margin: 0px 0px 0px 0px; /* top right bottom left */
+  padding: 0px 0px 0px 0px; /* top right bottom left */
+  
+  
+	& > *:nth-child(1) {
+	  margin-right: 10px;
+	}
+  
+  & > a {
+    display: flex;
+    flex-flow: row nowrap;   /* row */
+    justify-content: flex-end; align-items: center;
+    color: ${ ({theme})=>theme.color.Nav.nav2_link___font  };  
+    width: auto;
+    
+    
+    & > div:nth-child(n+2){
+      margin-left: 8px;
+    }
+    
+    & > div {
+      width: auto;
+      color: 'inherit';  
+    }
+    
+    &:hover {
+      color: ${ ({theme})=>theme.color.Nav.nav2_link___font_hover  };  
+    }
+    
+    
+  }
   
 `;

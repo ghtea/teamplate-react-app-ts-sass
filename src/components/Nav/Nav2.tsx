@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 
-import * as Styled from './Nav2__Styled';
+import * as Styled from './Nav2_Styled';
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
 
@@ -18,13 +18,13 @@ function Nav2({}: PropsNav2) {
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
   
   const onClick_LinkInsideApp = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement>, destination:string) => {
+    (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
   );
   
   return (
-    <Styled.Div__Nav2>
+    <Styled.Header__Nav2>
       <Styled.Div__Title>
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}
@@ -47,19 +47,25 @@ function Nav2({}: PropsNav2) {
         <div> category2 </div>
       </Styled.Div__CollectionLink>
       
+      
       <Styled.Div__CollectionTool>
-        <button
-          onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-        >
-          <IconSignIn
-            listKeyTheme={['color', 'Nav', 'nav2_tool___icon']}
-            width={'28px'}
-            height={'28px'}
-          />
-        </button>
+      
+        <Styled.Div__Tool>
+          <a
+            onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
+          >
+            <IconSignIn
+              color={'inherit'}
+              width={'28px'}
+              height={'28px'}
+            />
+            <div> Log In </div>
+          </a>
+        </Styled.Div__Tool>
+        
       </Styled.Div__CollectionTool>
       
-    </Styled.Div__Nav2>
+    </Styled.Header__Nav2>
   );
 }
 

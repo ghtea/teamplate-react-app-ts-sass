@@ -78,6 +78,30 @@ const GlobalStyle = createGlobalStyle`
     
     cursor: pointer;
   }
+  
+  
+  a {
+  
+    display: flex;
+    flex-flow: column nowrap;   /* row */
+    justify-content: flex-start; align-items: center;
+    
+    box-sizing: border-box;
+    color: ${ ({theme})=>theme.color.GlobalStyle.a___font };
+    
+    width: auto; 
+    height: auto;
+    font-size: 1rem;
+    border-radius: 0px;
+    
+    position: static;
+    
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
+    
+    cursor: pointer;
+  }
+  
 `
 
 export default GlobalStyle;

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-export const Div__Nav1 = styled.div
+export const Header__Nav1 = styled.header
 `
  
   display: flex;
@@ -50,6 +50,7 @@ const keyframes_RotateIconThreeBars = keyframes`
 `
 
 
+const pxHeightBar: number = 48;
 
 export const Div__Bar = styled.div
 `
@@ -66,7 +67,7 @@ export const Div__Bar = styled.div
   
   
   width: 100%;
-  height: 40px;      /* we should let 'Content', 'Nav1 - Board' know this value too */ 
+  height: ${pxHeightBar}px;      /* we should let 'Content', 'Nav1 - Board' know this value too */ 
   font-size: 1rem;
   border-radius: 0px;
   
@@ -113,12 +114,12 @@ export const Div__Board = styled.div
   
   
   width: 100%;
-  height: calc(100vh - 40px);      /* we should let 'Content' know this value too */ 
+  height: calc(100vh - ${pxHeightBar}px);     /* using height of*/
   font-size: 1rem;
   border-radius: 0px;
   
   position: fixed;
-  top: 40px; 
+  top: ${pxHeightBar}px; 
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -134,6 +135,10 @@ export const Div__Board = styled.div
     justify-content: center; align-items: center;
     
     height: 90px;
-    color: ${ ({theme})=>theme.color.Nav.nav1_board___font };  
+    
+    & > a {
+      color: ${ ({theme})=>theme.color.Nav.nav1_board___font };  
+    }
+    
   }
 `;
