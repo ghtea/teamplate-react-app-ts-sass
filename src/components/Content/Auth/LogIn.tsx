@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import {useSelector, useDispatch} from "react-redux";
@@ -15,7 +15,18 @@ type PropsLogIn = {};
 
 function LogIn({}: PropsLogIn) {
   
-  //const history = useHistory();
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    
+    console.log('hi');
+    dispatch(actionsStatus.return_REPLACE({
+      listKey:['showing', 'nav', 'all'],
+      replacement: false
+    }))
+      
+  });
+
 
   return (
     <div>

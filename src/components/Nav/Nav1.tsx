@@ -19,7 +19,8 @@ function Nav1({}: PropsNav1) {
   const history = useHistory();
   const dispatch = useDispatch();
   
-  const showingNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['nav1']);
+  const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
+  const showingBoardNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['boardNav1']);
   
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
@@ -34,18 +35,20 @@ function Nav1({}: PropsNav1) {
       event.preventDefault();
       
       dispatch(actionsStatus.return_REPLACE({
-        listKey:['showing', 'nav', 'nav1'],
-        replacement: !showingNav1
+        listKey:['showing', 'nav', 'boardNav1'],
+        replacement: !showingBoardNav1
       }))
     },
     
-    [showingNav1]
+    [showingBoardNav1]
   );
   
 
   
   return (
-    <Styled.Header__Nav1>
+    <Styled.Header__Nav1
+      showingNav={showingNav}
+    >
       
       <Styled.Div__Bar> 
         <div>
@@ -64,7 +67,7 @@ function Nav1({}: PropsNav1) {
           <button
             onClick={(event)=>onClick_ShowHideBoard(event)}
           >
-            {showingNav1 ? (
+            {showingBoardNav1 ? (
             <IconX 
               className={"IconX"} width={'30px'} height={'30px'} />
             ) : (
@@ -75,7 +78,7 @@ function Nav1({}: PropsNav1) {
         </div>
       </Styled.Div__Bar> 
       
-      {showingNav1 && (
+      {showingBoardNav1 && (
         <Styled.Div__Board>
           <div> 
             <a

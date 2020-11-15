@@ -15,6 +15,7 @@ function Nav2({}: PropsNav2) {
   
   const history = useHistory();
   
+  const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
   
   const onClick_LinkInsideApp = useCallback(
@@ -24,7 +25,9 @@ function Nav2({}: PropsNav2) {
   );
   
   return (
-    <Styled.Header__Nav2>
+    <Styled.Header__Nav2
+      showingNav={showingNav}
+    >
       <Styled.Div__Title>
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}

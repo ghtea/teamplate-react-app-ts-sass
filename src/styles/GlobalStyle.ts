@@ -48,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 0px;
     
     position: static;
+    z-index: auto;
     
     margin: 0px 0px 0px 0px; /* top right bottom left */
     padding: 0px 0px 0px 0px; /* top right bottom left */

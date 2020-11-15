@@ -1,8 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
-export const Header__Nav1 = styled.header
+export const Header__Nav1 = styled.header<{showingNav: boolean}>
 `
- 
+  visibility: ${ (props)=> props.showingNav ?  'visible' : 'hidden'};
+  
   display: flex;
   flex-flow: column nowrap;   /* row */
   justify-content: space-between; align-items: center;
@@ -14,7 +15,8 @@ export const Header__Nav1 = styled.header
   font-size: 1rem;
   border-radius: 0px;
   
-  position: static;
+  position: relative;
+  top: 0px;
   
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
@@ -50,8 +52,6 @@ const keyframes_RotateIconThreeBars = keyframes`
 `
 
 
-const pxHeightBar: number = 48;
-
 export const Div__Bar = styled.div
 `
  
@@ -67,7 +67,7 @@ export const Div__Bar = styled.div
   
   
   width: 100%;
-  height: ${pxHeightBar}px;      /* we should let 'Content', 'Nav1 - Board' know this value too */ 
+  height: ${ ({theme})=>theme.size.pxHeightNav1 }px;     /* we should let 'Content', 'Nav1 - Board' know this value too */ 
   font-size: 1rem;
   border-radius: 0px;
   
@@ -114,12 +114,13 @@ export const Div__Board = styled.div
   
   
   width: 100%;
-  height: calc(100vh - ${pxHeightBar}px);     /* using height of*/
+  height: calc(100vh - ${ ({theme})=>theme.size.pxHeightNav1 }px);     /* using height of*/
   font-size: 1rem;
   border-radius: 0px;
   
   position: fixed;
-  top: ${pxHeightBar}px; 
+  top: ${ ({theme})=>theme.size.pxHeightNav1 }px; 
+  z-index: 50;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */

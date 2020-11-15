@@ -1,5 +1,6 @@
 import device from './theme/device';
 import palette from './theme/palette';
+import size from './theme/size';
 
 export type Theme = typeof themeLight; // This is the type definition for my theme object.
 
@@ -11,7 +12,7 @@ export const themeLight = {
   light: true,
   
   device,
-  
+  size,
   
   color: {
     

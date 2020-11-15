@@ -32,7 +32,8 @@ const stateInitial = {
   
   showing: {
     nav: {
-      nav1: false
+      all: true,
+      boardNav1: false
     }
   }
   

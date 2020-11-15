@@ -12,21 +12,23 @@ type PropsContent = {};
 
 function Content({}: PropsContent) {
   return (
-  
-    <BrowserRouter>
-      <Switch>
-        
-        <Route path="/" exact={true}>
-          <Home />
-        </Route>
-        
-        <Route path="/log-in" >
-          <LogIn />
-        </Route>
-        
-      </Switch>
-    </BrowserRouter>
+    <Styled.Div__Content>
     
+      <BrowserRouter>
+        <Switch>
+          
+          <Route path="/" exact={true}>
+            <Home />
+          </Route>
+          
+          <Route path="/log-in" >
+            <LogIn />
+          </Route>
+          
+        </Switch>
+      </BrowserRouter>
+      
+    </Styled.Div__Content>
   );
 }
 

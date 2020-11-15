@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const Header__Nav2 = styled.header
+export const Header__Nav2 = styled.header<{showingNav: boolean}>
 `
   display: none;
-
+  visibility: ${ (props)=> props.showingNav ?  'visible' : 'hidden'};
   
 	@media ${({theme})=>theme.device.m} { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  
@@ -16,7 +16,7 @@ export const Header__Nav2 = styled.header
     
     
     width: 100%;
-    height: 60px;      /* we should let 'Content' know this value too */ 
+    height: ${ ({theme})=>theme.size.pxHeightNav2 }px;   /* we should let 'Content' know this value too */ 
     font-size: 1rem;
     border-radius: 0px;
     
