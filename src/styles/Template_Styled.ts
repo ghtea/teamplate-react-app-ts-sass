@@ -7,7 +7,6 @@ export const Div__TemplateBasic = styled.div
   justify-content: flex-start; align-items: center;
   
   box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   
   background-color: transparent; 
   color: #000;
@@ -31,7 +30,9 @@ export const Div__TemplateBasic = styled.div
 
 
 export const Div__TemplateAdvanced = styled.div
-`
+` 
+  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
+  
   position: absolute;
   top: 0px; right: 0px; bottom: 0px; left: 0px;
   

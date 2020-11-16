@@ -13,12 +13,12 @@ export const Div__FullPage = styled.div
     
   color: #000;
   
-  width: 100vh;
-  height: 100vh; min-height: ${({theme})=>theme.size.fullPage.minHeight}px;
+  width: 100%;
+  height: 100%; min-height: ${({theme})=>theme.size.fullPage.minHeight}px;
   font-size: 1rem;
   border-radius: 0px;
   
-  position: relative;
+  position: fixed;
   top: 0px;
   z-index: 0;
   

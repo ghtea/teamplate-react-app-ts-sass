@@ -16,11 +16,21 @@ type PropsLogIn = {};
 
 function LogIn({}: PropsLogIn) {
   
+  const history = useHistory();
+  const onClick_LinkInsideApp = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
+      history.push(destination);
+    },[history]
+  );
   
   return (
     <Styled.Div__LogIn>
     
-        <Styled.Div__LogIn_NameApp> React App </Styled.Div__LogIn_NameApp>
+        <Styled.Div__LogIn_NameApp> 
+          <a
+            onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+          > React App </a> 
+        </Styled.Div__LogIn_NameApp>
         
         <Styled.Div__LogIn_TitlePage> Log In </Styled.Div__LogIn_TitlePage>
         
@@ -33,6 +43,13 @@ function LogIn({}: PropsLogIn) {
           <div> password </div>
           <div> <input type='password' /> </div>
         </Styled.Div__LogIn_Password> 
+        
+        <Styled.Div__LogIn_CollectionLink> 
+          <div> <a
+            onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')}
+          > Sign Up </a> </div>
+        </Styled.Div__LogIn_CollectionLink>
+        
         
     </Styled.Div__LogIn>
   );

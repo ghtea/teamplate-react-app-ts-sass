@@ -92,7 +92,7 @@ const GlobalStyle = createGlobalStyle`
     
     width: auto; 
     height: auto;
-    font-size: 1rem;
+    font-size: inherit;
     border-radius: 0px;
     
     position: static;

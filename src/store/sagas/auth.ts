@@ -3,10 +3,10 @@ import axios from "axios";
 //import * as config from '../../config';
 
 
-import * as actionsStatus from "../actions/status";
+import * as actionsAuth from "../actions/auth";
 
 
-export default function* sagaStatus() {
+export default function* sagaAuth() {
     //yield takeEvery( theme.ADJUST_NEW_PALETTE_TO_THEME, adjustNewPaletteToTheme );
     
 }

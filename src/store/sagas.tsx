@@ -1,12 +1,12 @@
 import { all, fork } from 'redux-saga/effects'
 
-//import colorSaga from './sagas/color';
-//import authSaga from './sagas/auth';
+
+//import sagaAuth from './sagas/auth';
 
 export default function* sagaRoot() {
   yield all ([
-    //fork(colorSaga),
-    //fork(authSaga)
+    //fork(sagaColor),
+    //fork(sagaAuth)
   ])
   // code after fork-effect
 }

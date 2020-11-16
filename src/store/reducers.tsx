@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
 import reducerStatus from './reducers/status';
-//import authReducer from './reducers/auth';
+import reducerAuth from './reducers/auth';
 
 const reducerRoot = combineReducers({
-  status: reducerStatus
-  //auth: authReducer,
+  status: reducerStatus,
+  auth: reducerAuth
   //theme: themeReducer
 });
 
