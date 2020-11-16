@@ -37,12 +37,31 @@ function LogIn({}: PropsLogIn) {
         <Styled.Div__LogIn_Identity> 
           <div> email address </div>
           <div> <input type='text' /> </div>
+          <div> message </div>
         </Styled.Div__LogIn_Identity>
         
         <Styled.Div__LogIn_Password> 
           <div> password </div>
           <div> <input type='password' /> </div>
+          <div> message </div>
         </Styled.Div__LogIn_Password> 
+        
+        <Styled.Div__LogIn_Enter> 
+          <div> Log In </div>
+        </Styled.Div__LogIn_Enter> 
+        
+      
+        <div> 
+          <div> or </div>
+        </div> 
+        
+        <Styled.Div__LogIn_Social> 
+          <div> Log In with Google </div>
+        </Styled.Div__LogIn_Social> 
+        
+        <Styled.Div__LogIn_Social> 
+          <div> Log In with Twitter </div>
+        </Styled.Div__LogIn_Social> 
         
         <Styled.Div__LogIn_CollectionLink> 
           <div> <a

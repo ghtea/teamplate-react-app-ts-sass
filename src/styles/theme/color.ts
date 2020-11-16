@@ -28,7 +28,15 @@ export const colorLight = {
       button___bg__focus: 'transparent',
       button___font__focus: 'inherit',
       button___border__focus: palette.basic['50'],
-      button___outline__focus: palette.basic['50']
+      button___outline__focus: palette.basic['50'],
+      
+      button_main___bg: palette.main['50'],
+      button_main___font: palette.basic['100'],
+      button_main___border: 'transparent',
+      
+      input___bg: palette.basic['100'],
+      input___font: palette.basic['25'],
+      input___border: palette.basic['70']
     },
     
     Content : {

@@ -11,15 +11,11 @@ type PropsNotification = {};
 function Notification({}: PropsNotification) {
   return (
       
-    <Switch>
-    
-      <Styled.Div__Notification>
+    <Styled.Div__Notification>
       
       
-      </Styled.Div__Notification>
+    </Styled.Div__Notification>
       
-    </Switch>
-        
   );
 }
 

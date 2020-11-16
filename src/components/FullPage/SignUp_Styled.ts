@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Div__LogIn = styled.div
+export const Div__SignUp = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -25,7 +25,7 @@ export const Div__LogIn = styled.div
 
 
 
-export const Div__LogIn_NameApp = styled.div
+export const Div__SignUp_NameApp = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -50,7 +50,7 @@ export const Div__LogIn_NameApp = styled.div
 `;
 
 
-export const Div__LogIn_TitlePage = styled.div
+export const Div__SignUp_TitlePage = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -62,8 +62,8 @@ export const Div__LogIn_TitlePage = styled.div
   color: #000;
   
   width: 100%;
-  height: 50px;
-  font-size: 1.4rem;
+  height: 60px;
+  font-size: 1.5rem;
   border-radius: 0px;
   
   position: static;
@@ -74,7 +74,7 @@ export const Div__LogIn_TitlePage = styled.div
 `;
 
 
-export const Div__LogIn_Input = styled.div
+export const Div__SignUp_Input = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -86,8 +86,8 @@ export const Div__LogIn_Input = styled.div
   color: #000;
   
   width: 100%;
-  height: auto;
-  
+  height: 80px;
+  font-size: 1.6rem;
   border-radius: 0px;
   
   position: static;
@@ -95,59 +95,42 @@ export const Div__LogIn_Input = styled.div
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  
-  & > *:nth-child(n+2){
-    margin-top: px;
-  }
-  
-  
-  
-  & > div:nth-child(1) {
-    
+  & > div {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: flex-start;
-  
-    font-size: 1rem;
+    justify-content: space-evenly; align-items: flex-start;
+    
     color: ${ ({theme})=>theme.color.Content.label___font };  
     
+  }
+  
+  & input {
+    width: 240px;
     height: 24px;
   }
   
-  
-  & > div:nth-child(2) {
-    height: 40px;
-    & > input {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  
-  & > div:nth-child(3) {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
-  
-    height: 22px;
+  & > *:nth-child(n+2){
+    margin-top: 2px;
   }
 `;
 
 
 
-export const Div__LogIn_Identity = styled(Div__LogIn_Input)
+export const Div__SignUp_Identity = styled(Div__SignUp_Input)
 `
   
 `
 
 
-export const Div__LogIn_Password = styled(Div__LogIn_Input)
+export const Div__SignUp_Password = styled(Div__SignUp_Input)
 `
   
 `
 
 
 
-export const Div__LogIn_CollectionLink = styled.div
+export const Div__SignUp_CollectionLink = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -175,7 +158,8 @@ export const Div__LogIn_CollectionLink = styled.div
 
 
 
-export const Div__LogIn_Enter = styled.div
+
+export const Div__SignUp_Enter = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -183,51 +167,18 @@ export const Div__LogIn_Enter = styled.div
   
   box-sizing: border-box;
 
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+  background-color: transparent; 
+  color: #000;
   
   width: 100%;
-  height: 44px;
-  
-  font-weight: normal;
-  border-radius: 4px;
+  height: 40px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 0px;
   
   position: static;
   
-  margin: 10px 0px 0px 0px; /* top right bottom left */
+  margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  & > div {
-    font-size: 1.2rem;
-  }
-  
-`;
-
-
-export const Div__LogIn_Social = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
-
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
-  
-  width: 100%;
-  height: 44px;
-  
-  font-weight: normal;
-  border-radius: 4px;
-  
-  position: static;
-  
-  margin: 10px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  & > div {
-    font-size: 1rem;
-  }
   
 `;

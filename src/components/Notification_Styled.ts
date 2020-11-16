@@ -4,7 +4,7 @@ export const Div__Notification = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
-  justify-content: center; align-items: center;
+  justify-content: flex-start; align-items: center;
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
@@ -14,13 +14,13 @@ export const Div__Notification = styled.div
   color: #000;
   
   width: 100%;
-  height: 100%; min-height: ${({theme})=>theme.size.fullPage.minHeight}px;
+  height: auto;
   font-size: 1rem;
   border-radius: 0px;
   
   position: fixed;
   top: 0px;
-  z-index: 0;
+  z-index: 900;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
