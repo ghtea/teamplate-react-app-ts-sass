@@ -9,6 +9,8 @@ import * as actionsStatus from 'store/actions/status';
 
 import useInput from 'tools/hooks/useInput';
 
+import Cookies from 'js-cookie';
+
 
 //import IconSignUp from 'svgs/basic/IconSignUp';
 
@@ -43,7 +45,8 @@ function SignUp({}: PropsSignUp) {
       else {
         dispatch(actionsAuth.return_SIGN_UP({
           identification: inputEmail.value,
-          password: inputPassword1.value
+          password1: inputPassword1.value,
+          password2: inputPassword2.value
         }));
       }
     },

@@ -51,7 +51,8 @@ export const name__SIGN_UP = 'auth/SIGN_UP';
 
 interface Payload__SIGN_UP {
     email: string;
-    password: string;
+    password1: string;
+    password2: string;
 }
 
 export const return__SIGN_UP = (payload: Payload__SIGN_UP) => {
