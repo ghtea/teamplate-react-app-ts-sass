@@ -24,6 +24,10 @@ const stateInitial = {
   },
   
   current: {
+    
+    language: 'en',   // en, ko, ja
+    
+    
     theme: {
       option: '',
       name: 'themeLight'

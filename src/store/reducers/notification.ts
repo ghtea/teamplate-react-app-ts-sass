@@ -15,27 +15,7 @@ export type State = typeof stateInitial;
 
 const stateInitial = {
   
-  loading: {
-    user: false
-  },
-  
-  ready: {
-    user: false
-  },
-  
-  current: {
-    theme: {
-      option: '',
-      name: 'themeLight'
-    }
-  },
-  
-  showing: {
-    nav: {
-      all: true,
-      boardNav1: false
-    }
-  }
+  listNotification: []
   
 };
 
