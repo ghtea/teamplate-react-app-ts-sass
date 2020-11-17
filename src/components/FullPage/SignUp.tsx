@@ -6,6 +6,8 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
+import useInput from 'tools/hooks/useInput';
+
 
 //import IconSignUp from 'svgs/basic/IconSignUp';
 
@@ -17,11 +19,18 @@ type PropsSignUp = {};
 function SignUp({}: PropsSignUp) {
   
   const history = useHistory();
+  
+  const inputEmail = useInput(""); // {value, setValue, onChange};
+  const inputPassword1 = useInput(""); // {value, setValue, onChange};
+  const inputPassword2 = useInput(""); // {value, setValue, onChange};
+  
+  
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
   );
+  
   
   return (
     <Styled.Div__SignUp>
@@ -36,14 +45,39 @@ function SignUp({}: PropsSignUp) {
         
         <Styled.Div__SignUp_Identity> 
           <div> email address </div>
-          <div> <input type='text' /> </div>
+          <div> 
+            <input 
+              type='text' 
+              
+              value={inputEmail.value}
+              onChange={inputEmail.onChange}
+              
+              placeholder=""  
+            /> 
+          </div>
           <div> message </div>
         </Styled.Div__SignUp_Identity>
         
         <Styled.Div__SignUp_Password> 
           <div> password </div>
-          <div> <input type='password' /> </div>
-          <div> <input type='password' /> </div>
+          <div> 
+            <input  
+              type='password'
+              value={inputPassword1.value}
+              onChange={inputPassword1.onChange}
+              
+              placeholder=""  
+            /> 
+          </div>
+          <div> 
+            <input 
+              type='password'
+              value={inputPassword2.value}
+              onChange={inputPassword2.onChange}
+              
+              placeholder="" 
+            /> 
+          </div>
           <div> message </div>
         </Styled.Div__SignUp_Password> 
         
