@@ -147,6 +147,10 @@ export const Div__SignUp_Password = styled(Div__SignUp_Input)
   }
   
   & > div:nth-child(3) {
+    margin-top: 2px;
+  }
+  
+  & > div:nth-child(3) {
     margin-top: 4px;
   }
   

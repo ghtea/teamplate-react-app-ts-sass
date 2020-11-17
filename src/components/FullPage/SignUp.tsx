@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
+import * as actionsAuth from 'store/actions/auth';
 import * as actionsStatus from 'store/actions/status';
 
 import useInput from 'tools/hooks/useInput';
@@ -18,17 +19,46 @@ type PropsSignUp = {};
 
 function SignUp({}: PropsSignUp) {
   
+  const dispatch = useDispatch();
   const history = useHistory();
   
   const inputEmail = useInput(""); // {value, setValue, onChange};
   const inputPassword1 = useInput(""); // {value, setValue, onChange};
   const inputPassword2 = useInput(""); // {value, setValue, onChange};
   
+  const messageEmail = useState('');
+  const messagePassword = useState('');
   
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
+  );
+  
+  const onClick_SignUp = useCallback(
+    () => {
+      if (!inputEmail.value || !inputPassword1.value || !inputPassword2.value) {
+        console.log('enter text')
+      }
+      else {
+        dispatch(actionsAuth.return_SIGN_UP({
+          identification: inputEmail.value,
+          password: inputPassword1.value
+        }));
+      }
+    },
+    [inputEmail, inputPassword1, inputPassword2]
+  );
+  
+  
+  // (event: React.ChangeEvent<HTMLInputElement>)
+  const onKeyPress_SignUp = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Enter") {
+        onClick_SignUp();
+      }
+    },
+    []
   );
   
   
@@ -55,7 +85,7 @@ function SignUp({}: PropsSignUp) {
               placeholder=""  
             /> 
           </div>
-          <div> message </div>
+          <div> {messageEmail} </div>
         </Styled.Div__SignUp_Identity>
         
         <Styled.Div__SignUp_Password> 
@@ -76,13 +106,16 @@ function SignUp({}: PropsSignUp) {
               onChange={inputPassword2.onChange}
               
               placeholder="" 
+              onKeyPress={onKeyPress_SignUp}
             /> 
           </div>
-          <div> message </div>
+          <div> {messagePassword} </div>
         </Styled.Div__SignUp_Password> 
         
         <Styled.Div__SignUp_Enter> 
-          <button> Sign Up </button>
+          <button
+            onClick={onClick_SignUp}
+          > Sign Up </button>
         </Styled.Div__SignUp_Enter> 
         
       
@@ -106,7 +139,7 @@ function SignUp({}: PropsSignUp) {
           </div>
           <div> 
             <a
-              onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')}
+              onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
             > Log In </a> 
           </div>
         </Styled.Div__SignUp_CollectionLink>

@@ -31,7 +31,7 @@ type typeAction =
 export const name__LOG_IN = 'auth/LOG_IN';
 
 interface Payload__LOG_IN {
-    identification: string;
+    email: string;
     password: string;
 }
 
@@ -43,3 +43,22 @@ export const return__LOG_IN = (payload: Payload__LOG_IN) => {
 };
 
 export type type__LOG_IN = ReturnType<typeof return__LOG_IN>;
+
+
+
+
+export const name__SIGN_UP = 'auth/SIGN_UP';
+
+interface Payload__SIGN_UP {
+    email: string;
+    password: string;
+}
+
+export const return__SIGN_UP = (payload: Payload__SIGN_UP) => {
+    return {
+        type: name__SIGN_UP,
+        payload: payload
+    }
+};
+
+export type type__SIGN_UP = ReturnType<typeof return__SIGN_UP>;
