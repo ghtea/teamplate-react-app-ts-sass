@@ -121,9 +121,20 @@ const GlobalStyle = createGlobalStyle`
     
     position: static;
     
-    margin: 0px 0px 0px 0px; /* top right bottom left */
-    padding: 0px 0px 0px 0px; /* top right bottom left */
+    margin: 0px 0px 0px 0px ; /* top right bottom left */
+    padding: 0px 0px 0px 8px; /* top right bottom left */
     
+    &:focus {
+      background-color: ${ ({theme})=>theme.color.GlobalStyle.input___bg__focus };
+      color: ${ ({theme})=>theme.color.GlobalStyle.input___font__focus };
+      border: 2px solid ${ ({theme})=>theme.color.GlobalStyle.input___border__focus }; 
+      outline: 1px solid ${ ({theme})=>theme.color.GlobalStyle.input___outline__focus };
+      border-radius: 0px !important;
+      
+      -webkit-box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };
+      box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };
+
+    }
   }
 `
 

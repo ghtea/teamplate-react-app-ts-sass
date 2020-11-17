@@ -37,22 +37,44 @@ function SignUp({}: PropsSignUp) {
         <Styled.Div__SignUp_Identity> 
           <div> email address </div>
           <div> <input type='text' /> </div>
+          <div> message </div>
         </Styled.Div__SignUp_Identity>
         
         <Styled.Div__SignUp_Password> 
           <div> password </div>
           <div> <input type='password' /> </div>
+          <div> <input type='password' /> </div>
+          <div> message </div>
         </Styled.Div__SignUp_Password> 
         
         <Styled.Div__SignUp_Enter> 
-          <div> Sign Up </div>
+          <button> Sign Up </button>
         </Styled.Div__SignUp_Enter> 
         
+      
+        <div> 
+          <div> or </div>
+        </div> 
+        
+        <Styled.Div__SignUp_Social> 
+          <button> Log In with Google </button>
+        </Styled.Div__SignUp_Social> 
+        
+        <Styled.Div__SignUp_Social> 
+          <button> Log In with Twitter </button>
+        </Styled.Div__SignUp_Social> 
         
         <Styled.Div__SignUp_CollectionLink> 
-          <div> <a
-            onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-          > Log In </a> </div>
+          <div> 
+            <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+            > Home </a> 
+          </div>
+          <div> 
+            <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')}
+            > Log In </a> 
+          </div>
         </Styled.Div__SignUp_CollectionLink>
         
         

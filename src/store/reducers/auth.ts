@@ -16,7 +16,16 @@ export type State = typeof stateInitial;
 const stateInitial = {
   
   user: {
-    email: ''
+    _id: '',
+    email: '',
+    twitter: '',
+    google: '',
+    
+    type: 'normal',
+    
+    joined: Date.now,
+    accessed: Date.now,
+  
   }
   
 };
@@ -25,7 +34,7 @@ const stateInitial = {
 
 const reducerAuth = handleActions<State, any>({
   
-  [actionsAuth.REPLACE]: (statePrevious, action: actionsAuth.type_REPLACE) => {
+  [actionsAuth.name__REPLACE]: (statePrevious, action: actionsAuth.type__REPLACE) => {
     
     return produce(statePrevious, stateNew => {
       if (action.payload === undefined) { 

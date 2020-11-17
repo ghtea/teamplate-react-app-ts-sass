@@ -1,16 +1,20 @@
 //const department: string = 'notification';
 
 
-export const REPLACE = `notification_REPLACE`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+export const name__REPLACE: string = `notification/REPLACE`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
 
-export const return_REPLACE = (payload:any) => {
-    return {
-        type: REPLACE,
+interface Payload__REPLACE {
+    listKey: string[];
+    replacement: any;
+}
+
+export const return__REPLACE = (payload: Payload__REPLACE) => {    return {
+        type: name__REPLACE,
         payload: payload
     }
 };
 
-export type type_REPLACE = ReturnType<typeof return_REPLACE>;
+export type type__REPLACE = ReturnType<typeof return__REPLACE>;
 
 /*
 type typeAction =

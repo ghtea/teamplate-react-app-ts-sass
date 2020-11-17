@@ -47,7 +47,7 @@ function LogIn({}: PropsLogIn) {
         </Styled.Div__LogIn_Password> 
         
         <Styled.Div__LogIn_Enter> 
-          <div> Log In </div>
+          <button> Log In </button>
         </Styled.Div__LogIn_Enter> 
         
       
@@ -56,14 +56,19 @@ function LogIn({}: PropsLogIn) {
         </div> 
         
         <Styled.Div__LogIn_Social> 
-          <div> Log In with Google </div>
+          <button> Log In with Google </button>
         </Styled.Div__LogIn_Social> 
         
         <Styled.Div__LogIn_Social> 
-          <div> Log In with Twitter </div>
+          <button> Log In with Twitter </button>
         </Styled.Div__LogIn_Social> 
         
         <Styled.Div__LogIn_CollectionLink> 
+          <div> 
+            <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+            > Home </a> 
+          </div>
           <div> <a
             onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')}
           > Sign Up </a> </div>

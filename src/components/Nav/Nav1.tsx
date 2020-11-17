@@ -25,7 +25,7 @@ function Nav1({}: PropsNav1) {
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
-      dispatch(actionsStatus.return_REPLACE({
+      dispatch(actionsStatus.return__REPLACE({
         listKey:['showing', 'nav', 'boardNav1'],
         replacement: false
       }))
@@ -38,7 +38,7 @@ function Nav1({}: PropsNav1) {
     (event:React.MouseEvent<HTMLButtonElement> ) => {
       event.preventDefault();
       
-      dispatch(actionsStatus.return_REPLACE({
+      dispatch(actionsStatus.return__REPLACE({
         listKey:['showing', 'nav', 'boardNav1'],
         replacement: !showingBoardNav1
       }))

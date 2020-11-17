@@ -92,10 +92,6 @@ export const Div__LogIn_Input = styled.div
   
   position: static;
   
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  
   & > *:nth-child(n+2){
     margin-top: px;
   }
@@ -117,6 +113,7 @@ export const Div__LogIn_Input = styled.div
   
   & > div:nth-child(2) {
     height: 40px;
+    margin-top: 2px;
     & > input {
       width: 100%;
       height: 100%;
@@ -150,8 +147,8 @@ export const Div__LogIn_Password = styled(Div__LogIn_Input)
 export const Div__LogIn_CollectionLink = styled.div
 `
   display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
+  flex-flow: row nowrap;   /* row */
+  justify-content: flex-end; align-items: center;
   
   box-sizing: border-box;
   
@@ -159,7 +156,7 @@ export const Div__LogIn_CollectionLink = styled.div
   color: #000;
   
   width: 100%; min-width: 100%; max-width: 100%;
-  height: auto;
+  height: 40px;
   font-size: 1rem;
   border-radius: 0px;
   
@@ -170,6 +167,13 @@ export const Div__LogIn_CollectionLink = styled.div
   
   & > div {
     width: auto;
+  }
+  
+  & > * {
+    margin-left: 10px;
+    & > a {
+      font-size: 1.1rem;
+    }
   }
 `;
 

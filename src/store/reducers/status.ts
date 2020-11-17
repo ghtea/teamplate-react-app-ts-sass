@@ -43,7 +43,7 @@ const stateInitial = {
 
 const reducerStatus = handleActions<State, any>({
   
-  [actionsStatus.REPLACE]: (statePrevious, action: actionsStatus.type_REPLACE) => {
+  [actionsStatus.name__REPLACE]: (statePrevious, action: actionsStatus.type__REPLACE) => {
     
     return produce(statePrevious, stateNew => {
       if (action.payload === undefined) { 

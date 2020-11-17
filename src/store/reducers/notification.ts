@@ -43,7 +43,7 @@ const stateInitial = {
 
 const reducerNotification = handleActions<State, any>({
   
-  [actionsNotification.REPLACE]: (statePrevious, action: actionsNotification.type_REPLACE) => {
+  [actionsNotification.name__REPLACE]: (statePrevious, action: actionsNotification.type__REPLACE) => {
     
     return produce(statePrevious, stateNew => {
       if (action.payload === undefined) { 

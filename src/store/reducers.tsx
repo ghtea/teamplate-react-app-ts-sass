@@ -11,7 +11,7 @@ const reducerRoot = combineReducers({
   //theme: themeReducer
 });
 
-
+// redux 에서의 action 속의 type을 name 로 바꿔서 이용 (TypeScript 의 type과 구분하기 위해 )
 
 export default reducerRoot;
 
