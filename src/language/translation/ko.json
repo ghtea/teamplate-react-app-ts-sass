@@ -11,5 +11,20 @@
             "category_1": "카테고리1",
             "category_2": "카테고리2"
         }
+    },
+    
+    "Notification": {
+        "success": {
+            "test": "테스트에 성공하였습니다!"
+        },
+        "hint": {
+            
+        },
+        "error": {
+            "log_in_failed": "로그인에 실패하였습니다"
+        },
+        "warning": {
+            
+        }
     }
 }

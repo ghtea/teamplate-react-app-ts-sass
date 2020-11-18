@@ -4,7 +4,8 @@ import { useHistory, useLocation } from "react-router-dom";
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
-import * as actionsStatus from 'store/actions/status';
+import * as actionsNotification from 'store/actions/notification';
+import {Banner} from 'store/reducers/notification';
 
 
 //import IconNotification from 'svgs/basic/IconNotification';
@@ -16,7 +17,7 @@ type PropsNotification = {};
 
 function Notification({}: PropsNotification) {
   
-  const listNotification:any[] = useSelector((state: StateRoot) => state['notification']['']);
+  const listBanner: Banner[] = useSelector((state: StateRoot) => state['notification']['listBanner']);
   
   return (
     <Styled.Div__Notification>

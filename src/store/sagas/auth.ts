@@ -1,4 +1,4 @@
-import { call, spawn, put, takeEvery } from "redux-saga/effects";
+import { call, spawn, put, takeEvery, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 //import * as config from '../../config';
 
@@ -10,7 +10,7 @@ import * as actionsAuth from "../actions/auth";
 
 
 export default function* sagaAuth() {
-    yield takeEvery( actionsAuth.name__LOG_IN, logIn ); 
+    yield takeLatest( actionsAuth.name__LOG_IN, logIn ); 
     //yield takeEvery( actionsAuth.name__SIGN_UP, signUp ); 
 }
 

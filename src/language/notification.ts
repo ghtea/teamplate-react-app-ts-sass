@@ -1,12 +1,21 @@
 
-const notification = {
+import notificationAuth from './notification/auth';
+import notificationStatus from './notification/status';
+
+
+
+
+export interface Notification {
+    [index:string]: {
+        situation: 'success' | 'hint' | 'error' | 'warning';
+        time?: 'normal' | 'short' | 'long' | 'lasting';
+    };
+}
+
+const notification: Notification = {
     
-    'log_in__failed': {
-        en: '',
-        ko: '',
-        ja: ''
-    }
-    
+    ...notificationAuth,
+    ...notificationStatus
     
 }
 

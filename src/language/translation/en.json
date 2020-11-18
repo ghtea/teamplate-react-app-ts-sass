@@ -11,5 +11,20 @@
             "category_1": "Category 1",
             "category_2": "Category 2"
         }
+    },
+    
+    "Notification": {
+        "success": {
+            "test": "Succuessfully tested!"
+        },
+        "hint": {
+            
+        },
+        "error": {
+            "log_in_failed": "Log In has failed"
+        },
+        "warning": {
+            
+        }
     }
 }
