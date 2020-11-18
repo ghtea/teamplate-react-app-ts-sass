@@ -17,7 +17,9 @@ const resource =  {
 };
 
 
-i18n
+const instanceI18n = i18n.createInstance();
+
+instanceI18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)  // https://www.npmjs.com/package/i18next-browser-languagedetector
   .use(HttpApi)  // https://github.com/i18next/i18next-http-backend
@@ -34,5 +36,5 @@ i18n
   
  
 
-export default i18n;
+export default instanceI18n;
 

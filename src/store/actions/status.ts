@@ -8,7 +8,8 @@ interface Payload__REPLACE {
     replacement: any;
 }
 
-export const return__REPLACE = (payload: Payload__REPLACE) => {    return {
+export const return__REPLACE = (payload: Payload__REPLACE) => {    
+    return {
         type: name__REPLACE,
         payload: payload
     }
@@ -26,3 +27,17 @@ type typeAction =
 
 
 
+export const name__CHANGE_LANGUAGE: string = `status/CHANGE_LANGUAGE`;    // 뒤에 as const 를 붙이면 reducer 에서 status.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+
+interface Payload__CHANGE_LANGUAGE {
+    replacement: string;
+}
+
+export const return__CHANGE_LANGUAGE = (payload?: Payload__CHANGE_LANGUAGE) => {    
+    return {
+        type: name__CHANGE_LANGUAGE,
+        payload: payload
+    }
+};
+
+export type type__CHANGE_LANGUAGE = ReturnType<typeof return__CHANGE_LANGUAGE>;

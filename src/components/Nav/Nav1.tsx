@@ -18,7 +18,7 @@ type PropsNav1 = {};
 function Nav1({}: PropsNav1) {
   
   const history = useHistory();
-  const [ t, i18n ] = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);

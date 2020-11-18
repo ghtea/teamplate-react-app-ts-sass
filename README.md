@@ -9,3 +9,8 @@ Styled Component | 4 | reconstructed color of theme
 Redux | 3 | saved almost all status state in redux store
 Redux Saga | 2 | 
 Immer | 2 | 
+i18next | 2 | 
+
+## todos
+- detecting language from cookie, browser option
+-- https://www.npmjs.com/package/i18next-browser-languagedetector

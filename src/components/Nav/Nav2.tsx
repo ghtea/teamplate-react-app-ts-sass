@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
+import * as actionsStatus from 'store/actions/status';
 
 import * as Styled from './Nav2_Styled';
 import IconHome from 'svgs/basic/IconHome';
@@ -16,7 +17,8 @@ type PropsNav2 = {};
 function Nav2({}: PropsNav2) {
   
   let history = useHistory();
-  const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
@@ -30,14 +32,18 @@ function Nav2({}: PropsNav2) {
   
   const onClick_ChangeLanguage = useCallback(
     () => {
+      dispatch(actionsStatus.return__CHANGE_LANGUAGE() )
+      
       /*
-      if () {
-        
-      }
+      
+      dispatch(actionsStatus.return__CHANGE_LANGUAGE({
+        replacement: false
+      }))
+      
       */
-      i18n.changeLanguage('ko')
-    }, [i18n]
+    }, []
   );
+  
   
   return (
     <Styled.Header__Nav2
@@ -83,12 +89,12 @@ function Nav2({}: PropsNav2) {
         
         <Styled.Div__Tool>
           <a
-            onClick={(event)=>onClick_ChangeLanguage()}
+            onClick={()=>onClick_ChangeLanguage()}
           >
             <IconGlobe
               color={'inherit'}
-              width={'28px'}
-              height={'28px'}
+              width={'24px'}
+              height={'24px'}
             />
           </a>
         </Styled.Div__Tool>
