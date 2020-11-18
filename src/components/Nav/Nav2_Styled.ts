@@ -172,6 +172,7 @@ export const Div__Tool = styled.div
   background-color: transparent; 
   color: #000;
   
+  width: auto;
   height: auto;
   font-size: 1rem;
   border-radius: 0px;

@@ -43,8 +43,8 @@ function SignUp({}: PropsSignUp) {
         console.log('enter text')
       }
       else {
-        dispatch(actionsAuth.return_SIGN_UP({
-          identification: inputEmail.value,
+        dispatch(actionsAuth.return__SIGN_UP({
+          email: inputEmail.value,
           password1: inputPassword1.value,
           password2: inputPassword2.value
         }));

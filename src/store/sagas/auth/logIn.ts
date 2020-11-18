@@ -44,7 +44,7 @@ function* logIn(action: actionsAuth.type__LOG_IN) {
         
         
         const bodyReq = {
-            identification: action.payload.identification, 
+            identification: action.payload.email, 
             password: action.payload.password
         };
         

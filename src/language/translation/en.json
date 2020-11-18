@@ -1,0 +1,14 @@
+{
+    "Nav": {
+        "Nav1": {
+            "title": "Title" ,
+            "home": "Home",
+            "log_in": "Log In"
+        },
+        "Nav2": {
+            "log_in": "Log In",
+            "category_1": "Category 1",
+            "category_2": "Category 2"
+        }
+    }
+}

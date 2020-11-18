@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -17,6 +18,7 @@ type PropsNav1 = {};
 function Nav1({}: PropsNav1) {
   
   const history = useHistory();
+  const [ t, i18n ] = useTranslation();
   const dispatch = useDispatch();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
@@ -65,7 +67,7 @@ function Nav1({}: PropsNav1) {
         </div>
         
         <div>
-          title
+          {t('Nav.Nav1.title')}
         </div>
         
         <div>
@@ -88,13 +90,13 @@ function Nav1({}: PropsNav1) {
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-            > Home
+            > {t('Nav.Nav1.home')}
             </a>
           </div>
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-            > Log In
+            > {t('Nav.Nav1.log_in')}
             </a>
           </div>
         </Styled.Div__Board>

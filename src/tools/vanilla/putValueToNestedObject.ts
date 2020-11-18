@@ -2,14 +2,14 @@ interface Object {
   [key: string ]: any;
 }
 
-const putValueToNestedObject = function (obj:Object, listKey: string[], value:any) {
+const putValueToNestedObject = function (obj:Object, listKey: (string | number)[], value:any) {
 
 	// Cache the path length and current spot in the object
 	const length:number = listKey.length;
 	let current:Object = obj;
 
 	// Loop through the path
-	listKey.forEach( (key: string, index:number) => {
+	listKey.forEach( (key: (string | number), index:number) => {
 
 		// If this is the last item in the loop, assign the value
 		if (index === length -1) {

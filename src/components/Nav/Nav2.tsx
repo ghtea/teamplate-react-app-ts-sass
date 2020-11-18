@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -7,6 +8,7 @@ import {StateRoot} from 'store/reducers';
 import * as Styled from './Nav2_Styled';
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
+import IconGlobe from 'svgs/basic/IconGlobe';
 
 
 type PropsNav2 = {};
@@ -14,14 +16,27 @@ type PropsNav2 = {};
 function Nav2({}: PropsNav2) {
   
   let history = useHistory();
+  const { t, i18n } = useTranslation();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
-  
+  const languageCurrent:string = useSelector((state: StateRoot) => state['status']['current']['language']);
+
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
+  );
+  
+  const onClick_ChangeLanguage = useCallback(
+    () => {
+      /*
+      if () {
+        
+      }
+      */
+      i18n.changeLanguage('ko')
+    }, [i18n]
   );
   
   return (
@@ -46,8 +61,8 @@ function Nav2({}: PropsNav2) {
       </Styled.Div__Title>
       
       <Styled.Div__CollectionLink>
-        <div> category1 </div>
-        <div> category2 </div>
+        <div> {t('Nav.Nav2.category_1')} </div>
+        <div> {t('Nav.Nav2.category_2')} </div>
       </Styled.Div__CollectionLink>
       
       
@@ -62,7 +77,19 @@ function Nav2({}: PropsNav2) {
               width={'28px'}
               height={'28px'}
             />
-            <div> Log In </div>
+            <div> {t('Nav.Nav2.log_in')} </div>
+          </a>
+        </Styled.Div__Tool>
+        
+        <Styled.Div__Tool>
+          <a
+            onClick={(event)=>onClick_ChangeLanguage()}
+          >
+            <IconGlobe
+              color={'inherit'}
+              width={'28px'}
+              height={'28px'}
+            />
           </a>
         </Styled.Div__Tool>
         

@@ -41,7 +41,7 @@ const reducerAuth = handleActions<State, any>({
         return;
       }
       else {
-        const listKey: string[] = action.payload.listKey;
+        const listKey: (string | number)[] = action.payload.listKey;
         
         try { putValueToNestedObject(stateNew, listKey, action.payload.replacement); 
           

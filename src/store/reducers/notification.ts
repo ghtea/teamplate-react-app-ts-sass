@@ -23,26 +23,8 @@ const stateInitial = {
 
 const reducerNotification = handleActions<State, any>({
   
-  [actionsNotification.name__REPLACE]: (statePrevious, action: actionsNotification.type__REPLACE) => {
-    
-    return produce(statePrevious, stateNew => {
-      if (action.payload === undefined) { 
-        return;
-      }
-      else {
-        const listKey: string[] = action.payload.listKey;
-        
-        try { putValueToNestedObject(stateNew, listKey, action.payload.replacement); 
-          
-        }
-        catch {
-          return;
-        }
-        
-      }
-      
-    });
-  }
+  
+ 
   
 }, stateInitial);
 
