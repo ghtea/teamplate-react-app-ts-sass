@@ -3,7 +3,8 @@
         "Nav1": {
             "title": "Title" ,
             "home": "Home",
-            "log_in": "Log In"
+            "log_in": "Log In",
+            "change_language": "Change Language"
         },
         "Nav2": {
             "log_in": "Log In",

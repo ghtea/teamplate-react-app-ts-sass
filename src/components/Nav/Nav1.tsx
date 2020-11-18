@@ -50,6 +50,11 @@ function Nav1({}: PropsNav1) {
     [showingBoardNav1]
   );
   
+  const onClick_ChangeLanguage = useCallback(
+    () => {
+      dispatch(actionsStatus.return__CHANGE_LANGUAGE() )
+    }, []
+  );
 
   
   return (
@@ -97,6 +102,12 @@ function Nav1({}: PropsNav1) {
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
             > {t('Nav.Nav1.log_in')}
+            </a>
+          </div>
+          <div> 
+            <a
+              onClick={()=>onClick_ChangeLanguage()}
+            > {t('Nav.Nav1.change_language')}
             </a>
           </div>
         </Styled.Div__Board>

@@ -3,7 +3,8 @@
         "Nav1": {
             "title": "제목" ,
             "home": "홈",
-            "log_in": "로그인"
+            "log_in": "로그인",
+            "change_language": "언어 변경"
         },
         "Nav2": {
             "log_in": "로그인",
