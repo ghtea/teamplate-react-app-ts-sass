@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useMemo, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
 
@@ -10,7 +10,11 @@ import {Banner as TypeBanner} from 'store/reducers/notification';
 
 import IconXCircle from 'svgs/basic/IconXCircle';
 
+import IconSuccess from 'svgs/notification/IconSuccess';
 import IconHint from 'svgs/notification/IconHint';
+import IconError from 'svgs/notification/IconError';
+import IconWarning from 'svgs/notification/IconWarning';
+
 
 //import IconBanner from 'svgs/basic/IconBanner';
 
@@ -36,20 +40,28 @@ function Banner({
     }, []
   );
   
+  
+  const propsIconSituation = useMemo( (): any => {
+    return ({
+      width: '24px',
+      height:'24px',
+      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['situation']}`],
+      className: banner['situation'],
+      kind: 'regular'  
+    })
+  }, []);
+
+  
   return (
     <Styled.Div__Banner
       className={banner['situation']}
+      situation={banner['situation']}
     >
       <div>
-        {banner['situation'] === 'success' && 
-          <IconHint 
-            width={'24px'} 
-            height={'24px'} 
-            listKeyTheme={['color', 'Notification', `banner___font__${banner['situation']}`]}
-            className={banner['situation']}
-            kind={'regular'}
-          />
-        }
+        {banner['situation'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
+        {banner['situation'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
+        {banner['situation'] === 'error' &&  <IconError {...propsIconSituation} /> }
+        {banner['situation'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
       </div>
         
       <div> {banner['message']} </div>
@@ -61,24 +73,21 @@ function Banner({
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___font__${banner['situation']}`]}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['situation']}`]}
             className={banner['situation']}
             kind={'light'}
           />
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___font__${banner['situation']}`]}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['situation']}`]}
             className={banner['situation']}
             kind={'solid'}
           />
         </Styled.Button__Banner_Delete>
       </div>
       
-      <Styled.Div__Banner_Guage
-        className={banner['situation']}
-        banner={banner}
-      />
+      
       
     </Styled.Div__Banner>
   );
@@ -89,3 +98,13 @@ Banner.defaultProps = {
 };
 
 export default Banner;
+
+
+/*
+전체 요소들이 리렌더링 되면 그 요소의 애니메이션이 없어지는 
+
+<Styled.Div__Banner_Guage
+        className={banner['situation']}
+        banner={banner}
+      />
+*/

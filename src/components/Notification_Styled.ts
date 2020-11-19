@@ -9,8 +9,6 @@ export const Div__Notification = styled.div
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   
-  background-color: ${ ({theme})=>theme.color.FullPage.full_page___bg };  
-    
   color: #000;
   
   width: 100%;
@@ -19,7 +17,7 @@ export const Div__Notification = styled.div
   border-radius: 0px;
   
   position: fixed;
-  top: 0px;
+  top: 20px;
   z-index: 900;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */

@@ -2,6 +2,13 @@
 import palette from './palette';
 
 type Color = typeof colorLight;
+/*
+type Color = {
+  [index:string]: {
+    [index2:string] : string
+  }
+};
+*/
 
 const returnColor = (listHsl:number[], opacity?:number):string => {
   if (opacity === undefined){
@@ -92,20 +99,27 @@ export const colorLight = {
       banner___bg__success: returnColor( palette.success['90']),
       banner___font__success: returnColor( palette.success['40']),
       banner___border__success: returnColor( palette.success['70']),
+      banner___icon__success: returnColor( palette.success['50']),
       banner___box_shadow__success: returnColor( palette.success['60'], 0.3),
       
       
       banner___bg__hint: returnColor( palette.hint['90']),
       banner___font__hint: returnColor( palette.hint['40']),
       banner___border__hint: returnColor( palette.hint['70']),
+      banner___icon__hint: returnColor( palette.hint['50']),
+      banner___box_shadow__hint: returnColor( palette.hint['60'], 0.3),
       
       banner___bg__error: returnColor( palette.error['90']),
       banner___font__error: returnColor( palette.error['40']),
       banner___border__error: returnColor( palette.error['70']),
+      banner___icon__error: returnColor( palette.error['50']),
+      banner___box_shadow__error: returnColor( palette.error['60'], 0.3),
       
       banner___bg__warning: returnColor( palette.warning['90']),
       banner___font__warning: returnColor( palette.warning['40']),
-      banner___border__warning: returnColor( palette.warning['70'])
+      banner___border__warning: returnColor( palette.warning['70']),
+      banner___icon__warning: returnColor( palette.warning['50']),
+      banner___box_shadow__warning: returnColor( palette.warning['60'], 0.3)
       
     },
     

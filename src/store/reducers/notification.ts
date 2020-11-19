@@ -5,6 +5,7 @@ import instanceI18n from 'language/i18n';
 
 
 import * as actionsNotification from 'store/actions/notification';
+import {Situation} from 'language/notification';
 
 import { v4 as uuidv4 } from 'uuid';
 import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
@@ -21,7 +22,7 @@ import notification from 'language/notification';
 export type Banner = {
   id: string,  
   code: string, 
-  situation: 'success' | 'hint' | 'error' | 'warning',
+  situation: Situation,
   message: string,
   msTime: number 
 }

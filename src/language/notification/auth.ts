@@ -1,5 +1,5 @@
 
-import {Notification} from 'language/notification';
+import {Notification, Situation} from 'language/notification';
 
 
 const notificationAuth: Notification = {

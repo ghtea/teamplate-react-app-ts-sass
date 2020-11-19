@@ -7,7 +7,7 @@ import {StateRoot} from 'store/reducers';
 import { v4 as uuidv4 } from 'uuid';
 
 import instanceI18n from 'language/i18n';
-import notification from 'language/notification';
+import notification, {Situation} from 'language/notification';
 
 
 function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
@@ -28,7 +28,7 @@ function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
     
     const code: string = action.payload.code;
     
-    const situation: 'success' | 'hint' | 'error' | 'warning' = notification[code]['situation'];
+    const situation: Situation = notification[code]['situation'];
     
     const message: string = instanceI18n.t(`Notification.${situation}.${code}`);
     console.log(message);
