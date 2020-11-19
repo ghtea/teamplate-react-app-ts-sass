@@ -1,4 +1,4 @@
-import { call, spawn, put, takeEvery, select } from "redux-saga/effects";
+import { call, delay, put, takeEvery, select } from "redux-saga/effects";
 
 import * as actionsNotification from "store/actions/notification";
 import {Banner} from "store/reducers/notification";
@@ -10,7 +10,14 @@ import instanceI18n from 'language/i18n';
 import notification from 'language/notification';
 
 
-function* addNotification(action: actionsNotification.type__ADD_NOTIFICATION) {
+function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
+    
+  yield put( actionsNotification.return__ADD_BANNER({
+      code: action.payload.code
+  }) );
+  
+  yield delay( actionsNotification.MsTimeBanner[ notification[action.payload.code]['time'] ] );
+  
     
     const listBannerPrevious: Banner[] =  yield select( (state:StateRoot) => state.notification.listBanner ); 
         

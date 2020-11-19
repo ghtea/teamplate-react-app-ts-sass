@@ -10,17 +10,15 @@ import instanceI18n from 'language/i18n';
 import notification from 'language/notification';
 
 
-function* deleteNotification(action: actionsNotification.type__DELETE_NOTIFICATION) {
+function* deleteBanner(action: actionsNotification.type__DELETE_BANNER) {
     
     const listBannerPrevious: Banner[] =  yield select( (state:StateRoot) => state.notification.listBanner ); 
         
     const id: string = action.payload.id;
     
-    
-    
     const listBannerNew = listBannerPrevious.filter(banner => banner.id !== id);
-        
-        
+
+    
     yield put( actionsNotification.return__REPLACE({
         listKey: ['listBanner'],
         replacement: listBannerNew
@@ -28,5 +26,5 @@ function* deleteNotification(action: actionsNotification.type__DELETE_NOTIFICATI
     
 }
 
-export default deleteNotification;
+export default deleteBanner;
 

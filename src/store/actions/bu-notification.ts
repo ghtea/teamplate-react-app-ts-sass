@@ -25,23 +25,21 @@ export type type__REPLACE = ReturnType<typeof return__REPLACE>;
 
 
 
+export const name__ADD_BANNER: string = `notification/ADD_BANNER`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
 
-export const name__ADD_DELETE_BANNER: string = `notification/ADD_DELETE_BANNER`;
-
-interface Payload__ADD_DELETE_BANNER {
+interface Payload__ADD_BANNER {
     code: string;
+    id?: string;
 }
 
-export const return__ADD_DELETE_BANNER = (payload: Payload__ADD_DELETE_BANNER) => {    
+export const return__ADD_BANNER = (payload: Payload__ADD_BANNER) => {    
     return {
-        type: name__ADD_DELETE_BANNER,
+        type: name__ADD_BANNER,
         payload: payload
     }
 };
 
-export type type__ADD_DELETE_BANNER = ReturnType<typeof return__ADD_DELETE_BANNER>;
-
-
+export type type__ADD_BANNER = ReturnType<typeof return__ADD_BANNER>;
 
 
 
@@ -62,6 +60,22 @@ export type type__DELETE_BANNER = ReturnType<typeof return__DELETE_BANNER>;
 
 
 
+
+
+export const name__ADD_DELETE_BANNER: string = `notification/ADD_DELETE_BANNER`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+
+interface Payload__ADD_DELETE_BANNER {
+    code: string;
+}
+
+export const return__ADD_DELETE_BANNER = (payload: Payload__ADD_DELETE_BANNER) => {    
+    return {
+        type: name__ADD_DELETE_BANNER,
+        payload: payload
+    }
+};
+
+export type type__ADD_DELETE_BANNER = ReturnType<typeof return__ADD_DELETE_BANNER>;
 
 
 /*

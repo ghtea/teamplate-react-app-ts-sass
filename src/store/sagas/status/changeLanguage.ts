@@ -12,7 +12,6 @@ import {StateRoot} from 'store/reducers';
 
 function* changeLanguage(action: actionsStatus.type__CHANGE_LANGUAGE) {
     
-    console.log("hi, I'm saga");
     
     let languageReplacement:string = '';
     
@@ -22,8 +21,6 @@ function* changeLanguage(action: actionsStatus.type__CHANGE_LANGUAGE) {
     
     else {
         const languagePrevious:string =  yield select( (state:StateRoot) => state.status.current.language ); 
-        
-        console.log(languagePrevious)
         
         if (languagePrevious === 'en'){
             languageReplacement = 'ko';
