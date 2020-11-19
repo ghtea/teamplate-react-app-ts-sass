@@ -9,6 +9,7 @@ export const Header__Nav1 = styled.header<{showingNav: boolean}>
   justify-content: space-between; align-items: center;
   
   box-sizing: border-box;
+  border: 0px solid transparent;
   
   width: 100%;
   height: auto;      /* we should let 'Content' know this value too */ 
@@ -19,7 +20,7 @@ export const Header__Nav1 = styled.header<{showingNav: boolean}>
   top: 0px;
   
   
-  margin: 0px 0px 0px 0px; /* top right bottom left */
+  margin: 0px 0px 0px 0px !important; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   
@@ -42,6 +43,7 @@ const keyframes_RotateIconX = keyframes`
   }
 `
 
+// https://pqina.nl/blog/animating-width-and-height-without-the-squish-effect/
 const keyframes_RotateIconThreeBars = keyframes`
   0% {
     transform: translateY(-5px);
@@ -60,6 +62,7 @@ export const Div__Bar = styled.div
   justify-content: space-evenly; align-items: center;
   
   box-sizing: border-box;
+  border: 0px solid transparent;
   border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav1_bar___border };  /* border: 2px dashed #aaa; */
 
   background-color: ${ ({theme})=>theme.color.Nav.nav1_bar___bg };  
@@ -74,7 +77,7 @@ export const Div__Bar = styled.div
   position: static;
   z-index: 100;
   
-  margin: 0px 0px 0px 0px; /* top right bottom left */
+  margin: 0px 0px 0px 0px !important; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > div:nth-child(1) {

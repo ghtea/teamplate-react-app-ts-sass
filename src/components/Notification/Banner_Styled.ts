@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
+import {Banner as TypeBanner} from 'store/reducers/notification';
 
 export const Div__Banner = styled.div
 `
@@ -65,7 +66,7 @@ export const Div__Banner = styled.div
 `;
 
 
-export const Div__Banner_ButtonClose = styled.div
+export const Button__Banner_Delete = styled.button
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
@@ -105,4 +106,51 @@ export const Div__Banner_ButtonClose = styled.div
 	}
 	
   
+`;
+
+
+const keyframes_ScaleGuage = keyframes`
+  0% { 
+    transform: scaleX(1);
+  }
+  100% { 
+    transform: scaleX(0); 
+  }
+`
+
+export const Div__Banner_Guage = styled.div<{banner: TypeBanner}>
+`
+  display: flex;
+  flex-flow: column nowrap;   /* row */
+  justify-content: flex-start; align-items: center;
+  
+  box-sizing: border-box;
+  
+  width: 100%;
+  height: 1px;
+  font-size: 1rem;
+  border-radius: 0px;
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+  transform-origin: 0% 50%;
+  animation: ${keyframes_ScaleGuage} ${ props => props.banner.msTime / 1000 }s linear 0s 1 normal;
+  
+  &.success {
+    background-color: ${({theme})=>theme.color.Notification.banner___border__success};
+  }
+  
+  &.hint {
+    background-color: ${({theme})=>theme.color.Notification.banner___border__hint};
+  }
+  
+  &.error {
+    background-color: ${({theme})=>theme.color.Notification.banner___border__error};
+  }
+  
+  &.warning {
+    background-color: ${({theme})=>theme.color.Notification.banner___border__warning};
+  }
 `;

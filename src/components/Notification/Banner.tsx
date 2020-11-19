@@ -9,6 +9,9 @@ import * as actionsNotification from 'store/actions/notification';
 import {Banner as TypeBanner} from 'store/reducers/notification';
 
 import IconXCircle from 'svgs/basic/IconXCircle';
+
+import IconHint from 'svgs/notification/IconHint';
+
 //import IconBanner from 'svgs/basic/IconBanner';
 
 import * as Styled from './Banner_Styled';
@@ -37,21 +40,22 @@ function Banner({
     <Styled.Div__Banner
       className={banner['situation']}
     >
-      
       <div>
-        <IconXCircle 
-          width={'24px'} 
-          height={'24px'} 
-          listKeyTheme={['color', 'Notification', `banner___font__${banner['situation']}`]}
-          className={banner['situation']}
-          kind={'light'}
-        />
+        {banner['situation'] === 'success' && 
+          <IconHint 
+            width={'24px'} 
+            height={'24px'} 
+            listKeyTheme={['color', 'Notification', `banner___font__${banner['situation']}`]}
+            className={banner['situation']}
+            kind={'regular'}
+          />
+        }
       </div>
         
       <div> {banner['message']} </div>
       
       <div> 
-        <Styled.Div__Banner_ButtonClose
+        <Styled.Button__Banner_Delete
           onClick={()=>onClick_DeleteBanner(banner['id'])}
         >  
           <IconXCircle 
@@ -68,9 +72,14 @@ function Banner({
             className={banner['situation']}
             kind={'solid'}
           />
-        </Styled.Div__Banner_ButtonClose>
+        </Styled.Button__Banner_Delete>
       </div>
-    
+      
+      <Styled.Div__Banner_Guage
+        className={banner['situation']}
+        banner={banner}
+      />
+      
     </Styled.Div__Banner>
   );
 }
