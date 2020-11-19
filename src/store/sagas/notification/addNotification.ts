@@ -28,8 +28,8 @@ function* addNotification(action: actionsNotification.type__ADD_NOTIFICATION) {
     
     const situation: 'success' | 'hint' | 'error' | 'warning' = notification[code]['situation'];
     
-    const message: string = instanceI18n.t(code);
-    
+    const message: string = instanceI18n.t(`Notification.${situation}.${code}`);
+    console.log(message);
     
     enum MsTime {
       normal = 3000,
@@ -66,7 +66,7 @@ function* addNotification(action: actionsNotification.type__ADD_NOTIFICATION) {
         
     yield put( actionsNotification.return__REPLACE({
         listKey: ['listBanner'],
-        replacement: languageReplacement
+        replacement: listBannerNew
     }) );
     
 }

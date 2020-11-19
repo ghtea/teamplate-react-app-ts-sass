@@ -86,5 +86,28 @@ export const colorLight = {
       
     },
     
+    Notification : {
+      banner___box_shadow: returnColor( palette.basic['60'], 0.3),
+      
+      banner___bg__success: returnColor( palette.success['90']),
+      banner___font__success: returnColor( palette.success['40']),
+      banner___border__success: returnColor( palette.success['70']),
+      banner___box_shadow__success: returnColor( palette.success['60'], 0.3),
+      
+      
+      banner___bg__hint: returnColor( palette.hint['90']),
+      banner___font__hint: returnColor( palette.hint['40']),
+      banner___border__hint: returnColor( palette.hint['70']),
+      
+      banner___bg__error: returnColor( palette.error['90']),
+      banner___font__error: returnColor( palette.error['40']),
+      banner___border__error: returnColor( palette.error['70']),
+      
+      banner___bg__warning: returnColor( palette.warning['90']),
+      banner___font__warning: returnColor( palette.warning['40']),
+      banner___border__warning: returnColor( palette.warning['70'])
+      
+    },
+    
     
   };

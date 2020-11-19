@@ -1,4 +1,20 @@
-//const department: string = 'notification';
+export const name__REPLACE: string = `notification/REPLACE`;    // 뒤에 as const 를 붙이면 reducer 에서 status.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+
+interface Payload__REPLACE {
+    listKey: (string | number)[];
+    replacement: any;
+}
+
+export const return__REPLACE = (payload: Payload__REPLACE) => {    
+    return {
+        type: name__REPLACE,
+        payload: payload
+    }
+};
+
+export type type__REPLACE = ReturnType<typeof return__REPLACE>;
+
+
 
 
 export const name__ADD_NOTIFICATION: string = `notification/ADD_NOTIFICATION`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
@@ -22,7 +38,7 @@ export type type__ADD_NOTIFICATION = ReturnType<typeof return__ADD_NOTIFICATION>
 export const name__DELETE_NOTIFICATION: string = `notification/DELETE_NOTIFICATION`;    // 뒤에 as const 를 붙이면 reducer 에서 notification.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
 
 interface Payload__DELETE_NOTIFICATION {
-    idNotification: string;
+    id: string;
 }
 
 export const return__DELETE_NOTIFICATION = (payload: Payload__DELETE_NOTIFICATION) => {    
@@ -32,7 +48,7 @@ export const return__DELETE_NOTIFICATION = (payload: Payload__DELETE_NOTIFICATIO
     }
 };
 
-export type type__REMOVE_NOTIFICATION = ReturnType<typeof return__DELETE_NOTIFICATION>;
+export type type__DELETE_NOTIFICATION = ReturnType<typeof return__DELETE_NOTIFICATION>;
 
 
 
