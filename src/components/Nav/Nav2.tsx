@@ -10,6 +10,8 @@ import CategoryDestination from './Nav2/CategoryDestination';
 import SoloDestination from './Nav2/SoloDestination';
 
 import * as Styled from './Nav2_Styled';
+
+
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
 import IconGlobe from 'svgs/basic/IconGlobe';
@@ -119,5 +121,7 @@ Nav2.defaultProps = {};
 export default Nav2;
 
 
+// 브라우저 상의 특정 요소 위치 파악
+// https://stackoverflow.com/questions/37200019/how-to-get-elements-clientx-and-clienty-of-an-element
 
 // <Div_Triangle lengthBasic={12} onClick = {(event)=>onClick_NavGroupItemTitle(event, 'Color') } />

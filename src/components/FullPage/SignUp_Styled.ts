@@ -8,9 +8,6 @@ export const Div__SignUp = styled.div
   
   box-sizing: border-box;
   
-  background-color: transparent; 
-  color: #000;
-  
   width: ${({theme})=>theme.size.device.minWidth_xs}px; 
   height: auto;
   font-size: 1rem;

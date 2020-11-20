@@ -7,9 +7,8 @@ import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
 import * as Styled from './CategoryDestination_Styled';
-import IconHome from 'svgs/basic/IconHome';
-import IconSignIn from 'svgs/basic/IconSignIn';
-import IconGlobe from 'svgs/basic/IconGlobe';
+
+import IconAngle from 'svgs/basic/IconAngle';
 
 
 type PropsCategoryDestination = {
@@ -76,8 +75,17 @@ function CategoryDestination({
 			<Styled.Div__CategoryDestination_Title 
         onClick = {(event)=>onClick_CategoryDestination_Title (event, idCategory) }
 			> 
-			  <a> {t(`Nav.${idCategory}`)}  </a>
-			  <div> + </div>
+			  <div> 
+			    <a> {t(`Nav.${idCategory}`)}  </a>
+			  </div>
+			  <div> 
+			    <IconAngle 
+			      width={'20px'} 
+			      height={'20px'}
+			      color={'inherit'}
+			      directon={'down'}
+			    /> 
+			   </div>
 			</Styled.Div__CategoryDestination_Title>
 			
 			<Styled.Div__CategoryDestination_Popup

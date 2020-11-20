@@ -71,7 +71,7 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
     font-size: 1rem;
     border-radius: 0px;
-    
+    font-family: 'Noto Sans KR', sans-serif;
     position: static;
     
     margin: 0px 0px 0px 0px; /* top right bottom left */

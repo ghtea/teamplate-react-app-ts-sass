@@ -4,7 +4,7 @@ export const Div__FullPage = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */
-  justify-content: center; align-items: center;
+  justify-content: flex-start; align-items: center;
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
@@ -18,9 +18,6 @@ export const Div__FullPage = styled.div
   font-size: 1rem;
   border-radius: 0px;
   
-  position: fixed;
-  top: 0px;
-  z-index: 0;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */

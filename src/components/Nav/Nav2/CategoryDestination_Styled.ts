@@ -19,10 +19,16 @@ export const Div__CategoryDestination = styled.div
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
-	 
+	&:hover {
+	  
+	  & > div:nth-child(1) > div:nth-child(1) > a {
+	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
+	  }
+	  
+	  & > div:nth-child(1) > div:nth-child(2) {
+	    transform: rotate(180deg) translateY(1px);
+	  }
 	}
-	
   
 `;
 
@@ -40,7 +46,7 @@ export const Div__CategoryDestination_Title = styled.div`
   
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   
   width: auto;
 	heigth: auto;
@@ -48,13 +54,12 @@ export const Div__CategoryDestination_Title = styled.div`
 	& > * {
 	  width : auto;
 	}
-	& > a {
+	& a {
 	  color: ${({theme})=>theme.color.Nav.nav2_link___font};
 	  
-	  &:hover {
-	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
-	  }
 	}
+	
+	
 `
 
 
