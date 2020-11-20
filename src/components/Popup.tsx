@@ -1,26 +1,26 @@
 import React from 'react';
 
 
-//import LogIn from "./PopUp/LogIn";
+//import LogIn from "./Popup/LogIn";
 
-import * as Styled from './PopUp_Styled';
+import * as Styled from './Popup_Styled';
 
-type PropsPopUp = {};
+type PropsPopup = {};
 
-function PopUp({}: PropsPopUp) {
+function Popup({}: PropsPopup) {
   return (
       
-    <Styled.Div__PopUp>
+    <Styled.Div__Popup>
     
       
     
-    </Styled.Div__PopUp>
+    </Styled.Div__Popup>
       
         
   );
 }
 
-export default PopUp;
+export default Popup;
 
 /*
 <Route path="/sign-up" >

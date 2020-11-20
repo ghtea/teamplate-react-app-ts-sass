@@ -79,7 +79,7 @@ export const Div__Title = styled.div
 
 
 
-export const Div__CollectionLink = styled.div
+export const Div__CollectionDestination = styled.div
 `
   
   display: flex;

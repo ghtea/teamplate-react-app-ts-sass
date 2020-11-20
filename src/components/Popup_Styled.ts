@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Div__PopUp = styled.div
+export const Div__Popup = styled.div
 `
   display: flex;
   flex-flow: column nowrap;   /* row */

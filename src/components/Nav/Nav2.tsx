@@ -6,6 +6,9 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
+import CategoryDestination from './Nav2/CategoryDestination';
+import SoloDestination from './Nav2/SoloDestination';
+
 import * as Styled from './Nav2_Styled';
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
@@ -66,11 +69,17 @@ function Nav2({}: PropsNav2) {
         </button>
       </Styled.Div__Title>
       
-      <Styled.Div__CollectionLink>
-        <div> {t('Nav.Nav2.category_1')} </div>
-        <div> {t('Nav.Nav2.category_2')} </div>
-      </Styled.Div__CollectionLink>
       
+      <Styled.Div__CollectionDestination>
+        <CategoryDestination 
+          idCategory={'categoryA'}
+          listIdLink={['linkA1', 'linkA2']}
+        />
+  		  <SoloDestination 
+  		    keySolo={'solo1'}
+  		  />
+      </Styled.Div__CollectionDestination>
+
       
       <Styled.Div__CollectionTool>
       
@@ -83,7 +92,7 @@ function Nav2({}: PropsNav2) {
               width={'28px'}
               height={'28px'}
             />
-            <div> {t('Nav.Nav2.log_in')} </div>
+            <div> {t('Nav.log_in')} </div>
           </a>
         </Styled.Div__Tool>
         
@@ -108,3 +117,7 @@ function Nav2({}: PropsNav2) {
 Nav2.defaultProps = {};
 
 export default Nav2;
+
+
+
+// <Div_Triangle lengthBasic={12} onClick = {(event)=>onClick_NavGroupItemTitle(event, 'Color') } />

@@ -72,7 +72,7 @@ function Nav1({}: PropsNav1) {
         </div>
         
         <div>
-          {t('Nav.Nav1.title')}
+          {t('Nav.title')}
         </div>
         
         <div>
@@ -95,19 +95,19 @@ function Nav1({}: PropsNav1) {
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-            > {t('Nav.Nav1.home')}
+            > {t('Nav.home')}
             </a>
           </div>
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-            > {t('Nav.Nav1.log_in')}
+            > {t('Nav.log_in')}
             </a>
           </div>
           <div> 
             <a
               onClick={()=>onClick_ChangeLanguage()}
-            > {t('Nav.Nav1.change_language')}
+            > {t('Nav.change_language')}
             </a>
           </div>
         </Styled.Div__Board>

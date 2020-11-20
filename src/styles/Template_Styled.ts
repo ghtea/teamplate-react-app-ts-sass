@@ -53,8 +53,16 @@ export const Button__Template = styled.div
   
   box-sizing: border-box;
   
-  background-color: transparent; 
-  color: #000;
+  /*
+  
+  background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
+  color: ${({theme})=>theme.color.Notification.banner___font__error};
+  border: 1px solid ${({theme})=>theme.color.Notification.banner___border__error};
+    
+  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error};
+  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error };
+  
+  */
   
   width: 100%; min-width: 100%; max-width: 100%;
   height: auto;

@@ -1,16 +1,16 @@
 {
     "Nav": {
-        "Nav1": {
-            "title": "제목" ,
-            "home": "홈",
-            "log_in": "로그인",
-            "change_language": "언어 변경"
-        },
-        "Nav2": {
-            "log_in": "로그인",
-            "category_1": "카테고리1",
-            "category_2": "카테고리2"
-        }
+        
+        "title": "제목" ,
+        "home": "홈",
+        "log_in": "로그인",
+        "change_language": "언어 변경",
+        
+        "categoryA": "카테고리 A",
+        "categoryA_linkA1": "링크 A1",
+        "categoryA_linkA2": "링크 A2",
+        
+        "soloA": "솔로 A"
     },
     
     "Notification": {

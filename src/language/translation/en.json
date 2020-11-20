@@ -1,16 +1,16 @@
 {
     "Nav": {
-        "Nav1": {
-            "title": "Title" ,
-            "home": "Home",
-            "log_in": "Log In",
-            "change_language": "Change Language"
-        },
-        "Nav2": {
-            "log_in": "Log In",
-            "category_1": "Category 1",
-            "category_2": "Category 2"
-        }
+        
+        "title": "Title" ,
+        "home": "Home",
+        "log_in": "Log In",
+        "change_language": "Change Language",
+        
+        "categoryA": "Category A",
+        "categoryA_linkA1": "link A1",
+        "categoryA_linkA2": "link A2",
+        
+        "soloA": "Solo A"
     },
     
     "Notification": {
