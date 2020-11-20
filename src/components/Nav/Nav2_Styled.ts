@@ -21,6 +21,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
     border-radius: 0px;
     
     position: fixed;
+    z-index: 200;
     
     margin: 0px 0px 0px 0px; /* top right bottom left */
     padding: 0px 0px 0px 0px; /* top right bottom left */

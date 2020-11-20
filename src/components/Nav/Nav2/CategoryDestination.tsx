@@ -69,28 +69,35 @@ function CategoryDestination({
   return (
     
 		<Styled.Div__CategoryDestination
-			onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, 'Category1') }
+		  onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, idCategory) }
       onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
 		>
 		
 			<Styled.Div__CategoryDestination_Title 
-        onClick = {(event)=>onClick_CategoryDestination_Title (event, 'Category1') }
-			> {t(`Nav.${idCategory}`)}  
+        onClick = {(event)=>onClick_CategoryDestination_Title (event, idCategory) }
+			> 
+			  <a> {t(`Nav.${idCategory}`)}  </a>
+			  <div> + </div>
 			</Styled.Div__CategoryDestination_Title>
 			
 			<Styled.Div__CategoryDestination_Popup
 				spotlighted={idSpotlighted===idCategory}
-			> 
-				<div>
 				
+			> 
+				
+				<Styled.Div__CategoryDestination_Popup_TriangleFront/>
+				<Styled.Div__CategoryDestination_Popup_TriangleBack/>
+				<Styled.Div__CategoryDestination_Popup_TriangleBackground/>
+				
+				<Styled.Div__CategoryDestination_Popup_Box>
 				  {listIdLink.map( (idLink) => (
 				    <Styled.Div__Link
   					  onClick={()=>onClick_LinkInsideApp(`/${idCategory}/${idLink}`)}
   					> <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
   					</Styled.Div__Link>
-				  )}
-				  
-				</div>
+				  ))}
+				</Styled.Div__CategoryDestination_Popup_Box>
+				
 			</Styled.Div__CategoryDestination_Popup>
 			
 		</Styled.Div__CategoryDestination>

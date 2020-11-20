@@ -83,9 +83,14 @@ export const colorLight = {
       nav2_title___border: returnColor( palette.basic['80']),
       
       nav2_link___font: returnColor( palette.basic['40']),
-      nav2_link___font_hover: returnColor( palette.basic['20']),
+      nav2_link___font__hover: returnColor( palette.basic['20']),
       
-      nav2_tool___icon: returnColor( palette.basic['70'])
+      nav2_tool___icon: returnColor( palette.basic['70']),
+      
+      nav2_popup___bg: returnColor( palette.basic['100']),
+      nav2_popup___font: returnColor( palette.basic['25']),
+      nav2_popup___border: returnColor( palette.basic['50']),
+      nav2_popup___bg__hover: returnColor( palette.basic['95'])
     },
     
     FullPage : {

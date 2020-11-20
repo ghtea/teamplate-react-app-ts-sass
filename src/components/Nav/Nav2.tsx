@@ -76,7 +76,7 @@ function Nav2({}: PropsNav2) {
           listIdLink={['linkA1', 'linkA2']}
         />
   		  <SoloDestination 
-  		    keySolo={'solo1'}
+  		    idSolo={'soloA'}
   		  />
       </Styled.Div__CollectionDestination>
 

@@ -14,7 +14,7 @@ export const Div__CategoryDestination = styled.div
   font-size: 1rem;
   border-radius: 0px;
   
-  position: static;
+  position: relative;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
@@ -35,14 +35,33 @@ export const Div__CategoryDestination = styled.div
 
 
 export const Div__CategoryDestination_Title = styled.div`
+  
+  display: flex;
+  
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  
   width: auto;
 	heigth: auto;
+	
+	& > * {
+	  width : auto;
+	}
+	& > a {
+	  color: ${({theme})=>theme.color.Nav.nav2_link___font};
+	  
+	  &:hover {
+	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
+	  }
+	}
 `
 
 
 export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
 `
-  width: 100%;   /* this make align center!!! */
+
+  width: 200px; 
   
   /* 모바일에서 타이틀 클릭으로 온오프가능하게 */
   display: ${props=>props.spotlighted ? 'flex' : 'none' };
@@ -51,10 +70,10 @@ export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
   justify-content: flex-start;
   align-items: center;
   
+  
   position: absolute;
   z-index: 400;
-  top: 12px;
-  left: 0;
+  top: calc(100% + 10px);
   
   overflow: visible;
   /*box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5); not works */
@@ -62,6 +81,59 @@ export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
 `
 
 
+
+
+export const Div__CategoryDestination_Popup_TriangleFront = styled.div
+`
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  
+  bottom: calc(100% - 1px);
+  z-index: 399;
+  border-width: 12px;
+  border-color: transparent transparent ${({theme})=>theme.color.Nav.nav2_popup___border} transparent;
+`;
+
+
+export const Div__CategoryDestination_Popup_TriangleBack = styled.div
+`
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  
+  bottom: calc(100%);
+  z-index: 401;
+  border-width: 10px;
+  border-color: transparent transparent ${({theme})=>theme.color.Nav.nav2_popup___bg} transparent;
+  
+`;
+
+export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
+`
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: calc(100% - 1px);
+  background-color:red;
+`;
+  
+
+
+export const Div__CategoryDestination_Popup_Box = styled.div
+`
+  z-index: 400;
+  background-color: ${({theme})=>theme.color.Nav.nav2_popup___bg};
+  color: ${({theme})=>theme.color.Nav.nav2_popup___font};
+  border: 1px solid ${({theme})=>theme.color.Nav.nav2_popup___border};
+  
+`;
+  
+  
 export const Div__Link = styled.div`
   height: 40px;
   
@@ -78,7 +150,7 @@ export const Div__Link = styled.div`
   
   
   &:hover {
-  
+    background-color: ${({theme})=>theme.color.Nav.nav2_popup___bg__hover};
   }
   
 `

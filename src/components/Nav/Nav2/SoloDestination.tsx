@@ -13,11 +13,11 @@ import IconGlobe from 'svgs/basic/IconGlobe';
 
 
 type PropsSoloDestination = {
-  keySolo: string
+  idSolo: string
   
 };
 
-function SoloDestination({keySolo}: PropsSoloDestination) {
+function SoloDestination({idSolo}: PropsSoloDestination) {
   
   let history = useHistory();
   const dispatch = useDispatch();
@@ -36,9 +36,9 @@ function SoloDestination({keySolo}: PropsSoloDestination) {
 	  <Styled.Div__SoloDestination>
       <div> 
         <a
-          onClick={()=>onClick_LinkInsideApp(`/${keySolo}`)}
+          onClick={()=>onClick_LinkInsideApp(`/${idSolo}`)}
         > 
-          {t(`Nav.${keySolo}`)} 
+          {t(`Nav.${idSolo}`)} 
         </a> 
       </div>
     </Styled.Div__SoloDestination>

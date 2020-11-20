@@ -26,14 +26,15 @@ export const Div__SoloDestination = styled.div
 	
 	& > *:nth-child(1) {
 	  margin-left: 10px;
-	}
-  & > *:nth-child(2) {
-    color: ${ ({theme})=>theme.color.Nav.nav2_title___font };  
-  
-	  font-size: 1.4rem;
-	  font-weight: bold;
 	  
-	  margin-left: 10px;
+	  & > a {
+	    color: ${({theme})=>theme.color.Nav.nav2_link___font};
+	  
+  	  &:hover {
+  	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
+  	  }
+	  }
+	
 	}
   
 `;

@@ -18,7 +18,7 @@ export const Header__Nav1 = styled.header<{showingNav: boolean}>
   
   position: relative;
   top: 0px;
-  
+  z-index: 200;
   
   margin: 0px 0px 0px 0px !important; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
