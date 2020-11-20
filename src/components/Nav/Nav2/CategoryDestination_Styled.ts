@@ -82,7 +82,8 @@ export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
 
 
 
-
+// http://apps.eky.hk/css-triangle-generator/
+// TraiangleBack is for border effect of traiangle
 export const Div__CategoryDestination_Popup_TriangleFront = styled.div
 `
   width: 0;

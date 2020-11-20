@@ -124,7 +124,7 @@ export const Div__CollectionDestination = styled.div
     cursor: pointer;
     
     &:hover {
-      color: ${ ({theme})=>theme.color.Nav.nav2_link___font_hover  };  
+      color: ${ ({theme})=>theme.color.Nav.nav2_link___font__hover  };  
     }
   }
 `;
@@ -206,7 +206,7 @@ export const Div__Tool = styled.div
     }
     
     &:hover {
-      color: ${ ({theme})=>theme.color.Nav.nav2_link___font_hover  };  
+      color: ${ ({theme})=>theme.color.Nav.nav2_link___font__hover};  
     }
     
     

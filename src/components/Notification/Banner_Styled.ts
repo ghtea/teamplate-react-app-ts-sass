@@ -29,7 +29,7 @@ export const Div__Banner = styled.div<{situation: Situation}>
   &:nth-child(n+2) { 
     margin-top: 5px;
     padding: 0px 0px 0px 0px; /* top right bottom left */
-    opacity: 0.8;
+    opacity: 0.9;
   }
   
   

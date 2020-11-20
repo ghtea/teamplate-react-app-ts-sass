@@ -15,7 +15,8 @@
     
     "Notification": {
         "success": {
-            "test": "Succuessfully tested!"
+            "test1": "Succuessfully tested 1 !",
+            "test2": "Succuessfully tested 2 !"
         },
         "hint": {
             

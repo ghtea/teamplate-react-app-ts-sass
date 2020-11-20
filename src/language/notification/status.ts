@@ -3,10 +3,12 @@ import {Notification, Situation} from 'language/notification';
 
 const notificationStatus: Notification = {
     
-    'test': {
+    'test1': {
+        situation: 'success'
+    },
+    'test2': {
         situation: 'success'
     }
-    
     
 }
 
