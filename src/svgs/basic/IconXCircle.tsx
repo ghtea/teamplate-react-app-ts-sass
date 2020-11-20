@@ -57,7 +57,7 @@ export const Div__Icon = styled.div<PropsDivIcon>
 
 
 
-// X
+// XCircle
 const Icon = ({ width, height, color, className, listKeyTheme, kind }: PropsIcon) => {
   return (
     <Div__Icon

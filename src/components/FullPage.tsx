@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import NameApp from "./FullPage/NameApp";
 
 import LogIn from "./FullPage/LogIn";
 import SignUp from "./FullPage/SignUp";
@@ -12,23 +13,25 @@ type PropsFullPage = {};
 
 function FullPage({}: PropsFullPage) {
   return (
-      
-    <Switch>
     
       <Styled.Div__FullPage>
-      
-        <Route path="/log-in" >
-          <LogIn />
-        </Route>
         
-        <Route path="/sign-up" >
-          <SignUp />
-        </Route>
-      
+        <NameApp/>
+        
+        <Switch>
+          <Route path="/log-in" >
+            <LogIn />
+          </Route>
+          
+          <Route path="/sign-up" >
+            <SignUp />
+          </Route>
+        </Switch>
+        
+        <Styled.Div__FullPage_Background/>
+        
       </Styled.Div__FullPage>
-      
-    </Switch>
-        
+     
   );
 }
 

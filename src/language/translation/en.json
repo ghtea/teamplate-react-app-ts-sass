@@ -1,6 +1,7 @@
 {
+    
     "Nav": {
-        
+        "name_app": "React App",
         "title": "Title" ,
         "home": "Home",
         "log_in": "Log In",
@@ -12,6 +13,18 @@
         
         "soloA": "Solo A"
     },
+    
+    
+    "Protocol": {
+        "global": {
+            "unknown_error": "Unknown error happend"
+        },
+        "auth": {
+            "sign_up_existing_email": "That email is already existing",
+            "sign_up_succeeded": "Successfully signed up!"
+        }
+    },
+    
     
     "Notification": {
         "success": {
@@ -28,4 +41,5 @@
             
         }
     }
+    
 }

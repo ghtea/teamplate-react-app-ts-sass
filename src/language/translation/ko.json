@@ -1,6 +1,6 @@
 {
     "Nav": {
-        
+        "name_app": "리액트 ",
         "title": "제목" ,
         "home": "홈",
         "log_in": "로그인",
@@ -12,6 +12,18 @@
         
         "soloA": "솔로 A"
     },
+    
+    
+    "Protocol": {
+        "global": {
+            "unknown_error": "알수 없는 에러가 발생했습니다"
+        },
+        "auth": {
+            "sign_up_existing_email": "해당 이메일이 이미 존재합니다",
+            "sign_up_succeeded": "회원가입에 성공하였습니다"
+        }
+    },
+    
     
     "Notification": {
         "success": {

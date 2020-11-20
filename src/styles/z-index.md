@@ -11,3 +11,6 @@ Nav1 - board : 50
 
 Nav2 - popup 400
 Nav2 - popup - triangle 401. 402
+
+
+FullPage - background -100

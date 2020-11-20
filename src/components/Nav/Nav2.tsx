@@ -14,6 +14,7 @@ import * as Styled from './Nav2_Styled';
 
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
+import IconSetting from 'svgs/basic/IconSetting';
 import IconGlobe from 'svgs/basic/IconGlobe';
 
 
@@ -26,6 +27,8 @@ function Nav2({}: PropsNav2) {
   const { t } = useTranslation();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
+  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
+  
   const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
   const languageCurrent:string = useSelector((state: StateRoot) => state['status']['current']['language']);
 
@@ -35,18 +38,13 @@ function Nav2({}: PropsNav2) {
     },[history]
   );
   
-  const onClick_ChangeLanguage = useCallback(
+  const onClick_ShowHideSetting = useCallback(
     () => {
-      dispatch(actionsStatus.return__CHANGE_LANGUAGE() )
-      
-      /*
-      
-      dispatch(actionsStatus.return__CHANGE_LANGUAGE({
-        replacement: false
+      dispatch(actionsStatus.return__REPLACE({ 
+        listKey: ['showing', 'popup', 'setting'],
+        replacement: !showingSetting
       }))
-      
-      */
-    }, []
+    },[showingSetting]
   );
   
   
@@ -54,22 +52,24 @@ function Nav2({}: PropsNav2) {
     <Styled.Header__Nav2
       showingNav={showingNav}
     >
-      <Styled.Div__Title>
+      <Styled.Div__NameApp>
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}
         >
-          <IconHome
-            listKeyTheme={['color', 'Nav', 'nav2_title___logo']}
-            width={'36px'}
-            height={'36px'}
-          />
+          <div>
+            <IconHome
+              listKeyTheme={['color', 'Nav', 'nav2_name_app___logo']}
+              width={'36px'}
+              height={'36px'}
+            />
+          </div>
         </button>
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}
         >
-          React App
+          {t('Nav.name_app')}
         </button>
-      </Styled.Div__Title>
+      </Styled.Div__NameApp>
       
       
       <Styled.Div__CollectionDestination>
@@ -100,12 +100,12 @@ function Nav2({}: PropsNav2) {
         
         <Styled.Div__Tool>
           <a
-            onClick={()=>onClick_ChangeLanguage()}
+            onClick={()=>onClick_ShowHideSetting()}
           >
-            <IconGlobe
+            <IconSetting
               color={'inherit'}
-              width={'24px'}
-              height={'24px'}
+              width={'26px'}
+              height={'26px'}
             />
           </a>
         </Styled.Div__Tool>

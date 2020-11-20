@@ -12,7 +12,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
     justify-content: space-evenly; align-items: center;
     
     box-sizing: border-box;
-    border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav2_title___border };  /* border: 2px dashed #aaa; */
+    border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav2_name_app___border };  /* border: 2px dashed #aaa; */
     
     
     width: 100%;
@@ -41,7 +41,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
 `;
 
 
-export const Div__Title = styled.div
+export const Div__NameApp = styled.div
 `
   display: flex;
   flex-flow: row nowrap;   /* row */
@@ -49,9 +49,6 @@ export const Div__Title = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  
-  background-color: transparent; 
-  color: #000;
   
   height: auto;
   font-size: 1rem;
@@ -68,7 +65,7 @@ export const Div__Title = styled.div
 	  margin-left: 10px;
 	}
   & > *:nth-child(2) {
-    color: ${ ({theme})=>theme.color.Nav.nav2_title___font };  
+    color: ${ ({theme})=>theme.color.Nav.nav2_name_app___font };  
   
 	  font-size: 1.4rem;
 	  font-weight: bold;

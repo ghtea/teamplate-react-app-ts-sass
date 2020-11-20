@@ -68,12 +68,6 @@ function SignUp({}: PropsSignUp) {
   return (
     <Styled.Div__SignUp>
     
-        <Styled.Div__SignUp_NameApp> 
-          <a
-            onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-          > React App </a> 
-        </Styled.Div__SignUp_NameApp>
-        
         <Styled.Div__SignUp_TitlePage> Sign Up </Styled.Div__SignUp_TitlePage>
         
         <Styled.Div__SignUp_Identity> 

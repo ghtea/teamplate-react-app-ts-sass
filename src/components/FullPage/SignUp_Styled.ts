@@ -22,31 +22,6 @@ export const Div__SignUp = styled.div
 
 
 
-export const Div__SignUp_NameApp = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
-
-  background-color: transparent; 
-  color: #000;
-  
-  width: 100%;
-  height: 40px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-`;
-
-
 export const Div__SignUp_TitlePage = styled.div
 `
   display: flex;
@@ -60,12 +35,12 @@ export const Div__SignUp_TitlePage = styled.div
   
   width: 100%;
   height: 50px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   border-radius: 0px;
   
   position: static;
   
-  margin: 0px 0px 0px 0px; /* top right bottom left */
+  margin: 20px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
 `;

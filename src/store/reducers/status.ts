@@ -38,6 +38,9 @@ const stateInitial = {
     nav: {
       all: true,
       boardNav1: false
+    },
+    popup: {
+      setting: false
     }
   }
   
