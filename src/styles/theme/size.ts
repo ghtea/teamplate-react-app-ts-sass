@@ -2,8 +2,6 @@
 export type Size = typeof size;
 
 const size = {
-  pxHeightNav1: 48,
-  pxHeightNav2: 60 ,
   
   nav :{
     height_nav1: 48,

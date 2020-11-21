@@ -89,7 +89,7 @@ export const colorLight = {
       
       nav2_popup___bg: returnColor( palette.basic['100']),
       nav2_popup___font: returnColor( palette.basic['25']),
-      nav2_popup___border: returnColor( palette.basic['50']),
+      nav2_popup___border: returnColor( palette.basic['60']),
       nav2_popup___bg__hover: returnColor( palette.basic['95']),
       nav2_popup___box_shadow: returnColor( palette.basic['60'], 0.3),
       nav2_popup___drop_shadow: returnColor( palette.basic['60'], 0.5)
@@ -99,6 +99,15 @@ export const colorLight = {
       full_page___bg: returnColor( palette.basic['95']),
       full_page_name_app___font: returnColor( palette.basic['10'])
       
+    },
+    
+    Popup : {
+      popup___bg: returnColor( palette.basic['100']),
+      popup___font: returnColor( palette.basic['25']),
+      popup___border: returnColor( palette.basic['60']),
+      popup___box_shadow: returnColor( palette.basic['60'], 0.3),
+      popup___drop_shadow: returnColor( palette.basic['60'], 0.5),
+      shadow___bg: returnColor( palette.basic['00'], 0.1)
     },
     
     Notification : {

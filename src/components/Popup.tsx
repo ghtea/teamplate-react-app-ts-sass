@@ -16,12 +16,16 @@ function Popup({}: PropsPopup) {
 
   return (
       
-    <Styled.Div__Popup>
+    <>
       
-      {showingSetting && <Setting />}
+      {showingSetting && 
+        <Styled.Div__Shadow>
+          <Setting />
+        </Styled.Div__Shadow>
+      }
       
     
-    </Styled.Div__Popup>
+    </>
       
   );
 }

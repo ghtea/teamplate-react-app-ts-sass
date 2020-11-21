@@ -9,8 +9,7 @@ export const Div__Home = styled.div
   
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: none; 
-  color: #000;
+  
   
   width: 100%;
   height: auto;

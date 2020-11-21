@@ -42,7 +42,9 @@ function Setting({}: PropsSetting) {
   return (
     <Styled.Div__Setting>
       
-      <div> Setting </div>
+      <div>
+        <div> Setting </div>
+      </div>
       
       <div> Theme </div>
       <div> Language </div>

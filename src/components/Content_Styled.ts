@@ -18,7 +18,7 @@ export const Div__Content = styled.div
   border-radius: 0px;
   
   position: relative;
-  top: ${({theme})=>theme.size.pxHeightNav1}px;
+  top: ${({theme})=>theme.size.nav.height_nav1}px;
   z-index: 0;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */

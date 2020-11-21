@@ -4,6 +4,12 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   
+  html {
+    margin: 0px 0px 0px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
+    box-sizing: border-box;
+  }
+  
   body {
     
     display: flex;
@@ -23,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     
     border-radius: 0px;
     
-    position: static;
+    position: relative;
     
     margin: 0px 0px 0px 0px; /* top right bottom left */
     padding: 0px 0px 0px 0px; /* top right bottom left */

@@ -16,7 +16,7 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
     
     
     width: 100%;
-    height: ${ ({theme})=>theme.size.pxHeightNav2 }px;   /* we should let 'Content' know this value too */ 
+    height: ${ ({theme})=>theme.size.nav.height_nav2 }px;   /* we should let 'Content' know this value too */ 
     font-size: 1rem;
     border-radius: 0px;
     
