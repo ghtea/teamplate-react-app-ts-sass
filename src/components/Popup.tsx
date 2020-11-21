@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
-import * as actionsNotification from 'store/actions/notification';
+import * as actionsStatus from 'store/actions/status';
 
 import Setting from "./Popup/Setting";
 
@@ -13,18 +13,30 @@ type PropsPopup = {};
 function Popup({}: PropsPopup) {
   
   const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
-
+  const dispatch = useDispatch();
+  
+  const onClick_HidePopup = useCallback(
+    (idPopup:string) => {
+      dispatch(actionsStatus.return__REPLACE({ 
+        listKey: ['showing', 'popup', idPopup],
+        replacement: false
+      }))
+    },[showingSetting]
+  );
+  
   return (
       
     <>
       
       {showingSetting && 
-        <Styled.Div__Shadow>
+        <>
+          <Styled.Div__Shadow
+            onClick={()=>onClick_HidePopup('setting')}
+          />
           <Setting />
-        </Styled.Div__Shadow>
+        </>
       }
       
-    
     </>
       
   );

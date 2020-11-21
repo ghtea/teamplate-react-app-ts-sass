@@ -7,7 +7,7 @@ import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
 
-//import IconSetting from 'svgs/basic/IconSetting';
+import IconX from 'svgs/basic/IconX';
 
 import * as Styled from './Setting_Styled';
 
@@ -42,13 +42,48 @@ function Setting({}: PropsSetting) {
   return (
     <Styled.Div__Setting>
       
-      <div>
+      <Styled.Div__Setting_Header>
         <div> Setting </div>
-      </div>
+        <div> 
+          <IconX
+            listKeyTheme={['color', 'Nav', 'nav2_name_app___logo']}
+            width={'24px'}
+            height={'24px'}
+          />
+        </div>
+      </Styled.Div__Setting_Header>
       
-      <div> Theme </div>
-      <div> Language </div>
-      <div> Log In </div>
+      
+      <Styled.Div__Setting_Content>
+        
+        <Styled.Div__Setting_Content_Section>
+          <div> Theme </div>
+          <div>
+            <div> auto </div>
+            <div> light </div>
+            <div> dark </div>
+          </div>
+        </Styled.Div__Setting_Content_Section>
+        
+        <Styled.Div__Setting_Content_Section>
+          <div> Language </div>
+          <div>
+            <div> English </div>
+            <div> Korean </div>
+          </div>
+        </Styled.Div__Setting_Content_Section>
+        
+        <Styled.Div__Setting_Content_Section>
+          <div> Theme </div>
+          <div>
+            <div> auto </div>
+            <div> light </div>
+            <div> dark </div>
+          </div>
+        </Styled.Div__Setting_Content_Section>
+        
+      </Styled.Div__Setting_Content>
+        
         
     </Styled.Div__Setting>
   );

@@ -17,20 +17,20 @@ export const Div__Popup = styled.div
   box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Popup.popup___box_shadow };
   
   
-  width: calc(100% - 10px); max-width: ${({theme})=> (theme.size.device.minWidth_xs - 10)}px;
-  height: auto;
+  width: calc(100vw - 20px); max-width: ${({theme})=> (theme.size.device.minWidth_xs - 20)}px;
+  height: auto; max-height: 90vh;
   font-size: 1rem;
   border-radius: 12px;
   
   position: fixed;
   z-index: 600;
-  top: ${({theme})=>(theme.size.nav.height_nav1 + 10)}px;
+  top: 5vh;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
 	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
-	  top: ${({theme})=>(theme.size.nav.height_nav2 + 10)}px;
+
 	}
 	
 `;
@@ -47,11 +47,14 @@ export const Div__Shadow = styled.div
   
   background-color: ${ ({theme})=> theme.color.Popup.shadow___bg };
   
+  border-style: none;
+  
   width: 100vw;
   height: 100vh;
   font-size: 1rem;
   
-  position: absolute;
+  position: fixed;
+  z-index: 599;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
