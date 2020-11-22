@@ -184,27 +184,44 @@ export const Div__LogIn_Enter = styled.div
 export const Div__LogIn_Social = styled.div
 `
   display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
+  flex-flow: row nowrap;   /* row */
+  justify-content: center; align-items: center;
   
   box-sizing: border-box;
 
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
-  
-  width: 100%;
-  height: 44px;
+  width: auto;
+  height: auto;
   
   font-weight: normal;
-  border-radius: 4px;
+  
   
   position: static;
   
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  & > div {
+  & > button {
     font-size: 1rem;
+    
+    color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+    border-radius: 4px;
+    
+    width: 100px;
+    height: 44px;
+    
+    &:nth-child(n+2){
+      margin-left: 20px;
+    }
+    
+    &:nth-child(1){
+      background-color: ${ ({theme})=>theme.color.Share.button_google___bg };
+    }
+    &:nth-child(2){
+      background-color: ${ ({theme})=>theme.color.Share.button_facebook___bg };
+    }
+    &:nth-child(3){
+      background-color: ${ ({theme})=>theme.color.Share.button_twitter___bg };
+    }
   }
   
 `;

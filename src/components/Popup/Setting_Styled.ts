@@ -45,9 +45,11 @@ export const Div__Setting_Header = styled.div
   & > div:nth-child(1){
     width: auto;
     font-size: 1.2rem;
+    
   }
   & > div:nth-child(2){
     width: auto;
+    cursor: pointer;
   }
 `;
 
@@ -82,6 +84,7 @@ export const Div__Setting_Content = styled.div
   border-radius: 0px;
   
   position: static;
+  
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 5px 0px; /* top right bottom left */
@@ -123,6 +126,8 @@ export const Div__Setting_Content_Section = styled.div
   
   & > div:nth-child(1){ /* title */
     width: auto;
+    height: 24px;
+    font-size: 0.9rem;
   }
   
   & > div:nth-child(2){ /* options */
@@ -130,13 +135,25 @@ export const Div__Setting_Content_Section = styled.div
     flex-flow: row nowrap;   /* row */
     justify-content: flex-start; align-items: center;
     
+    background-color: ${({theme})=>theme.color.Popup.setting_option_behind___bg};
+    padding: 0px 2px 0px 2px; /* top right bottom left */
+    border-radius: 5px;
+    
     width: auto;
-    height: 36px;
+    height: 32px;
     
     & > div {
       width: auto;
+      height: 26px;
+      border-radius: 5px;
+      padding: 0px 4px 0px 4px; /* top right bottom left */
+      
+      background-color: ${({theme})=>theme.color.Popup.setting_option___bg};
+      cursor: pointer;
+      
       &:nth-child(n+2){
         margin-left: 8px;
+        
       }
     }
   }

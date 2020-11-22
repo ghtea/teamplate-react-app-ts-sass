@@ -46,7 +46,7 @@ function Setting({}: PropsSetting) {
         <div> Setting </div>
         <div> 
           <IconX
-            listKeyTheme={['color', 'Nav', 'nav2_name_app___logo']}
+            listKeyTheme={['color', 'Popup', 'setting_header___icon']}
             width={'24px'}
             height={'24px'}
           />

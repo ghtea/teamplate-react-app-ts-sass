@@ -77,6 +77,8 @@ export const colorLight = {
       
       nav1_board___bg: returnColor( palette.basic['85']),
       nav1_board___font: returnColor( palette.basic['25']),
+      nav1_board___border: returnColor( palette.basic['75']),
+      
       
       nav2_name_app___logo: returnColor( palette.main['60']),
       nav2_name_app___font: returnColor( palette.basic['20']),
@@ -107,7 +109,13 @@ export const colorLight = {
       popup___border: returnColor( palette.basic['90']),
       popup___box_shadow: returnColor( palette.basic['60'], 0.3),
       popup___drop_shadow: returnColor( palette.basic['60'], 0.5),
-      shadow___bg: returnColor( palette.basic['00'], 0.1)
+      shadow___bg: returnColor( palette.basic['00'], 0.1),
+      
+      setting_header___icon: returnColor( palette.basic['70']),
+      setting_header___icon__hover: returnColor( palette.basic['50']),
+      setting_option___bg: returnColor( palette.basic['100']),
+      setting_option_behind___bg: returnColor( palette.basic['90'])
+      
     },
     
     Notification : {
@@ -139,6 +147,12 @@ export const colorLight = {
       banner___box_shadow__warning: returnColor( palette.warning['60'], 0.3)
       
     },
+    
+    Share: {
+      button_google___bg: returnColor( palette.Google['50']),
+      button_facebook___bg: returnColor( palette.Facebook['50']),
+      button_twitter___bg: returnColor( palette.Twitter['60'])
+    }
     
     
   };

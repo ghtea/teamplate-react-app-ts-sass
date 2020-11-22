@@ -112,7 +112,7 @@ export const Div__Board = styled.div
   justify-content: flex-start; align-items: center;
   
   box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
+  
   background-color: ${ ({theme})=>theme.color.Nav.nav1_board___bg };  
   
   
@@ -138,7 +138,10 @@ export const Div__Board = styled.div
     flex-flow: column nowrap;   /* row */
     justify-content: center; align-items: center;
     
-    height: 90px;
+    border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav1_board___border };
+    
+    width: calc(100% - 20px);
+    height: 70px;
     
     & > a {
       color: ${ ({theme})=>theme.color.Nav.nav1_board___font };  

@@ -23,7 +23,8 @@ function Nav1({}: PropsNav1) {
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const showingBoardNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['boardNav1']);
-  
+  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
+
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
@@ -50,10 +51,13 @@ function Nav1({}: PropsNav1) {
     [showingBoardNav1]
   );
   
-  const onClick_ChangeLanguage = useCallback(
+  const onClick_ShowHideSetting = useCallback(
     () => {
-      dispatch(actionsStatus.return__CHANGE_LANGUAGE() )
-    }, []
+      dispatch(actionsStatus.return__REPLACE({ 
+        listKey: ['showing', 'popup', 'setting'],
+        replacement: !showingSetting
+      }))
+    },[showingSetting]
   );
 
   
@@ -106,8 +110,8 @@ function Nav1({}: PropsNav1) {
           </div>
           <div> 
             <a
-              onClick={()=>onClick_ChangeLanguage()}
-            > {t('Nav.change_language')}
+              onClick={()=>onClick_ShowHideSetting()}
+            > {t('Nav.setting')}
             </a>
           </div>
         </Styled.Div__Board>

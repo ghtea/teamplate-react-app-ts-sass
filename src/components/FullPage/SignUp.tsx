@@ -115,19 +115,6 @@ function SignUp({}: PropsSignUp) {
           > Sign Up </button>
         </Styled.Div__SignUp_Enter> 
         
-      
-        <div> 
-          <div> or </div>
-        </div> 
-        
-        <Styled.Div__SignUp_Social> 
-          <button> Log In with Google </button>
-        </Styled.Div__SignUp_Social> 
-        
-        <Styled.Div__SignUp_Social> 
-          <button> Log In with Twitter </button>
-        </Styled.Div__SignUp_Social> 
-        
         <Styled.Div__SignUp_CollectionLink> 
           <div> 
             <a

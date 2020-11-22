@@ -46,15 +46,13 @@ function LogIn({}: PropsLogIn) {
         
       
         <div> 
-          <div> or </div>
+          <div> or Log In with </div>
         </div> 
         
         <Styled.Div__LogIn_Social> 
-          <button> Log In with Google </button>
-        </Styled.Div__LogIn_Social> 
-        
-        <Styled.Div__LogIn_Social> 
-          <button> Log In with Twitter </button>
+          <button> Google </button>
+          <button> Facebook </button>
+          <button> Twitter </button>
         </Styled.Div__LogIn_Social> 
         
         <Styled.Div__LogIn_CollectionLink> 
