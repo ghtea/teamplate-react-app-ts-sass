@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -18,23 +19,30 @@ function Setting({}: PropsSetting) {
   
   const dispatch = useDispatch();
   const history = useHistory();
+  
+  const { t } = useTranslation();
+  
+  const onClick_HideSetting = useCallback(
+    () => {
+      dispatch(actionsStatus.return__REPLACE({ 
+        listKey: ['showing', 'popup', 'setting'],
+        replacement: false
+      }))
+    },[]
+  );
+  
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
     },[history]
   );
   
+  
   const onClick_ChangeLanguage = useCallback(
-    () => {
-      dispatch(actionsStatus.return__CHANGE_LANGUAGE() )
-      
-      /*
-      
+    (replacement:string) => {
       dispatch(actionsStatus.return__CHANGE_LANGUAGE({
-        replacement: false
-      }))
-      
-      */
+        replacement: replacement
+      }) )
     }, []
   );
   
@@ -43,8 +51,10 @@ function Setting({}: PropsSetting) {
     <Styled.Div__Setting>
       
       <Styled.Div__Setting_Header>
-        <div> Setting </div>
-        <div> 
+        <div> {t('Nav.setting')} </div>
+        <div
+          onClick={()=>onClick_HideSetting()}
+        > 
           <IconX
             listKeyTheme={['color', 'Popup', 'setting_header___icon']}
             width={'24px'}
@@ -68,8 +78,8 @@ function Setting({}: PropsSetting) {
         <Styled.Div__Setting_Content_Section>
           <div> Language </div>
           <div>
-            <div> English </div>
-            <div> Korean </div>
+            <div onClick={()=>onClick_ChangeLanguage('en')}> English </div>
+            <div onClick={()=>onClick_ChangeLanguage('ko')}> Korean </div>
           </div>
         </Styled.Div__Setting_Content_Section>
         

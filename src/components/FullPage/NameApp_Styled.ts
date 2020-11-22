@@ -9,7 +9,7 @@ export const Div__NameApp = styled.div
   box-sizing: border-box;
   
   width: auto; 
-  height: 60px;
+  height: 50px;
   font-size: 1rem;
   border-radius: 0px;
   
@@ -25,7 +25,7 @@ export const Div__NameApp = styled.div
     width: auto;
     color: ${ ({theme})=>theme.color.FullPage.full_page_name_app___font };  
   
-	  font-size: 1.6rem;
+	  font-size: 1.4rem;
 	  font-weight: bold;
 	  
 	  margin-left: 10px;

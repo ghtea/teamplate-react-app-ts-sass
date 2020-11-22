@@ -71,43 +71,42 @@ function SignUp({}: PropsSignUp) {
         <Styled.Div__SignUp_TitlePage> Sign Up </Styled.Div__SignUp_TitlePage>
         
         <Styled.Div__SignUp_Identity> 
-          <div> email address </div>
-          <div> 
-            <input 
-              type='text' 
-              
-              value={inputEmail.value}
-              onChange={inputEmail.onChange}
-              
-              placeholder=""  
-            /> 
-          </div>
-          <div> {messageEmail} </div>
+          <input 
+            type='text' 
+            placeholder='Email Address'  
+            
+            value={inputEmail.value}
+            onChange={inputEmail.onChange} 
+          /> 
+          <div> Email Address </div>
         </Styled.Div__SignUp_Identity>
         
+        
+        
         <Styled.Div__SignUp_Password> 
-          <div> password </div>
-          <div> 
-            <input  
-              type='password'
-              value={inputPassword1.value}
-              onChange={inputPassword1.onChange}
-              
-              placeholder=""  
-            /> 
-          </div>
-          <div> 
-            <input 
-              type='password'
-              value={inputPassword2.value}
-              onChange={inputPassword2.onChange}
-              
-              placeholder="" 
-              onKeyPress={onKeyPress_SignUp}
-            /> 
-          </div>
-          <div> {messagePassword} </div>
+          <input 
+            type='password'
+            placeholder='Password'
+            
+            value={inputPassword1.value}
+            onChange={inputPassword1.onChange}
+          /> 
+          <div> Password </div>
         </Styled.Div__SignUp_Password> 
+        
+        <Styled.Div__SignUp_Password> 
+          <input 
+            type='password'
+            placeholder='Password Again'
+            
+            value={inputPassword2.value}
+            onChange={inputPassword2.onChange}
+            onKeyPress={onKeyPress_SignUp}
+          /> 
+          <div> Password Again </div>
+        </Styled.Div__SignUp_Password> 
+        
+        
         
         <Styled.Div__SignUp_Enter> 
           <button

@@ -29,16 +29,22 @@ function LogIn({}: PropsLogIn) {
       <Styled.Div__LogIn_TitlePage> Log In </Styled.Div__LogIn_TitlePage>
         
         <Styled.Div__LogIn_Identity> 
-          <div> email address </div>
-          <div> <input type='text' /> </div>
-          <div> message </div>
+          <input 
+            type='text'
+            placeholder='Email Address'  
+          /> 
+          <div> Email Address </div>
         </Styled.Div__LogIn_Identity>
         
         <Styled.Div__LogIn_Password> 
-          <div> password </div>
-          <div> <input type='password' /> </div>
-          <div> message </div>
+          <input 
+            type='password'
+            placeholder='Password'
+          /> 
+          <div> Password </div>
         </Styled.Div__LogIn_Password> 
+        
+        <div> message </div>
         
         <Styled.Div__LogIn_Enter> 
           <button> Log In </button>

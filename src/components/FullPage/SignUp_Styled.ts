@@ -58,29 +58,51 @@ export const Div__SignUp_Input = styled.div
   color: #000;
   
   width: 100%;
-  height: auto;
+  height: 56px;
   
   border-radius: 0px;
   
-  position: static;
-  
-  & > *:nth-child(n+2){
-    margin-top: 0px;
+  position: relative;
+
+  &:nth-child(n+2){
+    margin-top: 5px;
   }
   
   
   
-  & > div:nth-child(1) {
+  & > input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: flex-start;
+    border-radius: 5px;
+    
+    &:focus::placeholder { color:transparent; }
+    &:focus::-webkit-input-placeholder { color:transparent; }
+    &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+    &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+    &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+    
+    &:focus {
+      padding-top: 12px; 
+    }
+    &:focus + div{
+      display: block;
+    }
+  }
   
-    font-size: 1rem;
+  
+  & > div:nth-child(2) {
+    
+    display: none;
+    font-size: 0.8rem;
     color: ${ ({theme})=>theme.color.Content.label___font };  
     
-    height: 24px;
+    position: absolute;
+    top: 1px;
+    left: 8px;
   }
+  
   
   
 `;

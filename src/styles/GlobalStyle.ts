@@ -135,7 +135,7 @@ const GlobalStyle = createGlobalStyle`
       color: ${ ({theme})=>theme.color.GlobalStyle.input___font__focus };
       border: 2px solid ${ ({theme})=>theme.color.GlobalStyle.input___border__focus }; 
       outline: 1px solid ${ ({theme})=>theme.color.GlobalStyle.input___outline__focus };
-      border-radius: 0px !important;
+      border-radius: 0px;
       
       -webkit-box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };
       box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };

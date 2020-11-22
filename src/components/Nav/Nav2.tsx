@@ -38,13 +38,13 @@ function Nav2({}: PropsNav2) {
     },[history]
   );
   
-  const onClick_ShowHideSetting = useCallback(
+  const onClick_ShowSetting = useCallback(
     () => {
       dispatch(actionsStatus.return__REPLACE({ 
         listKey: ['showing', 'popup', 'setting'],
-        replacement: !showingSetting
+        replacement: true
       }))
-    },[showingSetting]
+    },[]
   );
   
   
@@ -100,7 +100,7 @@ function Nav2({}: PropsNav2) {
         
         <Styled.Div__Tool>
           <a
-            onClick={()=>onClick_ShowHideSetting()}
+            onClick={()=>onClick_ShowSetting()}
           >
             <IconSetting
               color={'inherit'}

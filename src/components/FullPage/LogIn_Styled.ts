@@ -55,52 +55,59 @@ export const Div__LogIn_Input = styled.div
   
   box-sizing: border-box;
   
-  background-color: transparent; 
-  color: #000;
   
   width: 100%;
-  height: auto;
+  height: 56px;
   
   border-radius: 0px;
   
-  position: static;
+  position: relative;
   
-  & > *:nth-child(n+2){
-    margin-top: px;
+  margin: 0px;
+  padding: 0px;
+  &:nth-child(n+2){
+    margin-top: 5px;
   }
   
   
   
-  & > div:nth-child(1) {
+  & > input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
     
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: flex-start;
-  
-    font-size: 1rem;
-    color: ${ ({theme})=>theme.color.Content.label___font };  
+    &:focus::placeholder { color:transparent; }
+    &:focus::-webkit-input-placeholder { color:transparent; }
+    &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+    &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+    &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     
-    height: 24px;
+    &:focus {
+      padding-top: 12px; 
+    }
+    &:focus + div{
+      display: block;
+    }
   }
   
   
   & > div:nth-child(2) {
-    height: 40px;
-    margin-top: 2px;
-    & > input {
-      width: 100%;
-      height: 100%;
-    }
+    
+    display: none;
+    font-size: 0.8rem;
+    color: ${ ({theme})=>theme.color.Content.label___font };  
+    
+    position: absolute;
+    top: 1px;
+    left: 8px;
   }
   
-  & > div:nth-child(3) {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
   
-    height: 22px;
-  }
+  
 `;
+
+
 
 
 
@@ -185,11 +192,11 @@ export const Div__LogIn_Social = styled.div
 `
   display: flex;
   flex-flow: row nowrap;   /* row */
-  justify-content: center; align-items: center;
+  justify-content: space-evenly; align-items: center;
   
   box-sizing: border-box;
 
-  width: auto;
+  width: 100%;
   height: auto;
   
   font-weight: normal;
@@ -206,12 +213,8 @@ export const Div__LogIn_Social = styled.div
     color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
     border-radius: 4px;
     
-    width: 100px;
+    width: 90px;
     height: 44px;
-    
-    &:nth-child(n+2){
-      margin-left: 20px;
-    }
     
     &:nth-child(1){
       background-color: ${ ({theme})=>theme.color.Share.button_google___bg };
