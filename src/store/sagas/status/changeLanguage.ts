@@ -37,7 +37,7 @@ function* changeLanguage(action: actionsStatus.type__CHANGE_LANGUAGE) {
         replacement: languageReplacement
     }) );
     
-    Cookies.set('languageCurrent', languageReplacement, { expires: 7, path: '/' });    
+    // Cookies.set('languageCurrent', languageReplacement, { expires: 7, path: '/' });    
     // go to home
         
 }

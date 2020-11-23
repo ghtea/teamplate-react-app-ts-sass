@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
+import store from 'tools/vanilla/store';
 
 import styled, {ThemeProvider }  from 'styled-components';
 
@@ -51,6 +52,30 @@ function App({}: PropsApp) {
     
   }, [location]);
   
+  
+  
+  
+  useEffect(() => {
+    const languageI18next:string = store.get('i18nextLng');
+    
+    if (languageI18next !== undefined){
+      
+      // https://github.com/ladjs/i18n-locales     list of codes
+      let replacement = '';
+      if (languageI18next === 'ko' || 'ko-KR'){
+        replacement = 'ko';
+      }
+      else {
+        replacement = 'en';
+      }
+      
+      dispatch(actionsStatus.return__REPLACE({
+        listKey:['current', 'language'],
+        replacement: replacement
+      }))
+    };
+    
+  }, [store]);
   
   
   
