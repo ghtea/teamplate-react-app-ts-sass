@@ -7,7 +7,7 @@ import {StateRoot} from 'store/reducers';
 import { v4 as uuidv4 } from 'uuid';
 
 import instanceI18n from 'language/i18n';
-import notification, {Situation} from 'language/notification';
+import catalogSituation, {KindSituation} from 'language/catalogSituation';
 
 
 function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
@@ -28,32 +28,32 @@ function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
     
     const code: string = action.payload.code;
     
-    const situation: Situation = notification[code]['situation'];
+    const kindSituation: KindSituation = catalogSituation[code]['kind'];
     
-    const message: string = instanceI18n.t(`Notification.${situation}.${code}`);
+    const message: string = instanceI18n.t(`Notification.${code}`);
     console.log(message);
     
     
     
     let msTime: actionsNotification.MsTimeBanner = actionsNotification.MsTimeBanner.normal;
-    if ( situation === 'success'){
-      msTime = actionsNotification.MsTimeBanner[ notification[code]['time'] || 'short' ];
+    if ( kindSituation === 'success'){
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'short' ];
     }
-    else if ( situation === 'hint'){
-      msTime = actionsNotification.MsTimeBanner[ notification[code]['time'] || 'normal' ];
+    else if ( kindSituation === 'hint'){
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'normal' ];
     }
-    else if ( situation === 'error'){
-      msTime = actionsNotification.MsTimeBanner[ notification[code]['time'] || 'long' ];
+    else if ( kindSituation === 'error'){
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'long' ];
     }
-    else if ( situation === 'warning'){
-      msTime = actionsNotification.MsTimeBanner[ notification[code]['time'] || 'normal' ];
+    else if ( kindSituation === 'warning'){
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'normal' ];
     }
     
     
     const bannerAdding = {
       id: id,  
       code: code, 
-      situation: situation,
+      kind: kindSituation,
       message: message,
       msTime: msTime 
     }

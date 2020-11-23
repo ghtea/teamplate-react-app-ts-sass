@@ -5,12 +5,12 @@ import instanceI18n from 'language/i18n';
 
 
 import * as actionsNotification from 'store/actions/notification';
-import {Situation} from 'language/notification';
+import {KindSituation} from 'language/catalogSituation';
 
-import { v4 as uuidv4 } from 'uuid';
+//import { v4 as uuidv4 } from 'uuid';
 import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
 //import defaultUsingColorAssignment from '../../styles/defaultUsingColorAssignment'
-import notification from 'language/notification';
+//import catalogSituation from 'language/catalogSituation';
 
 //import addNotification from './notification/addNotification';
 
@@ -22,7 +22,7 @@ import notification from 'language/notification';
 export type Banner = {
   id: string,  
   code: string, 
-  situation: Situation,
+  kind: KindSituation,
   message: string,
   msTime: number 
 }

@@ -22,6 +22,8 @@ function* readOptionTheme(action: actionsStatus.type__READ_OPTION_THEME) {
             listKey: ['current', 'theme', 'option'],
             replacement: optionThemeCookie
         }) );
+        
+        yield put( actionsStatus.return__DECIDE_THEME() );
     }
         
 }

@@ -27,19 +27,13 @@
     
     
     "Notification": {
-        "success": {
-            "test1": "Succuessfully tested 1 !",
-            "test2": "Succuessfully tested 2 !"
-        },
-        "hint": {
-            
-        },
-        "error": {
-            "log_in_failed": "Log In has failed"
-        },
-        "warning": {
-            
-        }
+        
+        
+        "test1": "Succuessfully tested 1 !",
+        "test2": "Succuessfully tested 2 !",
+        
+        "log_in_failed": "Log In has failed"
+        
     }
     
 }

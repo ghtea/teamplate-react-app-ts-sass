@@ -45,8 +45,8 @@ function Banner({
     return ({
       width: '24px',
       height:'24px',
-      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['situation']}`],
-      className: banner['situation'],
+      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kind']}`],
+      className: banner['kind'],
       kind: 'regular'  
     })
   }, []);
@@ -54,14 +54,14 @@ function Banner({
   
   return (
     <Styled.Div__Banner
-      className={banner['situation']}
-      situation={banner['situation']}
+      className={banner['kind']}
+      kind={banner['kind']}
     >
       <div>
-        {banner['situation'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
-        {banner['situation'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
-        {banner['situation'] === 'error' &&  <IconError {...propsIconSituation} /> }
-        {banner['situation'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
+        {banner['kind'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
+        {banner['kind'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
+        {banner['kind'] === 'error' &&  <IconError {...propsIconSituation} /> }
+        {banner['kind'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
       </div>
         
       <div> {banner['message']} </div>
@@ -73,15 +73,15 @@ function Banner({
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['situation']}`]}
-            className={banner['situation']}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kind']}`]}
+            className={banner['kind']}
             kind={'light'}
           />
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['situation']}`]}
-            className={banner['situation']}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kind']}`]}
+            className={banner['kind']}
             kind={'solid'}
           />
         </Styled.Button__Banner_Delete>

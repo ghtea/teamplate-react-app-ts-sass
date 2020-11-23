@@ -33,63 +33,68 @@ const requestSignUp = (bodyRequest: BodyRequest) => {
 function* signUp(action: actionsAuth.type__SIGN_UP) {
     try {
             
-            if (action.payload.email === "") {
-                //addDeleteNotification("auth01", language);
-            }
-            else if ( !(/\S+@\S+\.\S+/).test(action.payload.email) ){
-                //addDeleteNotification("auth021", language);
-            }
+        if (action.payload.email === "") {
+            console.log('type email address');
+            //addDeleteNotification("auth01", language);
+        }
+        else if ( !(/\S+@\S+\.\S+/).test(action.payload.email) ){
+            console.log('type valid email address');
+            //addDeleteNotification("auth021", language);
+        }
+        
+        else if (action.payload.password1 === "" || action.payload.password2 === "") {
+            console.log('type both passwords');
+            //addDeleteNotification("auth03", language);
+        }
+        else if (action.payload.password1 !== action.payload.password2) {
+            console.log('two passwords are different');
+            //addDeleteNotification("auth04", language);
+        }
+        else if (action.payload.password1.length < 6) {
+            console.log('password is too short');
+            //addDeleteNotification("auth04", language);
+        }
+        
+        else {
+        
             
-            else if (action.payload.password1 === "" || action.payload.password2 === "") {
-                //addDeleteNotification("auth03", language);
+            const bodyRequest = {
+                _id: uuidv4(),
+                email: action.payload.email, 
+                password: action.payload.password1
+            };
+        
+    
+            const res = yield call( requestSignUp, bodyRequest );
+    
+    
+            if (res.data.code_situation) {
+        
+                const code_situation = res.data.code_situation;
+                removeCookie('logged');
+                addDeleteNotification(code_situation, language);
             }
-            else if (action.payload.password1 !== action.payload.password2) {
-                //addDeleteNotification("auth04", language);
-            }
-            else if (action.payload.password1.length < 6) {
-                //addDeleteNotification("auth04", language);
-            }
+              
+             // 성공시
+            else if (res.status === 200) {
             
-            else {
-            
+                addDeleteNotification("auth08", language);
                 
-                const bodyRequest = {
-                    _id: uuidv4(),
-                    email: action.payload.email, 
-                    password: action.payload.password1
-                };
-            
-        
-                const res = yield call( requestSignUp, bodyRequest );
-        
-        
-                if (res.data.code_situation) {
-            
-                    const code_situation = res.data.code_situation;
-                    removeCookie('logged');
-                    addDeleteNotification(code_situation, language);
-                }
-                  
-                 // 성공시
-                else if (res.status === 200) {
+                // 배틀태그 확인하러 여행!
+                history.push( `${config.URL_FRONT}/log-in/`);
                 
-                    addDeleteNotification("auth08", language);
-                    
-                    // 배틀태그 확인하러 여행!
-                    history.push( `${config.URL_FRONT}/log-in/`);
-                    
-                    // Cookies.set('logged', 'yes', { expires: 7, path: '/' });    
-                }
-                  
-                  // 그 외 (에러는 못받아들이는듯)
-                else { 
-                    console.log(res) 
-                };
-                
-            } // higher else
-        
+                // Cookies.set('logged', 'yes', { expires: 7, path: '/' });    
+            }
+              
+              // 그 외 (에러는 못받아들이는듯)
+            else { 
+                console.log(res) 
+            };
+            
+        } // higher else
+    
 
-        // go to home
+    // go to home
         
         
     } catch (error) {

@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 import store from 'tools/vanilla/store';
 
 import styled, {ThemeProvider }  from 'styled-components';
 
 import {useSelector, useDispatch} from "react-redux";
+import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
-import { themeLight } from "./styles/theme";
+import { Theme, themeLight } from "./styles/theme";
 import GlobalStyle from 'styles/GlobalStyle';
 import 'styles/importFonts.css';
 
@@ -27,12 +28,11 @@ function App({}: PropsApp) {
   
   
   
-  const [isFullPage, setIsFullPage] = useState(false);
   
+  const [isFullPage, setIsFullPage] = useState(false);
   const listFullPage : string[] = [
     '/log-in', '/sign-up', '/lost'
   ];
-  
   useEffect(() => {
     
     const listMatched: RegExpMatchArray | null = (location.pathname).match( /\/[^\/]+/ );
@@ -78,16 +78,30 @@ function App({}: PropsApp) {
   }, [store]);
   
   
+  
+  const nameThemeCurrent:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
+  
   useEffect(() => {
-      
     dispatch(actionsStatus.return__READ_OPTION_THEME() );
-    
   }, []);
   
+  const themeCurrent:Theme = useMemo(
+    () => {
+      if (nameThemeCurrent === 'dark') {
+        console.log('dark theme')
+        return themeLight;
+      }
+      else {
+        return themeLight;
+      }
+    },[]
+  );
   
   return (
     
-    <ThemeProvider theme={themeLight}>
+    <ThemeProvider 
+      theme={ themeCurrent }
+    >
     
       <GlobalStyle />
       

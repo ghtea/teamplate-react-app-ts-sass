@@ -1,13 +1,13 @@
 import styled, {keyframes} from 'styled-components';
 import {Banner as TypeBanner} from 'store/reducers/notification';
-import {Situation} from 'language/notification';
+import {KindSituation} from 'language/catalogSituation';
 
 
 /* 이런 방식이 안된다... T.T
   background-color: ${({theme, situation})=>theme.color.Notification[`banner___bg__${situation}`]};
 */
   
-export const Div__Banner = styled.div<{situation: Situation}>
+export const Div__Banner = styled.div<{kind: KindSituation}>
 `
   display: flex;
   flex-flow: row nowrap;   /* row */
