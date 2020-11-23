@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next'
+import Cookies from 'js-cookie';
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -46,7 +47,8 @@ function Setting({}: PropsSetting) {
       dispatch(actionsStatus.return__REPLACE({
         listKey: ['current', 'theme', 'option'],
         replacement: replacement
-      }) )
+      }) );
+      Cookies.set('optionTheme', replacement, { expires: 14});
     }, []
   );
   

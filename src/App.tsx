@@ -78,6 +78,12 @@ function App({}: PropsApp) {
   }, [store]);
   
   
+  useEffect(() => {
+      
+    dispatch(actionsStatus.return__READ_OPTION_THEME() );
+    
+  }, []);
+  
   
   return (
     

@@ -41,3 +41,17 @@ export const return__CHANGE_LANGUAGE = (payload?: Payload__CHANGE_LANGUAGE) => {
 };
 
 export type type__CHANGE_LANGUAGE = ReturnType<typeof return__CHANGE_LANGUAGE>;
+
+
+
+
+export const name__READ_OPTION_THEME: string = `status/READ_OPTION_THEME`;    // 뒤에 as const 를 붙이면 reducer 에서 status.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+
+
+export const return__READ_OPTION_THEME = () => {    
+    return {
+        type: name__READ_OPTION_THEME
+    }
+};
+
+export type type__READ_OPTION_THEME = ReturnType<typeof return__READ_OPTION_THEME>;
