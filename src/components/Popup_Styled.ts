@@ -18,7 +18,7 @@ export const Div__Popup = styled.div
   
   
   width: calc(100vw - 20px); max-width: ${({theme})=> (theme.size.device.minWidth_xs - 20)}px;
-  height: auto; max-height: 90vh;
+  height: auto; max-height: 90vh;  min-height: 100px;
   font-size: 1rem;
   border-radius: 12px;
   

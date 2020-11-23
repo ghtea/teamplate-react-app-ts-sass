@@ -85,6 +85,7 @@ export const Div__SignUp_Input = styled.div
     
     &:focus {
       padding-top: 12px; 
+      border-radius: 5px;
     }
     &:focus + div{
       display: block;

@@ -17,8 +17,7 @@ export const Div__Setting_Header = styled.div
   
   box-sizing: border-box;
   
-  border-bottom: 1px solid ${({theme})=>theme.color.Popup.popup___border };
-   
+  
   /*
   
   background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
@@ -35,7 +34,7 @@ export const Div__Setting_Header = styled.div
   border-radius: 0px;
   
   position: static;
-  overflow: hidden;
+  overflow: auto;
   flex-grow: 0;
   flex-shrink: 0;
   
@@ -60,6 +59,8 @@ export const Div__Setting_Content = styled.div
   flex-flow: column nowrap;   /* row */
   justify-content: space-between; align-items: flex-start;
   
+  border-top: 1px solid ${({theme})=>theme.color.Popup.popup___border };
+   
   box-sizing: border-box;
   
   /*
@@ -74,7 +75,7 @@ export const Div__Setting_Content = styled.div
   */
   
   width: calc(100% - 20px);
-  height: auto;
+  height: auto;  min-height: 50px;
   flex-grow: 1;
   flex-shrink: 1;
   
@@ -87,7 +88,7 @@ export const Div__Setting_Content = styled.div
   
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 5px 0px; /* top right bottom left */
+  padding: 0px 0px 10px 0px; /* top right bottom left */
   
 `;
 
@@ -148,7 +149,7 @@ export const Div__Setting_Content_Section = styled.div
       border-radius: 5px;
       padding: 0px 4px 0px 4px; /* top right bottom left */
       
-      background-color: ${({theme})=>theme.color.Popup.setting_option___bg};
+      
       cursor: pointer;
       
       &:nth-child(n+2){
@@ -158,3 +159,11 @@ export const Div__Setting_Content_Section = styled.div
     }
   }
 `;
+
+
+export const Button__Option = styled.div<{active:boolean}>
+`
+  background-color: ${({theme, active})=>(active===true) ? 
+    theme.color.Popup.setting_option___bg :
+    'transparent'};
+`

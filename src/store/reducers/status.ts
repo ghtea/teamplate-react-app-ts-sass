@@ -29,7 +29,7 @@ const stateInitial = {
     
     
     theme: {
-      option: '',
+      option: 'light',
       name: 'themeLight'
     }
   },

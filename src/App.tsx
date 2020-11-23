@@ -62,18 +62,16 @@ function App({}: PropsApp) {
       
       <Notification />
       <Popup />
-      { 
-        isFullPage ? (
-          <FullPage/>
-        ) : (
-          <>
-            <Nav/>
-            <Content/>
-          </>
-        ) 
+      
+      {isFullPage && <FullPage/>}
+      
+      {!isFullPage && 
+        <>
+          <Nav/>
+          <Content/>
+        </>
       }
       
-  
     </ThemeProvider>
     
   );

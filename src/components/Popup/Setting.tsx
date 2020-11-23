@@ -19,7 +19,10 @@ function Setting({}: PropsSetting) {
   
   const dispatch = useDispatch();
   const history = useHistory();
-  
+
+  const languageCurrent:string = useSelector((state: StateRoot) => state['status']['current']['language']);
+  const optionThemeCurrent:string = useSelector((state: StateRoot) => state['status']['current']['theme']['option']);
+
   const { t } = useTranslation();
   
   const onClick_HideSetting = useCallback(
@@ -37,6 +40,15 @@ function Setting({}: PropsSetting) {
     },[history]
   );
   
+  
+  const onClick_ChangeOptionTheme = useCallback(
+    (replacement:string) => {
+      dispatch(actionsStatus.return__REPLACE({
+        listKey: ['current', 'theme', 'option'],
+        replacement: replacement
+      }) )
+    }, []
+  );
   
   const onClick_ChangeLanguage = useCallback(
     (replacement:string) => {
@@ -69,26 +81,37 @@ function Setting({}: PropsSetting) {
         <Styled.Div__Setting_Content_Section>
           <div> Theme </div>
           <div>
-            <div> auto </div>
-            <div> light </div>
-            <div> dark </div>
+            <Styled.Button__Option 
+              onClick={()=>onClick_ChangeOptionTheme('auto')}
+              active={optionThemeCurrent === 'auto'}
+            > auto 
+            </Styled.Button__Option>
+            <Styled.Button__Option 
+              onClick={()=>onClick_ChangeOptionTheme('light')}
+              active={optionThemeCurrent === 'light'}
+            > light 
+            </Styled.Button__Option>
+            <Styled.Button__Option 
+              onClick={()=>onClick_ChangeOptionTheme('dark')}
+              active={optionThemeCurrent === 'dark'}
+            > dark 
+            </Styled.Button__Option>
           </div>
         </Styled.Div__Setting_Content_Section>
         
         <Styled.Div__Setting_Content_Section>
           <div> Language </div>
           <div>
-            <div onClick={()=>onClick_ChangeLanguage('en')}> English </div>
-            <div onClick={()=>onClick_ChangeLanguage('ko')}> Korean </div>
-          </div>
-        </Styled.Div__Setting_Content_Section>
-        
-        <Styled.Div__Setting_Content_Section>
-          <div> Theme </div>
-          <div>
-            <div> auto </div>
-            <div> light </div>
-            <div> dark </div>
+            <Styled.Button__Option 
+              onClick={()=>onClick_ChangeLanguage('en')}
+              active={languageCurrent === 'en'}
+            > English 
+            </Styled.Button__Option>
+            <Styled.Button__Option 
+              onClick={()=>onClick_ChangeLanguage('ko')}
+              active={languageCurrent === 'ko'}
+            > 한국어 
+            </Styled.Button__Option>
           </div>
         </Styled.Div__Setting_Content_Section>
         
