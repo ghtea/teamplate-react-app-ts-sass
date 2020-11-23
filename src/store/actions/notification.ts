@@ -5,6 +5,7 @@ export enum MsTimeBanner {
   long = 5000,
   lasting = 10000
 }
+export type TimeBanner = 'normal' | 'short' | 'long' | 'lasting';
 
 
 

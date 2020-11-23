@@ -45,8 +45,8 @@ function Banner({
     return ({
       width: '24px',
       height:'24px',
-      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kind']}`],
-      className: banner['kind'],
+      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kindSituation']}`],
+      className: banner['kindSituation'],
       kind: 'regular'  
     })
   }, []);
@@ -54,14 +54,14 @@ function Banner({
   
   return (
     <Styled.Div__Banner
-      className={banner['kind']}
-      kind={banner['kind']}
+      className={banner['kindSituation']}
+      kindSituation={banner['kindSituation']}
     >
       <div>
-        {banner['kind'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
-        {banner['kind'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
-        {banner['kind'] === 'error' &&  <IconError {...propsIconSituation} /> }
-        {banner['kind'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
+        {banner['kindSituation'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
+        {banner['kindSituation'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
+        {banner['kindSituation'] === 'error' &&  <IconError {...propsIconSituation} /> }
+        {banner['kindSituation'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
       </div>
         
       <div> {banner['message']} </div>
@@ -73,15 +73,15 @@ function Banner({
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kind']}`]}
-            className={banner['kind']}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+            className={banner['kindSituation']}
             kind={'light'}
           />
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kind']}`]}
-            className={banner['kind']}
+            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+            className={banner['kindSituation']}
             kind={'solid'}
           />
         </Styled.Button__Banner_Delete>

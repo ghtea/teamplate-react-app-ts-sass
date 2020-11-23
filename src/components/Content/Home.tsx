@@ -16,7 +16,7 @@ function Home({}: PropsHome) {
   const dispatch = useDispatch();
   
   const onClick_AddTestingBanner = useCallback(
-    (code) => {
+    (code:string) => {
       dispatch(actionsNotification.return__ADD_DELETE_BANNER({
         code: code
       }) )

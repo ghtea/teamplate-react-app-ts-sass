@@ -7,7 +7,7 @@ import {KindSituation} from 'language/catalogSituation';
   background-color: ${({theme, situation})=>theme.color.Notification[`banner___bg__${situation}`]};
 */
   
-export const Div__Banner = styled.div<{kind: KindSituation}>
+export const Div__Banner = styled.div<{kindSituation: KindSituation}>
 `
   display: flex;
   flex-flow: row nowrap;   /* row */

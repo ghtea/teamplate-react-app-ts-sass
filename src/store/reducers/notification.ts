@@ -5,7 +5,7 @@ import instanceI18n from 'language/i18n';
 
 
 import * as actionsNotification from 'store/actions/notification';
-import {KindSituation} from 'language/catalogSituation';
+import {CatalogSituation, KindSituation} from 'language/catalogSituation';
 
 //import { v4 as uuidv4 } from 'uuid';
 import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
@@ -21,8 +21,8 @@ import putValueToNestedObject from 'tools/vanilla/putValueToNestedObject';
 
 export type Banner = {
   id: string,  
-  code: string, 
-  kind: KindSituation,
+  codeSituation: string, 
+  kindSituation: KindSituation,
   message: string,
   msTime: number 
 }
