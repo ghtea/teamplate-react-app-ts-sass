@@ -34,7 +34,7 @@ export type type__REPLACE = ReturnType<typeof return__REPLACE>;
 export const name__ADD_DELETE_BANNER: string = `notification/ADD_DELETE_BANNER`;
 
 interface Payload__ADD_DELETE_BANNER {
-    code: string;
+    codeSituation: string;
 }
 
 export const return__ADD_DELETE_BANNER = (payload: Payload__ADD_DELETE_BANNER) => {    

@@ -167,22 +167,22 @@ export const Div__LogIn_Enter = styled.div
   justify-content: space-evenly; align-items: center;
   
   box-sizing: border-box;
-
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
-  
-  width: 100%;
-  height: 44px;
-  
-  font-weight: normal;
-  border-radius: 4px;
   
   position: static;
   
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  & > div {
+  & > button {
+  
+    background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
+    color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+  
+    width: 100%;
+    height: 44px;
+    
+    font-weight: normal;
+    border-radius: 4px;
     font-size: 1.2rem;
   }
   

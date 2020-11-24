@@ -39,16 +39,13 @@ function SignUp({}: PropsSignUp) {
   
   const onClick_SignUp = useCallback(
     () => {
-      if (!inputEmail.value || !inputPassword1.value || !inputPassword2.value) {
-        console.log('enter text')
-      }
-      else {
-        dispatch(actionsAuth.return__SIGN_UP({
-          email: inputEmail.value,
-          password1: inputPassword1.value,
-          password2: inputPassword2.value
-        }));
-      }
+      
+      dispatch(actionsAuth.return__SIGN_UP({
+        email: inputEmail.value,
+        password1: inputPassword1.value,
+        password2: inputPassword2.value
+      }));
+      
     },
     [inputEmail, inputPassword1, inputPassword2]
   );
@@ -110,7 +107,7 @@ function SignUp({}: PropsSignUp) {
         
         <Styled.Div__SignUp_Enter> 
           <button
-            onClick={onClick_SignUp}
+            onClick={()=>onClick_SignUp()}
           > Sign Up </button>
         </Styled.Div__SignUp_Enter> 
         

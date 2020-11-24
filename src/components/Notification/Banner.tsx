@@ -51,6 +51,7 @@ function Banner({
     })
   }, []);
 
+  console.log(banner);
   
   return (
     <Styled.Div__Banner

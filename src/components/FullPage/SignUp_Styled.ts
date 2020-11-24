@@ -204,11 +204,9 @@ export const Div__SignUp_Enter = styled.div
   
   box-sizing: border-box;
 
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
   
   width: 100%;
-  height: 44px;
+  height: auto;
   
   font-weight: normal;
   border-radius: 4px;
@@ -218,7 +216,12 @@ export const Div__SignUp_Enter = styled.div
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  & > div {
+  & > button {
+    background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
+  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+  
+    width: 100%;
+    height: 44px;
     font-size: 1.2rem;
   }
   

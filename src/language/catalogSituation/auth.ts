@@ -2,14 +2,24 @@
 import {CatalogSituation} from 'language/catalogSituation';
 
 
-const notificationAuth: CatalogSituation = {
+const catalogSituationAuth: CatalogSituation = {
     
-    'log_in_failed': {
+    'LogIn_Failed': {
         kind: 'error'
-        
-    }
+    },
     
+    
+    
+    'SignUp_Succeeded': {
+        kind: 'success'
+    },
+    'SignUp_DuplicateEmail': {
+        kind: 'error'
+    },
+    'SignUp_UnknownError': {
+        kind: 'error'
+    }
     
 }
 
-export default notificationAuth;
+export default catalogSituationAuth;

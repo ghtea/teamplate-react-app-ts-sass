@@ -26,13 +26,13 @@ const requestSignUp = (bodyRequest: BodyRequest) => {
         password
     }
     */  
-    return axios.post(`${config.URL_BACK}/auth/sign-up`, bodyRequest, {withCredentials: true});
+    return axios.post(`${config.URL_BACK}/auth/sign-up`, bodyRequest);
 };
 
 
 function* signUp(action: actionsAuth.type__SIGN_UP) {
     try {
-            
+            console.log(action)
         if (action.payload.email === "") {
             console.log('type email address');
             //addDeleteNotification("auth01", language);
@@ -67,29 +67,35 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
     
             const res = yield call( requestSignUp, bodyRequest );
     
-    
-            if (res.data.code_situation) {
-        
-                const code_situation = res.data.code_situation;
-                removeCookie('logged');
-                addDeleteNotification(code_situation, language);
-            }
-              
-             // 성공시
-            else if (res.status === 200) {
+            const codeSituation = res.data.codeSituation;
             
-                addDeleteNotification("auth08", language);
+            if (codeSituation === 'SignUp_UnknownError') {
                 
-                // 배틀태그 확인하러 여행!
-                history.push( `${config.URL_FRONT}/log-in/`);
+                //Cookies.remove('logged');
                 
-                // Cookies.set('logged', 'yes', { expires: 7, path: '/' });    
+            }
+            else if (codeSituation === 'SignUp_DuplicateEmail') {
+                
+                //Cookies.remove('logged');
+                
+            }
+            else if (codeSituation === 'SignUp_Succeeded') {
+                
+                //Cookies.remove('logged');
+                console.log(res.data.payload)
+                // const user = res.data.payload;
+                // Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['ready', 'user'],
+                    replacement: false
+                }) );
+            
+            }
+            else {
+                console.log('no code of situation');
             }
               
-              // 그 외 (에러는 못받아들이는듯)
-            else { 
-                console.log(res) 
-            };
             
         } // higher else
     
@@ -99,18 +105,8 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
         
     } catch (error) {
         
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['loading', 'user'],
-                replacement: false
-            }) );
-            
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['ready', 'user'],
-                replacement: false
-            }) );
-            
         console.log(error);
-        console.log('LOG_IN has been failed');
+        console.log('sign up has been failed');
         
         // clear inputs
     }

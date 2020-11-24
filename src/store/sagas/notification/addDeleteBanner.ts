@@ -26,34 +26,34 @@ function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
     }
     */
     
-    const code: string = action.payload.code;
+    const codeSituation: string = action.payload.codeSituation;
     
-    const kindSituation: KindSituation = catalogSituation[code]['kind'];
+    const kindSituation: KindSituation = catalogSituation[codeSituation]['kind'];
     
-    const message: string = instanceI18n.t(`Notification.${code}`);
+    const message: string = instanceI18n.t(`Notification.${codeSituation}`);
     console.log(message);
     
     
     
     let msTime: actionsNotification.MsTimeBanner = actionsNotification.MsTimeBanner.normal;
     if ( kindSituation === 'success'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'short' ];
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'short' ];
     }
     else if ( kindSituation === 'hint'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'normal' ];
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'normal' ];
     }
     else if ( kindSituation === 'error'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'long' ];
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'long' ];
     }
     else if ( kindSituation === 'warning'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[code]['time'] || 'normal' ];
+      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'normal' ];
     }
     
     
     const bannerAdding = {
       id: id,  
-      code: code, 
-      kind: kindSituation,
+      codeSituation: codeSituation, 
+      kindSituation: kindSituation,
       message: message,
       msTime: msTime 
     }

@@ -1,15 +1,15 @@
 
 import {CatalogSituation} from 'language/catalogSituation';
 
-const notificationStatus: CatalogSituation = {
+const catalogSituationStatus: CatalogSituation = {
     
-    'test1': {
+    'Test1': {
         kind: 'success'
     },
-    'test2': {
-        kind: 'success'
+    'Test2': {
+        kind: 'hint'
     }
     
 }
 
-export default notificationStatus;
+export default catalogSituationStatus;
