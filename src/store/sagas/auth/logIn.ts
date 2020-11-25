@@ -3,89 +3,101 @@ import axios from "axios";
 import queryString from 'query-string';
 
 import Cookies from 'js-cookie';
+import { v4 as uuidv4 } from 'uuid';
 
 import * as config from 'config';
 
 import * as actionsStatus from "store/actions/status";
 import * as actionsAuth from "store/actions/auth";
-//import * as actionsTheme from "../../actions/theme";
+import * as actionsNotification from "store/actions/notification";
 
 
 
-interface BodyReq {
-    identification: string;
+interface BodyRequest {
+    email: string;
     password: string;
 }
 
-const requestLogIn = (bodyReq: BodyReq) => {
+const requestLogIn = (bodyRequest: BodyRequest) => {
     
-    /*
-    let bodyReq = {
-        identification, 
-        password
-    }
-    */  
-    return axios.post(`${config.URL_BACK}/auth/log-in`, bodyReq, {withCredentials: true});
+    return axios.post(`${config.URL_BACK}/auth/log-in`, bodyRequest, {withCredentials: true})
+    
+        .then(response => { 
+        	//console.log(response)
+        	return response;
+        })
+        .catch(error => {
+            //console.log(error.response)
+            return error.response;
+        });
 };
 
 
 function* logIn(action: actionsAuth.type__LOG_IN) {
     try {
         
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['ready', 'user'],
-                replacement: false
-            }) );
+        if (action.payload.email === "") {
+            console.log('type email address');
+            //addDeleteNotification("auth01", language);
+        }
+        else if ( !(/\S+@\S+\.\S+/).test(action.payload.email) ){
+            console.log('type valid email address');
+            //addDeleteNotification("auth021", language);
+        }
+        
+        else if (action.payload.password === "") {
+            console.log('type password');
+            //addDeleteNotification("auth03", language);
+        }
+        
+        
+        else {
+        
             
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['loading', 'user'],
-                replacement: true
-            }) );
+            const bodyRequest = {
+                email: action.payload.email, 
+                password: action.payload.password
+            };
         
-        
-        const bodyReq = {
-            identification: action.payload.email, 
-            password: action.payload.password
-        };
-        
-        const { data } = yield call( requestLogIn, bodyReq );
-        //console.log(data);
-        
-        // main
-        yield put( actionsAuth.return__REPLACE({
-            listKey: ['user'],
-            replacement: data
-        }) );
     
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['loading', 'user'],
-                replacement: false
-            }) );
+            const res = yield call( requestLogIn, bodyRequest );
+            console.log(res);
             
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['ready', 'user'],
-                replacement: true
-            }) );
-        
+            const codeSituation = res.data.codeSituation;
+            
+            if (codeSituation === 'LogIn_Succeeded') {
+                
+                //Cookies.remove('logged');
+                console.log(res.data.payload)
+                // const user = res.data.payload;
+                Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['ready', 'user'],
+                    replacement: true
+                }) );
+            
+            }
+            else {
+                
+                // SignUp_UnknownError, SignUp_DuplicateEmail
+                yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+                    codeSituation: codeSituation
+                }) );
+            
+            }
+            
+            
+        } // higher else
+    
 
-        Cookies.set('logged', 'yes', { expires: 7, path: '/' });    
-        // go to home
+    // go to home
         
         
     } catch (error) {
         
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['loading', 'user'],
-                replacement: false
-            }) );
-            
-            yield put( actionsStatus.return__REPLACE({
-                listKey: ['ready', 'user'],
-                replacement: false
-            }) );
-            
         console.log(error);
-        console.log('LOG_IN has been failed');
+        console.log('log in has been failed');
         
         // clear inputs
     }

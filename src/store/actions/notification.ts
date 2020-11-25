@@ -3,9 +3,9 @@ export enum MsTimeBanner {
   normal = 3000,
   short = 2000,
   long = 5000,
-  lasting = 10000
+  lasting = 0
 }
-export type TimeBanner = 'normal' | 'short' | 'long' | 'lasting';
+export type LevelTimeBanner = 'normal' | 'short' | 'long' | 'lasting';
 
 
 
@@ -65,6 +65,42 @@ export const return__DELETE_BANNER = (payload: Payload__DELETE_BANNER) => {
 
 export type type__DELETE_BANNER = ReturnType<typeof return__DELETE_BANNER>;
 
+
+
+
+export const name__ADD_CODE_SITUATION_SPECIAL: string = `notification/ADD_CODE_SITUATION_SPECIAL`;
+
+interface Payload__ADD_CODE_SITUATION_SPECIAL {
+    codeSituation: string;
+}
+
+export const return__ADD_CODE_SITUATION_SPECIAL = (payload: Payload__ADD_CODE_SITUATION_SPECIAL) => {    
+    return {
+        type: name__ADD_CODE_SITUATION_SPECIAL,
+        payload: payload
+    }
+};
+
+export type type__ADD_CODE_SITUATION_SPECIAL = ReturnType<typeof return__ADD_CODE_SITUATION_SPECIAL>;
+
+
+
+
+export const name__DELETE_CODE_SITUATION_SPECIAL: string = `notification/DELETE_CODE_SITUATION_SPECIAL`;
+
+interface Payload__DELETE_CODE_SITUATION_SPECIAL {
+    codeSituation?: string;
+    regex?: RegExp
+}
+
+export const return__DELETE_CODE_SITUATION_SPECIAL = (payload: Payload__DELETE_CODE_SITUATION_SPECIAL) => {    
+    return {
+        type: name__DELETE_CODE_SITUATION_SPECIAL,
+        payload: payload
+    }
+};
+
+export type type__DELETE_CODE_SITUATION_SPECIAL = ReturnType<typeof return__DELETE_CODE_SITUATION_SPECIAL>;
 
 
 

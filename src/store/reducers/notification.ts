@@ -27,13 +27,21 @@ export type Banner = {
   msTime: number 
 }
 
+
+//export type State = typeof stateInitial;
+
+
 export type State = {
-  listBanner: Banner[]
+  listBanner: Banner[],
+  listCodeSituationSpecial: string[]
 }
 
-const stateInitial: State = {
+
+const stateInitial = {
   
-  listBanner: []
+  listBanner: [],
+  
+  listCodeSituationSpecial: []
   
 };
 

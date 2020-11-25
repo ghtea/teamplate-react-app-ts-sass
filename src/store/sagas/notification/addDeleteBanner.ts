@@ -34,21 +34,23 @@ function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
     console.log(message);
     
     
+    let levelTimeBanner:actionsNotification.LevelTimeBanner = 'normal';
     
-    let msTime: actionsNotification.MsTimeBanner = actionsNotification.MsTimeBanner.normal;
+    
     if ( kindSituation === 'success'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'short' ];
+      levelTimeBanner = catalogSituation[codeSituation]['levelTimeBanner'] || 'short';
     }
     else if ( kindSituation === 'hint'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'normal' ];
+      levelTimeBanner = catalogSituation[codeSituation]['levelTimeBanner'] || 'normal';
     }
     else if ( kindSituation === 'error'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'long' ];
+      levelTimeBanner = catalogSituation[codeSituation]['levelTimeBanner'] || 'long';
     }
     else if ( kindSituation === 'warning'){
-      msTime = actionsNotification.MsTimeBanner[ catalogSituation[codeSituation]['time'] || 'normal' ];
+      levelTimeBanner = catalogSituation[codeSituation]['levelTimeBanner'] || 'normal';
     }
     
+    let msTime: actionsNotification.MsTimeBanner = actionsNotification.MsTimeBanner[levelTimeBanner];
     
     const bannerAdding = {
       id: id,  
@@ -66,12 +68,14 @@ function* addDeleteBanner(action: actionsNotification.type__ADD_DELETE_BANNER) {
         replacement: listBannerNew
     }) );
     
-    yield delay( msTime );
+    if (levelTimeBanner !== 'lasting'){
+      yield delay( msTime );
     
-    yield put( actionsNotification.return__DELETE_BANNER({
-        id: id
-    }) );
-  
+      yield put( actionsNotification.return__DELETE_BANNER({
+          id: id
+      }) );
+    }
+    
 }
 
 export default addDeleteBanner;

@@ -1,7 +1,7 @@
 
 import catalogSituationAuth from './catalogSituation/auth';
 import catalogSituationStatus from './catalogSituation/status';
-import {TimeBanner} from 'store/actions/notification';
+import {LevelTimeBanner} from 'store/actions/notification';
 
 
 export type KindSituation = 'success' | 'hint'| 'error' | 'warning';
@@ -9,7 +9,7 @@ export type KindSituation = 'success' | 'hint'| 'error' | 'warning';
 export interface CatalogSituation {
     [index:string]: {
         kind: KindSituation;
-        time?: TimeBanner;
+        levelTimeBanner?: LevelTimeBanner;
     };
 }
 

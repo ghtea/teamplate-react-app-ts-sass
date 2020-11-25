@@ -63,3 +63,15 @@ export const return__SIGN_UP = (payload: Payload__SIGN_UP) => {
 };
 
 export type type__SIGN_UP = ReturnType<typeof return__SIGN_UP>;
+
+
+
+export const name__LOG_CHECK = 'auth/LOG_CHECKP';
+
+export const return__LOG_CHECK = () => {
+    return {
+        type: name__LOG_CHECK
+    }
+};
+
+export type type__LOG_CHECK = ReturnType<typeof return__LOG_CHECK>;

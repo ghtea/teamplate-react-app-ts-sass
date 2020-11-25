@@ -8,6 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 import * as config from 'config';
 
 import * as actionsStatus from "store/actions/status";
+import * as actionsNotification from "store/actions/notification";
+
 import * as actionsAuth from "store/actions/auth";
 //import * as actionsTheme from "../../actions/theme";
 
@@ -20,13 +22,16 @@ interface BodyRequest {
 
 const requestSignUp = (bodyRequest: BodyRequest) => {
     
-    /*
-    let bodyReq = {
-        email, 
-        password
-    }
-    */  
-    return axios.post(`${config.URL_BACK}/auth/sign-up`, bodyRequest);
+    return axios.post(`${config.URL_BACK}/auth/sign-up`, bodyRequest, {withCredentials: true})
+    
+        .then(response => { 
+        	//console.log(response)
+        	return response;
+        })
+        .catch(error => {
+            //console.log(error.response)
+            return error.response;
+        });
 };
 
 
@@ -56,44 +61,40 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
         }
         
         else {
-        
             
             const bodyRequest = {
                 _id: uuidv4(),
                 email: action.payload.email, 
                 password: action.payload.password1
             };
-        
-    
+            
+           
+            
             const res = yield call( requestSignUp, bodyRequest );
-    
+            console.log(res);
+            
             const codeSituation = res.data.codeSituation;
             
-            if (codeSituation === 'SignUp_UnknownError') {
-                
-                //Cookies.remove('logged');
-                
-            }
-            else if (codeSituation === 'SignUp_DuplicateEmail') {
-                
-                //Cookies.remove('logged');
-                
-            }
-            else if (codeSituation === 'SignUp_Succeeded') {
+            if (codeSituation === 'SignUp_Succeeded') {
                 
                 //Cookies.remove('logged');
                 console.log(res.data.payload)
                 // const user = res.data.payload;
-                // Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
+                Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
                 
                 yield put( actionsStatus.return__REPLACE({
                     listKey: ['ready', 'user'],
-                    replacement: false
+                    replacement: true
                 }) );
             
             }
             else {
-                console.log('no code of situation');
+                
+                // SignUp_UnknownError, SignUp_DuplicateEmail
+                yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+                    codeSituation: codeSituation
+                }) );
+            
             }
               
             
