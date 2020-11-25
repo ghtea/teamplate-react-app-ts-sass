@@ -80,7 +80,7 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
                 //Cookies.remove('logged');
                 console.log(res.data.payload)
                 // const user = res.data.payload;
-                Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
+                Cookies.set('logged_in', 'yes', { expires: 7, path: '/' });  
                 
                 yield put( actionsStatus.return__REPLACE({
                     listKey: ['ready', 'user'],
@@ -90,6 +90,7 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
             }
             else {
                 
+                console.log(codeSituation);
                 // SignUp_UnknownError, SignUp_DuplicateEmail
                 yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
                     codeSituation: codeSituation
@@ -109,7 +110,9 @@ function* signUp(action: actionsAuth.type__SIGN_UP) {
         console.log(error);
         console.log('sign up has been failed');
         
-        // clear inputs
+        yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+            codeSituation: 'SignUp_UnknownError'
+        }) );
     }
 }
 

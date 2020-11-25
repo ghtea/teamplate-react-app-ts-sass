@@ -9,7 +9,7 @@ import * as config from 'config';
 
 import * as actionsStatus from "store/actions/status";
 import * as actionsAuth from "store/actions/auth";
-//import * as actionsTheme from "../../actions/theme";
+import * as actionsNotification from "store/actions/notification";
 
 
 
@@ -18,14 +18,23 @@ interface BodyRequest {
     password: string;
 }
 
-const requestLogCheck = (bodyRequest: BodyRequest) => {
+const requestLogCheck = () => {
     
-    return axios.post(`${config.URL_BACK}/auth/log-in`, bodyRequest, {withCredentials: true});
-    // return axios.get('https://back.nextstorm.co/comp');
+    return axios.get(`${config.URL_BACK}/auth/log-check`, {withCredentials: true})
+    
+        .then(response => { 
+        	//console.log(response)
+        	return response;
+        })
+        .catch(error => {
+            //console.log(error.response)
+            return error.response;
+        });
+    
 };
 
 
-function* logCheck(action: actionsAuth.type__LOG_IN) {
+function* logCheck(action: actionsAuth.type__LOG_CHECK) {
     try {
         
         yield put( actionsStatus.return__REPLACE({
@@ -38,18 +47,14 @@ function* logCheck(action: actionsAuth.type__LOG_IN) {
             replacement: true
         }) );
         
-        const logged = Cookies.get('logged') 
+        const loggedIn = Cookies.get('logged_in') 
         
-        if(!logged) {
-            console.log("no logged user");
+        if(!loggedIn) {
+            
+            console.log("no logged in user");
             
             //replaceDataAuth("user", {});
             yield put( actionsAuth.return__REPLACE({
-                listKey: ['ready', 'user'],
-                replacement: false
-            }) );
-            
-            yield put( actionsStatus.return__REPLACE({
                 listKey: ['loading', 'user'],
                 replacement: false
             }) );
@@ -59,48 +64,58 @@ function* logCheck(action: actionsAuth.type__LOG_IN) {
                 replacement: false
             }) );
             
+            
             return; // 로그인 정보가 없다면 여기서 멈춥니다.
         } 
         
         else {
         
-            
-            const bodyRequest = {
-                email: action.payload.email, 
-                password: action.payload.password
-            };
-        
     
-            const res = yield call( requestLogCheck, bodyRequest );
+            const res = yield call( requestLogCheck );
             
             console.log(res);
             
             const codeSituation = res.data.codeSituation;
             
-            if (codeSituation === 'LogCheck_UnknownError') {
-                
-                //Cookies.remove('logged');
-                
-            }
-            else if (codeSituation === 'LogCheck_WrongPassword') {
-                
-                //Cookies.remove('logged');
-                
-            }
-            else if (codeSituation === 'LogCheck_Succeeded') {
+            if (codeSituation === 'LogCheck_Succeeded') {
                 
                 //Cookies.remove('logged');
                 console.log(res.data.payload)
-                // const user = res.data.payload;
-                Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
                 
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['loading', 'user'],
+                    replacement: false
+                }) );
                 
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['ready', 'user'],
+                    replacement: true
+                }) );
             
             }
             else {
-                console.log('no code of situation');
+                
+                console.log(codeSituation);
+                
+                // SignUp_UnknownError, SignUp_DuplicateEmail
+                yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+                    codeSituation: codeSituation
+                }) );
+                
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['loading', 'user'],
+                    replacement: false
+                }) );
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['ready', 'user'],
+                    replacement: false
+                }) );
+                
+                Cookies.remove('logged_in')
             }
-              
+            
             
         } // higher else
     
@@ -111,8 +126,22 @@ function* logCheck(action: actionsAuth.type__LOG_IN) {
     } catch (error) {
         
         console.log(error);
-        console.log('log in has been failed');
+        console.log('log check has been failed');
         
+        yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+            codeSituation: 'LogCheck_UnknownError'
+        }) );
+        
+        
+        yield put( actionsStatus.return__REPLACE({
+            listKey: ['loading', 'user'],
+            replacement: false
+        }) );
+        
+        yield put( actionsStatus.return__REPLACE({
+            listKey: ['ready', 'user'],
+            replacement: false
+        }) );
         // clear inputs
     }
 }

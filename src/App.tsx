@@ -7,6 +7,7 @@ import styled, {ThemeProvider }  from 'styled-components';
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
+import * as actionsAuth from 'store/actions/auth';
 
 import { Theme, themeLight } from "./styles/theme";
 import GlobalStyle from 'styles/GlobalStyle';
@@ -25,7 +26,6 @@ function App({}: PropsApp) {
   
   let location = useLocation();
   const dispatch = useDispatch();
-  
   
   
   
@@ -96,6 +96,14 @@ function App({}: PropsApp) {
       }
     },[]
   );
+  
+  
+  // log check
+  useEffect(() => {
+    dispatch(actionsAuth.return__LOG_CHECK() );
+  }, []);
+  
+  
   
   return (
     

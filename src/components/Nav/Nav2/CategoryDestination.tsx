@@ -68,8 +68,8 @@ function CategoryDestination({
   return (
     
 		<Styled.Div__CategoryDestination
-		  onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, idCategory) }
-      onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
+		    onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, idCategory) }
+            onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
 		>
 		
 			<Styled.Div__CategoryDestination_Title 
@@ -98,9 +98,10 @@ function CategoryDestination({
 				<Styled.Div__CategoryDestination_Popup_TriangleBackground/>
 				
 				<Styled.Div__CategoryDestination_Popup_Box>
-				  {listIdLink.map( (idLink) => (
+				  {listIdLink.map( (idLink, index) => (
 				    <Styled.Div__Link
-  					  onClick={()=>onClick_LinkInsideApp(`/${idCategory}/${idLink}`)}
+				        key={`idLink-${index}`}
+  					    onClick={()=>onClick_LinkInsideApp(`/${idCategory}/${idLink}`)}
   					> <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
   					</Styled.Div__Link>
 				  ))}

@@ -70,8 +70,7 @@ function SignUp({}: PropsSignUp) {
         <Styled.Div__SignUp_Identity> 
           <input 
             type='text' 
-            placeholder='Email Address'  
-            
+            placeholder='Email Address' 
             value={inputEmail.value}
             onChange={inputEmail.onChange} 
           /> 
@@ -84,7 +83,6 @@ function SignUp({}: PropsSignUp) {
           <input 
             type='password'
             placeholder='Password'
-            
             value={inputPassword1.value}
             onChange={inputPassword1.onChange}
           /> 
@@ -108,7 +106,8 @@ function SignUp({}: PropsSignUp) {
         <Styled.Div__SignUp_Enter> 
           <button
             onClick={()=>onClick_SignUp()}
-          > Sign Up </button>
+          > Sign Up 
+          </button>
         </Styled.Div__SignUp_Enter> 
         
         <Styled.Div__SignUp_CollectionLink> 

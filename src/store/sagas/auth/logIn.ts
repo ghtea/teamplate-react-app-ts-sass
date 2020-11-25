@@ -52,7 +52,17 @@ function* logIn(action: actionsAuth.type__LOG_IN) {
         
         
         else {
-        
+            
+            yield put( actionsStatus.return__REPLACE({
+                listKey: ['ready', 'user'],
+                replacement: false
+            }) );
+            
+            yield put( actionsStatus.return__REPLACE({
+                listKey: ['loading', 'user'],
+                replacement: true
+            }) );
+                
             
             const bodyRequest = {
                 email: action.payload.email, 
@@ -70,7 +80,12 @@ function* logIn(action: actionsAuth.type__LOG_IN) {
                 //Cookies.remove('logged');
                 console.log(res.data.payload)
                 // const user = res.data.payload;
-                Cookies.set('logged', 'yes', { expires: 7, path: '/' });  
+                Cookies.set('logged_in', 'yes', { expires: 7, path: '/' });  
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['loading', 'user'],
+                    replacement: false
+                }) );
                 
                 yield put( actionsStatus.return__REPLACE({
                     listKey: ['ready', 'user'],
@@ -80,11 +95,25 @@ function* logIn(action: actionsAuth.type__LOG_IN) {
             }
             else {
                 
+                console.log(codeSituation);
+                
                 // SignUp_UnknownError, SignUp_DuplicateEmail
                 yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
                     codeSituation: codeSituation
                 }) );
-            
+                
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['loading', 'user'],
+                    replacement: false
+                }) );
+                
+                yield put( actionsStatus.return__REPLACE({
+                    listKey: ['ready', 'user'],
+                    replacement: false
+                }) );
+                
+                Cookies.remove('logged_in')
             }
             
             
@@ -99,6 +128,20 @@ function* logIn(action: actionsAuth.type__LOG_IN) {
         console.log(error);
         console.log('log in has been failed');
         
+        yield put( actionsNotification.return__ADD_CODE_SITUATION_SPECIAL({
+            codeSituation: 'LogIn_UnknownError'
+        }) );
+        
+        
+        yield put( actionsStatus.return__REPLACE({
+            listKey: ['loading', 'user'],
+            replacement: false
+        }) );
+        
+        yield put( actionsStatus.return__REPLACE({
+            listKey: ['ready', 'user'],
+            replacement: false
+        }) );
         // clear inputs
     }
 }
