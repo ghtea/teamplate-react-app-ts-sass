@@ -1,39 +1,55 @@
 {
     
+    
     "Nav": {
-        "name_app": "React App",
-        "title": "Title" ,
-        "home": "Home",
-        "log_in": "Log In",
-        "setting": "Setting",
         
-        "categoryA": "Category A",
-        "categoryA_linkA1": "link A1",
-        "categoryA_linkA2": "link A2",
+        "Home": "Home",
+        "NameApp": "React App",
         
-        "soloA": "Solo A"
+        "LogIn": "Log In",
+        "SignUp": "Sign Up"
+        
     },
     
     
-    "Protocol": {
-        "global": {
-            "unknown_error": "Unknown error happend"
+    "FullPage": {
+        
+        "LogIn": {
+            "LogIn": "Log In"
         },
-        "auth": {
-            "sign_up_existing_email": "That email is already existing",
-            "sign_up_succeeded": "Successfully signed up!"
+        "SignUp": {
+            "SignUp": "Sign Up"
+        }
+        
+    },
+    
+    
+    "Popup": {
+        "Setting": {
+            
         }
     },
     
     
     "Notification": {
         
+        "Test1": "Succuessfully tested 1 !",
+        "Test2": "Succuessfully tested 2 !",
         
-        "test1": "Succuessfully tested 1 !",
-        "test2": "Succuessfully tested 2 !",
+        "LogIn_Failed": "Log In has failed",
         
-        "log_in_failed": "Log In has failed"
-        
+        "SignUp_DuplicateEmail": "That email is already existing",
+        "SignUp_Succeeded": "Successfully signed up!",
+        "SignUp_UnknownError": "An unknown error has occurred"
+    },
+    
+    
+    "Content": {
+        "Home": {
+            
+        }
     }
     
 }
+
+

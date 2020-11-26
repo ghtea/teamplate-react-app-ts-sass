@@ -69,7 +69,7 @@ function CategoryDestination({
     
 		<Styled.Div__CategoryDestination
 		    onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, idCategory) }
-            onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
+        onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
 		>
 		
 			<Styled.Div__CategoryDestination_Title 

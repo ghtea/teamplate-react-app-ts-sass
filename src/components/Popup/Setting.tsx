@@ -65,7 +65,7 @@ function Setting({}: PropsSetting) {
     <Styled.Div__Setting>
       
       <Styled.Div__Setting_Header>
-        <div> {t('Nav.setting')} </div>
+        <div> {t('.Setting')} </div>
         <div
           onClick={()=>onClick_HideSetting()}
         > 

@@ -56,7 +56,7 @@ instanceI18n
     resources: resource,
     //lng: "en",
     fallbackLng: "en",
-
+    debug: true,
     interpolation: {
       escapeValue: false
     },

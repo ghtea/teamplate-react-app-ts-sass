@@ -56,7 +56,8 @@ export const return__READ_OPTION_THEME = () => {
 export type type__READ_OPTION_THEME = ReturnType<typeof return__READ_OPTION_THEME>;
 
 
-export const name__DECIDE_THEME: string = `status/DECIDE_THEME`;    // 뒤에 as const 를 붙이면 reducer 에서 status.REPLACE 로 쓸때 오류 뜬다. 아직 이해못
+
+export const name__DECIDE_THEME: string = `status/DECIDE_THEME`;    
 
 export const return__DECIDE_THEME = () => {    
     return {
@@ -65,3 +66,17 @@ export const return__DECIDE_THEME = () => {
 };
 
 export type type__DECIDE_THEME = ReturnType<typeof return__DECIDE_THEME>;
+
+
+
+export const name__READ_LANGUAGE: string = `status/READ_LANGUAGE`;    
+
+export const return__READ_LANGUAGE = () => {    
+    return {
+        type: name__READ_LANGUAGE
+    }
+};
+
+export type type__READ_LANGUAGE = ReturnType<typeof return__READ_LANGUAGE>;
+
+

@@ -1,43 +1,36 @@
 {
+    
     "Nav": {
-        "name_app": "리액트 ",
-        "title": "제목" ,
-        "home": "홈",
-        "log_in": "로그인",
-        "setting": "설정",
+        "NameApp": "리액트 앱",
+        "Title": "제목" ,
+        "Home": "홈",
+        "LogIn": "로그인",
+        "SignUp": "회원가입",
+        "Setting": "설정",
         
-        "categoryA": "카테고리 A",
-        "categoryA_linkA1": "링크 A1",
-        "categoryA_linkA2": "링크 A2",
+        "CategoryA": "카테고리 A",
+        "CategoryA_LinkA1": "링크 A1",
+        "CategoryA_LinkA2": "링크 A2",
         
-        "soloA": "솔로 A"
+        "SoloA": "솔로 A"
     },
     
     
-    "Protocol": {
-        "global": {
-            "unknown_error": "알수 없는 에러가 발생했습니다"
-        },
-        "auth": {
-            "sign_up_existing_email": "해당 이메일이 이미 존재합니다",
-            "sign_up_succeeded": "회원가입에 성공하였습니다"
-        }
+    "Popup": {
+        "Setting": "설정"
     },
     
     
     "Notification": {
-        "success": {
-            "test1": "테스트에 성공하였습니다 1 !",
-            "test2": "테스트에 성공하였습니다 2 !"
-        },
-        "hint": {
-            
-        },
-        "error": {
-            "log_in_failed": "로그인에 실패하였습니다"
-        },
-        "warning": {
-            
-        }
+        
+        "Test1": "테스트에 성공하였습니다 1 !",
+        "Test2": "테스트에 성공하였습니다 2 !",
+        
+        "LogIn_Failed": "로그인에 실패하였습니다",
+        
+        "SignUp_DuplicateEmail": "해당 이메일이 이미 등록되어 있습니다",
+        "SignUp_Succeeded": "성공적으로 회원가입하였습니다!",
+        "SignUp_UnknownError": "알수 없는 에러가 발생했습니다"
     }
+    
 }

@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import useTranslationTyped from 'tools/hooks/useTranslationTyped'
+import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -24,7 +24,7 @@ function Nav2({}: PropsNav2) {
   
   let history = useHistory();
   const dispatch = useDispatch();
-  const { t } = useTranslationTyped();
+  const { t } = useTranslation();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
@@ -67,18 +67,18 @@ function Nav2({}: PropsNav2) {
         <button
           onClick={(event)=>onClick_LinkInsideApp(event, '/')}
         >
-          {t('Nav', 'NameApp')}
+          {t('Nav.name_app')}
         </button>
       </Styled.Div__NameApp>
       
       
       <Styled.Div__CollectionDestination>
         <CategoryDestination 
-          idCategory={'CategoryA'}
-          listIdLink={['LinkA1', 'LinkA2']}
+          idCategory={'categoryA'}
+          listIdLink={['linkA1', 'linkA2']}
         />
   		  <SoloDestination 
-  		    idSolo={'SoloA'}
+  		    idSolo={'soloA'}
   		  />
       </Styled.Div__CollectionDestination>
 
@@ -86,15 +86,16 @@ function Nav2({}: PropsNav2) {
       <Styled.Div__CollectionTool>
       
         <Styled.Div__Tool>
-        
-          <a onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
-            {t('basic', 'LogIn')}
+          <a
+            onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
+          >
+            <IconSignIn
+              color={'inherit'}
+              width={'28px'}
+              height={'28px'}
+            />
+            <div> {t('Nav.log_in')} </div>
           </a>
-          
-          <a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
-            {t('basic', 'SignUp')}
-          </a>
-          
         </Styled.Div__Tool>
         
         <Styled.Div__Tool>

@@ -76,7 +76,7 @@ function Nav1({}: PropsNav1) {
         </div>
         
         <div>
-          {t('Nav.title')}
+          {t('Nav.Title')}
         </div>
         
         <div>
@@ -99,19 +99,19 @@ function Nav1({}: PropsNav1) {
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-            > {t('Nav.home')}
+            > {t('Nav.Home')}
             </a>
           </div>
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-            > {t('Nav.log_in')}
+            > {t('Nav.LogIn')}
             </a>
           </div>
           <div> 
             <a
               onClick={()=>onClick_ShowHideSetting()}
-            > {t('Nav.setting')}
+            > {t('Nav.Setting')}
             </a>
           </div>
         </Styled.Div__Board>
