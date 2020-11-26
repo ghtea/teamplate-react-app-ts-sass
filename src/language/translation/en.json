@@ -4,11 +4,19 @@
     "Nav": {
         
         "Home": "Home",
+        "Setting": "Setting",
+        
         "NameApp": "React App",
         
         "LogIn": "Log In",
-        "SignUp": "Sign Up"
+        "SignUp": "Sign Up",
         
+        "Animal": "Animal",   
+        "Animal_Cat": "Cat",
+        "Animal_Owl": "Owl",
+        "Animal_Fox": "Fox",
+        
+        "Plant": "Plant"
     },
     
     
@@ -26,7 +34,9 @@
     
     "Popup": {
         "Setting": {
-            
+            "Title": "Setting",
+            "Theme": "Theme",
+            "Language": "Language"
         }
     },
     
@@ -46,7 +56,7 @@
     
     "Content": {
         "Home": {
-            
+            "Welcome": "Welcome!"
         }
     }
     

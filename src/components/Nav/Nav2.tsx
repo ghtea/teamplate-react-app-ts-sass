@@ -74,11 +74,11 @@ function Nav2({}: PropsNav2) {
       
       <Styled.Div__CollectionDestination>
         <CategoryDestination 
-          idCategory={'CategoryA'}
-          listIdLink={['LinkA1', 'LinkA2']}
+          idCategory={'Animal'}
+          listIdLink={['Cat', 'Owl', 'Fox']}
         />
   		  <SoloDestination 
-  		    idSolo={'SoloA'}
+  		    idSolo={'Plant'}
   		  />
       </Styled.Div__CollectionDestination>
 
@@ -88,11 +88,11 @@ function Nav2({}: PropsNav2) {
         <Styled.Div__Tool>
         
           <a onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
-            {t('basic', 'LogIn')}
+            {t('Nav', 'LogIn')}
           </a>
           
           <a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
-            {t('basic', 'SignUp')}
+            {t('Nav', 'SignUp')}
           </a>
           
         </Styled.Div__Tool>

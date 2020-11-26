@@ -1,10 +1,12 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
+
+import * as convertName from 'tools/vanilla/convertName';
 
 import * as Styled from './SoloDestination_Styled';
 import IconHome from 'svgs/basic/IconHome';
@@ -30,13 +32,18 @@ function SoloDestination({idSolo}: PropsSoloDestination) {
     },[history]
   );
   
-  
+  const idSolo_SnakeCase = useMemo(()=>{
+    
+    return convertName.convertPascalToSnake(idSolo)
+    
+  },[idSolo])
+
   return (
 
 	  <Styled.Div__SoloDestination>
       <div> 
         <a
-          onClick={()=>onClick_LinkInsideApp(`/${idSolo}`)}
+          onClick={()=>onClick_LinkInsideApp(`/${ idSolo_SnakeCase}`)}
         > 
           {t(`Nav.${idSolo}`)} 
         </a> 

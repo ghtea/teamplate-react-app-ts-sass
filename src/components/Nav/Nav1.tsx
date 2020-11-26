@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
+import useTranslationTyped from 'tools/hooks/useTranslationTyped'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -18,7 +18,7 @@ type PropsNav1 = {};
 function Nav1({}: PropsNav1) {
   
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t } = useTranslationTyped();
   const dispatch = useDispatch();
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
@@ -76,7 +76,7 @@ function Nav1({}: PropsNav1) {
         </div>
         
         <div>
-          {t('Nav.Title')}
+          (title)
         </div>
         
         <div>
@@ -99,19 +99,19 @@ function Nav1({}: PropsNav1) {
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-            > {t('Nav.Home')}
+            > {t('Nav', 'Home')}
             </a>
           </div>
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
-            > {t('Nav.LogIn')}
+            > {t('Nav', 'LogIn')}
             </a>
           </div>
           <div> 
             <a
               onClick={()=>onClick_ShowHideSetting()}
-            > {t('Nav.Setting')}
+            > {t('Nav', 'Setting')}
             </a>
           </div>
         </Styled.Div__Board>

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
+import useTranslationTyped from 'tools/hooks/useTranslationTyped'
 import Cookies from 'js-cookie';
 
 import {useSelector, useDispatch} from "react-redux";
@@ -24,7 +24,7 @@ function Setting({}: PropsSetting) {
   const languageCurrent:string = useSelector((state: StateRoot) => state['status']['current']['language']);
   const optionThemeCurrent:string = useSelector((state: StateRoot) => state['status']['current']['theme']['option']);
 
-  const { t } = useTranslation();
+  const { t } = useTranslationTyped();
   
   const onClick_HideSetting = useCallback(
     () => {
@@ -65,7 +65,7 @@ function Setting({}: PropsSetting) {
     <Styled.Div__Setting>
       
       <Styled.Div__Setting_Header>
-        <div> {t('.Setting')} </div>
+        <div> {t('Popup', 'Setting', 'Title')} </div>
         <div
           onClick={()=>onClick_HideSetting()}
         > 
@@ -81,7 +81,7 @@ function Setting({}: PropsSetting) {
       <Styled.Div__Setting_Content>
         
         <Styled.Div__Setting_Content_Section>
-          <div> Theme </div>
+          <div> {t('Popup', 'Setting', 'Theme')} </div>
           <div>
             <Styled.Button__Option 
               onClick={()=>onClick_ChangeOptionTheme('auto')}
@@ -102,7 +102,7 @@ function Setting({}: PropsSetting) {
         </Styled.Div__Setting_Content_Section>
         
         <Styled.Div__Setting_Content_Section>
-          <div> Language </div>
+          <div> {t('Popup', 'Setting', 'Language')} </div>
           <div>
             <Styled.Button__Option 
               onClick={()=>onClick_ChangeLanguage('en')}

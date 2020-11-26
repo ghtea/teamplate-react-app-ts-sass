@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import useTranslationTyped from 'tools/hooks/useTranslationTyped'
 
 import {useSelector, useDispatch} from "react-redux";
 
@@ -14,6 +15,7 @@ type PropsHome = {};
 function Home({}: PropsHome) {
   
   const dispatch = useDispatch();
+  const { t } = useTranslationTyped();
   
   const onClick_AddTestingBanner = useCallback(
     (codeSituation:string) => {
@@ -25,7 +27,7 @@ function Home({}: PropsHome) {
   
   return (
     <Styled.Div__Home>
-        <div> This app is a template for React app </div>
+        <div> {t('Content', 'Home', 'Welcome')} </div>
         
         <div> 
           <button
