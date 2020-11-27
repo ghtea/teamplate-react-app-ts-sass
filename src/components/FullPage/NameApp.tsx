@@ -33,7 +33,7 @@ function NameApp({}: PropsNameApp) {
     
       <div>
         <IconHome
-          listKeyTheme={['color', 'Nav', 'nav2_name_app___logo']}
+          listKeyTheme={['colors', 'Nav', 'nav2_name_app___logo']}
           width={'36px'}
           height={'36px'}
         />

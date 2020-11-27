@@ -33,7 +33,7 @@ export const Div__FullPage_Background = styled.div
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   
-  background-color: ${ ({theme})=>theme.color.FullPage.full_page___bg };  
+  background-color: ${ ({theme})=>theme.colors.FullPage.full_page___bg };  
     
   color: #000;
   

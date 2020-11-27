@@ -1,7 +1,7 @@
 
-import palette from './palette';
+import palette from './colors/palette';
 
-type Color = typeof colorLight;
+type Colors = typeof colorsLight;
 /*
 type Color = {
   [index:string]: {
@@ -24,7 +24,9 @@ const returnColor = (listHsl:number[], opacity?:number):string => {
 
 // 대상(_3개)UI요소(_2개)상황
 
-export const colorLight = {
+export const colorsLight = {
+  
+    mode: 'light',
     
     GlobalStyle: {
       

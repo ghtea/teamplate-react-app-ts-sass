@@ -25,7 +25,7 @@ export const Div__Notification = styled.div
   
   
   
-	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.sizes.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	    top: 0px;
 	}
   

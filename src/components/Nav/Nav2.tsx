@@ -26,11 +26,13 @@ function Nav2({}: PropsNav2) {
   const dispatch = useDispatch();
   const { t } = useTranslationTyped();
   
+
+
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
-  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
+   
+  const readyUser:boolean = useSelector((state: StateRoot) => state['status']['ready']['user']);
   
-  const nameTheme:string = useSelector((state: StateRoot) => state['status']['current']['theme']['name']);
-  const languageCurrent:string = useSelector((state: StateRoot) => state['status']['current']['language']);
+  
 
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
@@ -58,7 +60,7 @@ function Nav2({}: PropsNav2) {
         >
           <div>
             <IconHome
-              listKeyTheme={['color', 'Nav', 'nav2_name_app___logo']}
+              listKeyTheme={['colors', 'Nav', 'nav2_name_app___logo']}
               width={'36px'}
               height={'36px'}
             />
@@ -98,20 +100,19 @@ function Nav2({}: PropsNav2) {
         </Styled.Div__Tool>
         
         
-        <Styled.Div__Tool>
-          
-          <a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
-            {t('Nav', 'SignUp')}
-          </a>
-          
-          <Styled.A__LinkMain onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
-            {t('Nav', 'LogIn')}
-          </Styled.A__LinkMain>
-
-          
-        </Styled.Div__Tool>
+        { !readyUser &&
+          <Styled.Div__Tool>
+            <Styled.A__LinkMain onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
+              {t('Nav', 'LogIn')}
+            </Styled.A__LinkMain>
+          </Styled.Div__Tool>
+        }
         
-        
+        { readyUser &&
+          <Styled.Div__Tool> 
+            logged in
+          </Styled.Div__Tool>
+        }
         
       </Styled.Div__CollectionTool>
       
@@ -128,3 +129,11 @@ export default Nav2;
 // https://stackoverflow.com/questions/37200019/how-to-get-elements-clientx-and-clienty-of-an-element
 
 // <Div_Triangle lengthBasic={12} onClick = {(event)=>onClick_NavGroupItemTitle(event, 'Color') } />
+
+
+
+/*
+<a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
+            {t('Nav', 'SignUp')}
+          </a>
+*/

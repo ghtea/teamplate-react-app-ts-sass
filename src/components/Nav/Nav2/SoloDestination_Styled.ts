@@ -28,10 +28,10 @@ export const Div__SoloDestination = styled.div
 	  margin-left: 10px;
 	  
 	  & > a {
-	    color: ${({theme})=>theme.color.Nav.nav2_link___font};
+	    color: ${({theme})=>theme.colors.Nav.nav2_link___font};
 	  
   	  &:hover {
-  	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
+  	    color: ${({theme})=>theme.colors.Nav.nav2_link___font__hover};
   	  }
 	  }
 	

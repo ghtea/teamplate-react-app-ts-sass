@@ -1,7 +1,7 @@
 
-export type Size = typeof size;
+export type Sizes = typeof sizes;
 
-const size = {
+const sizes = {
   
   nav :{
     height_nav1: 48,
@@ -22,4 +22,4 @@ const size = {
   
 };
 
-export default size;
+export default sizes;

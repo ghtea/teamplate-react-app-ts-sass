@@ -16,7 +16,7 @@ export const Div__Banner = styled.div<{kindSituation: KindSituation}>
   box-sizing: border-box;
   
   
-  width: ${({theme})=>theme.size.device.minWidth_xs}px; 
+  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
   height: auto;
   font-size: 1rem;
   
@@ -34,39 +34,39 @@ export const Div__Banner = styled.div<{kindSituation: KindSituation}>
   
   
   &.success {
-    background-color: ${({theme})=>theme.color.Notification.banner___bg__success};
-    color: ${({theme})=>theme.color.Notification.banner___font__success};
-    border: 2px solid ${({theme})=>theme.color.Notification.banner___border__success};
+    background-color: ${({theme})=>theme.colors.Notification.banner___bg__success};
+    color: ${({theme})=>theme.colors.Notification.banner___font__success};
+    border: 2px solid ${({theme})=>theme.colors.Notification.banner___border__success};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__success};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__success };
+    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__success};
+    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__success };
   }
   
   &.hint {
-    background-color: ${({theme})=>theme.color.Notification.banner___bg__hint};
-    color: ${({theme})=>theme.color.Notification.banner___font__hint};
-    border: 1px solid ${({theme})=>theme.color.Notification.banner___border__hint};
+    background-color: ${({theme})=>theme.colors.Notification.banner___bg__hint};
+    color: ${({theme})=>theme.colors.Notification.banner___font__hint};
+    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__hint};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__hint};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__hint };
+    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__hint};
+    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__hint };
   }
   
   &.error {
-    background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
-    color: ${({theme})=>theme.color.Notification.banner___font__error};
-    border: 1px solid ${({theme})=>theme.color.Notification.banner___border__error};
+    background-color: ${({theme})=>theme.colors.Notification.banner___bg__error};
+    color: ${({theme})=>theme.colors.Notification.banner___font__error};
+    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__error};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error };
+    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error};
+    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error };
   }
   
   &.warning {
-    background-color: ${({theme})=>theme.color.Notification.banner___bg__warning};
-    color: ${({theme})=>theme.color.Notification.banner___font__warning};
-    border: 1px solid ${({theme})=>theme.color.Notification.banner___border__warning};
+    background-color: ${({theme})=>theme.colors.Notification.banner___bg__warning};
+    color: ${({theme})=>theme.colors.Notification.banner___font__warning};
+    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__warning};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__warning};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__warning };
+    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__warning};
+    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__warning };
   }
   
   
@@ -180,18 +180,18 @@ export const Div__Banner_Guage = styled.div<{banner: TypeBanner}>
   animation: ${keyframes_ScaleGuage} ${ props => props.banner.msTime / 1000 }s linear normal forwards;
   
   &.success {
-    background-color: ${({theme})=>theme.color.Notification.banner___border__success};
+    background-color: ${({theme})=>theme.colors.Notification.banner___border__success};
   }
   
   &.hint {
-    background-color: ${({theme})=>theme.color.Notification.banner___border__hint};
+    background-color: ${({theme})=>theme.colors.Notification.banner___border__hint};
   }
   
   &.error {
-    background-color: ${({theme})=>theme.color.Notification.banner___border__error};
+    background-color: ${({theme})=>theme.colors.Notification.banner___border__error};
   }
   
   &.warning {
-    background-color: ${({theme})=>theme.color.Notification.banner___border__warning};
+    background-color: ${({theme})=>theme.colors.Notification.banner___border__warning};
   }
 `;

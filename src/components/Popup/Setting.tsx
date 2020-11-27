@@ -70,7 +70,7 @@ function Setting({}: PropsSetting) {
           onClick={()=>onClick_HideSetting()}
         > 
           <IconX
-            listKeyTheme={['color', 'Popup', 'setting_header___icon']}
+            listKeyTheme={['colors', 'Popup', 'setting_header___icon']}
             width={'24px'}
             height={'24px'}
           />

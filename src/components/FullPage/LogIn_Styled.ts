@@ -8,7 +8,7 @@ export const Div__LogIn = styled.div
   
   box-sizing: border-box;
   
-  width: ${({theme})=>theme.size.device.minWidth_xs}px; 
+  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
   height: auto;
   font-size: 1rem;
   border-radius: 0px;
@@ -97,7 +97,7 @@ export const Div__LogIn_Input = styled.div
     
     display: none;
     font-size: 0.8rem;
-    color: ${ ({theme})=>theme.color.Content.label___font };  
+    color: ${ ({theme})=>theme.colors.Content.label___font };  
     
     position: absolute;
     top: 1px;
@@ -175,8 +175,8 @@ export const Div__LogIn_Enter = styled.div
   
   & > button {
   
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-    color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
   
     width: 100%;
     height: 44px;
@@ -211,20 +211,20 @@ export const Div__LogIn_Social = styled.div
   & > button {
     font-size: 1rem;
     
-    color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
     border-radius: 4px;
     
     width: 90px;
     height: 44px;
     
     &:nth-child(1){
-      background-color: ${ ({theme})=>theme.color.Share.button_google___bg };
+      background-color: ${ ({theme})=>theme.colors.Share.button_google___bg };
     }
     &:nth-child(2){
-      background-color: ${ ({theme})=>theme.color.Share.button_facebook___bg };
+      background-color: ${ ({theme})=>theme.colors.Share.button_facebook___bg };
     }
     &:nth-child(3){
-      background-color: ${ ({theme})=>theme.color.Share.button_twitter___bg };
+      background-color: ${ ({theme})=>theme.colors.Share.button_twitter___bg };
     }
   }
   

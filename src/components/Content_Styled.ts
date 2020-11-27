@@ -18,7 +18,7 @@ export const Div__Content = styled.div
   border-radius: 0px;
   
   position: relative;
-  top: ${({theme})=>theme.size.nav.height_nav1}px;
+  top: ${({theme})=>theme.sizes.nav.height_nav1}px;
   z-index: 0;
   
   margin: 0px 0px 0px 0px; /* top right bottom left */
@@ -26,8 +26,8 @@ export const Div__Content = styled.div
   
   
   
-	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
-	    top: ${({theme})=>theme.size.nav.height_nav2}px;
+	@media (min-width: ${({theme})=>theme.sizes.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	    top: ${({theme})=>theme.sizes.nav.height_nav2}px;
 	}
   
 `;

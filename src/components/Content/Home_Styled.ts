@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
 export const Div__Home = styled.div
-`
+` 
+
+  ${({theme})=>`
+    
+    ${theme.mixins.return_display('flex')}
   
-  display: flex;
+  `}
+  
   flex-flow: column nowrap;   /* row */
   justify-content: space-evenly; align-items: center;
   

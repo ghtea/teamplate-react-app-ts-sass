@@ -18,10 +18,10 @@ const GlobalStyle = createGlobalStyle`
     
     box-sizing: border-box;
   
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.body___bg };  
-    color: ${ ({theme})=>theme.color.GlobalStyle.body___font };  
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.body___bg };  
+    color: ${ ({theme})=>theme.colors.GlobalStyle.body___font };  
     
-    width: 100%; min-width: ${({theme})=>theme.size.device.minWidth_xs}px;
+    width: 100%; min-width: ${({theme})=>theme.sizes.device.minWidth_xs}px;
     height: auto;
     
     font-family: 'Noto Sans KR', sans-serif;
@@ -44,9 +44,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.color.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.div___bg };
-    color: ${ ({theme})=>theme.color.GlobalStyle.div___font };
+    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.div___bg };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.div___font };
     
     width: 100%; 
     height: auto;
@@ -69,9 +69,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center; align-items: center;
     
     box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.color.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.button___bg };
-    color: ${ ({theme})=>theme.color.GlobalStyle.button___font };
+    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button___bg };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.button___font };
     
     width: auto; 
     height: auto;
@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: flex-start; align-items: center;
     
     box-sizing: border-box;
-    color: ${ ({theme})=>theme.color.GlobalStyle.a___font };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.a___font };
     
     width: auto; 
     height: auto;
@@ -116,9 +116,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center; align-items: center;
     
     box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.color.GlobalStyle.input___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.input___bg };
-    color: ${ ({theme})=>theme.color.GlobalStyle.input___font };
+    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.input___border };  /* border: 2px dashed #aaa; */
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.input___bg };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.input___font };
     
     width: auto; 
     height: auto;
@@ -131,14 +131,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px 0px 0px 8px; /* top right bottom left */
     
     &:focus {
-      background-color: ${ ({theme})=>theme.color.GlobalStyle.input___bg__focus };
-      color: ${ ({theme})=>theme.color.GlobalStyle.input___font__focus };
-      border: 2px solid ${ ({theme})=>theme.color.GlobalStyle.input___border__focus }; 
-      outline: 1px solid ${ ({theme})=>theme.color.GlobalStyle.input___outline__focus };
+      background-color: ${ ({theme})=>theme.colors.GlobalStyle.input___bg__focus };
+      color: ${ ({theme})=>theme.colors.GlobalStyle.input___font__focus };
+      border: 2px solid ${ ({theme})=>theme.colors.GlobalStyle.input___border__focus }; 
+      outline: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.input___outline__focus };
       border-radius: 0px;
       
-      -webkit-box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };
-      box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.color.GlobalStyle.input___box_shadow__focus };
+      -webkit-box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.colors.GlobalStyle.input___box_shadow__focus };
+      box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.colors.GlobalStyle.input___box_shadow__focus };
 
     }
   }

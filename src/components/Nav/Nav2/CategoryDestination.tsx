@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
-import * as actionsStatus from 'store/actions/status';
+import * as convertName from 'tools/vanilla/convertName';
 
 import * as Styled from './CategoryDestination_Styled';
 
@@ -68,7 +68,7 @@ function CategoryDestination({
   return (
     
 		<Styled.Div__CategoryDestination
-		    onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, idCategory) }
+		    onMouseEnter ={(event)=> onMouseEnter_CategoryDestination(event, convertName.pascalToSnake(idCategory)) }
         onMouseLeave ={(event)=> onMouseLeave_CategoryDestination(event, "") }
 		>
 		
@@ -101,7 +101,7 @@ function CategoryDestination({
 				  {listIdLink.map( (idLink, index) => (
 				    <Styled.Div__Link
 				        key={`idLink-${index}`}
-  					    onClick={()=>onClick_LinkInsideApp(`/${idCategory}/${idLink}`)}
+  					    onClick={()=>onClick_LinkInsideApp(`/${convertName.pascalToSnake(idCategory)}/${convertName.pascalToSnake(idLink)}`)}
   					> <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
   					</Styled.Div__Link>
 				  ))}

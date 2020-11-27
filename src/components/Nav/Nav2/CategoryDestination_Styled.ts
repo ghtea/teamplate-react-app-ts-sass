@@ -22,7 +22,7 @@ export const Div__CategoryDestination = styled.div
 	&:hover {
 	  
 	  & > div:nth-child(1) > div:nth-child(1) > a {
-	    color: ${({theme})=>theme.color.Nav.nav2_link___font__hover};
+	    color: ${({theme})=>theme.colors.Nav.nav2_link___font__hover};
 	  }
 	  
 	  & > div:nth-child(1) > div:nth-child(2) {
@@ -55,7 +55,7 @@ export const Div__CategoryDestination_Title = styled.div`
 	  width : auto;
 	}
 	& a {
-	  color: ${({theme})=>theme.color.Nav.nav2_link___font};
+	  color: ${({theme})=>theme.colors.Nav.nav2_link___font};
 	  
 	}
 	
@@ -100,7 +100,7 @@ export const Div__CategoryDestination_Popup_TriangleFront = styled.div
   bottom: calc(100% - 1px);
   z-index: 401;
   border-width: 10px;
-  border-color: transparent transparent ${({theme})=>theme.color.Nav.nav2_popup___bg} transparent;
+  border-color: transparent transparent ${({theme})=>theme.colors.Nav.nav2_popup___bg} transparent;
   
 `;
 
@@ -115,10 +115,10 @@ export const Div__CategoryDestination_Popup_TriangleBack = styled.div
   bottom: calc(100% - 2px);
   z-index: 399;
   border-width: 12px;
-  border-color: transparent transparent ${({theme})=>theme.color.Nav.nav2_popup___border} transparent;
+  border-color: transparent transparent ${({theme})=>theme.colors.Nav.nav2_popup___border} transparent;
   
-  -webkit-filter: drop-shadow(0px 0px 3px ${({theme})=>theme.color.Nav.nav2_popup___drop_shadow});
-  filter: drop-shadow(0px 0px 3px ${({theme})=>theme.color.Nav.nav2_popup___drop_shadow});
+  -webkit-filter: drop-shadow(0px 0px 3px ${({theme})=>theme.colors.Nav.nav2_popup___drop_shadow});
+  filter: drop-shadow(0px 0px 3px ${({theme})=>theme.colors.Nav.nav2_popup___drop_shadow});
 `;
 
 export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
@@ -135,12 +135,12 @@ export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
 export const Div__CategoryDestination_Popup_Box = styled.div
 `
   z-index: 400;
-  background-color: ${({theme})=>theme.color.Nav.nav2_popup___bg};
-  color: ${({theme})=>theme.color.Nav.nav2_popup___font};
-  border: 1px solid ${({theme})=>theme.color.Nav.nav2_popup___border};
+  background-color: ${({theme})=>theme.colors.Nav.nav2_popup___bg};
+  color: ${({theme})=>theme.colors.Nav.nav2_popup___font};
+  border: 1px solid ${({theme})=>theme.colors.Nav.nav2_popup___border};
   
-  -webkit-box-shadow: 0px 0px 5px 2px ${({theme})=>theme.color.Nav.nav2_popup___box_shadow}; 
-  box-shadow: 0px 0px 5px 2px ${({theme})=>theme.color.Nav.nav2_popup___box_shadow};
+  -webkit-box-shadow: 0px 0px 5px 2px ${({theme})=>theme.colors.Nav.nav2_popup___box_shadow}; 
+  box-shadow: 0px 0px 5px 2px ${({theme})=>theme.colors.Nav.nav2_popup___box_shadow};
 
   border-radius: 4px;
   
@@ -163,7 +163,7 @@ export const Div__Link = styled.div`
   
   
   &:hover {
-    background-color: ${({theme})=>theme.color.Nav.nav2_popup___bg__hover};
+    background-color: ${({theme})=>theme.colors.Nav.nav2_popup___bg__hover};
   }
   
 `

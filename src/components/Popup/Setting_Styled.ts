@@ -20,11 +20,11 @@ export const Div__Setting_Header = styled.div
   
   /*
   
-  background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
-  color: ${({theme})=>theme.color.Notification.banner___font__error};
+  background-color: ${({theme})=>theme.colors.Notification.banner___bg__error};
+  color: ${({theme})=>theme.colors.Notification.banner___font__error};
    
-  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error};
-  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error };
+  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error};
+  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error };
   
   */
   
@@ -59,18 +59,18 @@ export const Div__Setting_Content = styled.div
   flex-flow: column nowrap;   /* row */
   justify-content: space-between; align-items: flex-start;
   
-  border-top: 1px solid ${({theme})=>theme.color.Popup.popup___border };
+  border-top: 1px solid ${({theme})=>theme.colors.Popup.popup___border };
    
   box-sizing: border-box;
   
   /*
   
-  background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
-  color: ${({theme})=>theme.color.Notification.banner___font__error};
-  border: 1px solid ${({theme})=>theme.color.Notification.banner___border__error};
+  background-color: ${({theme})=>theme.colors.Notification.banner___bg__error};
+  color: ${({theme})=>theme.colors.Notification.banner___font__error};
+  border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__error};
     
-  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error};
-  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error };
+  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error};
+  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error };
   
   */
   
@@ -104,12 +104,12 @@ export const Div__Setting_Content_Section = styled.div
   
   /*
   
-  background-color: ${({theme})=>theme.color.Notification.banner___bg__error};
-  color: ${({theme})=>theme.color.Notification.banner___font__error};
-  border: 1px solid ${({theme})=>theme.color.Notification.banner___border__error};
+  background-color: ${({theme})=>theme.colors.Notification.banner___bg__error};
+  color: ${({theme})=>theme.colors.Notification.banner___font__error};
+  border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__error};
     
-  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error};
-  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.color.Notification.banner___box_shadow__error };
+  -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error};
+  box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error };
   
   */
   
@@ -136,7 +136,7 @@ export const Div__Setting_Content_Section = styled.div
     flex-flow: row nowrap;   /* row */
     justify-content: flex-start; align-items: center;
     
-    background-color: ${({theme})=>theme.color.Popup.setting_option_behind___bg};
+    background-color: ${({theme})=>theme.colors.Popup.setting_option_behind___bg};
     padding: 0px 2px 0px 2px; /* top right bottom left */
     border-radius: 5px;
     
@@ -164,6 +164,6 @@ export const Div__Setting_Content_Section = styled.div
 export const Button__Option = styled.div<{active:boolean}>
 `
   background-color: ${({theme, active})=>(active===true) ? 
-    theme.color.Popup.setting_option___bg :
+    theme.colors.Popup.setting_option___bg :
     'transparent'};
 `

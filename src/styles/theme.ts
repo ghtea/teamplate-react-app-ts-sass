@@ -1,6 +1,8 @@
 
-import size from './theme/size';
-import {colorLight} from './theme/color';
+import sizes from './theme/sizes';
+import mixins from './theme/mixins';
+
+import {colorsLight} from './theme/colors';
 
 export type Theme = typeof themeLight; // This is the type definition for my theme object.
 
@@ -9,11 +11,12 @@ export type Theme = typeof themeLight; // This is the type definition for my the
 
 export const themeLight = {
   
-  light: true,
+  sizes,
   
-  size,
+  colors: colorsLight,
   
-  color: colorLight
+  mixins: mixins
+  
 }
 
 

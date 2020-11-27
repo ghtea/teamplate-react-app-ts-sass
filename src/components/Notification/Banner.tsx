@@ -74,14 +74,14 @@ function Banner({
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+            listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
             className={banner['kindSituation']}
             kind={'light'}
           />
           <IconXCircle 
             width={'20px'} 
             height={'20px'} 
-            listKeyTheme={['color', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+            listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
             className={banner['kindSituation']}
             kind={'solid'}
           />

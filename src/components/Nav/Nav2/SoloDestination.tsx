@@ -32,18 +32,12 @@ function SoloDestination({idSolo}: PropsSoloDestination) {
     },[history]
   );
   
-  const idSolo_SnakeCase = useMemo(()=>{
-    
-    return convertName.convertPascalToSnake(idSolo)
-    
-  },[idSolo])
-
   return (
 
 	  <Styled.Div__SoloDestination>
       <div> 
         <a
-          onClick={()=>onClick_LinkInsideApp(`/${ idSolo_SnakeCase}`)}
+          onClick={()=>onClick_LinkInsideApp(`/${ convertName.pascalToSnake(idSolo)}`)}
         > 
           {t(`Nav.${idSolo}`)} 
         </a> 

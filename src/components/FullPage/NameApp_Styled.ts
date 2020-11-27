@@ -23,7 +23,7 @@ export const Div__NameApp = styled.div
 	}
   & > *:nth-child(2) {
     width: auto;
-    color: ${ ({theme})=>theme.color.FullPage.full_page_name_app___font };  
+    color: ${ ({theme})=>theme.colors.FullPage.full_page_name_app___font };  
   
 	  font-size: 1.4rem;
 	  font-weight: bold;

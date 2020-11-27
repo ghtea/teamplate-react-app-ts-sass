@@ -5,18 +5,18 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
   display: none;
   visibility: ${ (props)=> props.showingNav ?  'visible' : 'hidden'};
   
-	@media (min-width: ${({theme})=>theme.size.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${({theme})=>theme.sizes.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  
 	  display: flex;
     flex-flow: row nowrap;   /* row */
     justify-content: space-evenly; align-items: center;
     
     box-sizing: border-box;
-    border-bottom: 1px solid ${ ({theme})=>theme.color.Nav.nav2_name_app___border };  /* border: 2px dashed #aaa; */
+    border-bottom: 1px solid ${ ({theme})=>theme.colors.Nav.nav2_name_app___border };  /* border: 2px dashed #aaa; */
     
     
     width: 100%;
-    height: ${ ({theme})=>theme.size.nav.height_nav2 }px;   /* we should let 'Content' know this value too */ 
+    height: ${ ({theme})=>theme.sizes.nav.height_nav2 }px;   /* we should let 'Content' know this value too */ 
     font-size: 1rem;
     border-radius: 0px;
     
@@ -65,7 +65,7 @@ export const Div__NameApp = styled.div
 	  margin-left: 10px;
 	}
   & > *:nth-child(2) {
-    color: ${ ({theme})=>theme.color.Nav.nav2_name_app___font };  
+    color: ${ ({theme})=>theme.colors.Nav.nav2_name_app___font };  
   
 	  font-size: 1.4rem;
 	  font-weight: bold;
@@ -87,7 +87,7 @@ export const Div__CollectionDestination = styled.div
   box-sizing: border-box;
   border: 0px solid #fff;  /* border: 2px dashed #aaa; */
   background-color: transparent; 
-  color: ${ ({theme})=>theme.color.Nav.nav2_link___font  };  
+  color: ${ ({theme})=>theme.colors.Nav.nav2_link___font  };  
   
   /*width: 100%; */
   height: auto;
@@ -121,7 +121,7 @@ export const Div__CollectionDestination = styled.div
     cursor: pointer;
     
     &:hover {
-      color: ${ ({theme})=>theme.color.Nav.nav2_link___font__hover  };  
+      color: ${ ({theme})=>theme.colors.Nav.nav2_link___font__hover  };  
     }
   }
 `;
@@ -189,7 +189,7 @@ export const Div__Tool = styled.div
     display: flex;
     flex-flow: row nowrap;   /* row */
     justify-content: flex-end; align-items: center;
-    color: ${ ({theme})=>theme.color.Nav.nav2_link___font  };  
+    color: ${ ({theme})=>theme.colors.Nav.nav2_link___font  };  
     width: auto;
     
     
@@ -203,7 +203,7 @@ export const Div__Tool = styled.div
     }
     
     &:hover {
-      color: ${ ({theme})=>theme.color.Nav.nav2_link___font__hover};  
+      color: ${ ({theme})=>theme.colors.Nav.nav2_link___font__hover};  
     }
     
     
@@ -214,8 +214,8 @@ export const Div__Tool = styled.div
 
 export const A__LinkMain = styled.a
 `
-  color: ${ ({theme})=>theme.color.Nav.nav2_link_main___font  } !important; 
-  background-color: ${ ({theme})=>theme.color.Nav.nav2_link_main___bg }; 
+  color: ${ ({theme})=>theme.colors.Nav.nav2_link_main___font  } !important; 
+  background-color: ${ ({theme})=>theme.colors.Nav.nav2_link_main___bg }; 
   
   padding: 4px 8px 4px 8px; /* top right bottom left */
   

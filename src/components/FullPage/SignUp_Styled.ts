@@ -8,7 +8,7 @@ export const Div__SignUp = styled.div
   
   box-sizing: border-box;
   
-  width: ${({theme})=>theme.size.device.minWidth_xs}px; 
+  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
   height: auto;
   font-size: 1rem;
   border-radius: 0px;
@@ -97,7 +97,7 @@ export const Div__SignUp_Input = styled.div
     
     display: none;
     font-size: 0.8rem;
-    color: ${ ({theme})=>theme.color.Content.label___font };  
+    color: ${ ({theme})=>theme.colors.Content.label___font };  
     
     position: absolute;
     top: 1px;
@@ -216,8 +216,8 @@ export const Div__SignUp_Enter = styled.div
   
   & > button {
   
-    background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-    color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
+    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
   
     width: 100%;
     height: 44px;
@@ -238,8 +238,8 @@ export const Div__SignUp_Social = styled.div
   
   box-sizing: border-box;
 
-  background-color: ${ ({theme})=>theme.color.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.color.GlobalStyle.button_main___font };
+  background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
+  color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
   
   width: 100%;
   height: 44px;
