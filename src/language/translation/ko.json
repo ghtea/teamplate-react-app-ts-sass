@@ -13,19 +13,21 @@
         "LogIn": "로그인",
         "SignUp": "회원가입",
         
-        "Animal": "동물",   
-        "Animal_Cat": "고양이",
-        "Animal_Owl": "올빼미",
-        "Animal_Fox": "여우",
+        "System": "시스템",   
+        "System_State": "상태",
+        "System_Styles": "스타일",
+        "System_Language": "언어",
         
-        "Plant": "식물"
+        "Diary": "일기"
     },
     
     
     "FullPage": {
         
         "LogIn": {
-            "LogIn": "로그인"
+            "LogIn": "로그인",
+            "EmailAddress": "이메일 주소",
+            "Password": "비밀번호"
         },
         "SignUp": {
             "SignUp": "회원가입"

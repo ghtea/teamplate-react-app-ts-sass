@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
+import useTranslationTyped from 'tools/hooks/useTranslationTyped'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -20,7 +21,9 @@ type PropsLogIn = {};
 function LogIn({}: PropsLogIn) {
   
   const dispatch = useDispatch();
+  const { t } = useTranslationTyped();
   const history = useHistory();
+  
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
       history.push(destination);
@@ -45,26 +48,26 @@ function LogIn({}: PropsLogIn) {
   return (
     <Styled.Div__LogIn>
     
-      <Styled.Div__LogIn_TitlePage> Log In </Styled.Div__LogIn_TitlePage>
+      <Styled.Div__LogIn_TitlePage> {t('FullPage', 'LogIn', 'LogIn')} </Styled.Div__LogIn_TitlePage>
         
         <Styled.Div__LogIn_Identity> 
           <input 
             type='text'
-            placeholder='Email Address'
+            placeholder={t('FullPage', 'LogIn', 'EmailAddress')}
             value={inputEmail.value}
             onChange={inputEmail.onChange} 
           /> 
-          <div> Email Address </div>
+          <div> {t('FullPage', 'LogIn', 'EmailAddress')} </div>
         </Styled.Div__LogIn_Identity>
         
         <Styled.Div__LogIn_Password> 
           <input 
             type='password'
-            placeholder='Password'
+            placeholder={t('FullPage', 'LogIn', 'Password')}
             value={inputPassword.value}
             onChange={inputPassword.onChange}
           /> 
-          <div> Password </div>
+          <div> {t('FullPage', 'LogIn', 'Password')} </div>
         </Styled.Div__LogIn_Password> 
         
         <div> message </div>
@@ -72,7 +75,7 @@ function LogIn({}: PropsLogIn) {
         <Styled.Div__LogIn_Enter> 
           <button
             onClick={()=>onClick_LogIn()}
-          > Log In 
+          > {t('FullPage', 'LogIn', 'LogIn')} 
           </button>
         </Styled.Div__LogIn_Enter> 
         

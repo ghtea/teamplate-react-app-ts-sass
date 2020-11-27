@@ -104,6 +104,12 @@ function Nav1({}: PropsNav1) {
           </div>
           <div> 
             <a
+              onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+            > {t('Nav', 'System')}
+            </a>
+          </div>
+          <div> 
+            <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
             > {t('Nav', 'LogIn')}
             </a>

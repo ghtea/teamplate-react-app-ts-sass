@@ -74,28 +74,16 @@ function Nav2({}: PropsNav2) {
       
       <Styled.Div__CollectionDestination>
         <CategoryDestination 
-          idCategory={'Animal'}
-          listIdLink={['Cat', 'Owl', 'Fox']}
+          idCategory={'System'}
+          listIdLink={['State', 'Styles', 'Language']}
         />
   		  <SoloDestination 
-  		    idSolo={'Plant'}
+  		    idSolo={'Diary'}
   		  />
       </Styled.Div__CollectionDestination>
 
       
       <Styled.Div__CollectionTool>
-      
-        <Styled.Div__Tool>
-        
-          <a onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
-            {t('Nav', 'LogIn')}
-          </a>
-          
-          <a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
-            {t('Nav', 'SignUp')}
-          </a>
-          
-        </Styled.Div__Tool>
         
         <Styled.Div__Tool>
           <a
@@ -103,11 +91,27 @@ function Nav2({}: PropsNav2) {
           >
             <IconSetting
               color={'inherit'}
-              width={'26px'}
-              height={'26px'}
+              width={'24px'}
+              height={'24px'}
             />
           </a>
         </Styled.Div__Tool>
+        
+        
+        <Styled.Div__Tool>
+          
+          <a onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')} >
+            {t('Nav', 'SignUp')}
+          </a>
+          
+          <Styled.A__LinkMain onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
+            {t('Nav', 'LogIn')}
+          </Styled.A__LinkMain>
+
+          
+        </Styled.Div__Tool>
+        
+        
         
       </Styled.Div__CollectionTool>
       

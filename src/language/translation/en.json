@@ -11,19 +11,21 @@
         "LogIn": "Log In",
         "SignUp": "Sign Up",
         
-        "Animal": "Animal",   
-        "Animal_Cat": "Cat",
-        "Animal_Owl": "Owl",
-        "Animal_Fox": "Fox",
+        "System": "System",   
+        "System_State": "State",
+        "System_Styles": "Styles",
+        "System_Language": "Language",
         
-        "Plant": "Plant"
+        "Diary": "Diary"
     },
     
     
     "FullPage": {
         
         "LogIn": {
-            "LogIn": "Log In"
+            "LogIn": "Log In",
+            "EmailAddress": "Email Address",
+            "Password": "Password"
         },
         "SignUp": {
             "SignUp": "Sign Up"

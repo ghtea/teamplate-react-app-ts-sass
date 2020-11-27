@@ -150,7 +150,7 @@ export const Div__CollectionTool = styled.div
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   
-	& > *:nth-child(1) {
+	& > *:last-child {
 	  margin-right: 10px;
 	}
   
@@ -210,3 +210,18 @@ export const Div__Tool = styled.div
   }
   
 `;
+
+
+export const A__LinkMain = styled.a
+`
+  color: ${ ({theme})=>theme.color.Nav.nav2_link_main___font  } !important; 
+  background-color: ${ ({theme})=>theme.color.Nav.nav2_link_main___bg }; 
+  
+  padding: 4px 8px 4px 8px; /* top right bottom left */
+  
+  border-radius: 5px;
+  
+  font-weight: regular;
+  
+  
+`

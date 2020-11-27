@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 
 import { useHistory, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
+import useTranslationTyped from 'tools/hooks/useTranslationTyped'
 
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
@@ -17,7 +17,7 @@ type PropsNameApp = {};
 function NameApp({}: PropsNameApp) {
   
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t } = useTranslationTyped();
   
   // event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, 
    
@@ -40,7 +40,7 @@ function NameApp({}: PropsNameApp) {
       </div>
       
       <div> 
-        <a> {t('Nav.name_app')}
+        <a> {t('Nav', 'NameApp')}
         </a>
       </div>
         
