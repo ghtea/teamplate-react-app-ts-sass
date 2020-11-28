@@ -1,28 +1,15 @@
 import styled from 'styled-components';
 
 export const Div__CategoryDestination = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
-  
-  box-sizing: border-box;
-  
-  
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: auto;
   height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: relative;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
   
 	&:hover {
 	  
 	  & > div:nth-child(1) > div:nth-child(1) > a {
-	    color: ${({theme})=>theme.colors.Nav.nav2_link___font__hover};
+	    color: ${c.Nav.nav2_link___font__hover};
 	  }
 	  
 	  & > div:nth-child(1) > div:nth-child(2) {
@@ -30,23 +17,17 @@ export const Div__CategoryDestination = styled.div
 	  }
 	}
   
-`;
+`}`;
 
 
 
+export const Div__CategoryDestination_Title = styled.div
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
-
-
-
-
-
-export const Div__CategoryDestination_Title = styled.div`
-  
-  display: flex;
-  
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
+  ${m.display("flex")}
+  ${m.flex_flow("column","nowrap")}
+  ${m.justify_content ("flex-start")}
+  ${m.align_items("flex-end")}
   
   width: auto;
 	heigth: auto;
@@ -55,115 +36,126 @@ export const Div__CategoryDestination_Title = styled.div`
 	  width : auto;
 	}
 	& a {
-	  color: ${({theme})=>theme.colors.Nav.nav2_link___font};
-	  
+	  color: ${c.Nav.nav2_link___font};
 	}
 	
-	
-`
+`}`;
+
 
 
 export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
-`
+`${( { theme:{mixins: m, colors: c, sizes: s}, spotlighted } )=>`
 
   width: 200px; 
   
   /* 모바일에서 타이틀 클릭으로 온오프가능하게 */
-  display: ${props=>props.spotlighted ? 'flex' : 'none' };
-  
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  
+  display: ${ spotlighted ? 'flex' : 'none' };
   
   position: absolute;
   z-index: 400;
-  top: calc(100% + 10px);
+  ${m._calc('top', `100% + 10px`)}
   
   overflow: visible;
-  /*box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5); not works */
   
-`
+  /*
+    ${m.box_shadow(`0px 0px 3px 3px ${c.Nav.nav2_modal___box_shadow}`)}
+  */
+  
+`}`;
 
 
 
 // http://apps.eky.hk/css-triangle-generator/
 // TraiangleBack is for border effect of traiangle
 export const Div__CategoryDestination_Popup_TriangleFront = styled.div
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: 0;
   height: 0;
   border-style: solid;
   content: "";
   position: absolute;
   
-  bottom: calc(100% - 1px);
+  ${m._calc('bottom', `100% - 1px`)}
   z-index: 401;
   border-width: 10px;
-  border-color: transparent transparent ${({theme})=>theme.colors.Nav.nav2_modal___bg} transparent;
+  border-color: transparent transparent ${c.Nav.nav2_modal___bg} transparent;
   
-`;
+`}`;
+
 
 export const Div__CategoryDestination_Popup_TriangleBack = styled.div
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: 0;
   height: 0;
   border-style: solid;
   content: "";
+  
   position: absolute;
-  
-  bottom: calc(100% - 2px);
+  ${m._calc('bottom', `100% - 2px`)}
   z-index: 399;
-  border-width: 12px;
-  border-color: transparent transparent ${({theme})=>theme.colors.Nav.nav2_modal___border} transparent;
   
-  -webkit-filter: drop-shadow(0px 0px 3px ${({theme})=>theme.colors.Nav.nav2_modal___drop_shadow});
-  filter: drop-shadow(0px 0px 3px ${({theme})=>theme.colors.Nav.nav2_modal___drop_shadow});
-`;
+  border-width: 12px;
+  border-color: transparent transparent ${c.Nav.nav2_modal___border} transparent;
+  
+  ${ m.filter(`drop-shadow(0px 0px 3px ${c.Nav.nav2_modal___drop_shadow})`) }
+  
+`}`;
+
 
 export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: 100%;
   height: 10px;
+  
   position: absolute;
-  bottom: calc(100% - 1px);
+  ${m._calc('bottom', `100% - 1px`)}
+
   /*background-color:red;*/
-`;
+`}`;
   
 
 
 export const Div__CategoryDestination_Popup_Box = styled.div
-`
-  z-index: 400;
-  background-color: ${({theme})=>theme.colors.Nav.nav2_modal___bg};
-  color: ${({theme})=>theme.colors.Nav.nav2_modal___font};
-  border: 1px solid ${({theme})=>theme.colors.Nav.nav2_modal___border};
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   
-  -webkit-box-shadow: 0px 0px 5px 2px ${({theme})=>theme.colors.Nav.nav2_modal___box_shadow}; 
-  box-shadow: 0px 0px 5px 2px ${({theme})=>theme.colors.Nav.nav2_modal___box_shadow};
+  background-color: ${c.Nav.nav2_modal___bg};
+  color: ${c.Nav.nav2_modal___font};
+  
+  border: 1px solid ${c.Nav.nav2_modal___border};
+  
+  z-index: 400;
+  
+  ${m.box_shadow(`0px 0px 5px 2px ${c.Nav.nav2_modal___box_shadow}`)}
 
   border-radius: 4px;
   
-`;
+`}`;
   
   
-export const Div__Link = styled.div`
+export const Div__Link = styled.div
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   height: 40px;
   
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${m.display("flex")}
+  ${m.flex_flow("column","nowrap")}
+  ${m.justify_content ("center")}
+  ${m.align_items("center")}
+  
   
   &:first-child { border-radius: 4px 4px 0 0; }
   
   &:last-child { border-radius: 0 0 4px 4px; }
   
-  border-collapse: separate; 
+  /* border-collapse: separate;    collapse | separate  */
   
   
   &:hover {
-    background-color: ${({theme})=>theme.colors.Nav.nav2_modal___bg__hover};
+    background-color: ${c.Nav.nav2_modal___bg__hover};
   }
   
-`
+`}`;

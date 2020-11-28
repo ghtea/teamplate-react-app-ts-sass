@@ -60,6 +60,17 @@ const mixinsPartial = {
     `
     
     return result;
+  },
+  
+  
+  filter: (value: string):string => {
+      
+    let result:string = `
+      -webkit-filter: ${value};
+      filter: ${value};
+    `
+    
+    return result;
   }
   
 };

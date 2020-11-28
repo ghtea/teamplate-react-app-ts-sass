@@ -60,6 +60,10 @@ export const all = styled.div
   visibility: visible; /* hidden */
   opacity: 1;
   
+  
+  border-collapse: separate;  /*  collapse | separate  */
+
+  
   @media (min-width: ${s.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	    
 	}

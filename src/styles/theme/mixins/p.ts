@@ -4,7 +4,7 @@ const mixinsPartial = {
 
 
   
-  placeholder: (styles:string):string => {
+  _placeholder: (styles:string):string => {
       
     let result:string = ``;
     

@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
 export const Header__Nav2 = styled.header<{showingNav: boolean}>
-`
+`${( { theme:{mixins: m, colors: c, sizes: s}, showingNav } )=>`
+
   display: none;
-  visibility: ${ (props)=> props.showingNav ?  'visible' : 'hidden'};
+  visibility: ${ showingNav ?  'visible' : 'hidden'};
   
-	@media (min-width: ${({theme})=>theme.sizes.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
+	@media (min-width: ${ s.device.minWidth_m}px) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	  
-	  display: flex;
-    flex-flow: row nowrap;   /* row */
-    justify-content: space-evenly; align-items: center;
-    
-    box-sizing: border-box;
-    border-bottom: 1px solid ${ ({theme})=>theme.colors.Nav.nav2_name_app___border };  /* border: 2px dashed #aaa; */
+	  ${m.display("flex")}
+    ${m.flex_flow("row","nowrap")}
+    ${m.justify_content ("space-around")}
+    ${m.align_items("center")}
+  
+  
+    border-bottom: 1px solid ${ c.Nav.nav2_name_app___border };  /* border: 2px dashed #aaa; */
     
     
     width: 100%;
-    height: ${ ({theme})=>theme.sizes.nav.height_nav2 }px;   /* we should let 'Content' know this value too */ 
-    font-size: 1rem;
-    border-radius: 0px;
+    height: ${ s.nav.height_nav2 }px;   /* we should let 'Content' know this value too */ 
     
     position: fixed;
     z-index: 200;
@@ -38,34 +38,24 @@ export const Header__Nav2 = styled.header<{showingNav: boolean}>
   	
 	}
   
-`;
+`}`;
+
 
 
 export const Div__NameApp = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  
-  height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("flex-start")}
+  ${m.align_items("center")}
   
 	
 	& > *:nth-child(1) {
 	  margin-left: 10px;
 	}
   & > *:nth-child(2) {
-    color: ${ ({theme})=>theme.colors.Nav.nav2_name_app___font };  
+    color: ${ c.Nav.nav2_name_app___font };  
   
 	  font-size: 1.4rem;
 	  font-weight: bold;
@@ -73,123 +63,80 @@ export const Div__NameApp = styled.div
 	  margin-left: 10px;
 	}
   
-`;
-
+`}`;
 
 
 export const Div__CollectionDestination = styled.div
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: center; align-items: center;
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("center")}
+  ${m.align_items("center")}
   
-  box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: transparent; 
-  color: ${ ({theme})=>theme.colors.Nav.nav2_link___font  };  
-  
-  /*width: 100%; */
-  height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
+  color: ${ c.Nav.nav2_link___font  };  
   
   & > div:nth-child(n+2){
     margin-left: 10px;
   }
   
   & > div {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
     
-    box-sizing: border-box;
-    border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-    
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("center")}
+    ${m.align_items("center")}
     
     width: auto;
     height: auto;
     
-    border-radius: 0px;
-    
     cursor: pointer;
     
     &:hover {
-      color: ${ ({theme})=>theme.colors.Nav.nav2_link___font__hover  };  
+      color: ${ c.Nav.nav2_link___font__hover  };  
     }
   }
-`;
-
+`}`;
 
 
 export const Div__CollectionTool = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: flex-end; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  
-  background-color: transparent; 
-  color: #000;
-  
-  height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("flex-end")}
+  ${m.align_items("center")}
+   
 	& > *:last-child {
 	  margin-right: 10px;
 	}
   
   
-`;
-
+`}`;
 
 export const Div__Tool = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: flex-end; align-items: center;
-  
-  box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  
-  background-color: transparent; 
-  color: #000;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("flex-end")}
+  ${m.align_items("center")}
   
   width: auto;
   height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
   
 	& > *:nth-child(1) {
 	  margin-right: 10px;
 	}
   
   & > a {
-    display: flex;
-    flex-flow: row nowrap;   /* row */
-    justify-content: flex-end; align-items: center;
-    color: ${ ({theme})=>theme.colors.Nav.nav2_link___font  };  
+  
+    ${m.display("flex")}
+    ${m.flex_flow("row","nowrap")}
+    ${m.justify_content ("flex-end")}
+    ${m.align_items("center")}
+    
+    color: ${ c.Nav.nav2_link___font  };  
     width: auto;
     
     
@@ -199,23 +146,23 @@ export const Div__Tool = styled.div
     
     & > div {
       width: auto;
-      color: 'inherit';  
+      color: inherit;  
     }
     
     &:hover {
-      color: ${ ({theme})=>theme.colors.Nav.nav2_link___font__hover};  
+      color: ${ c.Nav.nav2_link___font__hover};  
     }
     
     
   }
   
-`;
-
+`}`;
 
 export const A__LinkMain = styled.a
-`
-  color: ${ ({theme})=>theme.colors.Nav.nav2_link_main___font  } !important; 
-  background-color: ${ ({theme})=>theme.colors.Nav.nav2_link_main___bg }; 
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
+  color: ${ c.Nav.nav2_link_main___font  }; 
+  background-color: ${ c.Nav.nav2_link_main___bg }; 
   
   padding: 4px 8px 4px 8px; /* top right bottom left */
   
@@ -223,5 +170,4 @@ export const A__LinkMain = styled.a
   
   font-weight: regular;
   
-  
-`
+`}`;

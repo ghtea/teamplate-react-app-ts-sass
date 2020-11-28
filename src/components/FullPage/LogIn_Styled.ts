@@ -46,7 +46,7 @@ export const Div__LogIn_Input = styled.div
     
     
     &:focus {
-      ${m.placeholder(`
+      ${m._placeholder(`
           color:transparent;
       `)}
       

@@ -42,7 +42,7 @@ export const Div__SignUp_Input = styled.div
     border-radius: 5px;
     
     &:focus {
-      ${m.placeholder(`
+      ${m._placeholder(`
           color:transparent;
       `)}
       

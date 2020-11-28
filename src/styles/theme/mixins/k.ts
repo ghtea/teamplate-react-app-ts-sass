@@ -2,33 +2,18 @@
 
 const mixinsPartial = {
 
-
-  /*
-  display: (valueFull:string):string => {
+    _keyframes: (name: string, value: string):string => {
       
-    const listValueEach = valueFull.split(" ");
+    let result:string = `
+        @-webkit-keyframes ${name} ${value}
+        @-moz-keyframes ${name} ${value}
+        @-ms-keyframes ${name} ${value}
+        @-o-keyframes ${name} ${value}
+        @keyframes ${name} ${value}
+    `
     
-    if (listValueEach[0]==='flex'){
-      return `
-        display: -webkit-box;
-        display: -moz-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-      `
-    }
-    
-    
-    else {
-      return `
-        display: ${valueFull};  
-      `
-    }
+    return result;
   }
-  */
-  
-  
-  
   
 
 };

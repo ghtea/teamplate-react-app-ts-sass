@@ -100,9 +100,19 @@ const mixinsPartial = {
     `;
     
     return result;
+  },
+  
+  animation: (value: string):string => {
+      
+    let result:string = `
+      -webkit-animation: ${value};
+      -moz-animation: ${value};
+      -o-animation: ${value};
+      animation: ${value};
+    `
+    
+    return result;
   }
-  
-  
 
 };
 

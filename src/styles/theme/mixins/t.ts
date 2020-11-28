@@ -2,34 +2,18 @@
 
 const mixinsPartial = {
 
-
-  /*
-  display: (valueFull:string):string => {
+    transform: (value: string):string => {
       
-    const listValueEach = valueFull.split(" ");
+    let result:string = `
+        -webkit-transform: ${value};
+        -moz-transform:  ${value};
+        -ms-transform:  ${value};
+        -o-transform:  ${value};
+        transform:  ${value};
+    `
     
-    if (listValueEach[0]==='flex'){
-      return `
-        display: -webkit-box;
-        display: -moz-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-      `
-    }
-    
-    
-    else {
-      return `
-        display: ${valueFull};  
-      `
-    }
-  }
-  */
-  
-  
-  
-  
+    return result;
+  },
 
 };
 
