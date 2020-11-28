@@ -2,81 +2,82 @@ import styled, {createGlobalStyle} from 'styled-components';
 //import Immutable from 'immutable';
 
 
-const GlobalStyle = createGlobalStyle`
-  
-  html {
-    margin: 0px 0px 0px 0px; /* top right bottom left */
-    padding: 0px 0px 0px 0px; /* top right bottom left */
-    box-sizing: border-box;
-  }
+// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mixins
+
+const GlobalStyle = createGlobalStyle
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
   body {
     
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: flex-start; align-items: center;
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("flex-start")}
+    ${m.align_items("center")}
     
-    box-sizing: border-box;
-  
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.body___bg };  
-    color: ${ ({theme})=>theme.colors.GlobalStyle.body___font };  
+    ${m.box_sizing("border-box")}
     
-    width: 100%; min-width: ${({theme})=>theme.sizes.device.minWidth_xs}px;
+    background-color: ${c.GlobalStyle.body___bg};
+    color: ${c.GlobalStyle.body___font };
+    
+    width: 100%; min-width: ${ s.device.minWidth_xs}px; 
     height: auto;
     
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
     
-    border-radius: 0px;
-    
     position: relative;
     
-    margin: 0px 0px 0px 0px; /* top right bottom left */
-    padding: 0px 0px 0px 0px; /* top right bottom left */
-    
-    
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 0px 0px 0px; 
   }
+  
   
   div {
   
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: flex-start; align-items: center;
-    
-    box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.div___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.div___bg };
-    color: ${ ({theme})=>theme.colors.GlobalStyle.div___font };
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("flex-start")}
+    ${m.align_items("center")}
     
     width: 100%; 
     height: auto;
+    
+    ${m.box_sizing("border-box")}
+    
+    background-color: ${c.GlobalStyle.div___bg};
+    color: ${c.GlobalStyle.div___font } !important;
+    
     font-size: 1rem;
-    border-radius: 0px;
     
-    position: static;
-    z-index: auto;
+    position: relative;
+    z-index: inherit;
     
-    margin: 0px 0px 0px 0px; /* top right bottom left */
-    padding: 0px 0px 0px 0px; /* top right bottom left */
+    overflow: auto;
     
   }
+  
   
   
   button {
   
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
-    
-    box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.button___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button___bg };
-    color: ${ ({theme})=>theme.colors.GlobalStyle.button___font };
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("center")}
+    ${m.align_items("center")}
     
     width: auto; 
     height: auto;
+    
+    ${m.box_sizing("border-box")}
+    
+    background-color: ${c.GlobalStyle.button___bg};
+    color: ${c.GlobalStyle.button___font };
+    
+    border: 1px solid ${c.GlobalStyle.button___border };     
+    
     font-size: 1rem;
-    border-radius: 0px;
+    border-radius: 4px;
+    
     font-family: 'Noto Sans KR', sans-serif;
     position: static;
     
@@ -84,22 +85,25 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px 0px 0px 0px; /* top right bottom left */
     
     cursor: pointer;
+    
   }
   
   
   a {
   
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: flex-start; align-items: center;
-    
-    box-sizing: border-box;
-    color: ${ ({theme})=>theme.colors.GlobalStyle.a___font };
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("flex-start")}
+    ${m.align_items("center")}
     
     width: auto; 
     height: auto;
+    
+    ${m.box_sizing("border-box")}
+    
+    color: ${c.GlobalStyle.a___font };
+    
     font-size: inherit;
-    border-radius: 0px;
     
     position: static;
     
@@ -111,19 +115,24 @@ const GlobalStyle = createGlobalStyle`
   
   
   input {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
-    
-    box-sizing: border-box;
-    border: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.input___border };  /* border: 2px dashed #aaa; */
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.input___bg };
-    color: ${ ({theme})=>theme.colors.GlobalStyle.input___font };
+  
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("center")}
+    ${m.align_items("center")}
     
     width: auto; 
     height: auto;
-    font-size: 1rem;
+    
+    ${m.box_sizing("border-box")}
+    
+    background-color: ${c.GlobalStyle.input___bg};
+    color: ${c.GlobalStyle.input___font };
+    
+    border: 1px solid ${c.GlobalStyle.input___border };     
     border-radius: 0px;
+    
+    font-size: 1rem;
     
     position: static;
     
@@ -131,17 +140,19 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px 0px 0px 8px; /* top right bottom left */
     
     &:focus {
-      background-color: ${ ({theme})=>theme.colors.GlobalStyle.input___bg__focus };
-      color: ${ ({theme})=>theme.colors.GlobalStyle.input___font__focus };
-      border: 2px solid ${ ({theme})=>theme.colors.GlobalStyle.input___border__focus }; 
-      outline: 1px solid ${ ({theme})=>theme.colors.GlobalStyle.input___outline__focus };
-      border-radius: 0px;
       
-      -webkit-box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.colors.GlobalStyle.input___box_shadow__focus };
-      box-shadow: 0px 0px 15px 2px ${ ({theme})=>theme.colors.GlobalStyle.input___box_shadow__focus };
-
+      background-color: ${c.GlobalStyle.input___bg__focus};
+      color: ${c.GlobalStyle.input___font__focus };
+    
+      border: 2px solid ${c.GlobalStyle.input___border__focus };     
+      border-radius: 0px;
+      outline: 1px solid ${c.GlobalStyle.input___outline__focus };    /*   more limits compared to borders  https://developer.mozilla.org/en-US/docs/Web/CSS/outline  */
+      
+      ${m.box_shadow(  `0px 0px 15px 2px ${c.GlobalStyle.input___box_shadow__focus}`)}
+      
     }
   }
-`
+
+`}`;
 
 export default GlobalStyle;

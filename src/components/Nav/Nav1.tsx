@@ -23,7 +23,7 @@ function Nav1({}: PropsNav1) {
   
   const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
   const showingBoardNav1:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['boardNav1']);
-  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
+  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['modal']['setting']);
 
   const onClick_LinkInsideApp = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
@@ -54,7 +54,7 @@ function Nav1({}: PropsNav1) {
   const onClick_ShowHideSetting = useCallback(
     () => {
       dispatch(actionsStatus.return__REPLACE({ 
-        listKey: ['showing', 'popup', 'setting'],
+        listKey: ['showing', 'modal', 'setting'],
         replacement: !showingSetting
       }))
     },[showingSetting]

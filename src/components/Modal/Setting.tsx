@@ -29,7 +29,7 @@ function Setting({}: PropsSetting) {
   const onClick_HideSetting = useCallback(
     () => {
       dispatch(actionsStatus.return__REPLACE({ 
-        listKey: ['showing', 'popup', 'setting'],
+        listKey: ['showing', 'modal', 'setting'],
         replacement: false
       }))
     },[]
@@ -65,12 +65,12 @@ function Setting({}: PropsSetting) {
     <Styled.Div__Setting>
       
       <Styled.Div__Setting_Header>
-        <div> {t('Popup', 'Setting', 'Title')} </div>
+        <div> {t('Modal', 'Setting', 'Title')} </div>
         <div
           onClick={()=>onClick_HideSetting()}
         > 
           <IconX
-            listKeyTheme={['colors', 'Popup', 'setting_header___icon']}
+            listKeyTheme={['colors', 'Modal', 'setting_header___icon']}
             width={'24px'}
             height={'24px'}
           />
@@ -81,7 +81,7 @@ function Setting({}: PropsSetting) {
       <Styled.Div__Setting_Content>
         
         <Styled.Div__Setting_Content_Section>
-          <div> {t('Popup', 'Setting', 'Theme')} </div>
+          <div> {t('Modal', 'Setting', 'Theme')} </div>
           <div>
             <Styled.Button__Option 
               onClick={()=>onClick_ChangeOptionTheme('auto')}
@@ -102,7 +102,7 @@ function Setting({}: PropsSetting) {
         </Styled.Div__Setting_Content_Section>
         
         <Styled.Div__Setting_Content_Section>
-          <div> {t('Popup', 'Setting', 'Language')} </div>
+          <div> {t('Modal', 'Setting', 'Language')} </div>
           <div>
             <Styled.Button__Option 
               onClick={()=>onClick_ChangeLanguage('en')}

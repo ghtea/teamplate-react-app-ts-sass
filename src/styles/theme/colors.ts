@@ -4,9 +4,9 @@ import palette from './colors/palette';
 type Colors = typeof colorsLight;
 /*
 type Color = {
-  [index:string]: {
-    [index2:string] : string
-  }
+  
+  [key1:string]: { [key2:string] : string } | string;
+  
 };
 */
 
@@ -97,12 +97,12 @@ export const colorsLight = {
       
       nav2_tool___icon: returnColor( palette.basic['70']),
       
-      nav2_popup___bg: returnColor( palette.basic['100']),
-      nav2_popup___font: returnColor( palette.basic['25']),
-      nav2_popup___border: returnColor( palette.basic['90']),
-      nav2_popup___bg__hover: returnColor( palette.basic['95']),
-      nav2_popup___box_shadow: returnColor( palette.basic['60'], 0.3),
-      nav2_popup___drop_shadow: returnColor( palette.basic['60'], 0.5)
+      nav2_modal___bg: returnColor( palette.basic['100']),
+      nav2_modal___font: returnColor( palette.basic['25']),
+      nav2_modal___border: returnColor( palette.basic['90']),
+      nav2_modal___bg__hover: returnColor( palette.basic['95']),
+      nav2_modal___box_shadow: returnColor( palette.basic['60'], 0.3),
+      nav2_modal___drop_shadow: returnColor( palette.basic['60'], 0.5)
     },
     
     FullPage : {
@@ -111,12 +111,12 @@ export const colorsLight = {
       
     },
     
-    Popup : {
-      popup___bg: returnColor( palette.basic['100']),
-      popup___font: returnColor( palette.basic['25']),
-      popup___border: returnColor( palette.basic['90']),
-      popup___box_shadow: returnColor( palette.basic['60'], 0.3),
-      popup___drop_shadow: returnColor( palette.basic['60'], 0.5),
+    Modal : {
+      modal___bg: returnColor( palette.basic['100']),
+      modal___font: returnColor( palette.basic['25']),
+      modal___border: returnColor( palette.basic['90']),
+      modal___box_shadow: returnColor( palette.basic['60'], 0.3),
+      modal___drop_shadow: returnColor( palette.basic['60'], 0.5),
       shadow___bg: returnColor( palette.basic['00'], 0.1),
       
       setting_header___icon: returnColor( palette.basic['70']),

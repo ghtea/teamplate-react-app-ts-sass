@@ -15,7 +15,7 @@ import 'styles/importFonts.css';
 import Nav from "./components/Nav";
 import Content from "./components/Content";
 import FullPage from "./components/FullPage";
-import Popup from "./components/Popup";
+import Modal from "./components/Modal";
 import Notification from "./components/Notification";
 
 // TS  https://velog.io/@velopert/create-typescript-react-component
@@ -95,7 +95,7 @@ function App({}: PropsApp) {
       <GlobalStyle />
       
       <Notification />
-      <Popup />
+      <Modal />
       
       {isFullPage && <FullPage/>}
       

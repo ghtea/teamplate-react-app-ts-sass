@@ -4,21 +4,21 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
-import Setting from "./Popup/Setting";
+import Setting from "./Modal/Setting";
 
-import * as Styled from './Popup_Styled';
+import * as Styled from './Modal_Styled';
 
-type PropsPopup = {};
+type PropsModal = {};
 
-function Popup({}: PropsPopup) {
+function Modal({}: PropsModal) {
   
-  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['popup']['setting']);
+  const showingSetting:boolean = useSelector((state: StateRoot) => state['status']['showing']['modal']['setting']);
   const dispatch = useDispatch();
   
-  const onClick_HidePopup = useCallback(
-    (idPopup:string) => {
+  const onClick_HideModal = useCallback(
+    (idModal:string) => {
       dispatch(actionsStatus.return__REPLACE({ 
-        listKey: ['showing', 'popup', idPopup],
+        listKey: ['showing', 'modal', idModal],
         replacement: false
       }))
     },[showingSetting]
@@ -31,7 +31,7 @@ function Popup({}: PropsPopup) {
       {showingSetting && 
         <>
           <Styled.Div__Shadow
-            onClick={()=>onClick_HidePopup('setting')}
+            onClick={()=>onClick_HideModal('setting')}
           />
           <Setting />
         </>
@@ -42,7 +42,7 @@ function Popup({}: PropsPopup) {
   );
 }
 
-export default Popup;
+export default Modal;
 
 /*
 <Route path="/sign-up" >

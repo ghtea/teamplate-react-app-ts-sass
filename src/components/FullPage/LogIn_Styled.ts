@@ -1,95 +1,64 @@
 import styled from 'styled-components';
 
 export const Div__LogIn = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
-  
-  box-sizing: border-box;
-  
-  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
+  width: ${ s.device.minWidth_xs}px; 
   height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
   
   margin: 20px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-`;
+`}`;
 
 
 
 
 export const Div__LogIn_TitlePage = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
-  
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: 100%;
   height: 50px;
+  
   font-size: 1.6rem;
-  border-radius: 0px;
   
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-`;
+`}`;
 
 
 export const Div__LogIn_Input = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: flex-start;
-  
-  box-sizing: border-box;
-  
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   
   width: 100%;
   height: 56px;
   
-  border-radius: 0px;
-  
-  position: relative;
-  
-  margin: 0px;
-  padding: 0px;
   &:nth-child(n+2){
     margin-top: 5px;
   }
   
-  
+
   
   & > input {
+  
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
+    
     border-radius: 5px;
     
-    &:focus::placeholder { color:transparent; }
-    &:focus::-webkit-input-placeholder { color:transparent; }
-    &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-    &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-    &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     
     &:focus {
+      ${m.placeholder(`
+          color:transparent;
+      `)}
+      
       padding-top: 12px; 
       border-radius: 5px;
+      
+      & + div {
+        display: block;
+      }
     }
-    &:focus + div{
-      display: block;
-    }
+    
+
   }
   
   
@@ -97,7 +66,7 @@ export const Div__LogIn_Input = styled.div
     
     display: none;
     font-size: 0.8rem;
-    color: ${ ({theme})=>theme.colors.Content.label___font };  
+    color: ${ c.Content.label___font };  
     
     position: absolute;
     top: 1px;
@@ -106,45 +75,32 @@ export const Div__LogIn_Input = styled.div
   
   
   
-`;
-
+`}`;
 
 
 
 
 export const Div__LogIn_Identity = styled(Div__LogIn_Input)
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-`
-
+`}`;
 
 export const Div__LogIn_Password = styled(Div__LogIn_Input)
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-`
-
+`}`;
 
 
 export const Div__LogIn_CollectionLink = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: flex-end; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("flex-end")}
+  ${m.align_items("center")}
   
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
-  
-  width: 100%; min-width: 100%; max-width: 100%;
+  width: 100%; 
   height: 40px;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > div {
     width: auto;
@@ -156,27 +112,24 @@ export const Div__LogIn_CollectionLink = styled.div
       font-size: 1.1rem;
     }
   }
-`;
-
+`}`;
 
 
 export const Div__LogIn_Enter = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  
-  position: static;
+  ${m.display("flex")}
+  ${m.flex_flow("column","nowrap")}
+  ${m.justify_content ("center")}
+  ${m.align_items("center")}
   
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > button {
   
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
-    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
+    background-color: ${  c.GlobalStyle.button_main___bg };
+    color: ${  c.GlobalStyle.button_main___font };
   
     width: 100%;
     height: 44px;
@@ -186,46 +139,38 @@ export const Div__LogIn_Enter = styled.div
     font-size: 1.2rem;
   }
   
-`;
-
+`}`;
 
 export const Div__LogIn_Social = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
-  width: 100%;
-  height: auto;
-  
-  font-weight: normal;
-  
-  
-  position: static;
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("space-around")}
+  ${m.align_items("center")}
   
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > button {
-    font-size: 1rem;
-    
-    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
-    border-radius: 4px;
     
     width: 90px;
     height: 44px;
     
+    color: ${ c.GlobalStyle.button_main___font };
+    border-radius: 4px;
+    
+    
+    
     &:nth-child(1){
-      background-color: ${ ({theme})=>theme.colors.Share.button_google___bg };
+      background-color: ${ c.Share.button_google___bg };
     }
     &:nth-child(2){
-      background-color: ${ ({theme})=>theme.colors.Share.button_facebook___bg };
+      background-color: ${ c.Share.button_facebook___bg };
     }
     &:nth-child(3){
-      background-color: ${ ({theme})=>theme.colors.Share.button_twitter___bg };
+      background-color: ${ c.Share.button_twitter___bg };
     }
   }
   
-`;
+`}`;

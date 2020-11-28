@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const Div__TemplateBasic = styled.div
 `
   display: flex;
-  flex-flow: column nowrap;   /* row */
+  flex-flow: column nowrap;  
   justify-content: flex-start; align-items: center;
+  
   
   box-sizing: border-box;
   

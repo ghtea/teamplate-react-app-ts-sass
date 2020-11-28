@@ -12,12 +12,14 @@ const sizes = {
     minHeight: 400
   },
   
-  device : {
-    minWidth_xs : 320,   // min-width
-    minWidth_s : 576,
-    minWidth_m : 768,
+  device : {  // https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
+    minWidth_xs : 320,   // iPhone 5, 5s, 5c, SE     height:   568
+    minWidth_s : 576,   // iPhone 6, 6s, 7, 8     height: 667
+    minWidth_m : 768,   
     minWidth_l : 992,
-    minWidth_xl : 1200
+    minWidth_xl : 1200,
+    
+    normalHeight_xs: 440
   }
   
 };

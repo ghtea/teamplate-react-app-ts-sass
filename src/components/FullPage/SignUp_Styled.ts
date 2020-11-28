@@ -1,69 +1,34 @@
 import styled from 'styled-components';
 
 export const Div__SignUp = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: center; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  
-  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
+  width: ${s.device.minWidth_xs}px; 
   height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
   
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-`;
-
+`}`;
 
 
 export const Div__SignUp_TitlePage = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
   width: 100%;
   height: 50px;
-  font-size: 1.6rem;
-  border-radius: 0px;
   
-  position: static;
+  font-size: 1.6rem;
   
   margin: 20px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-`;
+`}`;
 
 
 export const Div__SignUp_Input = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: flex-start;
-  
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
-  
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   width: 100%;
   height: 56px;
   
-  border-radius: 0px;
-  
-  position: relative;
-
   &:nth-child(n+2){
     margin-top: 5px;
   }
@@ -73,22 +38,20 @@ export const Div__SignUp_Input = styled.div
   & > input {
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
     
     border-radius: 5px;
     
-    &:focus::placeholder { color:transparent; }
-    &:focus::-webkit-input-placeholder { color:transparent; }
-    &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-    &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-    &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
-    
     &:focus {
+      ${m.placeholder(`
+          color:transparent;
+      `)}
+      
       padding-top: 12px; 
       border-radius: 5px;
-    }
-    &:focus + div{
-      display: block;
+      
+      & + div {
+        display: block;
+      }
     }
   }
   
@@ -97,7 +60,7 @@ export const Div__SignUp_Input = styled.div
     
     display: none;
     font-size: 0.8rem;
-    color: ${ ({theme})=>theme.colors.Content.label___font };  
+    color: ${ c.Content.label___font };  
     
     position: absolute;
     top: 1px;
@@ -106,15 +69,18 @@ export const Div__SignUp_Input = styled.div
   
   
   
-`;
+`}`;
 
 
 
 export const Div__SignUp_Identity = styled(Div__SignUp_Input)
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   & > div:nth-child(2) {
+  
     height: 40px;
     margin-top: 2px;
+    
     & > input {
       width: 100%;
       height: 100%;
@@ -122,19 +88,23 @@ export const Div__SignUp_Identity = styled(Div__SignUp_Input)
   }
   
   & > div:nth-child(3) {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
-  
+    
+    ${m.display("flex")}
+    ${m.flex_flow("row","nowrap")}
+    ${m.justify_content ("center")}
+    ${m.align_items("center")}
+    
     height: 22px;
   }
-`
+`}`;
 
 
 export const Div__SignUp_Password = styled(Div__SignUp_Input)
-`
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   & > div:nth-child(2), & > div:nth-child(3) {
     height: 36px;
+    
     & > input {
       width: 100%;
       height: 100%;
@@ -150,36 +120,28 @@ export const Div__SignUp_Password = styled(Div__SignUp_Input)
   }
   
   & > div:nth-child(4) {
-    display: flex;
-    flex-flow: column nowrap;   /* row */
-    justify-content: center; align-items: center;
   
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("center")}
+    ${m.align_items("center")}
+    
     height: 22px;
   }
-`
+`}`;
 
 
 
 export const Div__SignUp_CollectionLink = styled.div
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: flex-end; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
-  
-  width: 100%; min-width: 100%; max-width: 100%;
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("flex-end")}
+  ${m.align_items("center")}
+    
+  width: 100%;
   height: 40px;
-  
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > div {
     width: auto;
@@ -192,69 +154,32 @@ export const Div__SignUp_CollectionLink = styled.div
     }
   }
   
-`;
-
+`}`;
 
 
 export const Div__SignUp_Enter = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
-  box-sizing: border-box;
-  
-  background-color: transparent;
-  
-  width: 100%;
-  height: auto;
-  
-  position: static;
+  ${m.display("flex")}
+  ${m.flex_flow("column","nowrap")}
+  ${m.justify_content ("center")}
+  ${m.align_items("center")}
   
   margin: 10px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
   & > button {
   
-    background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
-    color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
+    background-color: ${ c.GlobalStyle.button_main___bg };
+    color: ${ c.GlobalStyle.button_main___font };
   
     width: 100%;
     height: 44px;
     
-    font-weight: normal;
     border-radius: 4px;
+    
+    font-weight: normal;
     font-size: 1.2rem;
   }
   
-`;
-
-
-export const Div__SignUp_Social = styled.div
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: space-evenly; align-items: center;
-  
-  box-sizing: border-box;
-
-  background-color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___bg };
-  color: ${ ({theme})=>theme.colors.GlobalStyle.button_main___font };
-  
-  width: 100%;
-  height: 44px;
-  
-  font-weight: normal;
-  border-radius: 4px;
-  
-  position: static;
-  
-  margin: 10px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  & > div {
-    font-size: 1rem;
-  }
-  
-`;
-
+`}`;

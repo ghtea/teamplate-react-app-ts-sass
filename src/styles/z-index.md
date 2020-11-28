@@ -1,20 +1,28 @@
 
 
-Notification 900
+Notification  900
 
 
-Popup 600
-Popup - Shadow 599
+Modal  600
+    Shadow 599
 
 
-Nav1 - 200
-Nav2 - 200
+Nav1  200
+    
 
-Nav1 - bar : 100
-Nav1 - board : 50
+Nav2  200
+    
 
-Nav2 - popup 400
-Nav2 - popup - triangle 401. 402
+    Nav1 - bar : 100
+    Nav1 - board : 50
+
+    Nav2 - popup 400
+    Nav2 - popup - triangle 401. 402
 
 
-FullPage - background -100
+FullPage  100
+    Background 10
+    
+    
+Content  0
+    background 

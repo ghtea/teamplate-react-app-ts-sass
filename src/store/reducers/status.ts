@@ -39,7 +39,7 @@ const stateInitial = {
       all: true,
       boardNav1: false
     },
-    popup: {
+    modal: {
       setting: false
     }
   }

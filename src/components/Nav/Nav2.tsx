@@ -43,7 +43,7 @@ function Nav2({}: PropsNav2) {
   const onClick_ShowSetting = useCallback(
     () => {
       dispatch(actionsStatus.return__REPLACE({ 
-        listKey: ['showing', 'popup', 'setting'],
+        listKey: ['showing', 'modal', 'setting'],
         replacement: true
       }))
     },[]

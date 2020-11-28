@@ -8,23 +8,24 @@ import {KindSituation} from 'language/catalogSituation';
 */
   
 export const Div__Banner = styled.div<{kindSituation: KindSituation}>
-`
-  display: flex;
-  flex-flow: row nowrap;   /* row */
-  justify-content: space-betwwen; align-items: center;
+
+`${( { theme:{mixins: m, colors: c, sizes: s}, kindSituation } )=>`
+
+
+  ${m.display("flex")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("space-between")}
+  ${m.align_items("center")}
   
-  box-sizing: border-box;
   
-  
-  width: ${({theme})=>theme.sizes.device.minWidth_xs}px; 
+  width: ${ s.device.minWidth_xs}px; 
   height: auto;
-  font-size: 1rem;
+  
   
   border-radius: 8px;
   
-  position: relative;
-  
   padding: 10px 0px 10px 0px; /* top right bottom left */
+  
   
   &:nth-child(n+2) { 
     margin-top: 5px;
@@ -34,44 +35,45 @@ export const Div__Banner = styled.div<{kindSituation: KindSituation}>
   
   
   &.success {
-    background-color: ${({theme})=>theme.colors.Notification.banner___bg__success};
-    color: ${({theme})=>theme.colors.Notification.banner___font__success};
-    border: 2px solid ${({theme})=>theme.colors.Notification.banner___border__success};
+    background-color: ${c.Notification.banner___bg__success};
+    color: ${c.Notification.banner___font__success};
+    border: 2px solid ${c.Notification.banner___border__success};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__success};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__success };
+    ${m.box_shadow( `0px 0px 10px 2px ${ c.Notification.banner___box_shadow__success}` )}
+    
   }
   
   &.hint {
-    background-color: ${({theme})=>theme.colors.Notification.banner___bg__hint};
-    color: ${({theme})=>theme.colors.Notification.banner___font__hint};
-    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__hint};
+    background-color: ${c.Notification.banner___bg__hint};
+    color: ${c.Notification.banner___font__hint};
+    border: 1px solid ${c.Notification.banner___border__hint};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__hint};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__hint };
+    ${m.box_shadow( `0px 0px 10px 2px ${ c.Notification.banner___box_shadow__hint}` )}
+    
   }
   
   &.error {
-    background-color: ${({theme})=>theme.colors.Notification.banner___bg__error};
-    color: ${({theme})=>theme.colors.Notification.banner___font__error};
-    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__error};
+    background-color: ${c.Notification.banner___bg__error};
+    color: ${c.Notification.banner___font__error};
+    border: 1px solid ${c.Notification.banner___border__error};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__error };
+    ${m.box_shadow( `0px 0px 10px 2px ${ c.Notification.banner___box_shadow__error}` )}
+    
   }
   
   &.warning {
-    background-color: ${({theme})=>theme.colors.Notification.banner___bg__warning};
-    color: ${({theme})=>theme.colors.Notification.banner___font__warning};
-    border: 1px solid ${({theme})=>theme.colors.Notification.banner___border__warning};
+    background-color: ${c.Notification.banner___bg__warning};
+    color: ${c.Notification.banner___font__warning};
+    border: 1px solid ${c.Notification.banner___border__warning};
     
-    -webkit-box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__warning};
-    box-shadow: 0px 0px 10px 2px ${ ({theme})=>theme.colors.Notification.banner___box_shadow__warning };
+    ${m.box_shadow( `0px 0px 10px 2px ${ c.Notification.banner___box_shadow__warning}` )}
+    
   }
   
   
   & > div:nth-child(1){
     width: 50px;
+    
     border-right-width: 2px;
     border-right-style: solid;
     border-right-color: inherit;
@@ -104,34 +106,15 @@ export const Div__Banner = styled.div<{kindSituation: KindSituation}>
       border-left-style: none;
     }
   }
-`;
+  
+`}`;
 
 
 export const Button__Banner_Delete = styled.button
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
-  
-  box-sizing: border-box;
-  
-  background-color: transparent; 
-  color: #000;
-  
-  width: 100%; min-width: 100%; max-width: 100%;
-  height: auto;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-  
-  
+`${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
+
   & > div:nth-child(1){
-	    display: flex;
+	    ${m.display("flex")}
 	  }
 	  & > div:nth-child(2){
 	    display: none;
@@ -142,13 +125,12 @@ export const Button__Banner_Delete = styled.button
 	    display: none;
 	  }
 	  & > div:nth-child(2){
-	    display: flex;
+	    ${m.display("flex")}
 	  }
 	}
 	
   
-`;
-
+`}`;
 
 const keyframes_ScaleGuage = keyframes`
   0% { 
@@ -160,38 +142,32 @@ const keyframes_ScaleGuage = keyframes`
 `
 
 export const Div__Banner_Guage = styled.div<{banner: TypeBanner}>
-`
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: flex-start; align-items: center;
-  
-  box-sizing: border-box;
-  
+`${( { theme:{mixins: m, colors: c, sizes: s}, banner } )=>`
+
   width: inherit;
   height: 1px;
-  font-size: 1rem;
-  border-radius: 0px;
   
   position: absolute;
   top: 0px;
   left: 0px;
   
   transform-origin: 0% 50%;
-  animation: ${keyframes_ScaleGuage} ${ props => props.banner.msTime / 1000 }s linear normal forwards;
+  
+  animation: ${keyframes_ScaleGuage} ${ banner.msTime / 1000 }s linear normal forwards;
   
   &.success {
-    background-color: ${({theme})=>theme.colors.Notification.banner___border__success};
+    background-color: ${c.Notification.banner___border__success};
   }
   
   &.hint {
-    background-color: ${({theme})=>theme.colors.Notification.banner___border__hint};
+    background-color: ${c.Notification.banner___border__hint};
   }
   
   &.error {
-    background-color: ${({theme})=>theme.colors.Notification.banner___border__error};
+    background-color: ${c.Notification.banner___border__error};
   }
   
   &.warning {
-    background-color: ${({theme})=>theme.colors.Notification.banner___border__warning};
+    background-color: ${c.Notification.banner___border__warning};
   }
-`;
+`}`;
