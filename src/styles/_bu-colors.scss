@@ -1,35 +1,13 @@
+@import 'colors/palette';
 
-import palette from './colors/palette';
+// TYPE--BIG__SMALL--MODIFY     - once between one block
 
-type Colors = typeof colorsLight;
-/*
-type Color = {
-  
-  [key1:string]: { [key2:string] : string } | string;
-  
-};
-*/
 
-const returnColor = (listHsl:number[], opacity?:number):string => {
-  if (opacity === undefined){
-    return `hsl(${listHsl[0]}, ${listHsl[1]}%, ${listHsl[2]}%)`;
-  }
-  else if (typeof opacity === 'number'){
-    return `hsla(${listHsl[0]}, ${listHsl[1]}%, ${listHsl[2]}%, ${opacity})`;
-  }
-  else {
-    return ''
-  }
-}
+$name--theme: light;
 
-// 대상(_3개)UI요소(_2개)상황
 
-export const colorsLight = {
-  
-    mode: 'light',
-    
-    GlobalStyle: {
-      
+$background-color--body: map.get($map--color--basic, '100');
+ 
       body___bg: returnColor( palette.basic['100'] ),
       body___font: returnColor( palette.basic['25'] ),
       
@@ -70,7 +48,10 @@ export const colorsLight = {
       
       header___bg: 'transparent',
       header___font: 'inherit'
-    },
+      
+      
+      
+
     
     Content : {
       label___font: returnColor( palette.basic['40'])

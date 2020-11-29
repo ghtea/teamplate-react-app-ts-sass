@@ -1,0 +1,14 @@
+@import 'palette';
+
+// TYPE--ELEMENT--MODIFY
+//  what-it-is--
+//              big-element__small-element
+//                                        --big-modifier__small-modifier
+
+
+$name--theme: "light";
+
+
+$background-color--body--#{$name--thme}: map.get($map--color--basic, '100');
+$color--body--#{$name--thme}: map.get($map--color--basic, '25');
+
