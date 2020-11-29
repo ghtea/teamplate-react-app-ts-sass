@@ -161,7 +161,7 @@ export const Div__Tool = styled.div
 export const A__LinkMain = styled.a
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
-  color: ${ c.Nav.nav2_link_main___font  }; 
+  color: ${ c.Nav.nav2_link_main___font  } !important; 
   background-color: ${ c.Nav.nav2_link_main___bg }; 
   
   padding: 4px 8px 4px 8px; /* top right bottom left */

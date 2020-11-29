@@ -13,7 +13,7 @@ export const Div__CategoryDestination = styled.div
 	  }
 	  
 	  & > div:nth-child(1) > div:nth-child(2) {
-	    transform: rotate(180deg) translateY(1px);
+	    ${m.transform(`rotate(180deg) translateY(1px)`)}
 	  }
 	}
   
@@ -25,8 +25,8 @@ export const Div__CategoryDestination_Title = styled.div
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
   ${m.display("flex")}
-  ${m.flex_flow("column","nowrap")}
-  ${m.justify_content ("flex-start")}
+  ${m.flex_flow("row","nowrap")}
+  ${m.justify_content ("center")}
   ${m.align_items("flex-end")}
   
   width: auto;
@@ -43,19 +43,19 @@ export const Div__CategoryDestination_Title = styled.div
 
 
 
-export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
+export const Div__CategoryDestination_Modal = styled.div<{spotlighted: boolean}>
 `${( { theme:{mixins: m, colors: c, sizes: s}, spotlighted } )=>`
 
   width: 200px; 
   
   /* 모바일에서 타이틀 클릭으로 온오프가능하게 */
-  display: ${ spotlighted ? 'flex' : 'none' };
+  display: none;
+  ${spotlighted && m.display( `flex` )}
   
   position: absolute;
   z-index: 400;
   ${m._calc('top', `100% + 10px`)}
   
-  overflow: visible;
   
   /*
     ${m.box_shadow(`0px 0px 3px 3px ${c.Nav.nav2_modal___box_shadow}`)}
@@ -67,7 +67,7 @@ export const Div__CategoryDestination_Popup = styled.div<{spotlighted: boolean}>
 
 // http://apps.eky.hk/css-triangle-generator/
 // TraiangleBack is for border effect of traiangle
-export const Div__CategoryDestination_Popup_TriangleFront = styled.div
+export const Div__CategoryDestination_Modal_TriangleFront = styled.div
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
   width: 0;
@@ -84,7 +84,7 @@ export const Div__CategoryDestination_Popup_TriangleFront = styled.div
 `}`;
 
 
-export const Div__CategoryDestination_Popup_TriangleBack = styled.div
+export const Div__CategoryDestination_Modal_TriangleBack = styled.div
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
   width: 0;
@@ -104,7 +104,7 @@ export const Div__CategoryDestination_Popup_TriangleBack = styled.div
 `}`;
 
 
-export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
+export const Div__CategoryDestination_Modal_TriangleBackground = styled.div
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
   width: 100%;
@@ -118,7 +118,7 @@ export const Div__CategoryDestination_Popup_TriangleBackground = styled.div
   
 
 
-export const Div__CategoryDestination_Popup_Box = styled.div
+export const Div__CategoryDestination_Modal_Box = styled.div
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
 
   
@@ -151,7 +151,7 @@ export const Div__Link = styled.div
   
   &:last-child { border-radius: 0 0 4px 4px; }
   
-  /* border-collapse: separate;    collapse | separate  */
+  border-collapse: separate; 
   
   
   &:hover {

@@ -66,7 +66,10 @@ export const colorsLight = {
       input___font__focus: returnColor( palette.basic['25']),
       input___border__focus: returnColor( palette.main['60']),
       input___outline__focus: 'transparent',
-      input___box_shadow__focus: returnColor( palette.main['60'], 0.3)
+      input___box_shadow__focus: returnColor( palette.main['60'], 0.3),
+      
+      header___bg: 'transparent',
+      header___font: 'inherit'
     },
     
     Content : {

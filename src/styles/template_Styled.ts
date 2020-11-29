@@ -53,7 +53,7 @@ export const all = styled.div
   margin: 0px 0px 0px 0px; /* top right bottom left */
   padding: 0px 0px 0px 0px; /* top right bottom left */
   
-  overflow: auto; /*   auto | visible | hidden |  scroll */
+  overflow: auto; /*   auto | visible | hidden |  scroll    relative, fixed 인 자식들 때문에 visible 을 default로! */
   
   cursor: auto;  /*  pointer  */
   

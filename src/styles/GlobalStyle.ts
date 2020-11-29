@@ -7,6 +7,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 const GlobalStyle = createGlobalStyle
 `${( { theme:{mixins: m, colors: c, sizes: s} } )=>`
   
+  
   body {
     
     ${m.display("flex")}
@@ -29,6 +30,7 @@ const GlobalStyle = createGlobalStyle
     
     margin: 0px 0px 0px 0px; 
     padding: 0px 0px 0px 0px; 
+    
   }
   
   
@@ -45,14 +47,14 @@ const GlobalStyle = createGlobalStyle
     ${m.box_sizing("border-box")}
     
     background-color: ${c.GlobalStyle.div___bg};
-    color: ${c.GlobalStyle.div___font } !important;
+    color: ${c.GlobalStyle.div___font };
     
     font-size: 1rem;
     
     position: relative;
     z-index: inherit;
     
-    overflow: auto;
+    overflow: visible;
     
   }
   
@@ -152,6 +154,33 @@ const GlobalStyle = createGlobalStyle
       
     }
   }
+  
+  
+  
+  header {
+  
+    ${m.display("flex")}
+    ${m.flex_flow("column","nowrap")}
+    ${m.justify_content ("flex-start")}
+    ${m.align_items("center")}
+    
+    width: 100%; 
+    height: auto;
+    
+    ${m.box_sizing("border-box")}
+    
+    background-color: ${c.GlobalStyle.header___bg};
+    color: ${c.GlobalStyle.header___font };
+    
+    font-size: 1rem;
+    
+    position: relative;
+    z-index: inherit;
+    
+    
+  }
+  
+  
 
 `}`;
 
