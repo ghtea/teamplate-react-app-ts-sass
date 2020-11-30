@@ -6,9 +6,9 @@
 //                                        --big-modifier__small-modifier
 
 
-$name--theme: "light";
+$name__theme: "light";
 
 
-$background-color--body--#{$name--thme}: map.get($map--color--basic, '100');
-$color--body--#{$name--thme}: map.get($map--color--basic, '25');
+$background-color: map-get($map--color--basic, '100');
+$color--body: map-get($map--color--basic, '25');
 
