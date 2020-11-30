@@ -1,0 +1,16 @@
+@import 'color-assignment/global.scss';
+@import 'color-assignment/content.scss';
+@import 'color-assignment/full-page.scss';
+@import 'color-assignment/modal.scss';
+@import 'color-assignment/nav.scss';
+@import 'color-assignment/notification.scss';
+
+
+$map-color-assignment: map-merge(
+    $global__map-color-assignment, 
+    $content__map-color-assignment,
+    $full-page__map-color-assignment,
+    $modal__map-color-assignment,
+    $nav__map-color-assignment,
+    $notification__map-color-assignment
+);

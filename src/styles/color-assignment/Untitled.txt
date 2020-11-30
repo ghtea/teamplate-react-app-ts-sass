@@ -1,0 +1,10 @@
+banner-warning__background-color___theme-light: map-get($map-color-series__warning, '90'),
+
+banner-warning__font-color___theme-light: map-get($map-color-series__warning, '40'),
+
+banner-warning__border-color___theme-light: map-get($map-color-series__warning, '70'),
+
+banner-warning__icon-color___theme-light: map-get($map-color-series__warning, '50'),
+
+banner-warning__box-shadow-color___theme-light: rgba(map-get($map-color-series__warning, '60'), 0.3),
+

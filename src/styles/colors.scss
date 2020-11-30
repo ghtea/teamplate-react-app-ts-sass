@@ -1,7 +1,0 @@
-@import 'colors/global.scss';
-@import 'colors/Nav.scss';
-
-$map-color-assignment: map-merge(
-    $map-color-assignment--global, 
-    $map-color-assignment--Nav
-);

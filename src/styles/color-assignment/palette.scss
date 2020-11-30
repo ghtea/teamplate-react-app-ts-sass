@@ -1,9 +1,9 @@
 
 // https://sandstorm.de/de/blog/post/bem-sass-scss-variable-naming.html
 
-// TYPE--BIG__SMALL--MODIFY     - once between one block
+// TYPE__MODIFY     - once between one block
 
-$map-color-series--basic: (
+$map-color-series__basic: (
   '00': hsl(210,15%,0%),
   '05': hsl(210,15%,5%),
   '10': hsl(210,15%,10%),
@@ -27,7 +27,7 @@ $map-color-series--basic: (
   '100': hsl(210,15%,100%)
 );
 
-$map-color-series--main: (
+$map-color-series__main: (
   '00': hsl(210,100%,0%),
   '05': hsl(210,100%,4%),
   '10': hsl(210,100%,7%),
@@ -51,7 +51,7 @@ $map-color-series--main: (
   '100': hsl(210,100%,100%)
 );
   
-$map-color-series--sub: (
+$map-color-series__sub: (
   '00': hsl(335,100%,0%),
   '05': hsl(335,83%,7%),
   '10': hsl(335,83%,13%),
@@ -75,7 +75,7 @@ $map-color-series--sub: (
   '100': hsl(335,90%,100%)
 );
   
-$map-color-series--warning: (
+$map-color-series__warning: (
   '00': hsl(15,100%,0%),
   '05': hsl(15,100%,5%),
   '10': hsl(15,100%,10%),
@@ -99,7 +99,7 @@ $map-color-series--warning: (
   '100': hsl(15,100%,100%)
 );
   
-$map-color-series--error: (
+$map-color-series__error: (
   '00': hsl(0,98%,0%),
   '05': hsl(0,78%,6%),
   '10': hsl(0,77%,13%),
@@ -123,7 +123,7 @@ $map-color-series--error: (
   '100': hsl(0,100%,100%)
 );
   
-$map-color-series--success: (
+$map-color-series__success: (
   '00': hsl(125,100%,0%),
   '05': hsl(120,53%,5%),
   '10': hsl(120,57%,9%),
@@ -147,7 +147,7 @@ $map-color-series--success: (
   '100': hsl(120,95%,100%)
 );
   
-$map-color-series--hint: (
+$map-color-series__hint: (
   '00': hsl(208,100%,0%),
   '05': hsl(208,100%,5%),
   '10': hsl(208,100%,8%),
@@ -171,7 +171,7 @@ $map-color-series--hint: (
   '100': hsl(208,100%,100%)
 );
   
-$map-color-series--facebook: (
+$map-color-series__facebook: (
   '00': hsl(208,70%,0%),
   '05': hsl(222,70%,5%),
   '10': hsl(222,70%,9%),
@@ -195,7 +195,7 @@ $map-color-series--facebook: (
   '100': hsl(222,70%,100%)
 );
   
-$map-color-series--twitter: (
+$map-color-series__twitter: (
   '00': hsl(196,100%,0%),
   '05': hsl(200,100%,5%),
   '10': hsl(200,100%,9%),
@@ -219,7 +219,7 @@ $map-color-series--twitter: (
   '100': hsl(200,100%,100%)
 );
   
-$map-color-series--google: (
+$map-color-series__google: (
   '00': hsl(16, 100%, 0%),
   '05': hsl(16, 94%, 7%),
   '10': hsl(16, 94%, 12%),

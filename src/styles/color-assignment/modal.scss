@@ -1,0 +1,34 @@
+@import 'palette.scss';
+
+// ELEMENT__PROPERTY__SITUATION___THEME
+// big-element--small-element
+//                            what-it-is--
+//                                        __big-modifier--small-modifier
+
+// name of theme: theme-light, theme-dark
+
+
+$modal__map-color-assignment: (
+
+    modal__background-color___theme-light: map-get($map-color-series__basic, '100'),
+
+    modal__font-color___theme-light: map-get($map-color-series__basic, '25'),
+
+    modal__border-color___theme-light: map-get($map-color-series__basic, '90'),
+
+    modal__box-shadow-color___theme-light: rgba(map-get($map-color-series__basic, '60'), 0.3),
+
+    modal__drop-shadow-color___theme-light: rgba(map-get($map-color-series__basic, '60'), 0.5),
+
+    modal--shadow__background-color___theme-light: rgba(map-get($map-color-series__basic, '80'), 0.1),
+
+
+    setting--header__icon-color___theme-light: map-get($map-color-series__basic, '70'),
+
+    setting--header__icon-color__hover___theme-light: map-get($map-color-series__basic, '50'),
+
+    setting--option__background-color___theme-light: map-get($map-color-series__basic, '100'),
+
+    setting--option-behind__background-color___theme-light: map-get($map-color-series__basic, '90')
+
+);
