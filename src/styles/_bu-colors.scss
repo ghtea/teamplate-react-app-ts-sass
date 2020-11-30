@@ -8,31 +8,6 @@ $name--theme: light;
 
 $background-color--body: map.get($map--color--basic, '100');
  
-      
-      button___bg__focus: 'transparent',
-      button___font__focus: 'inherit',
-      button___border__focus: returnColor( palette.basic['50']),
-      button___outline__focus: returnColor( palette.basic['50']),
-      
-      button_main___bg: returnColor( palette.main['50']),
-      button_main___font: returnColor( palette.basic['100']),
-      button_main___border: 'transparent',
-      
-      input___bg: returnColor( palette.basic['100']),
-      input___font: returnColor( palette.basic['25']),
-      input___border: returnColor( palette.basic['75']),
-      
-      input___bg__focus: returnColor( palette.main['100']),
-      input___font__focus: returnColor( palette.basic['25']),
-      input___border__focus: returnColor( palette.main['60']),
-      input___outline__focus: 'transparent',
-      input___box_shadow__focus: returnColor( palette.main['60'], 0.3),
-      
-      header___bg: 'transparent',
-      header___font: 'inherit'
-      
-      
-      
 
     
     Content : {

@@ -1,0 +1,92 @@
+@import 'palette.scss';
+
+// ELEMENT--TYPE--MODIFY
+// big-element__small-element
+//                            what-it-is--
+//                                        --big-modifier__small-modifier
+
+// !!!  I don't know why, but I can't use    #{}
+
+// name of theme: theme-light, theme-dark
+
+
+$map-color-assignment--global: (
+
+    body--background-color---theme-light: map-get($map-color-series--basic, '100'),
+
+    body--font-color---theme-light: map-get($map-color-series--basic, '25'),
+
+
+    div--background-color---theme-light: transparent,
+    div--background-color---theme-dark: transparent,
+    div--font-color---theme-light: inherit,
+    div--font-color---theme-dark: inherit,
+    div--border-color---theme-light: transparent,
+    div--border-color---theme-dark: transparent,
+
+
+    anchor--font-color---theme-light: inherit
+    anchor--font-color---theme-light: inherit
+
+
+    button--background-color---theme-light: transparent,
+    button--background-color---theme-dark: transparent,
+    button--font-color---theme-light: inherit,
+    button--font-color---theme-dark: inherit,
+    button--border-color---theme-light: transparent,
+    button--border-color---theme-dark: transparent,
+
+
+    button--background-color--hover---theme-light: transparent,
+    button--background-color--hover---theme-dark: transparent,
+    button--font-color--hover---theme-light: inherit,
+    button--font-color--hover---theme-dark: inherit,
+    button--border-color--hover---theme-light: transparent,
+    button--border-color--hover---theme-dark: transparent,
+
+
+    button--background-color--focus---theme-light: transparent,
+    button--background-color--focus---theme-dark: transparent,
+    button--font-color--focus---theme-light: inherit,
+    button--font-color--focus---theme-dark: inherit,
+    button--border-color--focus---theme-light:  map-get($map-color-series--basic, '50'),
+    button--border-color--focus---theme-dark:  map-get($map-color-series--basic, '50'),
+    button--outline-color--focus---theme-light:  map-get($map-color-series--basic, '50'),
+    button--outline-color--focus---theme-dark:  map-get($map-color-series--basic, '50'),
+
+
+    button-main--background-color--focus---theme-light: map-get($map-color-series--main, '50'),
+    button-main--background-color--focus---theme-dark: map-get($map-color-series--main, '50'),
+    button-main--font-color--focus---theme-light: map-get($map-color-series--main, '100'),
+    button-main--font-color--focus---theme-dark: map-get($map-color-series--main, '00'),
+    button-main--border-color--focus---theme-light:  transparent,
+    button-main--border-color--focus---theme-dark:  transparent,
+    button-main--outline-color--focus---theme-light:  transparent,
+    button-main--outline-color--focus---theme-dark:  transparent,
+
+
+    input-text--background-color---theme-light: map-get($map-color-series--basic, '100'),
+
+    input-text--font-color----theme-light: map-get($map-color-series--basic, '25'),
+
+    input-text--border-color---theme-light:  map-get($map-color-series--basic, '75'),
+
+
+    input-text--background-color--focus---theme-light: map-get($map-color-series--main, '100'),
+
+    input-text--font-color--focus---theme-light: map-get($map-color-series--basic, '25'),
+
+    input-text--border-color--focus---theme-light:  map-get($map-color-series--main, '75'),
+
+    input-text--outline-color--focus---theme-light:  transparent,
+
+    input-text--box-shadow-color--focus---theme-light:  rgba(map-get($map-color-series--main, '60'), 0.3),
+
+
+    header--background-color---theme-light: transparent,
+    header--background-color---theme-dark: transparent,
+    header--font-color---theme-light: inherit,
+    header--font-color---theme-dark: inherit
+
+
+);

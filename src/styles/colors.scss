@@ -1,48 +1,7 @@
-@import 'palette';
+@import 'colors/global.scss';
+@import 'colors/Nav.scss';
 
-// ELEMENT--TYPE--MODIFY
-// big-element__small-element
-//                            what-it-is--
-//                                        --big-modifier__small-modifier
-
-// !!!  I don't know why, but I can't use    #{}
-
-// name of theme: theme-light, theme-dark
-
-
-$color: (
-
-    body--background-color---theme-light: map-get($map-color--basic, '100'),
-
-    body--font-color---theme-light: map-get($map-color--basic, '25'),
-
-
-    div--background-color---theme-light: transparent,
-    div--background-color---theme-dark: transparent,
-    div--font-color---theme-light: inherit,
-    div--font-color---theme-dark: inherit,
-    div--border-color---theme-light: transparent,
-    div--border-color---theme-dark: transparent,
-
-
-    anchor--font-color---theme-light: inherit
-    anchor--font-color---theme-light: inherit
-
-
-    button--background-color---theme-light: transparent,
-    button--background-color---theme-dark: transparent,
-    button--font-color---theme-light: inherit,
-    button--font-color---theme-dark: inherit,
-    button--border-color---theme-light: transparent,
-    button--border-color---theme-dark: transparent,
-
-
-    button--background-color--hover---theme-light: transparent,
-    button--background-color--hover---theme-dark: transparent,
-    button--font-color--hover---theme-light: inherit,
-    button--font-color--hover---theme-dark: inherit,
-    button--border-color--hover---theme-light: transparent,
-    button--border-color--hover---theme-light: transparent,
-
-    
+$map-color-assignment: map-merge(
+    $map-color-assignment--global, 
+    $map-color-assignment--Nav
 );

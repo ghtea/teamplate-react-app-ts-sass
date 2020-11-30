@@ -2,16 +2,19 @@
 
 $list-name-theme: (theme-light, theme-dark);
 
-@mixin theme($property, $key-front) {
+@mixin color($property, $key-front) {
 
     @each $name-theme in $list-name-theme {
     .#{$name-theme} & {
-      #{$property}: map-get($map: $color, $key: #{$key-front}---#{$name-theme})
+        #{$property}: map-get(
+            $map: $map-color-assignment, 
+            $key: #{$key-front}---#{$name-theme}
+        )
     }
 
   }
 }
 
 .test {
-    @include theme(color, border-color);
+    @include color(color, border-color);
 }
