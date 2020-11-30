@@ -1,0 +1,17 @@
+@import 'colors';
+
+$list-name-theme: (theme-light, theme-dark);
+
+@mixin theme($property, $key-front) {
+
+    @each $name-theme in $list-name-theme {
+    .#{$name-theme} & {
+      #{$property}: map-get($map: $color, $key: #{$key-front}---#{$name-theme})
+    }
+
+  }
+}
+
+.test {
+    @include theme(color, border-color);
+}

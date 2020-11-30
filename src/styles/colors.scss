@@ -1,14 +1,48 @@
 @import 'palette';
 
-// TYPE--ELEMENT--MODIFY
-//  what-it-is--
-//              big-element__small-element
+// ELEMENT--TYPE--MODIFY
+// big-element__small-element
+//                            what-it-is--
 //                                        --big-modifier__small-modifier
 
+// !!!  I don't know why, but I can't use    #{}
 
-$name__theme: "light";
+// name of theme: theme-light, theme-dark
 
 
-$background-color: map-get($map--color--basic, '100');
-$color--body: map-get($map--color--basic, '25');
+$color: (
 
+    body--background-color---theme-light: map-get($map-color--basic, '100'),
+
+    body--font-color---theme-light: map-get($map-color--basic, '25'),
+
+
+    div--background-color---theme-light: transparent,
+    div--background-color---theme-dark: transparent,
+    div--font-color---theme-light: inherit,
+    div--font-color---theme-dark: inherit,
+    div--border-color---theme-light: transparent,
+    div--border-color---theme-dark: transparent,
+
+
+    anchor--font-color---theme-light: inherit
+    anchor--font-color---theme-light: inherit
+
+
+    button--background-color---theme-light: transparent,
+    button--background-color---theme-dark: transparent,
+    button--font-color---theme-light: inherit,
+    button--font-color---theme-dark: inherit,
+    button--border-color---theme-light: transparent,
+    button--border-color---theme-dark: transparent,
+
+
+    button--background-color--hover---theme-light: transparent,
+    button--background-color--hover---theme-dark: transparent,
+    button--font-color--hover---theme-light: inherit,
+    button--font-color--hover---theme-dark: inherit,
+    button--border-color--hover---theme-light: transparent,
+    button--border-color--hover---theme-light: transparent,
+
+    
+);

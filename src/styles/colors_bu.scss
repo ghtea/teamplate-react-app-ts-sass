@@ -1,0 +1,21 @@
+@import 'palette';
+
+// TYPE--ELEMENT--MODIFY
+//  what-it-is--
+//              big-element__small-element
+//                                        --big-modifier__small-modifier
+
+// !!!  I don't know why, but I can't use    #{}
+
+// name of theme: light
+
+$background-color--body--light: map-get($map-color--basic, '100');
+$font-color--body--light: map-get($map-color--basic, '25');
+
+$background-color--div--light: transparent;
+$font-color--div--light: inherit;
+$border--div--light: transparent;
+
+$font-color--anchor--light: inherit;
+
+

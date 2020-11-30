@@ -8,24 +8,6 @@ $name--theme: light;
 
 $background-color--body: map.get($map--color--basic, '100');
  
-      body___bg: returnColor( palette.basic['100'] ),
-      body___font: returnColor( palette.basic['25'] ),
-      
-      div___bg: 'transparent',
-      div___font: 'inherit',
-      div___border: 'transparent',
-      //div___border: palette.basic['80'],
-      
-      a___font: 'inherit',
-      
-      button___bg: 'transparent',
-      button___font: 'inherit',
-      button___border: 'transparent',
-      //button___border: palette.basic['50'],
-      
-      button___bg__hover: 'transparent',
-      button___font__hover: 'inherit',
-      button___border__hover: returnColor( palette.basic['50']),
       
       button___bg__focus: 'transparent',
       button___font__focus: 'inherit',
