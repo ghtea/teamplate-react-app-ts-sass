@@ -1,4 +1,4 @@
-@import '/src/styles/mixins/basic.scss';
+@import '/src/styles/every/mixins/tools.scss';
 
 @import 'color-assignment/global.scss';
 @import 'color-assignment/content.scss';
@@ -16,3 +16,5 @@ $map-color-assignment: map-merge-all(
     $nav__map-color-assignment,
     $notification__map-color-assignment
 );
+
+$list-name-theme: (theme-light, theme-dark);

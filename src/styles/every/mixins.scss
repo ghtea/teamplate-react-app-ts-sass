@@ -1,7 +1,5 @@
-@import '/src/styles/mixins//color-assignment.scss';
-
-$list-name-theme: (theme-light, theme-dark);
-
+@import 'mixins/color-assignment.scss';
+@import 'mixins/basic.scss';
 
 @mixin color($property, $key-color-front) {
 
