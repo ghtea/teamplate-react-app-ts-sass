@@ -1,4 +1,4 @@
-@import '/src/styles/every.scss';
+@import 'every.scss';
 
 // react + sass 전반적인 정리 https://velog.io/@velopert/react-component-styling
 .template {
@@ -18,7 +18,7 @@
     @include color(background-color, div__background-color);
     @include color(color, div__font-color);
 
-    @include frame(borer, 1px, solid, div__border-color);
+    @include frame(border, 1px, solid, div__border-color);
     // https://developer.mozilla.org/ko/docs/Web/CSS/border
     // border-width: 1px;
     // border-style: solid;
