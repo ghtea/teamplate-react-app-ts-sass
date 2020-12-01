@@ -1,19 +1,132 @@
-@import 'colors';
+@import 'color-assignment.scss';
 
 $list-name-theme: (theme-light, theme-dark);
 
-@mixin color($property, $key-front) {
+
+@mixin color($property, $key-color-front) {
 
     @each $name-theme in $list-name-theme {
     .#{$name-theme} & {
         #{$property}: map-get(
             $map: $map-color-assignment, 
-            $key: #{$key-front}---#{$name-theme}
-        )
+            $key: #{$key-color-front}___#{$name-theme}
+        );
     }
 
   }
 }
+
+
+@mixin frame($property, $width: 1px, $style: solid, $key-color-front) {
+
+    // ex: border, border-top, outline
+    @each $name-theme in $list-name-theme {
+    .#{$name-theme} & {
+        $property: $width $style map-get(
+            $map: $map-color-assignment, 
+            $key: #{$key-color-front}___#{$name-theme}
+        );
+    }
+
+  }
+}
+
+
+@mixin shadow($property, $offset-x: 0px, $offset-y: 0px, $blur-radius: 0px, $spread-radius: 0px, $key-color-front) {
+
+    // ex: box-shadow, text-shadow ( drop-shadow 사용법은 아직 잘 모르겠다)
+
+    @if $property == box-shadow {
+        @each $name-theme in $list-name-theme {
+            .#{$name-theme} & {
+                $property: $offset-x $offset-y $blur-radius $spread-radius map-get(
+                    $map: $map-color-assignment, 
+                    $key: #{$key-color-front}___#{$name-theme}
+                );
+            }
+        }
+    }
+
+    @else if $property == text-shadow {
+        @each $name-theme in $list-name-theme {
+            .#{$name-theme} & {
+                $property: $offset-x $offset-y $blur-radius map-get(
+                    $map: $map-color-assignment, 
+                    $key: #{$key-color-front}___#{$name-theme}
+                );
+            }
+        }
+    }
+
+}
+
+
+// 90deg = to right
+@mixin linear-gradient($propery: background-color, $direction: 90deg, $map-color-stop...) { 
+    @each $name-theme in $list-name-theme {
+        .#{$name-theme} & {
+
+            @each $position, $key-color-front in $map-color-stop {
+                    $position  map-get(
+                        $map: $map-color-assignment, 
+                        $key: #{$key-color-front}___#{$name-theme}
+                    )
+                }
+            $property: linear-gradient( $direction, 
+
+                @each $position, $key-color-front in $map-color-stop {
+                    $position  map-get(
+                        $map: $map-color-assignment, 
+                        $key: #{$key-color-front}___#{$name-theme}
+                    )
+                }
+            );
+        }
+    }
+}
+
+
+/*
+@function return-list-color($key-front) {
+
+    $result: ();
+
+    @each $name-theme in $list-name-theme {
+
+    $result: append($result, map-get(
+        $map: $map-color-assignment, 
+        $key: #{$key-front}___#{$name-theme}
+    ));
+    
+    @return $result;
+
+  }
+}
+*/
+
+
+/*
+@mixin styles-including-color($list-key-color-front...) {
+
+    @each $name-theme in $list-name-theme {
+    .#{$name-theme} & {
+
+        @each $key-color-front in $list-key-color-front {
+            @content; #{map-get(
+                $map: $map-color-assignment, 
+                $key: #{$key-front}___#{$name-theme}
+            )}
+        }
+    }
+
+  }
+}
+*/
+
+
+
+
+
 
 .test {
     @include color(color, border-color);

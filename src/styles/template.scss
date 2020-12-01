@@ -1,5 +1,7 @@
-@import '~styles/color-assignment.scss'
+@import 'src/styles/sizes.scss';
+@import 'src/styles/mixins.scss';
 
+// react + sass 전반적인 정리 https://velog.io/@velopert/react-component-styling
 .template {
 
     display: flex;
@@ -9,13 +11,22 @@
 
     flex: 1 0 auto;
 
-    width: 100%; min-width: 
-  
+    width: 100%; min-width: $device-xs__min-width; max-width: $device-m__min-width;
+    height: auto; min-height: 0px; max-height: $device-xs__max-height;
+
+    box-sizing: border-box;
+
+    @include styles-color('background-color', 'div__background-color');
+    @include styles-color('color', 'div__font-color');
+
+    border: 1px solid return-list-color('div__');
+    
+
 }
 
 
 .template-div {
-    
+
 }
 
 

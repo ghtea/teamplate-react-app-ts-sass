@@ -14,3 +14,7 @@ i18next | 2 |
 ## todos
 - detecting language from cookie, browser option
 -- https://www.npmjs.com/package/i18next-browser-languagedetector
+
+
+- https://velopert.com/3447
+-- sass 경로 설정

@@ -1,0 +1,17 @@
+.template {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 0 auto;
+  width: 100%;
+  min-width: 320px;
+  max-width: 768px;
+  height: auto;
+  min-height: 0px;
+  max-height: 440px;
+  box-sizing: border-box; }
+  .theme-light .template {
+    background-color: transparent; }
+  .theme-dark .template {
+    background-color: transparent; }
