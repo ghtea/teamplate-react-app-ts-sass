@@ -1,3 +1,5 @@
+@import '/src/styles/mixins/basic.scss';
+
 @import 'color-assignment/global.scss';
 @import 'color-assignment/content.scss';
 @import 'color-assignment/full-page.scss';
@@ -6,17 +8,7 @@
 @import 'color-assignment/notification.scss';
 
 
-// sass 절대 경로 관련 설정:   https://velog.io/@velopert/react-component-styling
-@function map-collect($maps...) {
-    $collection: ();
-
-    @each $map in $maps {
-        $collection: map-merge($collection, $map);
-    }
-    @return $collection;
-}
-
-$map-color-assignment: map-collect(
+$map-color-assignment: map-merge-all(
     $global__map-color-assignment, 
     $content__map-color-assignment,
     $full-page__map-color-assignment,

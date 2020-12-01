@@ -9,7 +9,7 @@ import * as actionsStatus from 'store/actions/status';
 import * as actionsAuth from 'store/actions/auth';
 
 import { Theme, themeLight } from "./styles/theme";
-import GlobalStyle from 'styles/GlobalStyle';
+import GlobalStyle from 'styles/bu/GlobalStyle';
 import 'styles/importFonts.css';
 
 import Nav from "./components/Nav";

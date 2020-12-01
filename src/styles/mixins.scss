@@ -1,4 +1,4 @@
-@import 'color-assignment.scss';
+@import '/src/styles/mixins//color-assignment.scss';
 
 $list-name-theme: (theme-light, theme-dark);
 
@@ -61,26 +61,14 @@ $list-name-theme: (theme-light, theme-dark);
 }
 
 
-// 90deg = to right
-@mixin linear-gradient($propery: background-color, $direction: 90deg, $map-color-stop...) { 
+// 90deg = to right 
+@mixin linear-gradient($propery: background, $direction: 90deg, $map-color-stop...) { 
+    
+    $list-color-stop: map-pairs($value: $map-color-stop, $order: opposite);
+    
     @each $name-theme in $list-name-theme {
         .#{$name-theme} & {
-
-            @each $position, $key-color-front in $map-color-stop {
-                    $position  map-get(
-                        $map: $map-color-assignment, 
-                        $key: #{$key-color-front}___#{$name-theme}
-                    )
-                }
-            $property: linear-gradient( $direction, 
-
-                @each $position, $key-color-front in $map-color-stop {
-                    $position  map-get(
-                        $map: $map-color-assignment, 
-                        $key: #{$key-color-front}___#{$name-theme}
-                    )
-                }
-            );
+            $propery: linear-gradient( $direction, $list-color-stop);
         }
     }
 }
