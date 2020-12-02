@@ -7,7 +7,7 @@ import {useSelector, useDispatch} from "react-redux";
 
 import * as actionsNotification from 'store/actions/notification';
 
-import * as Styled from './Home_Styled';
+import './Home.scss';
 
 
 type PropsHome = {};
@@ -26,7 +26,7 @@ function Home({}: PropsHome) {
   );
   
   return (
-    <Styled.Div__Home>
+    <div className={'home__root'}>
         <div> {t('Content', 'Home', 'Welcome')} </div>
         
         <div> 
@@ -43,7 +43,7 @@ function Home({}: PropsHome) {
           </button>
         </div>
         
-    </Styled.Div__Home>
+    </div>
   );
 }
 

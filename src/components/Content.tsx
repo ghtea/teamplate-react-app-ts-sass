@@ -4,14 +4,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Content/Home";
 //import SignUp from "./components/Auth/SignUp";
 
-
-import * as Styled from './Content_Styled';
+import './Content.scss';
 
 type PropsContent = {};
 
 function Content({}: PropsContent) {
   return (
-      <Styled.Div__Content>
+      <div className={'content__root'}>
       
           <Switch>
             
@@ -21,7 +20,7 @@ function Content({}: PropsContent) {
             
           </Switch>
         
-      </Styled.Div__Content>
+      </div>
   );
 }
 

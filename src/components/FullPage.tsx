@@ -6,15 +6,14 @@ import NameApp from "./FullPage/NameApp";
 import LogIn from "./FullPage/LogIn";
 import SignUp from "./FullPage/SignUp";
 
-
-import * as Styled from './FullPage_Styled';
+import './FullPage.scss';
 
 type PropsFullPage = {};
 
 function FullPage({}: PropsFullPage) {
   return (
     
-      <Styled.Div__FullPage>
+      <div className={'full-page__root'}>
         
         <NameApp/>
         
@@ -28,9 +27,9 @@ function FullPage({}: PropsFullPage) {
           </Route>
         </Switch>
         
-        <Styled.Div__FullPage_Background/>
+        <div className={'full-page__background'}/>
         
-      </Styled.Div__FullPage>
+      </div>
      
   );
 }

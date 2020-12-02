@@ -18,3 +18,6 @@ i18next | 2 |
 
 - https://velopert.com/3447
 -- sass 경로 설정
+
+
+// https://velog.io/@velopert/react-component-styling#sass-loader-%EC%84%A4%EC%A0%95-%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95%ED%95%98%EA%B8%B0

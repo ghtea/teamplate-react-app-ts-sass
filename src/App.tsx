@@ -1,22 +1,18 @@
 import React, {useEffect, useState, useMemo} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 
-import styled, {ThemeProvider }  from 'styled-components';
-
 import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 import * as actionsAuth from 'store/actions/auth';
 
-import { Theme, themeLight } from "./styles/theme";
-import GlobalStyle from 'styles/bu/GlobalStyle';
-import 'styles/importFonts.css';
+import 'styles/once.scss';
 
-import Nav from "./components/Nav";
-import Content from "./components/Content";
-import FullPage from "./components/FullPage";
-import Modal from "./components/Modal";
-import Notification from "./components/Notification";
+//import Nav from "./components/Nav";
+//import Content from "./components/Content";
+//import FullPage from "./components/FullPage";
+//import Modal from "./components/Modal";
+//import Notification from "./components/Notification";
 
 // TS  https://velog.io/@velopert/create-typescript-react-component
 type PropsApp = {};
@@ -66,17 +62,6 @@ function App({}: PropsApp) {
     dispatch(actionsStatus.return__READ_OPTION_THEME() );
   }, []);
   
-  const themeCurrent:Theme = useMemo(
-    () => {
-      if (nameThemeCurrent === 'dark') {
-        console.log('dark theme')
-        return themeLight;
-      }
-      else {
-        return themeLight;
-      }
-    },[nameThemeCurrent]
-  );
   
   
   // log check
@@ -86,8 +71,15 @@ function App({}: PropsApp) {
   
   
   
-  return (
+  return ( <div/>
     
+  );
+}
+
+export default App;
+
+
+/*
     <ThemeProvider 
       theme={ themeCurrent }
     >
@@ -107,10 +99,4 @@ function App({}: PropsApp) {
       }
       
     </ThemeProvider>
-    
-  );
-}
-
-export default App;
-
-
+    */

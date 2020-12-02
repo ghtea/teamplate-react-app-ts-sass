@@ -10,7 +10,7 @@ import {Banner as TypeBanner} from 'store/reducers/notification';
 
 import Banner from "./Notification/Banner";
 
-import * as Styled from './Notification_Styled';
+import './Notification.scss';
 
 
 
@@ -24,14 +24,14 @@ function Notification({}: PropsNotification) {
 
   return (
       
-    <Styled.Div__Notification>
+    <div className={'notification__shadow'}>
       {listBanner.map( (banner, iBanner)=> 
         <Banner
           banner={banner}
           key={`banner-${iBanner}`}
         />
       )}
-    </Styled.Div__Notification>
+    </div>
       
   );
 }
