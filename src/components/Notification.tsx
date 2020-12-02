@@ -10,7 +10,8 @@ import {Banner as TypeBanner} from 'store/reducers/notification';
 
 import Banner from "./Notification/Banner";
 
-import './Notification.scss';
+import styles from './Notification.module.scss';
+
 
 
 
@@ -23,14 +24,14 @@ function Notification({}: PropsNotification) {
   const listBanner:TypeBanner[] = useSelector((state: StateRoot) => state['notification']['listBanner']);
 
   return (
-      
-    <div className={'notification__shadow'}>
-      {listBanner.map( (banner, iBanner)=> 
-        <Banner
-          banner={banner}
-          key={`banner-${iBanner}`}
-        />
-      )}
+    
+    <div className={`${styles['root']}`} >
+        {listBanner.map( (banner, iBanner)=> 
+            <Banner
+            banner={banner}
+            key={`banner-${iBanner}`}
+            />
+        )}
     </div>
       
   );

@@ -1,6 +1,6 @@
 
 
-.modal__root {
+.modal {
 
     width: calc(100vw - 20px); max-width: $device-xs__min-width - 20px;
     height: auto; max-height: 90vh;  min-height: 100px;
@@ -18,7 +18,7 @@
     top: 5vh;
 } 
 
-.modal__shadow {
+.shadow-of-modal {
 
     width: 100vw;
     height: 100vh;

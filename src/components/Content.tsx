@@ -4,13 +4,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Content/Home";
 //import SignUp from "./components/Auth/SignUp";
 
-import './Content.scss';
+import styles from './Content.module.scss';
+
 
 type PropsContent = {};
 
 function Content({}: PropsContent) {
   return (
-      <div className={'content__root'}>
+    
+    <div className={`${styles['root']}`} >
       
           <Switch>
             

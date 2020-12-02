@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as convertName from 'tools/vanilla/convertName';
 
-import * as Styled from './CategoryDestination_Styled';
+import styles from './CategoryDestination.module.scss';
 
 import IconAngle from 'svgs/basic/IconAngle';
 
@@ -67,13 +67,13 @@ function CategoryDestination({
   
   return (
     
-		<Styled.Div__CategoryDestination
+		<div className={`${styles['root']}`}
 		    onMouseEnter ={()=> onMouseEnter_CategoryDestination(idCategory) }
-        onMouseLeave ={()=> onMouseLeave_CategoryDestination("") }
+            onMouseLeave ={()=> onMouseLeave_CategoryDestination("") }
 		>
 		
-			<Styled.Div__CategoryDestination_Title 
-        onClick = {()=>onClick_CategoryDestination_Title(idCategory) }
+			<div className={`${styles['title']}`}
+                onClick = {()=>onClick_CategoryDestination_Title(idCategory) }
 			> 
 			  <div> 
 			    <a> {t(`Nav.${idCategory}`)}  </a>
@@ -86,30 +86,27 @@ function CategoryDestination({
 			      directon={'down'}
 			    /> 
 			   </div>
-			</Styled.Div__CategoryDestination_Title>
+			</div>
 			
-			<Styled.Div__CategoryDestination_Modal
-				spotlighted={idSpotlighted===idCategory}
+			<div className={`${styles['modal']} spotlighted----${idSpotlighted===idCategory}`}> 
 				
-			> 
+				<div className={`${styles['modal__triangle-front']}`}/>
+                <div className={`${styles['modal__triangle-back']}`}/>
+                <div className={`${styles['modal__background-of-triangle']}`}/>
+                
+                <div className={`${styles['modal__box']}`}>
+				    {listIdLink.map( (idLink, index) => (
+                        <div className={`${styles['link']}`}>
+                            key={`idLink-${index}`}
+                            onClick={()=>onClick_LinkInsideApp(`/${convertName.pascalToSnake(idCategory)}/${convertName.pascalToSnake(idLink)}`)}
+                        > <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
+  					    </div>
+				    ))}
+				</div>
 				
-				<Styled.Div__CategoryDestination_Modal_TriangleFront/>
-				<Styled.Div__CategoryDestination_Modal_TriangleBack/>
-				<Styled.Div__CategoryDestination_Modal_TriangleBackground/>
-				
-				<Styled.Div__CategoryDestination_Modal_Box>
-				  {listIdLink.map( (idLink, index) => (
-				    <Styled.Div__Link
-				        key={`idLink-${index}`}
-  					    onClick={()=>onClick_LinkInsideApp(`/${convertName.pascalToSnake(idCategory)}/${convertName.pascalToSnake(idLink)}`)}
-  					> <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
-  					</Styled.Div__Link>
-				  ))}
-				</Styled.Div__CategoryDestination_Modal_Box>
-				
-			</Styled.Div__CategoryDestination_Modal>
+			</div>
 			
-		</Styled.Div__CategoryDestination>
+		</div>
   
   );
 }

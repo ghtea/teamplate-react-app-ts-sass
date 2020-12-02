@@ -63,9 +63,9 @@ function Nav1({}: PropsNav1) {
 
   // showingNav={showingNav}
   return (
-    <div className={`${styles.root}`} >
+    <header className={`${styles.root} showing----${showingNav}`} >
 
-      <Styled.Div__Bar> 
+      <div className={`${styles.bar}`} >
         <div>
           <button
             onClick={(event)=>onClick_LinkInsideApp(event, '/')}
@@ -91,10 +91,10 @@ function Nav1({}: PropsNav1) {
             )}
           </button>
         </div>
-      </Styled.Div__Bar> 
+      </div> 
       
       {showingBoardNav1 && (
-        <Styled.Div__Board>
+        <div className={`${styles.board}`} >
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
@@ -119,10 +119,10 @@ function Nav1({}: PropsNav1) {
             > {t('Nav', 'Setting')}
             </a>
           </div>
-        </Styled.Div__Board>
+        </div>
       )}
       
-    </Styled.Header__Nav1>
+    </header>
   );
 }
 

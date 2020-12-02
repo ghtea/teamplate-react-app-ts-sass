@@ -1,11 +1,11 @@
 @import 'styles/every.scss';
 
-.full-page__root {
+.root {
 
     z-index: 100;
 } 
 
-.full-page__background {
+.background {
 
     @include color-each-theme(background-color, full-page__background-color);
 

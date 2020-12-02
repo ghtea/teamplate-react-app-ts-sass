@@ -6,7 +6,8 @@ import * as actionsStatus from 'store/actions/status';
 
 import Setting from "./Modal/Setting";
 
-import './Modal.scss'
+import styles from './Modal.module.scss';
+
 
 type PropsModal = {};
 
@@ -30,10 +31,10 @@ function Modal({}: PropsModal) {
       
       {showingSetting && 
         <>
-          <div className={'modal__shadow'}
-            onClick={()=>onClick_HideModal('setting')}
-          />
-          <Setting />
+            <div className={`${styles['shadow-of-modal']}`} 
+                onClick={()=>onClick_HideModal('setting')}
+            />
+            <Setting />
         </>
       }
       

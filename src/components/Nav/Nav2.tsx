@@ -9,8 +9,7 @@ import * as actionsStatus from 'store/actions/status';
 import CategoryDestination from './Nav2/CategoryDestination';
 import SoloDestination from './Nav2/SoloDestination';
 
-import * as Styled from './Nav2_Styled';
-
+import styles from './Nav2.module.scss';
 
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
@@ -22,20 +21,18 @@ type PropsNav2 = {};
 
 function Nav2({}: PropsNav2) {
   
-  let history = useHistory();
-  const dispatch = useDispatch();
-  const { t } = useTranslationTyped();
+    let history = useHistory();
+    const dispatch = useDispatch();
+    const { t } = useTranslationTyped();
+    
+    const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
+    
+    const readyUser:boolean = useSelector((state: StateRoot) => state['status']['ready']['user']);
+    
   
-
-
-  const showingNav:boolean = useSelector((state: StateRoot) => state['status']['showing']['nav']['all']);
-   
-  const readyUser:boolean = useSelector((state: StateRoot) => state['status']['ready']['user']);
-  
-  
-
+// event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, 
   const onClick_LinkInsideApp = useCallback(
-    (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
+    (destination:string) => {
       history.push(destination);
     },[history]
   );
@@ -51,12 +48,11 @@ function Nav2({}: PropsNav2) {
   
   
   return (
-    <Styled.Header__Nav2
-      showingNav={showingNav}
-    >
-      <Styled.Div__NameApp>
+    <header className={`${styles.root} showing----${showingNav}`} >
+
+      <div className={`${styles['name-app']}`} >
         <button
-          onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+          onClick={()=>onClick_LinkInsideApp('/')}
         >
           <div>
             <IconHome
@@ -67,14 +63,14 @@ function Nav2({}: PropsNav2) {
           </div>
         </button>
         <button
-          onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+          onClick={()=>onClick_LinkInsideApp('/')}
         >
           {t('Nav', 'NameApp')}
         </button>
-      </Styled.Div__NameApp>
+      </div>
       
       
-      <Styled.Div__CollectionDestination>
+      <div className={`${styles['collection-destination']}`} >
         <CategoryDestination 
           idCategory={'System'}
           listIdLink={['State', 'Styles', 'Language']}
@@ -82,12 +78,12 @@ function Nav2({}: PropsNav2) {
   		  <SoloDestination 
   		    idSolo={'Diary'}
   		  />
-      </Styled.Div__CollectionDestination>
+      </div>
 
       
-      <Styled.Div__CollectionTool>
+      <div className={`${styles['collection-tool']}`} >
         
-        <Styled.Div__Tool>
+        <div className={`${styles['tool']}`} >
           <a
             onClick={()=>onClick_ShowSetting()}
           >
@@ -97,26 +93,28 @@ function Nav2({}: PropsNav2) {
               height={'24px'}
             />
           </a>
-        </Styled.Div__Tool>
+        </div>
         
         
         { !readyUser &&
-          <Styled.Div__Tool>
-            <Styled.A__LinkMain onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')} >
-              {t('Nav', 'LogIn')}
-            </Styled.A__LinkMain>
-          </Styled.Div__Tool>
+            <div className={`${styles['tool']}`} >
+                <a className={`${styles['link-main']}`} >
+                    onClick={()=>onClick_LinkInsideApp('/log-in')} 
+                >
+                {t('Nav', 'LogIn')}
+                </a>
+            </div>
         }
         
         { readyUser &&
-          <Styled.Div__Tool> 
-            logged in
-          </Styled.Div__Tool>
+            <div className={`${styles['tool']}`} > 
+                logged in
+            </div>
         }
         
-      </Styled.Div__CollectionTool>
+      </div>
       
-    </Styled.Header__Nav2>
+    </header>
   );
 }
 

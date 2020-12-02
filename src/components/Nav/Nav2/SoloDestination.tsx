@@ -8,7 +8,8 @@ import * as actionsStatus from 'store/actions/status';
 
 import * as convertName from 'tools/vanilla/convertName';
 
-import * as Styled from './SoloDestination_Styled';
+import styles from './SoloDestination.module.scss';
+
 import IconHome from 'svgs/basic/IconHome';
 import IconSignIn from 'svgs/basic/IconSignIn';
 import IconGlobe from 'svgs/basic/IconGlobe';
@@ -34,15 +35,15 @@ function SoloDestination({idSolo}: PropsSoloDestination) {
   
   return (
 
-	  <Styled.Div__SoloDestination>
-      <div> 
-        <a
-          onClick={()=>onClick_LinkInsideApp(`/${ convertName.pascalToSnake(idSolo)}`)}
-        > 
-          {t(`Nav.${idSolo}`)} 
-        </a> 
-      </div>
-    </Styled.Div__SoloDestination>
+	<div className={`${styles['root']}`} >
+        <div> 
+            <a
+                onClick={()=>onClick_LinkInsideApp(`/${ convertName.pascalToSnake(idSolo)}`)}
+            > 
+                {t(`Nav.${idSolo}`)} 
+            </a> 
+        </div>
+    </div>
   
   );
 }

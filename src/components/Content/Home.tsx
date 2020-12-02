@@ -7,7 +7,8 @@ import {useSelector, useDispatch} from "react-redux";
 
 import * as actionsNotification from 'store/actions/notification';
 
-import './Home.scss';
+import styles from './Home.module.scss';
+
 
 
 type PropsHome = {};
@@ -26,7 +27,7 @@ function Home({}: PropsHome) {
   );
   
   return (
-    <div className={'home__root'}>
+    <div className={`${styles['root']}`} >
         <div> {t('Content', 'Home', 'Welcome')} </div>
         
         <div> 

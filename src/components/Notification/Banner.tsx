@@ -18,16 +18,16 @@ import IconWarning from 'svgs/notification/IconWarning';
 
 //import IconBanner from 'svgs/basic/IconBanner';
 
-import * as Styled from './Banner_Styled';
+import styles from './Banner.module.scss';
 
 
 type PropsBanner = {
-  banner: TypeBanner
+    banner: TypeBanner
 };
 
 
 function Banner({
-  banner
+    banner
 }: PropsBanner) {
   
   const dispatch = useDispatch();
@@ -43,21 +43,20 @@ function Banner({
   
   const propsIconSituation = useMemo( (): any => {
     return ({
-      width: '24px',
-      height:'24px',
-      listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kindSituation']}`],
-      className: banner['kindSituation'],
-      kind: 'regular'  
+        width: '24px',
+        height:'24px',
+        listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kindSituation']}`],
+        className: banner['kindSituation'],
+        kind: 'regular'  
     })
   }, []);
 
   console.log(banner);
   
   return (
-    <Styled.Div__Banner
-      className={banner['kindSituation']}
-      kindSituation={banner['kindSituation']}
-    >
+    
+    <div className={`${styles['root']} ${banner['kindSituation']}`} >
+
       <div>
         {banner['kindSituation'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
         {banner['kindSituation'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
@@ -67,30 +66,30 @@ function Banner({
         
       <div> {banner['message']} </div>
       
-      <div> 
-        <Styled.Button__Banner_Delete
-          onClick={()=>onClick_DeleteBanner(banner['id'])}
-        >  
-          <IconXCircle 
-            width={'20px'} 
-            height={'20px'} 
-            listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
-            className={banner['kindSituation']}
-            kind={'light'}
-          />
-          <IconXCircle 
-            width={'20px'} 
-            height={'20px'} 
-            listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
-            className={banner['kindSituation']}
-            kind={'solid'}
-          />
-        </Styled.Button__Banner_Delete>
-      </div>
+        <div> 
+            <button className={`${styles['button-delete']}`} 
+                onClick={()=>onClick_DeleteBanner(banner['id'])}
+            >
+
+                <IconXCircle 
+                    width={'20px'} 
+                    height={'20px'} 
+                    listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+                    className={banner['kindSituation']}
+                    kind={'light'}
+                />
+                <IconXCircle 
+                    width={'20px'} 
+                    height={'20px'} 
+                    listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
+                    className={banner['kindSituation']}
+                    kind={'solid'}
+                />
+            </button>
+
+        </div>
       
-      
-      
-    </Styled.Div__Banner>
+    </div>
   );
 }
 

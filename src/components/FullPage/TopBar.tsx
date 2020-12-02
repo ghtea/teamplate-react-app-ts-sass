@@ -9,7 +9,7 @@ import * as actionsStatus from 'store/actions/status';
 
 import IconHome from 'svgs/basic/IconHome';
 
-import './TopBar.scss';
+import styles from './TopBar.module.scss';
 
 
 type PropsTopBar = {};
@@ -27,7 +27,7 @@ function TopBar({}: PropsTopBar) {
   );
   
   return (
-    <div className={'top-bar__root'}
+    <div className={`${styles['root']}`}
       onClick={(event)=>onClick_LinkInsideApp('/')}
     >
     
