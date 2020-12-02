@@ -53,14 +53,24 @@ $global__map-color-assignment: (
     button__outline-color__focus___theme-dark:  map-get($map-color-series__basic, '50'),
 
 
-    button-main__background-color__focus___theme-light: map-get($map-color-series__main, '50'),
-    button-main__background-color__focus___theme-dark: map-get($map-color-series__main, '50'),
-    button-main__font-color__focus___theme-light: map-get($map-color-series__main, '100'),
-    button-main__font-color__focus___theme-dark: map-get($map-color-series__main, '00'),
+    button-main__background-color___theme-light: map-get($map-color-series__main, '50'),
+    button-main__background-color___theme-dark: map-get($map-color-series__main, '50'),
+    button-main__font-color___theme-light: map-get($map-color-series__main, '100'),
+    button-main__font-color___theme-dark: map-get($map-color-series__main, '00'),
     button-main__border-color__focus___theme-light:  transparent,
     button-main__border-color__focus___theme-dark:  transparent,
     button-main__outline-color__focus___theme-light:  transparent,
     button-main__outline-color__focus___theme-dark:  transparent,
+
+    
+    button-social__font-color___theme-light: map-get($map-color-series__basic, '100'),
+
+    button-google__background-color___theme-light: map-get($map-color-series__google, '50'),
+
+    button-facebook__background-color___theme-light: map-get($map-color-series__facebook, '50'),
+
+    button-twitter__background-color___theme-light: map-get($map-color-series__twitter, '60')
+
 
 
     input-text__background-color___theme-light: map-get($map-color-series__basic, '100'),

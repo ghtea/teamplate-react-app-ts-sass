@@ -1,0 +1,29 @@
+
+.top-bar__root {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-self: flex-start;
+    align-items: center;
+  
+    width: auto; 
+    height: 50px;
+  
+    font-size: 1rem;
+  
+    & > *:nth-child(1) {
+        width: auto;
+    }
+
+    & > *:nth-child(2) {
+        width: auto;
+        @include color(color, full-page--name-app__font-color);
+    
+        font-size: 1.4rem;
+        font-weight: bold;
+        
+        margin-left: 10px;
+    }
+}
+
+

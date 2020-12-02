@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import NameApp from "./FullPage/NameApp";
+import NameApp from "./FullPage/TopBar";
 
 import LogIn from "./FullPage/LogIn";
 import SignUp from "./FullPage/SignUp";

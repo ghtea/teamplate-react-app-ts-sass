@@ -13,7 +13,7 @@ import useInput from 'tools/hooks/useInput';
 
 //import IconLogIn from 'svgs/basic/IconLogIn';
 
-import * as Styled from './LogIn_Styled';
+import 'LogIn.scss';
 
 
 type PropsLogIn = {};
@@ -46,11 +46,11 @@ function LogIn({}: PropsLogIn) {
   );
   
   return (
-    <Styled.Div__LogIn>
+    <div className={'log-in__root'}>
     
-      <Styled.Div__LogIn_TitlePage> {t('FullPage', 'LogIn', 'LogIn')} </Styled.Div__LogIn_TitlePage>
+      <div className={'log-in__title-page'}> {t('FullPage', 'LogIn', 'LogIn')} </div>
         
-        <Styled.Div__LogIn_Identity> 
+        <div className={'log-in__input-identity'}> 
           <input 
             type='text'
             placeholder={t('FullPage', 'LogIn', 'EmailAddress')}
@@ -58,9 +58,9 @@ function LogIn({}: PropsLogIn) {
             onChange={inputEmail.onChange} 
           /> 
           <div> {t('FullPage', 'LogIn', 'EmailAddress')} </div>
-        </Styled.Div__LogIn_Identity>
+        </div> 
         
-        <Styled.Div__LogIn_Password> 
+        <div className={'log-in__input-password'}>
           <input 
             type='password'
             placeholder={t('FullPage', 'LogIn', 'Password')}
@@ -68,29 +68,29 @@ function LogIn({}: PropsLogIn) {
             onChange={inputPassword.onChange}
           /> 
           <div> {t('FullPage', 'LogIn', 'Password')} </div>
-        </Styled.Div__LogIn_Password> 
+        </div> 
         
         <div> message </div>
         
-        <Styled.Div__LogIn_Enter> 
+        <div className={'log-in__button-enter'}>  
           <button
             onClick={()=>onClick_LogIn()}
           > {t('FullPage', 'LogIn', 'LogIn')} 
           </button>
-        </Styled.Div__LogIn_Enter> 
+        </div> 
         
       
         <div> 
           <div> or Log In with </div>
         </div> 
         
-        <Styled.Div__LogIn_Social> 
+        <div className={'log-in__social'}> 
           <button> Google </button>
           <button> Facebook </button>
           <button> Twitter </button>
-        </Styled.Div__LogIn_Social> 
+        </div> 
         
-        <Styled.Div__LogIn_CollectionLink> 
+        <div className={'log-in__collection-link'}> 
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
@@ -99,13 +99,14 @@ function LogIn({}: PropsLogIn) {
           <div> <a
             onClick={(event)=>onClick_LinkInsideApp(event, '/sign-up')}
           > Sign Up </a> </div>
-        </Styled.Div__LogIn_CollectionLink>
+        </div> 
         
         
-    </Styled.Div__LogIn>
+    </div>
   );
 }
 
 LogIn.defaultProps = {};
 
 export default LogIn;
+

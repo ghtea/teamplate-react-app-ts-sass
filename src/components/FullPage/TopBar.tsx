@@ -9,12 +9,12 @@ import * as actionsStatus from 'store/actions/status';
 
 import IconHome from 'svgs/basic/IconHome';
 
-import * as Styled from './NameApp_Styled';
+import './TopBar.scss';
 
 
-type PropsNameApp = {};
+type PropsTopBar = {};
 
-function NameApp({}: PropsNameApp) {
+function TopBar({}: PropsTopBar) {
   
   const history = useHistory();
   const { t } = useTranslationTyped();
@@ -27,7 +27,7 @@ function NameApp({}: PropsNameApp) {
   );
   
   return (
-    <Styled.Div__NameApp
+    <div className={'top-bar__root'}
       onClick={(event)=>onClick_LinkInsideApp('/')}
     >
     
@@ -44,10 +44,10 @@ function NameApp({}: PropsNameApp) {
         </a>
       </div>
         
-    </Styled.Div__NameApp>
+    </div>
   );
 }
 
-NameApp.defaultProps = {};
+TopBar.defaultProps = {};
 
-export default NameApp;
+export default TopBar;

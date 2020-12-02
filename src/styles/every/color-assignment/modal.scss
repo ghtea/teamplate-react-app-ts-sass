@@ -27,7 +27,8 @@ $modal__map-color-assignment: (
 
     setting--header__icon-color__hover___theme-light: map-get($map-color-series__basic, '50'),
 
-    setting--option__background-color___theme-light: map-get($map-color-series__basic, '100'),
+    setting--option-on__background-color___theme-light: map-get($map-color-series__basic, '100'),
+    setting--option-off__background-color___theme-light: map-get($map-color-series__basic, '100'),
 
     setting--option-behind__background-color___theme-light: map-get($map-color-series__basic, '90')
 

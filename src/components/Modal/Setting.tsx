@@ -11,7 +11,8 @@ import * as actionsStatus from 'store/actions/status';
 
 import IconX from 'svgs/basic/IconX';
 
-import * as Styled from './Setting_Styled';
+import './Setting.scss';
+import '../Modal.scss';
 
 
 type PropsSetting = {};
@@ -62,9 +63,9 @@ function Setting({}: PropsSetting) {
   
   
   return (
-    <Styled.Div__Setting>
+    <div className={'modal__root, setting__root'}>
       
-      <Styled.Div__Setting_Header>
+      <div className={'setting__header'}>
         <div> {t('Modal', 'Setting', 'Title')} </div>
         <div
           onClick={()=>onClick_HideSetting()}
@@ -75,52 +76,47 @@ function Setting({}: PropsSetting) {
             height={'24px'}
           />
         </div>
-      </Styled.Div__Setting_Header>
+      </div>
       
       
-      <Styled.Div__Setting_Content>
+      <div className={'setting__content'}>
         
-        <Styled.Div__Setting_Content_Section>
+        <div className={'setting__content--section'}>
           <div> {t('Modal', 'Setting', 'Theme')} </div>
           <div>
-            <Styled.Button__Option 
+            <div className={`setting__button-option active----${optionThemeCurrent === 'auto'}`}
               onClick={()=>onClick_ChangeOptionTheme('auto')}
-              active={optionThemeCurrent === 'auto'}
-            > auto 
-            </Styled.Button__Option>
-            <Styled.Button__Option 
+            > auto
+            </div>
+            <div className={`setting__button-option active----${optionThemeCurrent === 'light'}`}
               onClick={()=>onClick_ChangeOptionTheme('light')}
-              active={optionThemeCurrent === 'light'}
-            > light 
-            </Styled.Button__Option>
-            <Styled.Button__Option 
+            > light
+            </div>
+            <div className={`setting__button-option active----${optionThemeCurrent === 'dark'}`}
               onClick={()=>onClick_ChangeOptionTheme('dark')}
-              active={optionThemeCurrent === 'dark'}
-            > dark 
-            </Styled.Button__Option>
+            > dark
+            </div>
           </div>
-        </Styled.Div__Setting_Content_Section>
+        </div>
         
-        <Styled.Div__Setting_Content_Section>
+        <div className={'setting__content'}>
           <div> {t('Modal', 'Setting', 'Language')} </div>
           <div>
-            <Styled.Button__Option 
+            <div className={`setting__button-option active----${languageCurrent === 'en'}`}
               onClick={()=>onClick_ChangeLanguage('en')}
-              active={languageCurrent === 'en'}
-            > English 
-            </Styled.Button__Option>
-            <Styled.Button__Option 
+            > English
+            </div>
+            <div className={`setting__button-option active----${languageCurrent === 'ko'}`}
               onClick={()=>onClick_ChangeLanguage('ko')}
-              active={languageCurrent === 'ko'}
-            > 한국어 
-            </Styled.Button__Option>
+            > 한국어
+            </div>
           </div>
-        </Styled.Div__Setting_Content_Section>
+        </div>
         
-      </Styled.Div__Setting_Content>
+      </div>
         
         
-    </Styled.Div__Setting>
+    </div>
   );
 }
 
