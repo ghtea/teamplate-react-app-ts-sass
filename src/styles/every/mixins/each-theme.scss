@@ -1,7 +1,7 @@
 @import '../color-assignment.scss';
 @import 'tools.scss';
 
-@mixin color($property, $key-color-front) {
+@mixin color-each-theme($property, $key-color-front) {
 
     @each $name-theme in $list-name-theme {
     .#{$name-theme} & {
@@ -15,7 +15,7 @@
 }
 
 
-@mixin frame($property, $width, $style, $key-color-front) {
+@mixin frame-each-theme($property, $width, $style, $key-color-front) {
 
     // ex: border, border-top, outline
     @each $name-theme in $list-name-theme {
@@ -30,7 +30,7 @@
 }
 
 
-@mixin shadow($property, $offset-x, $offset-y, $blur-radius, $spread-radius, $key-color-front) {
+@mixin shadow-each-theme($property, $offset-x, $offset-y, $blur-radius, $spread-radius, $key-color-front) {
 
     // ex: box-shadow, text-shadow ( drop-shadow 사용법은 아직 잘 모르겠다)
 
@@ -60,7 +60,7 @@
 
 
 // 90deg = to right 
-@mixin linear-gradient($propery, $direction, $map-color-stop...) { 
+@mixin linear-gradient-each-theme($propery, $direction, $map-color-stop...) { 
     
     $list-color-stop: map-pairs($value: $map-color-stop, $order: opposite);
     

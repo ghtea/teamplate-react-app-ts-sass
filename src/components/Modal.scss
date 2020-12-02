@@ -5,11 +5,11 @@
     width: calc(100vw - 20px); max-width: $device-xs__min-width - 20px;
     height: auto; max-height: 90vh;  min-height: 100px;
 
-    @include color(background-color, modal__background-color);
-    @include color(color, modal__font-color);
+    @include color-each-theme(background-color, modal__background-color);
+    @include color-each-theme(color, modal__font-color);
 
-    @include frame(border, 1px, solid, modal__border-color);
-    @include shadow(box-shaow, 0px, 0px, 10px, 2px, modal__box-shadow);
+    @include frame-each-theme(border, 1px, solid, modal__border-color);
+    @include shadow-each-theme(box-shaow, 0px, 0px, 10px, 2px, modal__box-shadow);
 
     border-radius: 12px;
 
@@ -23,7 +23,7 @@
     width: 100vw;
     height: 100vh;
 
-    @include color(background-color, modal--shadow__background-color);
+    @include color-each-theme(background-color, modal--shadow__background-color);
 
     position: fixed;
     z-index: 599;

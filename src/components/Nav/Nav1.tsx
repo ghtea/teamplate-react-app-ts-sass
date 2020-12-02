@@ -6,7 +6,8 @@ import {useSelector, useDispatch} from "react-redux";
 import {StateRoot} from 'store/reducers';
 import * as actionsStatus from 'store/actions/status';
 
-import * as Styled from './Nav1_Styled';
+import styles from './Nav1.module.scss';
+
 import IconHome from 'svgs/basic/IconHome';
 import IconThreeBars from 'svgs/basic/IconThreeBars';
 import IconX from 'svgs/basic/IconX';
@@ -60,12 +61,10 @@ function Nav1({}: PropsNav1) {
     },[showingSetting]
   );
 
-  
+  // showingNav={showingNav}
   return (
-    <Styled.Header__Nav1
-      showingNav={showingNav}
-    >
-      
+    <div className={`${styles.root}`} >
+
       <Styled.Div__Bar> 
         <div>
           <button

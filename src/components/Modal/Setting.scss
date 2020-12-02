@@ -39,7 +39,7 @@
     width: calc(100% - 20px);
     height: auto;  min-height: 50px;
     
-    @include frame(border-top, 1px, solid, modal__border-color);
+    @include frame-each-theme(border-top, 1px, solid, modal__border-color);
 
     margin: 0px 0px 0px 0px; /* top right bottom left */
     padding: 0px 0px 10px 0px; /* top right bottom left */
@@ -74,7 +74,7 @@
         width: auto;
         height: 32px;
 
-        @include color(background-color, setting--option-behind__background-color);
+        @include color-each-theme(background-color, setting--option-behind__background-color);
         
         border-radius: 5px;
     
@@ -101,10 +101,10 @@
 
 .setting__button-option {
     
-    @include color(background-color, setting--option-off__background-color);
+    @include color-each-theme(background-color, setting--option-off__background-color);
 
     &.active----true {
-        @include color(background-color, setting--option-on__background-color);
+        @include color-each-theme(background-color, setting--option-on__background-color);
     }
 
 }

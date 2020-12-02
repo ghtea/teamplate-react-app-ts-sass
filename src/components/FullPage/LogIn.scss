@@ -57,7 +57,7 @@
     
         display: none;
         font-size: 0.8rem;
-        @include color(color, content--input--label__font-color);
+        @include color-each-theme(color, content--input--label__font-color);
         
         position: absolute;
         top: 1px;
@@ -103,8 +103,8 @@
   
     & > button {
     
-        @include color(background-color, button-main__background-color);
-        @include color(color, button-main__font-color);
+        @include color-each-theme(background-color, button-main__background-color);
+        @include color-each-theme(color, button-main__font-color);
   
         width: 100%;
         height: 44px;
@@ -133,18 +133,18 @@
         width: 90px;
         height: 44px;
         
-        @include color(color, button-social__font-color);
+        @include color-each-theme(color, button-social__font-color);
         border-radius: 4px;
         
     
     &:nth-child(1){
-        @include color(background-color, button-google__background-color);
+        @include color-each-theme(background-color, button-google__background-color);
     }
     &:nth-child(2){
-        @include color(background-color, button-facebook__background-color);
+        @include color-each-theme(background-color, button-facebook__background-color);
     }
     &:nth-child(3){
-        @include color(background-color, button-twitter__background-color);
+        @include color-each-theme(background-color, button-twitter__background-color);
     }
   }
   
