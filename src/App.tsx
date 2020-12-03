@@ -8,11 +8,11 @@ import * as actionsAuth from 'store/actions/auth';
 
 import 'styles/once.scss';
 
-//import Nav from "./components/Nav";
-//import Content from "./components/Content";
-//import FullPage from "./components/FullPage";
-//import Modal from "./components/Modal";
-//import Notification from "./components/Notification";
+import Nav from "./components/Nav";
+import Content from "./components/Content";
+import FullPage from "./components/FullPage";
+import Modal from "./components/Modal";
+import Notification from "./components/Notification";
 
 // TS  https://velog.io/@velopert/create-typescript-react-component
 type PropsApp = {};
@@ -71,7 +71,22 @@ function App({}: PropsApp) {
   
   
   
-  return ( <div/>
+  return ( 
+    
+    <div>
+      
+        <Notification />
+        <Modal />
+        
+        {isFullPage && <FullPage/>}
+        
+        {!isFullPage && 
+            <>
+            <Nav/>
+            <Content/>
+            </>
+        }
+    </div>
     
   );
 }

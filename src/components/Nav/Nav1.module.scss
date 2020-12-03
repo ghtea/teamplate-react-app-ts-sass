@@ -1,10 +1,12 @@
+@import 'styles/every.scss';
+
+
 .root {
 
     visibility: visible;
-    &:global(.active----false) {
+    &:global(.showing----false) {
         visibility: hidden;
-    }
-
+    } 
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -126,7 +128,7 @@
         justify-content: center;
         align-items: center;
 
-        @include frame-each-theme(border-bottom, 1px, solid, $nav-1--board__border-color);
+        @include frame-each-theme(border-bottom, 1px, solid, nav-1--board__border-color);
     
         width: calc(100% - 20px);
         height: 70px;

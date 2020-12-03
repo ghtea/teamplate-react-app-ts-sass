@@ -23,8 +23,8 @@ $global__map-color-assignment: (
     div__border-color___theme-dark: transparent,
 
 
-    anchor__font-color___theme-light: inherit,
-    anchor__font-color___theme-dark: inherit,
+    a__font-color___theme-light: inherit,
+    a__font-color___theme-dark: inherit,
 
 
     button__background-color___theme-light: transparent,
@@ -69,10 +69,9 @@ $global__map-color-assignment: (
 
     button-facebook__background-color___theme-light: map-get($map-color-series__facebook, '50'),
 
-    button-twitter__background-color___theme-light: map-get($map-color-series__twitter, '60')
+    button-twitter__background-color___theme-light: map-get($map-color-series__twitter, '60'),
 
-
-
+    
     input-text__background-color___theme-light: map-get($map-color-series__basic, '100'),
 
     input-text__font-color-___theme-light: map-get($map-color-series__basic, '25'),

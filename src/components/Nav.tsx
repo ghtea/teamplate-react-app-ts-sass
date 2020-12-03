@@ -9,7 +9,7 @@ import * as actionsStatus from 'store/actions/status';
 import Nav1 from "./Nav/Nav1";
 import Nav2 from "./Nav/Nav2";
 
-import styles from './Nav.module.scss';
+//import styles from './Nav.module.scss';
 
 
 // TS  https://velog.io/@velopert/create-typescript-react-component
