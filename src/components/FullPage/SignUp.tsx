@@ -34,7 +34,7 @@ function SignUp({}: PropsSignUp) {
   const messagePassword = useState('');
   
   const onClick_LinkInsideApp = useCallback(
-    (event: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>, destination:string) => {
+    (destination:string) => {
       history.push(destination);
     },[history]
   );
@@ -114,12 +114,12 @@ function SignUp({}: PropsSignUp) {
         <div className={`${styles['collection-link']}`} > 
           <div> 
             <a
-              onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+              onClick={()=>onClick_LinkInsideApp( '/')}
             > Home </a> 
           </div>
           <div> 
             <a
-              onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
+              onClick={()=>onClick_LinkInsideApp('/log-in')}
             > Log In </a> 
           </div>
         </div>

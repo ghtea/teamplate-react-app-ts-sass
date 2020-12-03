@@ -24,6 +24,14 @@
         width: auto;
         cursor: pointer;
     }
+
+    
+    .icon-x {
+        @include color-each-theme(color, setting--header__icon-color);
+        width: 24px;
+        height: 24px;
+    }
+
 }
 
 
@@ -108,3 +116,4 @@
     }
 
 }
+

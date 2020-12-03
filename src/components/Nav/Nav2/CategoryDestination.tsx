@@ -79,12 +79,7 @@ function CategoryDestination({
 			    <a> {t(`Nav.${idCategory}`)}  </a>
 			  </div>
 			  <div> 
-			    <IconAngle 
-			      width={'20px'} 
-			      height={'20px'}
-			      color={'inherit'}
-			      directon={'down'}
-			    /> 
+			    <IconAngle className={`${styles['icon-angle']}`} /> 
 			   </div>
 			</div>
 			

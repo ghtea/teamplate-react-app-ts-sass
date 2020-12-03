@@ -69,7 +69,7 @@ function Nav1({}: PropsNav1) {
             <div>
                 <button
                     onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-                >   <IconHome className={`${styles['bar__icon-home']}`} />
+                >   <IconHome className={`${styles['icon-logo']}`} />
                 </button>
             </div>
         
@@ -81,8 +81,8 @@ function Nav1({}: PropsNav1) {
             <button
                 onClick={(event)=>onClick_ShowHideBoard(event)}
             >
-                {showingBoardNav1 ? ( <IconX className={`${styles['bar__icon-x']}`} />) : (
-                    <IconThreeBars className={`${styles['bar__icon-three-bars']}`} />
+                {showingBoardNav1 ? ( <IconX className={`${styles['icon-x']}`} />) : (
+                    <IconThreeBars className={`${styles['icon-three-bars']}`} />
                 )}
             </button>
             </div>

@@ -20,8 +20,8 @@
         opacity: 0.9;
     }
   
-  
-    &:global(.success) {
+    
+    &.success {
         @include color-each-theme(background-color, banner-success__background-color);
         @include color-each-theme(color, banner-success__font-color);
 
@@ -30,7 +30,7 @@
         @include shadow-each-theme(box-shadow, 0px, 0px, 10px, 2px, banner-success__box-shadow-color);
     }
 
-    &:global(.hint) {
+    &.hint {
         @include color-each-theme(background-color, banner-hint__background-color);
         @include color-each-theme(color, banner-hint__font-color);
 
@@ -39,7 +39,7 @@
         @include shadow-each-theme(box-shadow, 0px, 0px, 10px, 2px, banner-hint__box-shadow-color);
     }
 
-    &:global(.error) {
+    &.error {
         @include color-each-theme(background-color, banner-error__background-color);
         @include color-each-theme(color, banner-error__font-color);
 
@@ -48,7 +48,7 @@
         @include shadow-each-theme(box-shadow, 0px, 0px, 10px, 2px, banner-error__box-shadow-color);
     }
 
-    &:global(.warning) {
+    &.warning {
         @include color-each-theme(background-color, banner-warning__background-color);
         @include color-each-theme(color, banner-warning__font-color);
 
@@ -57,7 +57,25 @@
         @include shadow-each-theme(box-shadow, 0px, 0px, 10px, 2px, banner-warning__box-shadow-color);
     }
   
-  
+    .icon-success, .icon-hint, .icon-error, .icon-warning {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon-success {
+        @include color-each-theme(color, banner__icon__success);
+    }
+    .icon-hint {
+        @include color-each-theme(color, banner__icon__hint);
+    }
+    .icon-error {
+        @include color-each-theme(color, banner__icon__error);
+    }
+    .icon-warning {
+        @include color-each-theme(color, banner__icon__warning);
+    }
+
+
     & > div:nth-child(1){
         width: 50px;
         
@@ -116,7 +134,26 @@
 	    & > div:nth-child(2){
             display: flex;
 	    }
-	}
+    }
+    
+    .icon-x-circle {
+        @include color-each-theme(color, banner__icon__warning);
+        width: 20px;
+        height: 20px;
+
+        .success & {
+            @include color-each-theme(color, banner__icon__success);
+        }
+        .hint & {
+            @include color-each-theme(color, banner__icon__hint);
+        }
+        .error & {
+            @include color-each-theme(color, banner__icon__error);
+        }
+        warning & {
+            @include color-each-theme(color, banner__icon__warning);
+        }
+    }
 }
 
 /*
@@ -130,6 +167,7 @@
 }
 */
 
+/*
 .gauge {
 
     width: inherit;
@@ -141,22 +179,23 @@
   
     transform-origin: 0% 50%;
   
-    /* animation: scaleGuage ${ banner.msTime / 1000 }s linear normal forwards; */
+    // animation: scaleGuage ${ banner.msTime / 1000 }s linear normal forwards; 
   
-    &:global(.success) {
+    &.success {
         @include color-each-theme(background-color, banner-success__border-color);
     }
 
-    &:global(.hint) {
+    &.hint {
         @include color-each-theme(background-color, banner-hint__border-color);
     }
 
-    &:global(.error) {
+    &.error {
         @include color-each-theme(background-color, banner-error__border-color);
     }
 
-    &:global(.warning) {
+    &.warning {
         @include color-each-theme(background-color, banner-warning__border-color);
     }
   
 }
+*/

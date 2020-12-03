@@ -10,9 +10,9 @@ import * as convertName from 'tools/vanilla/convertName';
 
 import styles from './SoloDestination.module.scss';
 
-import IconHome from 'svgs/basic/IconHome';
-import IconSignIn from 'svgs/basic/IconSignIn';
-import IconGlobe from 'svgs/basic/IconGlobe';
+//import IconHome from 'svgs/basic/IconHome';
+//import IconSignIn from 'svgs/basic/IconSignIn';
+//import IconGlobe from 'svgs/basic/IconGlobe';
 
 
 type PropsSoloDestination = {

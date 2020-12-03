@@ -70,11 +70,7 @@ function Setting({}: PropsSetting) {
         <div
           onClick={()=>onClick_HideSetting()}
         > 
-          <IconX
-            listKeyTheme={['colors', 'Modal', 'setting_header___icon']}
-            width={'24px'}
-            height={'24px'}
-          />
+            <IconX className={`${styles['icon-x']}`} />
         </div>
       </div>
       

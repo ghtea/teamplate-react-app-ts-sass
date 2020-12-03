@@ -59,4 +59,10 @@
 	    
 	}
 
+
+    .icon-logo {
+        @include color-each-theme(color, nav-2--name-app__icon-color);
+        width: 36px;
+        height: 36px;
+    }
 }

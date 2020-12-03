@@ -32,11 +32,7 @@ function TopBar({}: PropsTopBar) {
     >
     
       <div>
-        <IconHome
-          listKeyTheme={['colors', 'Nav', 'nav2_name_app___logo']}
-          width={'36px'}
-          height={'36px'}
-        />
+          <IconHome className={`${styles['icon-logo']}`} />
       </div>
       
       <div> 

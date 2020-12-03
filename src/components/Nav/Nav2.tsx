@@ -55,7 +55,7 @@ function Nav2({}: PropsNav2) {
           onClick={()=>onClick_LinkInsideApp('/')}
         >
           <div>
-            <IconHome className={`${styles['name-app__icon-home']}`} />
+            <IconHome className={`${styles['icon-logo']}`} />
           </div>
         </button>
         <button
@@ -82,7 +82,7 @@ function Nav2({}: PropsNav2) {
         <div className={`${styles['tool']}`} >
           <a
             onClick={()=>onClick_ShowSetting()}
-          > <IconSetting className={`${styles['tool__icon-setting']}`} />
+          > <IconSetting className={`${styles['icon-setting']}`} />
           </a>
         </div>
         

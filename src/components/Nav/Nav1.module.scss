@@ -84,19 +84,19 @@
 	    display: none;
 	}
     
-    .bar__icon-home {
+    .icon-logo {
         @include color-each-theme(color, nav-1--bar--left__icon-color);
         width: 30px;
         height: 30px;
     }
 
-    .bar__icon-x {
+    .icon-x {
         @include color-each-theme(color, nav-1--bar--right__icon-color);
         width: 30px;
         height: 30px;
     }
 
-    .bar__icon-three-bars {
+    .icon-three-bars {
         @include color-each-theme(color, nav-1--bar--right__icon-color);
         width: 30px;
         height: 30px;

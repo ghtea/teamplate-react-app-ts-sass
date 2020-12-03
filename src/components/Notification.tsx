@@ -28,8 +28,8 @@ function Notification({}: PropsNotification) {
     <div className={`${styles['root']}`} >
         {listBanner.map( (banner, iBanner)=> 
             <Banner
-            banner={banner}
-            key={`banner-${iBanner}`}
+                banner={banner}
+                key={`banner-${iBanner}`}
             />
         )}
     </div>

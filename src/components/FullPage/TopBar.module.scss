@@ -17,13 +17,19 @@
 
     & > *:nth-child(2) {
         width: auto;
-        @include color-each-theme(color, full-page--name-app__font-color);
+        @include color-each-theme(color, full-page--top-bar--name-app__font-color);
     
         font-size: 1.4rem;
         font-weight: bold;
         
         margin-left: 10px;
     }
+}
+
+.icon-logo {
+    @include color-each-theme(color, full-page--top-bar--name-app);
+    width: 36px;
+    height: 36px;
 }
 
 

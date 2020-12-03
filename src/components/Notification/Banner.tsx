@@ -41,16 +41,6 @@ function Banner({
   );
   
   
-  const propsIconSituation = useMemo( (): any => {
-    return ({
-        width: '24px',
-        height:'24px',
-        listKeyTheme: ['color', 'Notification', `banner___icon__${banner['kindSituation']}`],
-        className: banner['kindSituation'],
-        kind: 'regular'  
-    })
-  }, []);
-
   console.log(banner);
   
   return (
@@ -58,10 +48,10 @@ function Banner({
     <div className={`${styles['root']} ${banner['kindSituation']}`} >
 
       <div>
-        {banner['kindSituation'] === 'success' &&  <IconSuccess {...propsIconSituation} /> }
-        {banner['kindSituation'] === 'hint' &&  <IconHint {...propsIconSituation} /> }
-        {banner['kindSituation'] === 'error' &&  <IconError {...propsIconSituation} /> }
-        {banner['kindSituation'] === 'warning' &&  <IconWarning {...propsIconSituation} /> }
+        {banner['kindSituation'] === 'success' &&  <IconSuccess className={`${styles['icon-success']}`}  /> }
+        {banner['kindSituation'] === 'hint' &&  <IconHint className={`${styles['icon-hint']}`}  /> }
+        {banner['kindSituation'] === 'error' &&  <IconError className={`${styles['icon-error']}`}  /> }
+        {banner['kindSituation'] === 'warning' &&  <IconWarning className={`${styles['icon-warning']}`}  /> }
       </div>
         
       <div> {banner['message']} </div>
@@ -70,21 +60,9 @@ function Banner({
             <button className={`${styles['button-delete']}`} 
                 onClick={()=>onClick_DeleteBanner(banner['id'])}
             >
-
-                <IconXCircle 
-                    width={'20px'} 
-                    height={'20px'} 
-                    listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
-                    className={banner['kindSituation']}
-                    kind={'light'}
-                />
-                <IconXCircle 
-                    width={'20px'} 
-                    height={'20px'} 
-                    listKeyTheme={['colors', 'Notification', `banner___icon__${banner['kindSituation']}`]}
-                    className={banner['kindSituation']}
-                    kind={'solid'}
-                />
+                <IconXCircle className={`${styles['icon-x-circle']}`} kind={'light'}  />
+                <IconXCircle className={`${styles['icon-x-circle']}`} kind={'solid'}  />
+                
             </button>
 
         </div>
