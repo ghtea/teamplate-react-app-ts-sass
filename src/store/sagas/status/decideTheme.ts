@@ -14,16 +14,16 @@ function* decideTheme(action: actionsStatus.type__READ_OPTION_THEME) {
     
     const optionThemeCurrent:string =  yield select( (state:StateRoot) => state.status.current.theme.option ); 
         
-    if ( optionThemeCurrent === 'light' ) {
+    if ( optionThemeCurrent === 'always-light' ) {
         yield put( actionsStatus.return__REPLACE({
             listKey: ['current', 'theme', 'name'],
-            replacement: 'themeLight'
+            replacement: 'light'
         }) );
     }
-    else if ( optionThemeCurrent === 'dark' ) {
+    else if ( optionThemeCurrent === 'always-dark' ) {
         yield put( actionsStatus.return__REPLACE({
             listKey: ['current', 'theme', 'name'],
-            replacement: 'themeDark'
+            replacement: 'dark'
         }) );
     }
     else if ( optionThemeCurrent === 'auto' ){
@@ -31,14 +31,14 @@ function* decideTheme(action: actionsStatus.type__READ_OPTION_THEME) {
             console.log('browser is dark mode');
             yield put( actionsStatus.return__REPLACE({
                 listKey: ['current', 'theme', 'name'],
-                replacement: 'themeDark'
+                replacement: 'dark'
             }) );
         }
         else {
             console.log('browser is light mode');
             yield put( actionsStatus.return__REPLACE({
                 listKey: ['current', 'theme', 'name'],
-                replacement: 'themeLight'
+                replacement: 'light'
             }) );
         }
     }

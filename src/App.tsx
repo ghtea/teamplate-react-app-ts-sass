@@ -70,10 +70,10 @@ function App({}: PropsApp) {
   }, []);
   
   
-  
+  // https://dev.to/cmcwebcode40/simple-react-dark-mode-with-scss-lae
   return ( 
     
-    <div>
+    <div className={`app theme----${nameThemeCurrent}`}>
       
         <Notification />
         <Modal />

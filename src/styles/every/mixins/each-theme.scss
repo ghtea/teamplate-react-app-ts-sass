@@ -4,7 +4,8 @@
 @mixin color-each-theme($property, $key-color-front) {
 
     @each $name-theme in $list-name-theme {
-    .#{$name-theme} & {
+
+    &.theme----#{$name-theme}, .theme----#{$name-theme} & {
         #{$property}: map-get(
             $map: $map-color-assignment, 
             $key: #{$key-color-front}___#{$name-theme}
@@ -19,7 +20,7 @@
 
     // ex: border, border-top, outline
     @each $name-theme in $list-name-theme {
-    .#{$name-theme} & {
+    &.theme----#{$name-theme}, .theme----#{$name-theme} & {
         #{$property}: $width $style map-get(
             $map: $map-color-assignment, 
             $key: #{$key-color-front}___#{$name-theme}
@@ -36,7 +37,7 @@
 
     @if $property == box-shadow {
         @each $name-theme in $list-name-theme {
-            .#{$name-theme} & {
+            &.theme----#{$name-theme}, .theme----#{$name-theme} & {
                 #{$property}: $offset-x $offset-y $blur-radius $spread-radius map-get(
                     $map: $map-color-assignment, 
                     $key: #{$key-color-front}___#{$name-theme}
@@ -47,7 +48,7 @@
 
     @else if $property == text-shadow {
         @each $name-theme in $list-name-theme {
-            .#{$name-theme} & {
+            &.theme----#{$name-theme}, .theme----#{$name-theme} & {
                 #{$property}: $offset-x $offset-y $blur-radius map-get(
                     $map: $map-color-assignment, 
                     $key: #{$key-color-front}___#{$name-theme}
@@ -65,7 +66,7 @@
     $list-color-stop: map-pairs($value: $map-color-stop, $order: opposite);
     
     @each $name-theme in $list-name-theme {
-        .#{$name-theme} & {
+        &.theme----#{$name-theme}, .theme----#{$name-theme} & {
             #{$property}: linear-gradient( $direction, $list-color-stop);
         }
     }

@@ -29,8 +29,8 @@ const stateInitial = {
     
     
     theme: {
-      option: 'light',
-      name: 'themeLight'
+      option: 'always-light',
+      name: 'light'
     }
   },
   

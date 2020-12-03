@@ -8,8 +8,33 @@ body {
     justify-content: flex-start;
     align-items: center;
 
-    @include color-each-theme(background-color, body__background-color);
-    @include color-each-theme(color, body__font-color);
+    background-color: transparent;
+    color: transparent;
+    // use div.app as body (about colors)
+
+    width: 100%; min-width: $device-xs__min-width;
+    height: auto; 
+
+    box-sizing: border-box;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    
+    position: relative;
+    
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 0px 0px 0px; 
+}
+
+.app {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include color-each-theme(background-color, app__background-color);
+    @include color-each-theme(color, app__font-color);
 
     width: 100%; min-width: $device-xs__min-width;
     height: auto; 
@@ -50,6 +75,8 @@ div {
 
     margin: 0px 0px 0px 0px; 
     padding: 0px 0px 0px 0px; 
+
+
 }
 
 
