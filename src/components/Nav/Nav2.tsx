@@ -12,9 +12,9 @@ import SoloDestination from './Nav2/SoloDestination';
 import styles from './Nav2.module.scss';
 
 import IconHome from 'svgs/basic/IconHome';
-import IconSignIn from 'svgs/basic/IconSignIn';
+// import IconSignIn from 'svgs/basic/IconSignIn';
 import IconSetting from 'svgs/basic/IconSetting';
-import IconGlobe from 'svgs/basic/IconGlobe';
+// import IconGlobe from 'svgs/basic/IconGlobe';
 
 
 type PropsNav2 = {};
@@ -48,18 +48,14 @@ function Nav2({}: PropsNav2) {
   
   
   return (
-    <header className={`${styles.root} showing----${showingNav}`} >
+    <header className={`${styles['root']} showing----${showingNav}`}>
 
       <div className={`${styles['name-app']}`} >
         <button
           onClick={()=>onClick_LinkInsideApp('/')}
         >
           <div>
-            <IconHome
-              listKeyTheme={['colors', 'Nav', 'nav2_name_app___logo']}
-              width={'36px'}
-              height={'36px'}
-            />
+            <IconHome className={`${styles['name-app__icon-home']}`} />
           </div>
         </button>
         <button
@@ -86,19 +82,14 @@ function Nav2({}: PropsNav2) {
         <div className={`${styles['tool']}`} >
           <a
             onClick={()=>onClick_ShowSetting()}
-          >
-            <IconSetting
-              color={'inherit'}
-              width={'24px'}
-              height={'24px'}
-            />
+          > <IconSetting className={`${styles['tool__icon-setting']}`} />
           </a>
         </div>
         
         
         { !readyUser &&
             <div className={`${styles['tool']}`} >
-                <a className={`${styles['link-main']}`} >
+                <a className={`${styles['link-main']}`} 
                     onClick={()=>onClick_LinkInsideApp('/log-in')} 
                 >
                 {t('Nav', 'LogIn')}

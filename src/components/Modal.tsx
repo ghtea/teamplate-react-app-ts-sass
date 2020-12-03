@@ -31,7 +31,8 @@ function Modal({}: PropsModal) {
       
       {showingSetting && 
         <>
-            <div className={`${styles['shadow-of-modal']}`} 
+            <div 
+                className={`${styles['shadow-of-modal']}`} 
                 onClick={()=>onClick_HideModal('setting')}
             />
             <Setting />

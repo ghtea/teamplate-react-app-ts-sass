@@ -15,7 +15,7 @@ import Cookies from 'js-cookie';
 
 //import IconSignUp from 'svgs/basic/IconSignUp';
 
-import * as Styled from './SignUp_Styled';
+import styles from './SignUp.module.scss';
 
 
 type PropsSignUp = {};
@@ -65,11 +65,11 @@ function SignUp({}: PropsSignUp) {
   
   
   return (
-    <Styled.Div__SignUp>
-    
-        <Styled.Div__SignUp_TitlePage> Sign Up </Styled.Div__SignUp_TitlePage>
+    <div className={`${styles['root']}`} >
         
-        <Styled.Div__SignUp_Identity> 
+        <div className={`${styles['title-page']}`} >  Sign Up </div>
+        
+        <div className={`${styles['input-identity']}`} >
           <input 
             type='text' 
             placeholder='Email Address' 
@@ -77,11 +77,10 @@ function SignUp({}: PropsSignUp) {
             onChange={inputEmail.onChange} 
           /> 
           <div> Email Address </div>
-        </Styled.Div__SignUp_Identity>
+        </div>
         
         
-        
-        <Styled.Div__SignUp_Password> 
+        <div className={`${styles['input-password']}`} >
           <input 
             type='password'
             placeholder='Password'
@@ -89,9 +88,9 @@ function SignUp({}: PropsSignUp) {
             onChange={inputPassword1.onChange}
           /> 
           <div> Password </div>
-        </Styled.Div__SignUp_Password> 
+        </div>
         
-        <Styled.Div__SignUp_Password> 
+        <div className={`${styles['input-password']}`} >
           <input 
             type='password'
             placeholder='Password Again'
@@ -101,18 +100,18 @@ function SignUp({}: PropsSignUp) {
             onKeyPress={onKeyPress_SignUp}
           /> 
           <div> Password Again </div>
-        </Styled.Div__SignUp_Password> 
+        </div> 
         
         
         
-        <Styled.Div__SignUp_Enter> 
+        <div className={`${styles['button-enter']}`} >
           <button
             onClick={()=>onClick_SignUp()}
           > Sign Up 
           </button>
-        </Styled.Div__SignUp_Enter> 
+        </div>
         
-        <Styled.Div__SignUp_CollectionLink> 
+        <div className={`${styles['collection-link']}`} > 
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
@@ -123,10 +122,10 @@ function SignUp({}: PropsSignUp) {
               onClick={(event)=>onClick_LinkInsideApp(event, '/log-in')}
             > Log In </a> 
           </div>
-        </Styled.Div__SignUp_CollectionLink>
+        </div>
         
         
-    </Styled.Div__SignUp>
+    </div>
   );
 }
 

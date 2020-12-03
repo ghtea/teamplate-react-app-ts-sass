@@ -83,7 +83,24 @@
 	@media (min-width: $device-xs__min-width) { // 320≤ xs < 576,   576 ≤ s < 768,   768 ≤ m < 992,   992 ≤ l < 1200,   1200 ≤ xl
 	    display: none;
 	}
-  
+    
+    .bar__icon-home {
+        @include color-each-theme(color, nav-1--bar--left__icon-color);
+        width: 30px;
+        height: 30px;
+    }
+
+    .bar__icon-x {
+        @include color-each-theme(color, nav-1--bar--right__icon-color);
+        width: 30px;
+        height: 30px;
+    }
+
+    .bar__icon-three-bars {
+        @include color-each-theme(color, nav-1--bar--right__icon-color);
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .board {

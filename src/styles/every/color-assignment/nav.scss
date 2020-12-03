@@ -17,6 +17,10 @@ $nav__map-color-assignment: (
 
     nav-1--bar__border-color___theme-light: map-get($map-color-series__main, '60'),
 
+    nav-1--bar--left__icon-color___theme-light: map-get($map-color-series__main, '60'),
+
+    nav-1--bar--right__icon-color___theme-light: map-get($map-color-series__main, '60'),
+
 
     nav-1--board__background-color___theme-light: map-get($map-color-series__main, '65'),
 

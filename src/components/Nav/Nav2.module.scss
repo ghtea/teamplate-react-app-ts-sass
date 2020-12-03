@@ -61,7 +61,12 @@
         
         margin-left: 10px;
 	}
-  
+
+    .name-app__icon-home {
+        @include color-each-theme(color, nav-2--name-app__icon-color);
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .collection-destination {
@@ -153,7 +158,12 @@
             @include color-each-theme(color, nav-2--link__font-color__hover);
         }
     
-    
+    }
+
+    .tool__icon-setting {
+        @include color-each-theme(color, nav-2--tool__icon-color);
+        width: 24px;
+        height: 24px;
     }
 }
 

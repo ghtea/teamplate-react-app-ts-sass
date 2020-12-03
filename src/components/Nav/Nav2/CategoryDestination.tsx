@@ -96,13 +96,14 @@ function CategoryDestination({
                 
                 <div className={`${styles['modal__box']}`}>
 				    {listIdLink.map( (idLink, index) => (
-                        <div className={`${styles['link']}`}>
+                        <div className={`${styles['link']}`}
                             key={`idLink-${index}`}
                             onClick={()=>onClick_LinkInsideApp(`/${convertName.pascalToSnake(idCategory)}/${convertName.pascalToSnake(idLink)}`)}
                         > <a> {t(`Nav.${idCategory}_${idLink}`)} </a> 
   					    </div>
 				    ))}
 				</div>
+
 				
 			</div>
 			

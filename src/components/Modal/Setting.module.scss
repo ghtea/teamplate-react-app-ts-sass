@@ -1,6 +1,6 @@
 
 
-.setting__header {
+.header {
 
     display: flex;
     flex-flow: row nowrap;
@@ -27,7 +27,7 @@
 }
 
 
-.setting__content {
+.content {
   
     display: flex;
     flex-flow: column nowrap;
@@ -48,7 +48,7 @@
 
 
 
-.setting__content--section {
+.content__section {
 
     display: flex;
     flex-flow: column nowrap;
@@ -99,7 +99,7 @@
 }
 
 
-.setting__button-option {
+.button-option {
     
     @include color-each-theme(background-color, setting--option-off__background-color);
 

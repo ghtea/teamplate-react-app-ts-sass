@@ -1,72 +1,19 @@
 import React from "react";
-import styled from 'styled-components';
+
 
 type PropsIcon = {
-  
-  width: string;
-  height: string;
-  
   className?: string;
-  color?: string;
-  
-  listKeyTheme?: string[];
-  kind?: string; // thin, light, regular, solid, ...
-  
+  kind?: string;  // thin, light, regular, solid, ...
 } & typeof propsDefault;
 
 const propsDefault = {  
-  width: '30px',
-  height: '30px',
-  
-  color: '#000',
   className: ''
 };
 
-
-type PropsDivIcon = {
-  width: string;
-  height: string;
-  color: string;
-  listKeyTheme?: string[];
-};
-
-
-
-export const Div__Icon = styled.div<PropsDivIcon>
-`
-  
-  display: flex;
-  flex-flow: column nowrap;   /* row */
-  justify-content: center; align-items: center;
-  
-  box-sizing: border-box;
-  border: 0px solid #fff;  /* border: 2px dashed #aaa; */
-  background-color: none; 
-  color: ${props=> (props.listKeyTheme) ? (props.listKeyTheme).reduce((obj: any, key: string) =>  (obj || {})[key], props.theme) : props.color } !important;
-  width: ${props=>props.width} !important;
-  height: ${props=>props.height } !important;
-  font-size: 1rem;
-  border-radius: 0px;
-  
-  position: static;
-  
-  margin: 0px 0px 0px 0px; /* top right bottom left */
-  padding: 0px 0px 0px 0px; /* top right bottom left */
-  
-`;
-
-
-
 // Setting
-const Icon = ({ width, height, color, className, listKeyTheme, kind }: PropsIcon) => {
+const Icon = ({ className, kind }: PropsIcon) => {
   return (
-    <Div__Icon
-      className={className}
-      width={width}
-      height={height}
-      color={color}
-      listKeyTheme={listKeyTheme}
-    >
+    <div className={className}>
       <svg
         width="100%"
         height="100%"
@@ -93,7 +40,7 @@ const Icon = ({ width, height, color, className, listKeyTheme, kind }: PropsIcon
         
       </svg>
       
-    </Div__Icon>
+    </div>
   );
 };
 Icon.defaultProps = propsDefault;

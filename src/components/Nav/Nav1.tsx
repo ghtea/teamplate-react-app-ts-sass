@@ -63,38 +63,34 @@ function Nav1({}: PropsNav1) {
 
   // showingNav={showingNav}
   return (
-    <header className={`${styles.root} showing----${showingNav}`} >
+    <header className={`${styles['root']} showing----${showingNav}`}>
 
-      <div className={`${styles.bar}`} >
-        <div>
-          <button
-            onClick={(event)=>onClick_LinkInsideApp(event, '/')}
-          >
-            <IconHome width={'30px'} height={'30px'} />
-          </button>
-        </div>
+        <div className={`${styles['bar']}`} >
+            <div>
+                <button
+                    onClick={(event)=>onClick_LinkInsideApp(event, '/')}
+                >   <IconHome className={`${styles['bar__icon-home']}`} />
+                </button>
+            </div>
         
-        <div>
-          (title)
-        </div>
+            <div>
+            (title)
+            </div>
         
-        <div>
-          <button
-            onClick={(event)=>onClick_ShowHideBoard(event)}
-          >
-            {showingBoardNav1 ? (
-            <IconX 
-              className={"IconX"} width={'30px'} height={'30px'} />
-            ) : (
-            <IconThreeBars 
-              className={"IconThreeBars"} width={'30px'} height={'30px'} />
-            )}
-          </button>
-        </div>
-      </div> 
+            <div>
+            <button
+                onClick={(event)=>onClick_ShowHideBoard(event)}
+            >
+                {showingBoardNav1 ? ( <IconX className={`${styles['bar__icon-x']}`} />) : (
+                    <IconThreeBars className={`${styles['bar__icon-three-bars']}`} />
+                )}
+            </button>
+            </div>
+            
+        </div> 
       
       {showingBoardNav1 && (
-        <div className={`${styles.board}`} >
+        <div className={`${styles['board']}`} >
           <div> 
             <a
               onClick={(event)=>onClick_LinkInsideApp(event, '/')}
