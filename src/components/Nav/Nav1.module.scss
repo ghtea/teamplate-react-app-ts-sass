@@ -57,10 +57,10 @@
     width: 100%;
     height: $nav-1--bar__height;     /* we should let 'Content', 'Nav1 - Board' know this value too */ 
     
-    background-color: red !important;
-    //@include color-each-theme(background-color, nav-1--bar__background-color);
+    //background-color: red !important;
+    @include color-each-theme(background-color, nav-1--bar__background-color);
     @include color-each-theme(color, nav-1--bar__font-color);
-    
+
     @include frame-each-theme(border-bottomm, 1px, solid, nav-1--bar__border-color);
 
     z-index: 100;

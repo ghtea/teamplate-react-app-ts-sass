@@ -10,9 +10,9 @@
 
 $global__map-color-assignment: (
 
-    app__background-color___light: map-get($map-color-series__basic, '100'),
+    body__background-color___light: map-get($map-color-series__basic, '100'),
 
-    app__font-color___light: map-get($map-color-series__basic, '25'),
+    body__font-color___light: map-get($map-color-series__basic, '25'),
 
 
     div__background-color___light: transparent,

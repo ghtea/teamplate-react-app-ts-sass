@@ -62,6 +62,17 @@ function App({}: PropsApp) {
     dispatch(actionsStatus.return__READ_OPTION_THEME() );
   }, []);
   
+  useEffect(()=>{
+        if (nameThemeCurrent === 'dark'){
+            document.body.classList.add('theme----dark');
+            document.body.classList.remove('theme----light');
+        }
+        else {
+            document.body.classList.add('theme----light');
+            document.body.classList.remove('theme----dark');
+        }
+    
+  }, [nameThemeCurrent])
   
   
   // log check
@@ -72,21 +83,19 @@ function App({}: PropsApp) {
   
   // https://dev.to/cmcwebcode40/simple-react-dark-mode-with-scss-lae
   return ( 
+    <>
+    <Notification />
+    <Modal />
     
-    <div className={`app theme----${nameThemeCurrent}`}>
-      
-        <Notification />
-        <Modal />
-        
-        {isFullPage && <FullPage/>}
-        
-        {!isFullPage && 
-            <>
-            <Nav/>
-            <Content/>
-            </>
-        }
-    </div>
+    {isFullPage && <FullPage/>}
+    
+    {!isFullPage && 
+        <>
+        <Nav/>
+        <Content/>
+        </>
+    }
+    </>
     
   );
 }
