@@ -42,6 +42,7 @@ function Nav1({}: PropsNav1) {
     (event:React.MouseEvent<HTMLButtonElement> ) => {
       event.preventDefault();
       
+      console.log('heoo');
       dispatch(actionsStatus.return__REPLACE({
         listKey:['showing', 'nav', 'boardNav1'],
         replacement: !showingBoardNav1

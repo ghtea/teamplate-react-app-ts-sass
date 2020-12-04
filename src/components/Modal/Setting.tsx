@@ -84,12 +84,12 @@ function Setting({}: PropsSetting) {
                 onClick={()=>onClick_ChangeOptionTheme('auto')}
             > auto
             </div>
-            <div className={`${styles['button-option']} active----${optionThemeCurrent === 'light'}`}
-                onClick={()=>onClick_ChangeOptionTheme('light')}
+            <div className={`${styles['button-option']} active----${optionThemeCurrent === 'always-light'}`}
+                onClick={()=>onClick_ChangeOptionTheme('always-light')}
             > light
             </div>
-            <div className={`${styles['button-option']} active----${optionThemeCurrent === 'dark'}`}
-                onClick={()=>onClick_ChangeOptionTheme('dark')}
+            <div className={`${styles['button-option']} active----${optionThemeCurrent === 'always-dark'}`}
+                onClick={()=>onClick_ChangeOptionTheme('always-dark')}
             > dark
             </div>
           </div>

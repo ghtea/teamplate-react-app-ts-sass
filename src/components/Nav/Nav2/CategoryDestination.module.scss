@@ -12,7 +12,7 @@
         }
 	  
         & > div:nth-child(1) > div:nth-child(2) {
-            transform: rotate(180deg) translateY(1px);
+            transform: rotate(180deg) translateY(-1px);
         }
 	}
   
@@ -24,13 +24,13 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
   
     width: auto;
 	height: auto;
 	
 	& > * {
-	  width : auto;
+      width : auto;
 	}
 	& a {
         @include color-each-theme(color, nav-2--link__font-color);
@@ -40,6 +40,7 @@
         @include color-each-theme(color, nav-2--link__font-color);
         width: 20px;
         height: 20px;
+        top: 1px;
     }
 }
 
@@ -47,7 +48,8 @@
 .modal {
 
     width: 200px; 
-  
+    
+    display: none;
     /* 모바일에서 타이틀 클릭으로 온오프가능하게 */
     &:global(.spotlighted----true) {
         display: flex;

@@ -155,9 +155,6 @@
             color: inherit;  
         }
         
-        &:hover {
-            @include color-each-theme(color, nav-2--link__font-color__hover);
-        }
     
     }
 

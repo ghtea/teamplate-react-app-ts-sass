@@ -45,7 +45,7 @@ function Banner({
   
   return (
     
-    <div className={`${styles['root']} ${banner['kindSituation']}`} >
+    <div className={`${styles['root']} ${styles[banner['kindSituation']]}`} >
 
       <div>
         {banner['kindSituation'] === 'success' &&  <IconSuccess className={`${styles['icon-success']}`}  /> }

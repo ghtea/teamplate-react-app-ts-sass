@@ -1,7 +1,7 @@
 @import 'styles/every.scss';
 
 
-.modal {
+.root {
 
     width: calc(100vw - 20px); max-width: $device-xs__min-width - 20px;
     height: auto; max-height: 90vh;  min-height: 100px;

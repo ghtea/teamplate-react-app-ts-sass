@@ -1,11 +1,11 @@
 @import 'mixins/tools.scss';
 
-@import 'color-assignment/global.scss';
-@import 'color-assignment/content.scss';
-@import 'color-assignment/full-page.scss';
-@import 'color-assignment/modal.scss';
-@import 'color-assignment/nav.scss';
-@import 'color-assignment/notification.scss';
+@import 'color-assignment/ca-global.scss';
+@import 'color-assignment/ca-content.scss';
+@import 'color-assignment/ca-full-page.scss';
+@import 'color-assignment/ca-modal.scss';
+@import 'color-assignment/ca-nav.scss';
+@import 'color-assignment/ca-notification.scss';
 
 
 $map-color-assignment: map-merge-all(
